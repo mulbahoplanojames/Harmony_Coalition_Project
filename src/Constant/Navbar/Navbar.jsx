@@ -31,7 +31,7 @@ const Navbar = () => {
                 to={navlink.path}
                 className={`font-montserrat focus:text-black text-base leading-normal text-[#1d232a]${
                   menu === navlink.label
-                    ? "pb-3 border-b-2 border-red-400 "
+                    ? "pb-3 border-b-2 border-primary "
                     : ""
                 }`}
                 onClick={() => setMenu(navlink.label)}
@@ -54,7 +54,6 @@ const Navbar = () => {
               alt="cart icon"
               className="w-6 h-6 cursor-pointer"
             />
-            <div className="absolute -top-2 -right-1 w-3 h-3 rounded-full bg-red-500"></div>
           </div>
           <Link
             to="/signin"
@@ -75,7 +74,7 @@ const Navbar = () => {
       {/*//! Responsive menu for smaller devices */}
       {isMenuOpen && (
         <div>
-          <nav className="lg:bottom-auto bg-red-500 fixed top-0 bottom-0 left-0 right-0 z-40">
+          <nav className="lg:bottom-auto bg-primary fixed top-0 bottom-0 left-0 right-0 z-40">
             {/* Close button for the menu */}
             <div
               className="max-lg:block fixed right-0 hidden px-8 py-4 cursor-pointer"
