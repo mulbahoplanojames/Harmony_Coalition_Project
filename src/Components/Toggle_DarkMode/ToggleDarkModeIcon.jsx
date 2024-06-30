@@ -4,6 +4,8 @@ import { AppContext } from "../../Context/AppContext";
 import { useContext } from "react";
 
 const ToggleDarkModeIcon = () => {
+  const { darkMode } = useContext(AppContext);
+
   const { toggleDarkMode } = useContext(AppContext);
 
   return (
@@ -13,7 +15,11 @@ const ToggleDarkModeIcon = () => {
         <input type="checkbox" onClick={toggleDarkMode} />
 
         {/* sun icon */}
-        <MdOutlineWbSunny className="swap-on h-6 w-6 fill-current" />
+        <MdOutlineWbSunny
+          className={`swap-on h-6 w-6 fill-current ${
+            darkMode ? "text-black" : "text-black"
+          }`}
+        />
 
         {/* moon icon */}
         <BsMoonStars className="swap-off h-6 w-6 fill-current" />
