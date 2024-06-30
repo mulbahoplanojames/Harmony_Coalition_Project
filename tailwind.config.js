@@ -2,7 +2,15 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#0a2640",
+        secondary: "#000000",
+        tertiary: "#ffffff",
+        quaternary: "#1e3a8a",
+        quinary: "#1e3a8a",
+      },
+    },
   },
   // add daisyUI plugin
   plugins: [require("daisyui")],
