@@ -3,6 +3,7 @@ import { TbMenu2 } from "react-icons/tb";
 import { MdOutlineCancelPresentation } from "react-icons/md";
 import navLinks from "../../Data/Data";
 import { Link } from "react-router-dom";
+import ToggleDarkMode from "../../Components/Toggle_DarkMode/ToggleDarkMode";
 // import { assets } from "../data/assets";
 
 /**
@@ -43,18 +44,7 @@ const Navbar = () => {
         </ul>
         {/*//! Contact Us button */}
         <div className="lg:gap-x-6 gap-x-4 flex justify-center items-center">
-          <img
-            // src={assets.search_icon}
-            alt="search icon"
-            className="w-6 h-6 cursor-pointer max-lg:hidden"
-          />
-          <div className="relative">
-            <img
-              // src={assets.basket_icon}
-              alt="cart icon"
-              className="w-6 h-6 cursor-pointer"
-            />
-          </div>
+          <ToggleDarkMode />
           <Link
             to="/signin"
             className="py-1.5 lg:px-4 px-3 border-[1px] b text-sm lg:text-base rounded-3xl text-black hover:opacity-50"
