@@ -3,7 +3,7 @@
 */
 
 // I am importing the necessary functions from the React library to manage the state of the dark mode.
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 // I create a new context using the `createContext` function. The argument is the initial value of the context.
 export const AppContext = createContext(null);
@@ -12,9 +12,20 @@ export const AppContext = createContext(null);
     used to provide the context to all of its child components.
  */
 const AppContextProvider = ({ children }) => {
-  // i usee the `useState` hook to create a state variable called `darkMode`.
-  // This state variable will keep track of whether the application is in dark mode or not.
-  const [darkMode, setDarkMode] = useState(false);
+  // I am Checking local storage for theme preference, default to false (light mode)
+  const saveDarkMode = JSON.parse(localStorage.getItem("darkMode")) || false;
+
+  /* 
+    i am using the `useState` hook to create a state variable called `darkMode`.
+     This state variable will keep track of whether the application is in dark mode or not
+     base on the value of the `saveDarkMode` variable from local storage.
+  */
+  const [darkMode, setDarkMode] = useState(saveDarkMode);
+
+  // Update local storage whenever darkMode state changes using the useEffect hook
+  useEffect(() => {
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
+  }, [darkMode]);
 
   // I define a function called `toggleDarkMode`. This function will be used to
   //toggle the value of the `darkMode` state variable.
