@@ -1,7 +1,12 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../../Context/AppContext";
-import { FaLinkedin, FaInstagram } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaInstagram,
+  FaFacebookSquare,
+  FaWhatsappSquare,
+} from "react-icons/fa";
 
 const HomeHero = () => {
   const { darkMode } = useContext(AppContext);
@@ -29,30 +34,34 @@ const HomeHero = () => {
           className=" bg-green-300 md:w-[60%] md:h-[24rem] w-[70%] h-[17rem] rounded-full relative overflow-visible border-4 border-primary "
           id="item1"
         >
-          <div
+          <Link
             className={`icons_Wripper bg-black top-1 right-5  ${
               darkMode ? "border-white" : "border-black"
             }`}
           >
             <FaLinkedin className="text-4xl z-40 text-white" />
-          </div>
-          <div
+          </Link>
+          <Link
             className={`icons_Wripper md:bottom-[4rem] bottom-8 -md:right-1 -right-6 bg-black ${
               darkMode ? "border-white" : "border-black"
             }`}
           >
             <FaInstagram className="text-4xl z-40 text-white" />
-          </div>
-          <div
-            className={`md:w-[5rem] md:h-[5rem] w-[5rem] h-[5rem] bg-orange-300 rounded-full absolute top-7 left-0  border-4 flex justify-center items-center z-40 ${
+          </Link>
+          <Link
+            className={`icons_Wripper bg-black top-7 left-0  ${
               darkMode ? "border-white " : "border-black"
             }`}
-          ></div>
-          <div
-            className={`md:w-[5rem] md:h-[5rem] w-[5rem] h-[5rem] bg-purple-300 rounded-full absolute md:bottom-14 -bottom-2 md:left-0 left-4 border-4 flex justify-center items-center z-40 ${
+          >
+            <FaWhatsappSquare className="text-4xl z-40 text-white" />
+          </Link>
+          <Link
+            className={`icons_Wripper bg-black md:bottom-14 -bottom-2 md:left-0 left-4 ${
               darkMode ? "border-white" : "border-black"
             }`}
-          ></div>
+          >
+            <FaFacebookSquare className="text-4xl z-40 text-white" />
+          </Link>
         </div>
       </div>
     </>
