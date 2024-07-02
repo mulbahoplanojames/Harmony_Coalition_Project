@@ -31,7 +31,7 @@ const Navbar = () => {
             darkMode ? "text-black" : "text-black"
           }`}
         >
-          Harmony
+          ALSULK
         </Link>
         {/*//! Menu items for larger devices and mapping through the links */}
         <ul className="max-lg:hidden">

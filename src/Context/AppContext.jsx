@@ -25,6 +25,7 @@ const AppContextProvider = ({ children }) => {
   // Update local storage whenever darkMode state changes using the useEffect hook
   useEffect(() => {
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
+    console.log("darkMode", darkMode);
   }, [darkMode]);
 
   // I define a function called `toggleDarkMode`. This function will be used to
@@ -35,15 +36,15 @@ const AppContextProvider = ({ children }) => {
         I pass a function as an argument to the `setDarkMode` function. This function takes the
         current value of the `darkMode` state variable and returns the opposite value.
     */
-    setDarkMode((darkMode) => !darkMode);
+    setDarkMode((prevDarkMode) => !prevDarkMode);
   };
 
   // I create an object called `darkModeStyle`. This object will provide CSS styles for the app based on the `darkMode` state variable.
   const darkModeStyle = {
     // If the `darkMode` state variable is true, the background color of the app will be "#23272f". Otherwise, it will be "#f6f7f9".
-    backgroundColor: darkMode ? "#23272f" : "#f6f7f9",
-    // If the `darkMode` state variable is true, the text color of the app will be "white". Otherwise, it will be "#23272f".
-    color: darkMode ? "white" : "#23272f",
+    backgroundColor: darkMode ? "#1d232a" : "#f6f7f9",
+    // If the `darkMode` state variable is true, the text color of the app will be "white". Otherwise, it will be "#1d232a".
+    color: darkMode ? "#939aa7" : "#1d232a",
   };
 
   // I create an object called `contextValue`. This object will store all of the data that i want to share to all parts of this project.

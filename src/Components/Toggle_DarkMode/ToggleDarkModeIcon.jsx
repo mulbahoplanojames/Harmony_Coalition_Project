@@ -33,7 +33,11 @@ const ToggleDarkModeIcon = () => {
         />
 
         {/* The moon icon is displayed when the dark mode is off. */}
-        <BsMoonStars className="swap-off h-6 w-6 fill-current" />
+        <BsMoonStars
+          className={`swap-off h-6 w-6 fill-current ${
+            darkMode ? "text-black" : "text-black"
+          }`}
+        />
       </label>
     </>
   );
