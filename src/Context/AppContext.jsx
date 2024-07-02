@@ -44,8 +44,10 @@ const AppContextProvider = ({ children }) => {
     // If the `darkMode` state variable is true, the background color of the app will be "#23272f". Otherwise, it will be "#f6f7f9".
     backgroundColor: darkMode ? "#1d232a" : "#f6f7f9",
     // If the `darkMode` state variable is true, the text color of the app will be "white". Otherwise, it will be "#1d232a".
-    color: darkMode ? "#939aa7" : "#1d232a",
+    color: darkMode ? "white" : "black",
   };
+
+  // #939aa7
 
   // I create an object called `contextValue`. This object will store all of the data that i want to share to all parts of this project.
   const contextValue = {

@@ -1,8 +1,9 @@
+import HomeHero from "../../Components/Home_Hero/HomeHero";
+
 const Home = () => {
   return (
     <div>
-      <p>Home</p>
-      <a href="/about">About</a>
+      <HomeHero />
     </div>
   );
 };
