@@ -5,10 +5,13 @@ export default {
     extend: {
       colors: {
         primary: "#0a2640",
+        primary_main: "#4b208c",
         secondary: "#000000",
+        secondary_main: "#190734",
         tertiary: "#ffffff",
         quaternary: "#1e3a8a",
         quinary: "#1e3a8a",
+        // aaah: "#5625A",
       },
     },
   },

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../../Context/AppContext";
+import { FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const HomeHero = () => {
   const { darkMode } = useContext(AppContext);
@@ -19,7 +20,7 @@ const HomeHero = () => {
           </p>
           <Link
             to="about"
-            className="py-3 px-6 bg-primary text-lg text-white border-none rounded-full hover:bg-opacity-70"
+            className="py-3 px-6 bg-primary_main text-lg text-white border-none rounded-full hover:bg-opacity-70"
           >
             About Us
           </Link>
@@ -29,22 +30,26 @@ const HomeHero = () => {
           id="item1"
         >
           <div
-            className={`md:w-[6rem] md:h-[6rem] w-[5rem] h-[5rem] bg-red-300 rounded-full absolute top-1 right-5 border-4 ${
+            className={`icons_Wripper bg-black top-1 right-5  ${
               darkMode ? "border-white" : "border-black"
             }`}
-          ></div>
+          >
+            <FaLinkedin className="text-4xl z-40 text-white" />
+          </div>
           <div
-            className={`md:w-[6rem] md:h-[6rem] w-[5rem] h-[5rem] bg-yellow-300 rounded-full absolute md:bottom-[4rem] bottom-8 -md:right-1 -right-6 border-4 ${
+            className={`icons_Wripper md:bottom-[4rem] bottom-8 -md:right-1 -right-6 bg-black ${
               darkMode ? "border-white" : "border-black"
             }`}
-          ></div>
+          >
+            <FaInstagram className="text-4xl z-40 text-white" />
+          </div>
           <div
-            className={`md:w-[6rem] md:h-[6rem] w-[5rem] h-[5rem] bg-orange-300 rounded-full absolute top-7 left-0  border-4 ${
+            className={`md:w-[5rem] md:h-[5rem] w-[5rem] h-[5rem] bg-orange-300 rounded-full absolute top-7 left-0  border-4 flex justify-center items-center z-40 ${
               darkMode ? "border-white " : "border-black"
             }`}
           ></div>
           <div
-            className={`md:w-[6rem] md:h-[6rem] w-[5rem] h-[5rem] bg-purple-300 rounded-full absolute md:bottom-14 -bottom-2 md:left-0 left-4 border-4 ${
+            className={`md:w-[5rem] md:h-[5rem] w-[5rem] h-[5rem] bg-purple-300 rounded-full absolute md:bottom-14 -bottom-2 md:left-0 left-4 border-4 flex justify-center items-center z-40 ${
               darkMode ? "border-white" : "border-black"
             }`}
           ></div>

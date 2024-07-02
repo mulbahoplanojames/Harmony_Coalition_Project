@@ -41,7 +41,7 @@ const Navbar = () => {
                 to={navlink.path}
                 className={`font-montserrat focus:text-black text-base leading-normal text-[#1d232a]${
                   menu === navlink.label
-                    ? "pb-3 border-b-2 border-primary "
+                    ? "pb-4 inline-block border-b-2 border-primary_main "
                     : ""
                 } ${darkMode ? "text-black" : "text-black"}`}
                 onClick={() => setMenu(navlink.label)}
