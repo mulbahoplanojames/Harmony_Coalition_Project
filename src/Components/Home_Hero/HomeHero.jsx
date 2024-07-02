@@ -21,10 +21,10 @@ const HomeHero = () => {
           </Link>
         </div>
         <div
-          className=" bg-green-300 md:w-[60%] md:h-[24rem] w-[70%] h-[17rem] rounded-full relative overflow-visible"
+          className=" bg-green-300 md:w-[60%] md:h-[24rem] w-[70%] h-[17rem] rounded-full relative overflow-visible border-4 border-primary "
           id="item1"
         >
-          <div className="md:w-[6rem] md:h-[6rem] w-[5rem] h-[5rem] bg-red-300 rounded-full absolute top-1 right-5  z-20"></div>
+          <div className="md:w-[6rem] md:h-[6rem] w-[5rem] h-[5rem] bg-red-300 rounded-full absolute top-1 right-5"></div>
           <div className="md:w-[6rem] md:h-[6rem] w-[5rem] h-[5rem] bg-yellow-300 rounded-full absolute md:bottom-[4rem] bottom-6 md:right-0 -right-6"></div>
           <div className="md:w-[6rem] md:h-[6rem] w-[5rem] h-[5rem] bg-orange-300 rounded-full absolute top-7 left-0"></div>
           <div className="md:w-[6rem] md:h-[6rem] w-[5rem] h-[5rem] bg-purple-300 rounded-full absolute md:bottom-14 -bottom-2 md:left-0 left-4"></div>
