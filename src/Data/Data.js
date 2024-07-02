@@ -22,3 +22,74 @@ const navLinks = [
 ];
 
 export default navLinks;
+
+// ==============================================================
+export const currentLeaderShip = [
+  {
+    name: "Himanshu Chauhan",
+    image: "himanshu.jpg",
+    position: "President",
+    quote:
+      "The greatest glory in life is not to have much to do, but to have nothing to lose.",
+    socialsLinks: {
+      facebook: "https://www.facebook.com/",
+      twitter: "https://www.twitter.com/",
+      linkedin: "https://www.linkedin.com/",
+    },
+  },
+  {
+    name: "Sachin",
+    image: "sachin.jpg",
+    position: "Vice President",
+    quote: "The only way to do great work is to love what you do.",
+    socialsLinks: {
+      facebook: "https://www.facebook.com/",
+      twitter: "https://www.twitter.com/",
+      linkedin: "https://www.linkedin.com/",
+    },
+  },
+  {
+    name: "Saurabh",
+    image: "saurabh.jpg",
+    position: "Treasurer",
+    quote: "The only way to do great work is to love what you do.",
+    socialsLinks: {
+      facebook: "https://www.facebook.com/",
+      twitter: "https://www.twitter.com/",
+      linkedin: "https://www.linkedin.com/",
+    },
+  },
+  {
+    name: "Saurabh",
+    image: "saurabh.jpg",
+    position: "Treasurer",
+    quote: "The only way to do great work is to love what you do.",
+    socialsLinks: {
+      facebook: "https://www.facebook.com/",
+      twitter: "https://www.twitter.com/",
+      linkedin: "https://www.linkedin.com/",
+    },
+  },
+  {
+    name: "Saurabh",
+    image: "saurabh.jpg",
+    position: "Treasurer",
+    quote: "The only way to do great work is to love what you do.",
+    socialsLinks: {
+      facebook: "https://www.facebook.com/",
+      twitter: "https://www.twitter.com/",
+      linkedin: "https://www.linkedin.com/",
+    },
+  },
+  {
+    name: "Saurabh",
+    image: "saurabh.jpg",
+    position: "Treasurer",
+    quote: "The only way to do great work is to love what you do.",
+    socialsLinks: {
+      facebook: "https://www.facebook.com/",
+      twitter: "https://www.twitter.com/",
+      linkedin: "https://www.linkedin.com/",
+    },
+  },
+];

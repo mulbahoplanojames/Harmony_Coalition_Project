@@ -7,7 +7,7 @@ const Layout = () => {
     <>
       <div className="pt-[6rem] ">
         <Navbar />
-        <div className="md:px-[3rem] px-[.10rem]">{<Outlet />}</div>
+        <div className="md:px-[3rem] px-[.7rem]">{<Outlet />}</div>
         {/* <Footer /> */}
       </div>
     </>
