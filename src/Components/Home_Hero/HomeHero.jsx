@@ -31,33 +31,33 @@ const HomeHero = () => {
           </Link>
         </div>
         <div
-          className=" bg-green-300 md:w-[60%] md:h-[24rem] w-[70%] h-[17rem] rounded-full relative overflow-visible border-4 border-primary "
+          className=" md:w-[60%] md:h-[24rem] w-[70%] h-[17rem] rounded-full relative overflow-visible border-4 border-primary_main "
           id="item1"
         >
           <Link
-            className={`icons_Wripper bg-black top-1 right-5  ${
-              darkMode ? "border-white" : "border-black"
+            className={`icons_Wripper bg-primary_main top-1 right-5  ${
+              darkMode ? "border-white" : "border-primary_main"
             }`}
           >
             <FaLinkedin className="text-4xl z-40 text-white" />
           </Link>
           <Link
-            className={`icons_Wripper md:bottom-[4rem] bottom-8 -md:right-1 -right-6 bg-black ${
-              darkMode ? "border-white" : "border-black"
+            className={`icons_Wripper md:bottom-[4rem] bottom-8 -md:right-1 -right-6 bg-primary_main ${
+              darkMode ? "border-white" : "border-primary_main"
             }`}
           >
             <FaInstagram className="text-4xl z-40 text-white" />
           </Link>
           <Link
-            className={`icons_Wripper bg-black top-7 left-0  ${
-              darkMode ? "border-white " : "border-black"
+            className={`icons_Wripper bg-primary_main top-7 left-0  ${
+              darkMode ? "border-white " : "border-primary_main"
             }`}
           >
             <FaWhatsappSquare className="text-4xl z-40 text-white" />
           </Link>
           <Link
-            className={`icons_Wripper bg-black md:bottom-14 -bottom-2 md:left-0 left-4 ${
-              darkMode ? "border-white" : "border-black"
+            className={`icons_Wripper bg-primary_main md:bottom-14 -bottom-2 md:left-0 left-4 ${
+              darkMode ? "border-white" : "border-primary_main"
             }`}
           >
             <FaFacebookSquare className="text-4xl z-40 text-white" />
