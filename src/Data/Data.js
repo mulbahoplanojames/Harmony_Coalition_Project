@@ -176,3 +176,42 @@ export const pastLeaderShip = [
     },
   },
 ];
+
+// ! ===================================================================================
+const computerScience = "src/assets/hero.jpg";
+const law = "src/assets/hero1.jpg";
+
+export const disciplinesOffer = [
+  {
+    id: 1,
+    name: "ULK Polytechnic Institute",
+    image: law,
+    description:
+      "It comprises of the following: Electrical Engineering, Electronics and Telecommunication, Civil and Construction Engineering, Land Surveying.....",
+    path: "/Ulk-Polytechnic-enrollment",
+  },
+  {
+    id: 2,
+    name: "Computer Science",
+    image: computerScience,
+    description:
+      "It comprises of the following: Data Science, Software Engineering and Networking......",
+    path: "/Computer-Science-enrollment",
+  },
+  {
+    id: 3,
+    name: "Social Science and Law",
+    image: law,
+    description:
+      "It comprises of the following: Law, Development Studies, International Relations......",
+    path: "/Social-Science-and-Law-enrollment",
+  },
+  {
+    id: 4,
+    name: "Economics and Business Studies",
+    image: computerScience,
+    description:
+      "It comprises of the following: Finance, Accounting, Economics......",
+    path: "/Economics-and-Business-Studies-enrollment",
+  },
+];

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const AboutUs = () => {
   return (
     <>
-      <div className="grid md:grid-cols-2 grid-cols-1 md:gap-x-16 gap-y-20 place-items-center pb-32 md:pt-32 pt-24">
+      <div className="grid md:grid-cols-2 grid-cols-1 md:gap-x-16 gap-y-20 place-items-center pb-32 md:pt-32 pt-[3.5rem]">
         <div className="">
           <h1 className="text-4xl font-bold pb-8">About Us </h1>
           <p className="text-lg pb-10 md:pr-10">
