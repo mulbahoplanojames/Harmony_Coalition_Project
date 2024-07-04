@@ -24,6 +24,13 @@ const navLinks = [
 export default navLinks;
 
 //! ===================================================================================
+import stephen from "../assets/stephen.jpg";
+import eric from "/src/assets/eric.jpeg";
+import jeff from "/src/assets/jeff.jpeg";
+import kelvin from "/src/assets/kelvin.jpeg";
+import girl from "/src/assets/girl.jpeg";
+import pro from "/src/assets/pro.jpeg";
+
 export const currentLeaderShip = [
   {
     id: 1,
@@ -213,5 +220,67 @@ export const disciplinesOffer = [
     description:
       "It comprises of the following: Finance, Accounting, Economics......",
     path: "/Economics-and-Business-Studies-enrollment",
+  },
+];
+
+// ! ===================================================================================
+export const quickLinks = [
+  {
+    id: 1,
+    name: "Home",
+    path: "/",
+  },
+  {
+    id: 2,
+    name: "About",
+    path: "/about",
+  },
+  {
+    id: 3,
+    name: "Enrollment",
+    path: "/enrollment",
+  },
+  {
+    id: 4,
+    name: "Student Portal",
+    path: "/student-portal",
+  },
+  {
+    id: 5,
+    name: "Contact Us",
+    path: "/contact-us",
+  },
+];
+
+// ! ===================================================================================
+export const supportLinks = [
+  {
+    id: 1,
+    name: "FAQs",
+    path: "/",
+  },
+  {
+    id: 2,
+    name: "Contact Us",
+    path: "/",
+  },
+  {
+    id: 3,
+    name: "Support",
+    path: "/",
+  },
+];
+
+// ! ===================================================================================
+export const legalLinks = [
+  {
+    id: 1,
+    name: "Privacy Policy",
+    path: "/",
+  },
+  {
+    id: 2,
+    name: "Terms and Conditions",
+    path: "/",
   },
 ];

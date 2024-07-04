@@ -8,7 +8,7 @@ const Layout = () => {
       <div className="pt-[6rem] ">
         <Navbar />
         <div className="md:px-[3rem] px-[.7rem]">{<Outlet />}</div>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </>
   );
