@@ -34,7 +34,7 @@ import pro from "/src/assets/pro.jpeg";
 export const currentLeaderShip = [
   {
     id: 1,
-    name: "Himanshu Chauhan",
+    name: "Stephen",
     image: stephen,
     position: "President",
     quote:
