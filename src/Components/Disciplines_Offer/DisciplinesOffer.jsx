@@ -14,7 +14,7 @@ const DisciplinesOffer = () => {
               <div>
                 <img
                   src={discipline.image}
-                  alt="discipline"
+                  alt={discipline.name}
                   className="h-64 md:h-[26rem] w-full  bg-red-400 rounded-md mb-6"
                 />
               </div>

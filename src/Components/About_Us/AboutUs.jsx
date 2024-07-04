@@ -24,7 +24,7 @@ const AboutUs = () => {
         </div>
 
         <div className="relative h-[60vh] w-full">
-          <div className="md:w-[54%] md:h-[52vh] w-[70%] h-[40vh] bg-red-300 rounded-full absolute md:-top-10 -top-5 md:-left-3 left-2 overflow-hidden border-4 border-primary_main group cursor-pointer">
+          <div className="md:w-[54%] md:h-[52vh] w-[70%] h-[40vh] rounded-full absolute md:-top-10 -top-5 md:-left-3 left-2 overflow-hidden border-4 border-primary_main group cursor-pointer">
             <img
               src={image}
               alt="hero"
