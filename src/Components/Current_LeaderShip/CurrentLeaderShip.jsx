@@ -37,7 +37,7 @@ const CurrentLeaderShip = () => {
               <img
                 src={member.image}
                 alt="team"
-                className="h-52 mx-auto bg-red-400 rounded-md mb-3"
+                className="h-52 md:mx-auto bg-red-400 rounded-md mb-3 w-full"
               />
 
               {/* Displaying the name */}
