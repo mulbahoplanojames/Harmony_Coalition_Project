@@ -24,7 +24,7 @@ const navLinks = [
 export default navLinks;
 
 //! ===================================================================================
-import stephen from "../assets/stephen.jpg";
+import stephen from "/src/assets/pro.jpeg";
 import eric from "/src/assets/eric.jpeg";
 import jeff from "/src/assets/jeff.jpeg";
 import kelvin from "/src/assets/kelvin.jpeg";
@@ -35,7 +35,7 @@ export const currentLeaderShip = [
   {
     id: 1,
     name: "Himanshu Chauhan",
-    image: "himanshu.jpg",
+    image: stephen,
     position: "President",
     quote:
       "The greatest glory in life is not to have much to do, but to have nothing to lose.",
@@ -47,8 +47,8 @@ export const currentLeaderShip = [
   },
   {
     id: 2,
-    name: "Sachin",
-    image: "sachin.jpg",
+    name: "Eric",
+    image: eric,
     position: "Vice President",
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: {
@@ -59,8 +59,8 @@ export const currentLeaderShip = [
   },
   {
     id: 3,
-    name: "Saurabh",
-    image: "saurabh.jpg",
+    name: "Jeff",
+    image: jeff,
     position: "Treasurer",
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: {
@@ -71,8 +71,8 @@ export const currentLeaderShip = [
   },
   {
     id: 4,
-    name: "Saurabh",
-    image: "saurabh.jpg",
+    name: "kelvin",
+    image: kelvin,
     position: "Treasurer",
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: {
@@ -83,8 +83,8 @@ export const currentLeaderShip = [
   },
   {
     id: 5,
-    name: "Saurabh",
-    image: "saurabh.jpg",
+    name: "pro",
+    image: pro,
     position: "Treasurer",
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: {
@@ -95,8 +95,8 @@ export const currentLeaderShip = [
   },
   {
     id: 6,
-    name: "Saurabh",
-    image: "saurabh.jpg",
+    name: "girl",
+    image: girl,
     position: "Treasurer",
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: {
