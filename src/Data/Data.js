@@ -34,7 +34,7 @@ import pro from "/src/assets/pro.jpeg";
 export const currentLeaderShip = [
   {
     id: 1,
-    name: "Stephen",
+    name: "Awalayah Stephen Suwarkpala",
     image: stephen,
     position: "President",
     quote:
@@ -47,7 +47,7 @@ export const currentLeaderShip = [
   },
   {
     id: 2,
-    name: "Eric",
+    name: "Eric Flumo Pewee",
     image: eric,
     position: "Vice President",
     quote: "The only way to do great work is to love what you do.",
@@ -59,9 +59,9 @@ export const currentLeaderShip = [
   },
   {
     id: 3,
-    name: "Jeff",
+    name: "Jefferson M. Flomo",
     image: jeff,
-    position: "Treasurer",
+    position: "Secretary General",
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: {
       facebook: "https://www.facebook.com/",
@@ -71,9 +71,9 @@ export const currentLeaderShip = [
   },
   {
     id: 4,
-    name: "kelvin",
-    image: kelvin,
-    position: "Treasurer",
+    name: "Isidore D. Kiel Jr.",
+    image: pro,
+    position: "Assistant Secretary",
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: {
       facebook: "https://www.facebook.com/",
@@ -83,9 +83,9 @@ export const currentLeaderShip = [
   },
   {
     id: 5,
-    name: "pro",
-    image: pro,
-    position: "Treasurer",
+    name: "Kelvin E. Tarr",
+    image: kelvin,
+    position: "Financial Secretary",
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: {
       facebook: "https://www.facebook.com/",
@@ -95,7 +95,7 @@ export const currentLeaderShip = [
   },
   {
     id: 6,
-    name: "girl",
+    name: "Senita Faith Kollie",
     image: girl,
     position: "Treasurer",
     quote: "The only way to do great work is to love what you do.",
@@ -111,7 +111,7 @@ export const currentLeaderShip = [
 export const pastLeaderShip = [
   {
     id: 1,
-    name: "Himanshu Chauhan",
+    name: "Pius Barche",
     image: "himanshu.jpg",
     position: "President",
     quote:
@@ -124,7 +124,7 @@ export const pastLeaderShip = [
   },
   {
     id: 2,
-    name: "Sachin",
+    name: "Laynue D. Keitoe",
     image: "sachin.jpg",
     position: "Vice President",
     quote: "The only way to do great work is to love what you do.",
@@ -136,9 +136,9 @@ export const pastLeaderShip = [
   },
   {
     id: 3,
-    name: "Saurabh",
+    name: "Sensi Nyei",
     image: "saurabh.jpg",
-    position: "Treasurer",
+    position: "Secretary General",
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: {
       facebook: "https://www.facebook.com/",
@@ -148,9 +148,9 @@ export const pastLeaderShip = [
   },
   {
     id: 4,
-    name: "Saurabh",
+    name: "Edward Williams",
     image: "saurabh.jpg",
-    position: "Treasurer",
+    position: "Financial Secretary",
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: {
       facebook: "https://www.facebook.com/",
@@ -160,7 +160,7 @@ export const pastLeaderShip = [
   },
   {
     id: 5,
-    name: "Saurabh",
+    name: "Kutu Love",
     image: "saurabh.jpg",
     position: "Treasurer",
     quote: "The only way to do great work is to love what you do.",
@@ -170,18 +170,18 @@ export const pastLeaderShip = [
       linkedin: "https://www.linkedin.com/",
     },
   },
-  {
-    id: 6,
-    name: "Saurabh",
-    image: "saurabh.jpg",
-    position: "Treasurer",
-    quote: "The only way to do great work is to love what you do.",
-    socialsLinks: {
-      facebook: "https://www.facebook.com/",
-      twitter: "https://www.twitter.com/",
-      linkedin: "https://www.linkedin.com/",
-    },
-  },
+  // {
+  //   id: 6,
+  //   name: "Saurabh",
+  //   image: "saurabh.jpg",
+  //   position: "Treasurer",
+  //   quote: "The only way to do great work is to love what you do.",
+  //   socialsLinks: {
+  //     facebook: "https://www.facebook.com/",
+  //     twitter: "https://www.twitter.com/",
+  //     linkedin: "https://www.linkedin.com/",
+  //   },
+  // },
 ];
 
 // ! ===================================================================================
