@@ -55,7 +55,7 @@ const Navbar = () => {
         <div className="lg:gap-x-6 gap-x-4 flex justify-center items-center">
           <ToggleDarkModeIcon />
           <Link
-            to="/signin"
+            to="/sign-up"
             className="py-1.5 lg:px-4 px-3 border-[1px] b text-sm lg:text-base rounded-3xl text-black hover:opacity-50"
           >
             sign in
@@ -103,7 +103,7 @@ const Navbar = () => {
                 </li>
               ))}
               <Link
-                to="/signin"
+                to="/sign-up"
                 className="py-1.5 lg:px-4 px-5 border-[1px] border-white text-xl lg:text-lg rounded-3xl text-white hover:opacity-50"
                 onClick={() => {
                   setIsMenuOpen(!isMenuOpen);

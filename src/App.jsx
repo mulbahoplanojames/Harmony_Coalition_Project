@@ -10,6 +10,8 @@ import StudentPortal from "./Pages/Student_Portal/StudentPortal";
 import ContactUs from "./Pages/Contact_Us/ContactUs";
 
 import PageNotFound from "./Pages/Page_Not_Found/PageNotFound";
+import SignUp from "./Pages/Sign_Up/SignUp";
+import LogIn from "./Pages/Log_In/LogIn";
 
 const App = () => {
   const { darkModeStyle } = useContext(AppContext);
@@ -28,6 +30,12 @@ const App = () => {
 
           {/* 404 Page */}
           <Route path="*" element={<PageNotFound />} />
+
+          {/* //SignUp page */}
+          <Route path="/sign-up" element={<SignUp />} />
+
+          {/* //Login Page */}
+          <Route path="/log-in" element={<LogIn />} />
         </Routes>
       </div>
     </>
