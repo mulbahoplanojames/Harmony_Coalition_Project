@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 const SignUp = () => {
   return (
     <>
-      <div className="flex justify-center items-center w-full h-full bg-primary_main">
+      <div className="flex justify-center items-center w-full h-fit py-14  bg-primary_main ">
         <div className="md:w-[80%] w-[95%] h-fit grid md:grid-cols-2 grid-cols-1 bg-white">
-          <div className=" w-full md:h-[35rem] h-[15rem] overflow-hidden bg-red-400"></div>
+          <div className=" w-full md:h-full h-[15rem] overflow-hidden bg-red-400"></div>
 
           <div className="py-10 px-6">
             <h1 className="md:text-3xl text-2xl font-bold pb-4">
@@ -76,6 +78,30 @@ const SignUp = () => {
                   />
                 </div>
               </div>
+
+              {/* // Create account Button */}
+              <button
+                type="submit"
+                className=" bg-primary_main md:text-lg textb text-white border-none rounded-md mt-3 mb-4 hover:bg-opacity-70 py-2 md:px-6 px-4 mr-4"
+              >
+                Create Account
+              </button>
+
+              {/* // Back home Button */}
+              <Link
+                to="/"
+                className=" bg-transparent border-2 border-primary_main md:text-lg text-base text-primary_main  rounded-md mt-3 mb-4 hover:bg-opacity-70 py-2 md:px-6 px-4"
+              >
+                Back Home
+              </Link>
+
+              {/* // Already have an account Log in */}
+              <p className="text-lg">
+                Already have an account? &nbsp;
+                <Link to="/log-in" className="text-primary_main">
+                  Log in
+                </Link>
+              </p>
             </form>
           </div>
         </div>
