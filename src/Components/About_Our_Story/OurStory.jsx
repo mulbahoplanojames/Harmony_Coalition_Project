@@ -2,7 +2,7 @@ import storyImage from "/src/assets/ourStory.webp";
 const OurStory = () => {
   return (
     <>
-      <div className="grid md:grid-cols-2 grid-cols-1 md:gap-x-16 gap-y-10 place-items-center pb-32 md:pt-20 pt-[2rem]">
+      <div className="grid md:grid-cols-2 grid-cols-1 md:gap-x-16 gap-y-10 place-items-center md:pb-32 pb-10 md:pt-20 pt-[2rem]">
         <div className="md:order-first order-last">
           <h1 className="text-4xl font-bold md:pb-8 pb-5">Our Story </h1>
           <p className="text-lg pb-10 md:pr-10">
