@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import singUp_image from "/src/assets/study1-removebg-preview.png";
+import singUp_image from "/src/assets/study2-removebg-preview.png";
 import { CgArrowLeftR } from "react-icons/cg";
 
 const SignUp = () => {
@@ -11,7 +11,7 @@ const SignUp = () => {
             <img
               src={singUp_image}
               alt="Sign up illustration"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </div>
 
@@ -27,7 +27,7 @@ const SignUp = () => {
 
             <form className="relative">
               {/* // First Name and Last Name */}
-              <div className="flex justify-between items-center gap-4 md:flex-nowrap flex-wrap mb-2">
+              <div className="flex justify-between items-center w-full gap-4 md:flex-nowrap flex-wrap mb-2">
                 <div>
                   <label htmlFor="first_name" className="inline-block pb-2">
                     First Name
@@ -82,7 +82,7 @@ const SignUp = () => {
                   <input
                     type="tel"
                     name="number"
-                    className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
+                    className="w-full bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
                   />
                 </div>
               </div>
@@ -90,7 +90,7 @@ const SignUp = () => {
               {/* // Create account Button */}
               <button
                 type="submit"
-                className=" bg-primary_main md:text-lg textb text-white border-none rounded-md mt-3 mb-4 hover:bg-opacity-70 py-2 md:px-6 px-4 mr-4"
+                className=" bg-primary_main md:text-lg textb text-white border-none rounded-md mt-5 mb-4 hover:bg-opacity-70 py-2 md:px-6 px-4 mr-4"
               >
                 Create Account
               </button>
@@ -98,13 +98,14 @@ const SignUp = () => {
               {/* // Back home Button */}
               <Link
                 to="/"
-                className="border-2 border-primary_main rounded-full md:p-3 text-black inline-block absolute bottom-0 right-0"
+                className="border-2 border-primary_main rounded-full md:p-3 p-2 text-black inline-block absolute md:bottom-0 bottom-16 right-0"
+                onClick={() => window.scrollTo(0, 3000)}
               >
-                <CgArrowLeftR className="md:text-2xl text-xl" />
+                <CgArrowLeftR className="md:text-2xl text-xl animate-pulse" />
               </Link>
 
               {/* // Already have an account Log in */}
-              <p className="text-lg">
+              <p className="text-lg md:pt-4 pt-6">
                 Already have an account? &nbsp;
                 <Link to="/log-in" className="text-primary_main">
                   Log in
