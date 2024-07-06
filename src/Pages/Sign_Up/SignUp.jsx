@@ -1,11 +1,19 @@
 import { Link } from "react-router-dom";
+import singUp_image from "/src/assets/study1-removebg-preview.png";
+import { CgArrowLeftR } from "react-icons/cg";
 
 const SignUp = () => {
   return (
     <>
       <div className="flex justify-center items-center w-full h-fit py-14  bg-primary_main ">
         <div className="md:w-[80%] w-[95%] h-fit grid md:grid-cols-2 grid-cols-1 bg-white">
-          <div className=" w-full md:h-full h-[15rem] overflow-hidden bg-red-400"></div>
+          <div className=" w-full md:h-full h-[15rem] overflow-hidden bg-purple-200">
+            <img
+              src={singUp_image}
+              alt="Sign up illustration"
+              className="w-full h-full object-cover"
+            />
+          </div>
 
           <div className="py-10 px-6">
             <h1 className="md:text-3xl text-2xl font-bold pb-4">
@@ -17,7 +25,7 @@ const SignUp = () => {
               platform of the Association.
             </p>
 
-            <form className="">
+            <form className="relative">
               {/* // First Name and Last Name */}
               <div className="flex justify-between items-center gap-4 md:flex-nowrap flex-wrap mb-2">
                 <div>
@@ -90,9 +98,9 @@ const SignUp = () => {
               {/* // Back home Button */}
               <Link
                 to="/"
-                className=" bg-transparent border-2 border-primary_main md:text-lg text-base text-primary_main  rounded-md mt-3 mb-4 hover:bg-opacity-70 py-2 md:px-6 px-4"
+                className="border-2 border-primary_main rounded-full md:p-3 text-black inline-block absolute bottom-0 right-0"
               >
-                Back Home
+                <CgArrowLeftR className="md:text-2xl text-xl" />
               </Link>
 
               {/* // Already have an account Log in */}
