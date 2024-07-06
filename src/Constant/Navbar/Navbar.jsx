@@ -44,7 +44,10 @@ const Navbar = () => {
                     ? "pb-4 inline-block border-b-2 border-primary_main "
                     : ""
                 } ${darkMode ? "text-black" : "text-black"}`}
-                onClick={() => setMenu(navlink.label)}
+                onClick={() => {
+                  setMenu(navlink.label);
+                  window.scrollTo(0, 0);
+                }}
               >
                 {navlink.label}
               </Link>
@@ -92,6 +95,8 @@ const Navbar = () => {
                   key={navlink.label}
                   onClick={() => {
                     setIsMenuOpen(!isMenuOpen);
+                    setMenu(navlink.label);
+                    window.scrollTo(0, 8000);
                   }}
                 >
                   <Link
@@ -107,6 +112,7 @@ const Navbar = () => {
                 className="py-1.5 lg:px-4 px-5 border-[1px] border-white text-xl lg:text-lg rounded-3xl text-white hover:opacity-50"
                 onClick={() => {
                   setIsMenuOpen(!isMenuOpen);
+                  window.scrollTo(0, 8000);
                 }}
               >
                 sign in

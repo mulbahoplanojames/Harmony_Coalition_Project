@@ -24,7 +24,7 @@ const navLinks = [
 export default navLinks;
 
 //! ===================================================================================
-import stephen from "/src/assets/pro.jpeg";
+import stephen from "/src/assets/stephen.jpeg";
 import eric from "/src/assets/eric.jpeg";
 import jeff from "/src/assets/jeff.jpeg";
 import kelvin from "/src/assets/kelvin.jpeg";
@@ -108,11 +108,12 @@ export const currentLeaderShip = [
 ];
 
 //! ===================================================================================
+import pius from "/src/assets/pius.jpeg";
 export const pastLeaderShip = [
   {
     id: 1,
     name: "Pius Barche",
-    image: "himanshu.jpg",
+    image: pius,
     position: "President",
     quote:
       "The greatest glory in life is not to have much to do, but to have nothing to lose.",

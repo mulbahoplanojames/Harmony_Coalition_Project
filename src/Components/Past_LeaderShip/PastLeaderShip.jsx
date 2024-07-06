@@ -37,11 +37,13 @@ const PastLeaderShip = () => {
           pastLeaderShip.map((member) => (
             <div className="text-left" key={member.id}>
               {/* Displaying the image */}
-              <img
-                src={member.image}
-                alt="team"
-                className=" h-52 md:mx-auto w-full bg-red-400 rounded-md mb-3"
-              />
+              <div className="h-52 w-full">
+                <img
+                  src={member.image}
+                  alt="team"
+                  className=" md:mx-auto bg-red-400 rounded-md mb-3  w-full h-full object-scale"
+                />
+              </div>
 
               {/* Displaying the name */}
               <p className="text-xl font-semibold py-1">{member.name}</p>
