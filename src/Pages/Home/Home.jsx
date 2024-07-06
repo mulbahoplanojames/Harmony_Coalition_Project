@@ -3,6 +3,7 @@ import Team from "../../Components/Team/Team";
 import AboutUs from "../../Components/About_Us/AboutUs";
 import DisciplinesOffer from "../../Components/Disciplines_Offer/DisciplinesOffer";
 import NewsLetter from "../../Components/News_Letter/NewsLetter";
+import FAQ from "../../Components/FAQ/FAQ";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <AboutUs />
       <DisciplinesOffer />
       <NewsLetter />
+      <FAQ />
     </div>
   );
 };

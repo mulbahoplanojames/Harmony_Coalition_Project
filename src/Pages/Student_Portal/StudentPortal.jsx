@@ -1,5 +1,11 @@
+import StudentPortalHero from "../../Components/StudentPortal_Hero/StudentPortalHero";
+
 const StudentPortal = () => {
-  return <div>StudentPortal</div>;
+  return (
+    <>
+      <StudentPortalHero />
+    </>
+  );
 };
 
 export default StudentPortal;
