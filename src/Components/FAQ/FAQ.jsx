@@ -3,9 +3,9 @@ const FAQ = () => {
     <>
       <section className="w-full pb-20">
         <h1 className="text-3xl font-bold text-center pb-10">FAQ</h1>
-        <div className="join join-vertical w-full">
+        <div className="join join-vertical w-full bg-white">
           {/* // First QUestion */}
-          <div className="collapse collapse-arrow join-item border-base-300 border">
+          <div className="collapse collapse-arrow join-item border-base-300 border ">
             <input type="radio" name="my-accordion-4" defaultChecked />
             <div className="collapse-title text-xl font-medium">
               What do i need to do to get started?

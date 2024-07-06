@@ -6,6 +6,7 @@ import Card from "../../Interfaces/About_Card/Card";
 import totalStudents from "/src/assets/total_Students.svg";
 import newStudents from "/src/assets/newStudents.svg";
 import connection from "/src/assets/connections.svg";
+import FAQ from "../../Components/FAQ/FAQ";
 
 const About = () => {
   return (
@@ -13,6 +14,7 @@ const About = () => {
       <AboutHero />
       <OurMission />
       <OurStory />
+      <FAQ />
 
       <div className="">
         <h1 className="text-center text-4xl capitalize font-semibold pb-10">
