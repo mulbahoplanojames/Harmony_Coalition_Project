@@ -17,7 +17,7 @@ const StudentTable = () => {
               {/* row 1 */}
               {registerStudents.map((student) => {
                 return (
-                  <tr key={student.id}>
+                  <tr key={student.id} className="text-black">
                     <td>{student.id}</td>
                     <td>
                       <div className="flex items-center gap-3">
