@@ -1,8 +1,48 @@
-import { Link } from "react-router-dom";
 import singUp_image from "/src/assets/study1-removebg-preview.png";
 import { CgArrowLeftR } from "react-icons/cg";
+import { AppContext } from "../../Context/AppContext";
+import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const LogIn = () => {
+  const [email, setEmail] = useState("");
+  const [password, setEPassword] = useState("");
+
+  const { setIsLogin } = useContext(AppContext);
+  const navigate = useNavigate();
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    // window.location.href = "/";
+    setIsLogin(true);
+    navigate("/");
+    console.log("is logged in");
+  };
+
+  axios
+    .post("http://localhost:3000/", {
+      method: "POST",
+      url: "http://localhost:3000/",
+      data: {
+        email: email,
+        password: password,
+      },
+    })
+    .then((response) => {
+      console.log(response);
+      if (response.status === 200) {
+        setIsLogin(true);
+        navigate("/");
+      } else {
+        setIsLogin(false);
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
   return (
     <>
       <div className="flex justify-center items-center w-full h-fit py-14  bg-primary_main ">
@@ -25,7 +65,7 @@ const LogIn = () => {
               platform of the Association.
             </p>
 
-            <form className="relative">
+            <form className="relative" onSubmit={handleLogin}>
               {/* // Email */}
               <div className="mb-4">
                 <label htmlFor="email" className="inline-block pb-2">
@@ -35,6 +75,8 @@ const LogIn = () => {
                   type="email"
                   name="email"
                   required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
                 />
               </div>
@@ -49,6 +91,8 @@ const LogIn = () => {
                     type="password"
                     name="password"
                     required
+                    value={password}
+                    onChange={(e) => setEPassword(e.target.value)}
                     className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
                   />
                 </div>
@@ -66,7 +110,9 @@ const LogIn = () => {
               <Link
                 to="/"
                 className="border-2 border-primary_main rounded-full md:p-3 p-2 text-black inline-block absolute md:bottom-0 bottom-16 right-0"
-                onClick={() => window.scrollTo(0, 3000)}
+                onClick={() => {
+                  window.scrollTo(0, 3000);
+                }}
               >
                 <CgArrowLeftR className="md:text-2xl text-xl animate-pulse" />
               </Link>

@@ -47,13 +47,16 @@ const AppContextProvider = ({ children }) => {
     color: darkMode ? "white" : "black",
   };
 
-  // #939aa7
+  // I create a state variable called `logIn`. This state variable will keep track of whether the user is logged in or not.
+  const [isLogIn, setIsLogin] = useState(false);
 
   // I create an object called `contextValue`. This object will store all of the data that i want to share to all parts of this project.
   const contextValue = {
     darkMode,
     toggleDarkMode,
     darkModeStyle,
+    isLogIn,
+    setIsLogin,
   };
 
   // I return the `AppContext.Provider` component, which will provide the `contextValue` object to all of its child components.
