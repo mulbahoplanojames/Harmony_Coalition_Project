@@ -33,18 +33,25 @@ const StudentProfile = () => {
     });
   };
 
-  axios.post("http://localhost:3000/students", {
-    ...studentDate,
-    roll_number: studentDate.roll_number,
-    address: studentDate.address,
-    date_of_birth: studentDate.date_of_birth,
-    gender: studentDate.gender,
-    avatar_image: studentDate.avatar_image,
-    department: studentDate.department,
-    Course: studentDate.Course,
-    visa_start_date: studentDate.visa_start_date,
-    visa_end_date: studentDate.visa_end_date,
-  });
+  axios
+    .post("http://localhost:3000/students", {
+      ...studentDate,
+      roll_number: studentDate.roll_number,
+      address: studentDate.address,
+      date_of_birth: studentDate.date_of_birth,
+      gender: studentDate.gender,
+      avatar_image: studentDate.avatar_image,
+      department: studentDate.department,
+      Course: studentDate.Course,
+      visa_start_date: studentDate.visa_start_date,
+      visa_end_date: studentDate.visa_end_date,
+    })
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 
   return (
     <>

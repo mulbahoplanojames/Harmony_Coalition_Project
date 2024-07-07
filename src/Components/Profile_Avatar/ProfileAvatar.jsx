@@ -1,6 +1,18 @@
 import { Link } from "react-router-dom";
+import { AppContext } from "../../Context/AppContext";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ProfileAvatar = () => {
+  const { setIsLogin } = useContext(AppContext);
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    setIsLogin(false);
+    navigate("/");
+  };
+
   return (
     <>
       <div className="dropdown dropdown-end">
@@ -30,7 +42,7 @@ const ProfileAvatar = () => {
             <Link to={"/settings"}>Settings</Link>
           </li>
           <li>
-            <Link to={"/logout"}>Logout</Link>
+            <Link onClick={handleLogout}>Logout</Link>
           </li>
         </ul>
       </div>
