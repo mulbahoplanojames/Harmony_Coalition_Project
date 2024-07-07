@@ -15,6 +15,9 @@ const AppContextProvider = ({ children }) => {
   // I am Checking local storage for theme preference, default to false (light mode)
   const saveDarkMode = JSON.parse(localStorage.getItem("darkMode")) || false;
 
+  // I am checking local storage for the user login status, default to false
+  const saveIsLogin = JSON.parse(localStorage.getItem("isLogin")) || false;
+
   /* 
     i am using the `useState` hook to create a state variable called `darkMode`.
      This state variable will keep track of whether the application is in dark mode or not
@@ -22,11 +25,18 @@ const AppContextProvider = ({ children }) => {
   */
   const [darkMode, setDarkMode] = useState(saveDarkMode);
 
+  // I create a state variable called `logIn`. This state variable will keep track of whether the user is logged in or not.
+  const [isLogIn, setIsLogin] = useState(saveIsLogin);
+
   // Update local storage whenever darkMode state changes using the useEffect hook
   useEffect(() => {
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
     console.log("darkMode", darkMode);
-  }, [darkMode]);
+
+    // Update local storage whenever isLogin state changes using the useEffect hook
+    localStorage.setItem("isLogin", JSON.stringify(isLogIn));
+    console.log("isLogin", isLogIn);
+  }, [darkMode, isLogIn]);
 
   // I define a function called `toggleDarkMode`. This function will be used to
   //toggle the value of the `darkMode` state variable.
@@ -46,9 +56,6 @@ const AppContextProvider = ({ children }) => {
     // If the `darkMode` state variable is true, the text color of the app will be "white". Otherwise, it will be "#1d232a".
     color: darkMode ? "white" : "black",
   };
-
-  // I create a state variable called `logIn`. This state variable will keep track of whether the user is logged in or not.
-  const [isLogIn, setIsLogin] = useState(false);
 
   // I create an object called `contextValue`. This object will store all of the data that i want to share to all parts of this project.
   const contextValue = {

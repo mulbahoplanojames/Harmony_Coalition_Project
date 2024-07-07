@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 
 const StudentProfile = () => {
@@ -13,10 +14,45 @@ const StudentProfile = () => {
     visa_end_date: "",
   });
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(studentDate);
+
+    // window.location.href = "/";
+
+    setStudentDate({
+      roll_number: "",
+      address: "",
+      date_of_birth: "",
+      gender: "",
+      avatar_image: "",
+      department: "",
+      Course: "",
+      visa_start_date: "",
+      visa_end_date: "",
+    });
+  };
+
+  axios.post("http://localhost:3000/students", {
+    ...studentDate,
+    roll_number: studentDate.roll_number,
+    address: studentDate.address,
+    date_of_birth: studentDate.date_of_birth,
+    gender: studentDate.gender,
+    avatar_image: studentDate.avatar_image,
+    department: studentDate.department,
+    Course: studentDate.Course,
+    visa_start_date: studentDate.visa_start_date,
+    visa_end_date: studentDate.visa_end_date,
+  });
+
   return (
     <>
       <div className="w-full">
-        <form className="md:w-[90%] w-full bg-white h-fit py-6 md:px-8 px-4 rounded-md mx-auto mb-20 mt-10">
+        <form
+          className="md:w-[90%] w-full bg-white h-fit py-6 md:px-8 px-4 rounded-md mx-auto mb-20 mt-10"
+          onSubmit={handleSubmit}
+        >
           <h1 className="text-3xl font-bold pb-8    ">Personal Information</h1>
           {/* //Roll numer and Address  */}
           <div className="w-full flex justify-center items-center gap-5 md:flex-nowrap flex-wrap mb-8">
