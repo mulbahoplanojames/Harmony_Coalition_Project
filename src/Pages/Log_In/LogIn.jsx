@@ -17,7 +17,7 @@ const LogIn = () => {
     event.preventDefault();
     // window.location.href = "/";
     setIsLogin(true);
-    navigate("/");
+    navigate("/student_profile");
     console.log("is logged in");
   };
 
