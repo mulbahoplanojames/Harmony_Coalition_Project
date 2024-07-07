@@ -1,11 +1,23 @@
-import { FaArrowRightFromBracket } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const StudentProfile = () => {
+  const [studentDate, setStudentDate] = useState({
+    roll_number: "",
+    address: "",
+    date_of_birth: "",
+    gender: "",
+    avatar_image: "",
+    department: "",
+    Course: "",
+    visa_start_date: "",
+    visa_end_date: "",
+  });
+
   return (
     <>
       <div className="w-full">
-        <div className="md:w-[90%] w-full bg-white h-fit py-6 md:px-8 px-4 rounded-md mx-auto my-20">
+        <form className="md:w-[90%] w-full bg-white h-fit py-6 md:px-8 px-4 rounded-md mx-auto mb-20 mt-10">
+          <h1 className="text-3xl font-bold pb-8    ">Personal Information</h1>
           {/* //Roll numer and Address  */}
           <div className="w-full flex justify-center items-center gap-5 md:flex-nowrap flex-wrap mb-8">
             {/* roll number  */}
@@ -18,6 +30,13 @@ const StudentProfile = () => {
                 name="roll_number"
                 className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
                 placeholder="Enter your roll number"
+                value={studentDate.roll_number}
+                onChange={(e) =>
+                  setStudentDate({
+                    ...studentDate,
+                    roll_number: e.target.value,
+                  })
+                }
               />
             </div>
 
@@ -31,11 +50,65 @@ const StudentProfile = () => {
                 name="address"
                 placeholder="Enter your address"
                 className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
+                value={studentDate.address}
+                onChange={(e) =>
+                  setStudentDate({
+                    ...studentDate,
+                    address: e.target.value,
+                  })
+                }
               />
             </div>
           </div>
 
-          {/* profile picture and Gender  */}
+          {/* // date of birth and gender  */}
+          <div className="w-full flex justify-center items-center gap-5 md:flex-nowrap flex-wrap mb-8">
+            {/* date of birth  */}
+            <div className="w-full">
+              <label htmlFor="date_of_birth" className="inline-block pb-2">
+                Date of Birth
+              </label>
+              <input
+                type="date"
+                name="date_of_birth"
+                className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
+                value={studentDate.date_of_birth}
+                onChange={(e) =>
+                  setStudentDate({
+                    ...studentDate,
+                    date_of_birth: e.target.value,
+                  })
+                }
+              />
+            </div>
+
+            {/* gender  */}
+            <div className="w-full">
+              <label htmlFor="gender" className="inline-block pb-2">
+                Gender
+              </label>
+              <select
+                name="gender"
+                className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
+                value={studentDate.gender}
+                onChange={(e) =>
+                  setStudentDate({
+                    ...studentDate,
+                    gender: e.target.value,
+                  })
+                }
+              >
+                <option value="gender" selected hidden>
+                  Select your Gender
+                </option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          {/* profile picture  */}
           <div className="w-full mb-8">
             <label htmlFor="profile_picture" className="inline-block pb-2">
               Profile Picture
@@ -45,8 +118,17 @@ const StudentProfile = () => {
               type="file"
               name="profile_picture"
               className="file-input file-input-bordered w-full"
+              value={studentDate.avatar_image}
+              onChange={(e) =>
+                setStudentDate({
+                  ...studentDate,
+                  avatar_image: e.target.value,
+                })
+              }
             />
           </div>
+
+          <h1 className="text-3xl font-bold pb-8 pt-4">School Information</h1>
 
           {/* // Department and Course */}
           <div className="w-full flex justify-center items-center gap-5 md:flex-nowrap flex-wrap mb-8">
@@ -58,6 +140,10 @@ const StudentProfile = () => {
               <select
                 name="department"
                 className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
+                value={studentDate.department}
+                onChange={(e) =>
+                  setStudentDate({ ...studentDate, department: e.target.value })
+                }
               >
                 <option value="department" selected hidden>
                   Select your Department
@@ -80,6 +166,10 @@ const StudentProfile = () => {
               <select
                 name="department"
                 className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
+                value={studentDate.course}
+                onChange={(e) =>
+                  setStudentDate({ ...studentDate, course: e.target.value })
+                }
               >
                 <option value="course" selected hidden>
                   Select your Course
@@ -127,6 +217,13 @@ const StudentProfile = () => {
                 type="date"
                 name="visa_start_date"
                 className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
+                value={studentDate.visa_start_date}
+                onChange={(e) =>
+                  setStudentDate({
+                    ...studentDate,
+                    visa_start_date: e.target.value,
+                  })
+                }
               />
             </div>
 
@@ -139,13 +236,25 @@ const StudentProfile = () => {
                 type="date"
                 name="visa_end_date"
                 className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
+                value={studentDate.visa_end_date}
+                onChange={(e) =>
+                  setStudentDate({
+                    ...studentDate,
+                    visa_end_date: e.target.value,
+                  })
+                }
               />
             </div>
           </div>
-          <Link to={"/student_profile/next_profile"}>
-            <FaArrowRightFromBracket className="cursor-pointer mt-12 text-end p-2 text-5xl border-2 border-primary_main rounded-md " />
-          </Link>
-        </div>
+
+          {/* submit button  */}
+          <button
+            type="submit"
+            className="md:w-[20%] w-[50%] mt-2 mb-4 bg-primary_main text-white py-3 px-6 rounded-md hover:bg-opacity-70"
+          >
+            Submit
+          </button>
+        </form>
       </div>
     </>
   );

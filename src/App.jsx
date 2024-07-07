@@ -30,10 +30,6 @@ const App = () => {
             <Route path="/student-portal" element={<StudentPortal />} />
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/student_profile" element={<StudentProfile />} />
-            <Route
-              path="/student_profile/next_profile"
-              element={<NextProfile />}
-            />
           </Route>
 
           {/* 404 Page */}
