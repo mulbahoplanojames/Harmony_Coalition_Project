@@ -26,7 +26,7 @@ const SignUp = () => {
       signedUpData.password.length === 0 ||
       signedUpData.phone.length === 0
     ) {
-      alert("Please fill all the fields");
+      // alert("Please fill all the fields");
       setErrorMessage("Please fill all the fields");
     } else {
       axios

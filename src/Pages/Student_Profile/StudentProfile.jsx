@@ -85,12 +85,17 @@ const StudentProfile = () => {
           className="md:w-[90%] w-full bg-white h-fit py-6 md:px-8 px-4 rounded-md mx-auto mb-20 mt-10"
           onSubmit={handleSubmit}
         >
-          <h1 className="text-3xl font-bold pb-8    ">Personal Information</h1>
+          <h1 className="text-3xl font-bold pb-8  text-black">
+            Personal Information
+          </h1>
           {/* //Roll numer and Address  */}
           <div className="w-full flex justify-center items-center gap-5 md:flex-nowrap flex-wrap mb-8">
             {/* roll number  */}
             <div className="w-full">
-              <label htmlFor="roll_number" className="inline-block pb-2">
+              <label
+                htmlFor="roll_number"
+                className="inline-block pb-2 text-black"
+              >
                 Roll Number
               </label>
               <input
@@ -110,7 +115,7 @@ const StudentProfile = () => {
 
             {/* address  */}
             <div className="w-full">
-              <label htmlFor="address" className="inline-block pb-2">
+              <label htmlFor="address" className="inline-block pb-2 text-black">
                 Address
               </label>
               <input
@@ -133,7 +138,10 @@ const StudentProfile = () => {
           <div className="w-full flex justify-center items-center gap-5 md:flex-nowrap flex-wrap mb-8">
             {/* date of birth  */}
             <div className="w-full">
-              <label htmlFor="date_of_birth" className="inline-block pb-2">
+              <label
+                htmlFor="date_of_birth"
+                className="inline-block pb-2 text-black"
+              >
                 Date of Birth
               </label>
               <input
@@ -152,7 +160,7 @@ const StudentProfile = () => {
 
             {/* gender  */}
             <div className="w-full">
-              <label htmlFor="gender" className="inline-block pb-2">
+              <label htmlFor="gender" className="inline-block pb-2 text-black">
                 Gender
               </label>
               <select
@@ -178,7 +186,10 @@ const StudentProfile = () => {
 
           {/* profile picture  */}
           <div className="w-full mb-8">
-            <label htmlFor="profile_picture" className="inline-block pb-2">
+            <label
+              htmlFor="profile_picture"
+              className="inline-block pb-2 text-black"
+            >
               Profile Picture
             </label>
             <br />
@@ -199,13 +210,18 @@ const StudentProfile = () => {
           {/*//? error message  */}
           <p className="text-red-500 text-lg font-bold">{errorMessage}</p>
 
-          <h1 className="text-3xl font-bold pb-8 pt-4">School Information</h1>
+          <h1 className="text-3xl font-bold pb-8 pt-4 text-black">
+            School Information
+          </h1>
 
           {/* // Department and Course */}
           <div className="w-full flex justify-center items-center gap-5 md:flex-nowrap flex-wrap mb-8">
             {/* department  */}
             <div className="w-full">
-              <label htmlFor="department" className="inline-block pb-2">
+              <label
+                htmlFor="department"
+                className="inline-block pb-2 text-black"
+              >
                 Department
               </label>
               <select
@@ -231,7 +247,7 @@ const StudentProfile = () => {
 
             {/* // course  */}
             <div className="w-full">
-              <label htmlFor="course" className="inline-block pb-2">
+              <label htmlFor="course" className="inline-block pb-2 text-black">
                 Course
               </label>
               <select
@@ -281,7 +297,10 @@ const StudentProfile = () => {
           <div className="w-full flex justify-center items-center gap-5 md:flex-nowrap flex-wrap mb-5">
             {/* visa start date  */}
             <div className="w-full">
-              <label htmlFor="visa_start_date" className="inline-block pb-2">
+              <label
+                htmlFor="visa_start_date"
+                className="inline-block pb-2 text-black"
+              >
                 Visa Start Date
               </label>
               <input
@@ -300,7 +319,10 @@ const StudentProfile = () => {
 
             {/* visa end date  */}
             <div className="w-full">
-              <label htmlFor="visa_end_date" className="inline-block pb-2">
+              <label
+                htmlFor="visa_end_date"
+                className="inline-block pb-2 text-black"
+              >
                 Visa End Date
               </label>
               <input
