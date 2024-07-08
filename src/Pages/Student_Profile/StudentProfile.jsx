@@ -33,8 +33,11 @@ const StudentProfile = () => {
     });
   };
 
+  // API URL FROM THE ENV FILE
+  const API_ENDPOINT = `${import.meta.env.VITE_API_URL}/students`;
+
   axios
-    .post("http://localhost:3000/students", {
+    .post(API_ENDPOINT, {
       ...studentDate,
       roll_number: studentDate.roll_number,
       address: studentDate.address,
@@ -141,7 +144,7 @@ const StudentProfile = () => {
                   })
                 }
               >
-                <option value="gender" selected hidden>
+                <option value="gender" hidden>
                   Select your Gender
                 </option>
                 <option value="male">Male</option>
@@ -188,7 +191,7 @@ const StudentProfile = () => {
                   setStudentDate({ ...studentDate, department: e.target.value })
                 }
               >
-                <option value="department" selected hidden>
+                <option value="department" hidden>
                   Select your Department
                 </option>
                 <option value=" Electrical and tellecommunication Engineering">
@@ -214,7 +217,7 @@ const StudentProfile = () => {
                   setStudentDate({ ...studentDate, course: e.target.value })
                 }
               >
-                <option value="course" selected hidden>
+                <option value="course" hidden>
                   Select your Course
                 </option>
                 <option value="Software Engineering">
