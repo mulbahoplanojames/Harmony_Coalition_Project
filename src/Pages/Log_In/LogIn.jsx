@@ -10,13 +10,12 @@ const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setEPassword] = useState("");
 
-  const { setIsLogin } = useContext(AppContext);
+  const { setIsLoggedIn } = useContext(AppContext);
   const navigate = useNavigate();
 
   const handleLogin = (event) => {
     event.preventDefault();
-    // window.location.href = "/";
-    setIsLogin(true);
+    setIsLoggedIn(true);
     navigate("/student_profile");
     console.log("is logged in");
   };
@@ -33,10 +32,10 @@ const LogIn = () => {
     .then((response) => {
       console.log(response);
       if (response.status === 200) {
-        setIsLogin(true);
+        setIsLoggedIn(true);
         navigate("/");
       } else {
-        setIsLogin(false);
+        setIsLoggedIn(false);
       }
     })
     .catch((error) => {

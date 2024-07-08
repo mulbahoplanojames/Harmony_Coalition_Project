@@ -6,12 +6,12 @@ import { AppContext } from "../Context/AppContext";
 import { useContext } from "react";
 
 const Layout = () => {
-  const { isLogIn } = useContext(AppContext);
+  const { isLoggedIn } = useContext(AppContext);
 
   return (
     <>
       <div className="pt-[6rem] ">
-        {isLogIn ? <LogInNavbar /> : <Navbar />}
+        {isLoggedIn ? <LogInNavbar /> : <Navbar />}
         {/* <LogInNavbar /> */}
         <div className="md:px-[3rem] px-[.7rem]">{<Outlet />}</div>
         <Footer />

@@ -12,9 +12,7 @@ import ContactUs from "./Pages/Contact_Us/ContactUs";
 import PageNotFound from "./Pages/Page_Not_Found/PageNotFound";
 import SignUp from "./Pages/Sign_Up/SignUp";
 import LogIn from "./Pages/Log_In/LogIn";
-import StudentProfile, {
-  NextProfile,
-} from "./Pages/Student_Profile/StudentProfile";
+import StudentProfile from "./Pages/Student_Profile/StudentProfile";
 
 const App = () => {
   const { darkModeStyle } = useContext(AppContext);

@@ -26,7 +26,7 @@ const AppContextProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(saveDarkMode);
 
   // I create a state variable called `logIn`. This state variable will keep track of whether the user is logged in or not.
-  const [isLogIn, setIsLogin] = useState(saveIsLogin);
+  const [isLoggedIn, setIsLoggedIn] = useState(saveIsLogin);
 
   // Update local storage whenever darkMode state changes using the useEffect hook
   useEffect(() => {
@@ -34,9 +34,9 @@ const AppContextProvider = ({ children }) => {
     console.log("darkMode", darkMode);
 
     // Update local storage whenever isLogin state changes using the useEffect hook
-    localStorage.setItem("isLogin", JSON.stringify(isLogIn));
-    console.log("isLogin", isLogIn);
-  }, [darkMode, isLogIn]);
+    localStorage.setItem("isLogin", JSON.stringify(isLoggedIn));
+    console.log("isLogin", isLoggedIn);
+  }, [darkMode, isLoggedIn]);
 
   // I define a function called `toggleDarkMode`. This function will be used to
   //toggle the value of the `darkMode` state variable.
@@ -62,8 +62,8 @@ const AppContextProvider = ({ children }) => {
     darkMode,
     toggleDarkMode,
     darkModeStyle,
-    isLogIn,
-    setIsLogin,
+    isLoggedIn,
+    setIsLoggedIn,
   };
 
   // I return the `AppContext.Provider` component, which will provide the `contextValue` object to all of its child components.
