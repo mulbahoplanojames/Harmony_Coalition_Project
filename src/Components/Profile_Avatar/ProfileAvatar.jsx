@@ -39,7 +39,7 @@ const ProfileAvatar = () => {
           <Link to="/settings">Settings</Link>
         </li>
         <li>
-          <Link onClick={handleLogout}>Logout</Link>
+          <p onClick={handleLogout}>Logout</p>
         </li>
       </ul>
     </div>
