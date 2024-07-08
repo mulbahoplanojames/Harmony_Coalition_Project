@@ -13,6 +13,7 @@ const LogIn = () => {
   const { setIsLoggedIn } = useContext(AppContext);
   const navigate = useNavigate();
 
+  // TODO : The axios call for login should be here in the handleLogin function
   const handleLogin = (event) => {
     event.preventDefault();
     setIsLoggedIn(true);
@@ -20,10 +21,12 @@ const LogIn = () => {
     console.log("is logged in");
   };
 
+  // API URL FROM THE ENV FILE
+  const API_ENDPOINT = `${import.meta.env.VITE_API_URL}/students`;
+
   axios
-    .post("http://localhost:3000/", {
+    .post(API_ENDPOINT, {
       method: "POST",
-      url: "http://localhost:3000/",
       data: {
         email: email,
         password: password,
@@ -33,7 +36,7 @@ const LogIn = () => {
       console.log(response);
       if (response.status === 200) {
         setIsLoggedIn(true);
-        navigate("/");
+        navigate("/student_profile");
       } else {
         setIsLoggedIn(false);
       }

@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
 import singUp_image from "/src/assets/study2-removebg-preview.png";
 import { CgArrowLeftR } from "react-icons/cg";
+import { useState } from "react";
 
 const SignUp = () => {
+  const [signedUpData, setSignedUpData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    phone: "",
+  });
+
   return (
     <>
       <div className="flex justify-center items-center w-full h-fit py-14  bg-primary_main ">
@@ -36,6 +45,13 @@ const SignUp = () => {
                     type="text"
                     name="first_name"
                     className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none "
+                    value={signedUpData.firstName}
+                    onChange={(e) => {
+                      setSignedUpData({
+                        ...signedUpData,
+                        firstName: e.target.value,
+                      });
+                    }}
                   />
                 </div>
 
@@ -47,6 +63,13 @@ const SignUp = () => {
                     type="text"
                     name="last_name"
                     className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
+                    value={signedUpData.lastName}
+                    onChange={(e) => {
+                      setSignedUpData({
+                        ...signedUpData,
+                        lastName: e.target.value,
+                      });
+                    }}
                   />
                 </div>
               </div>
@@ -60,6 +83,13 @@ const SignUp = () => {
                   type="email"
                   name="email"
                   className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
+                  value={signedUpData.email}
+                  onChange={(e) => {
+                    setSignedUpData({
+                      ...signedUpData,
+                      email: e.target.value,
+                    });
+                  }}
                 />
               </div>
 
@@ -73,6 +103,13 @@ const SignUp = () => {
                     type="password"
                     name="password"
                     className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
+                    value={signedUpData.password}
+                    onChange={(e) => {
+                      setSignedUpData({
+                        ...signedUpData,
+                        password: e.target.value,
+                      });
+                    }}
                   />
                 </div>
                 <div>
@@ -83,6 +120,13 @@ const SignUp = () => {
                     type="tel"
                     name="number"
                     className="w-full bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
+                    value={signedUpData.phone}
+                    onChange={(e) => {
+                      setSignedUpData({
+                        ...signedUpData,
+                        phone: e.target.value,
+                      });
+                    }}
                   />
                 </div>
               </div>

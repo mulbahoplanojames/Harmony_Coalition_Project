@@ -14,6 +14,8 @@ const StudentProfile = () => {
     visa_end_date: "",
   });
 
+  // TODO : The axios call for login should be here in the handleSubmit function
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(studentDate);
@@ -38,16 +40,19 @@ const StudentProfile = () => {
 
   axios
     .post(API_ENDPOINT, {
-      ...studentDate,
-      roll_number: studentDate.roll_number,
-      address: studentDate.address,
-      date_of_birth: studentDate.date_of_birth,
-      gender: studentDate.gender,
-      avatar_image: studentDate.avatar_image,
-      department: studentDate.department,
-      Course: studentDate.Course,
-      visa_start_date: studentDate.visa_start_date,
-      visa_end_date: studentDate.visa_end_date,
+      method: "POST",
+      data: {
+        ...studentDate,
+        roll_number: studentDate.roll_number,
+        address: studentDate.address,
+        date_of_birth: studentDate.date_of_birth,
+        gender: studentDate.gender,
+        avatar_image: studentDate.avatar_image,
+        department: studentDate.department,
+        Course: studentDate.Course,
+        visa_start_date: studentDate.visa_start_date,
+        visa_end_date: studentDate.visa_end_date,
+      },
     })
     .then((response) => {
       console.log(response);
