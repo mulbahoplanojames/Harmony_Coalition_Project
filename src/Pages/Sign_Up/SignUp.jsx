@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import singUp_image from "/src/assets/study2-removebg-preview.png";
 import { CgArrowLeftR } from "react-icons/cg";
 import { useState } from "react";
+import axios from "axios";
 
 const SignUp = () => {
   const [signedUpData, setSignedUpData] = useState({
@@ -11,6 +12,51 @@ const SignUp = () => {
     password: "",
     phone: "",
   });
+
+  // Error Message
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSignUp = (e) => {
+    e.preventDefault();
+
+    if (
+      signedUpData.firstName.length === 0 ||
+      signedUpData.lastName.length === 0 ||
+      signedUpData.email.length === 0 ||
+      signedUpData.password.length === 0 ||
+      signedUpData.phone.length === 0
+    ) {
+      alert("Please fill all the fields");
+      setErrorMessage("Please fill all the fields");
+    } else {
+      axios
+        .post("http://localhost:3001/students", {
+          method: "POST",
+          data: {
+            firstName: signedUpData.firstName,
+            lastName: signedUpData.lastName,
+            email: signedUpData.email,
+            password: signedUpData.password,
+            phone: signedUpData.phone,
+          },
+        })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+
+    setSignedUpData({
+      ...signedUpData,
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      phone: "",
+    });
+  };
 
   return (
     <>
@@ -34,7 +80,7 @@ const SignUp = () => {
               platform of the Association.
             </p>
 
-            <form className="relative">
+            <form className="relative" onSubmit={handleSignUp}>
               {/* // First Name and Last Name */}
               <div className="flex justify-between items-center w-full gap-4 md:flex-nowrap flex-wrap mb-2">
                 <div>
@@ -130,6 +176,11 @@ const SignUp = () => {
                   />
                 </div>
               </div>
+
+              {/* //Error Message */}
+              <p className="text-red-500 text-lg font-bold mt-4">
+                {errorMessage}
+              </p>
 
               {/* // Create account Button */}
               <button

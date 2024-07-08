@@ -14,13 +14,56 @@ const StudentProfile = () => {
     visa_end_date: "",
   });
 
-  // TODO : The axios call for login should be here in the handleSubmit function
+  // Error Message
+  const [errorMessage, setErrorMessae] = useState("");
 
+  //? API URL FROM THE ENV FILE
+  const API_ENDPOINT = `${import.meta.env.VITE_API_URL}/students`;
+
+  // TODO : The axios call for login should be here in the handleSubmit function
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(studentDate);
 
-    // window.location.href = "/";
+    if (
+      studentDate.roll_number.length === 0 ||
+      studentDate.address.length === 0 ||
+      studentDate.date_of_birth.length === 0 ||
+      studentDate.gender.length === 0 ||
+      studentDate.avatar_image.length === 0 ||
+      studentDate.department.length === 0 ||
+      studentDate.Course.length === 0 ||
+      studentDate.visa_start_date.length === 0 ||
+      studentDate.visa_end_date.length === 0
+    ) {
+      // alert("Please fill all the fields");
+      setErrorMessae("Please fill all the fields");
+    } else {
+      setErrorMessae("");
+
+      axios
+        .post(API_ENDPOINT, {
+          method: "POST",
+          data: {
+            ...studentDate,
+            roll_number: studentDate.roll_number,
+            address: studentDate.address,
+            date_of_birth: studentDate.date_of_birth,
+            gender: studentDate.gender,
+            avatar_image: studentDate.avatar_image,
+            department: studentDate.department,
+            Course: studentDate.Course,
+            visa_start_date: studentDate.visa_start_date,
+            visa_end_date: studentDate.visa_end_date,
+          },
+        })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
 
     setStudentDate({
       roll_number: "",
@@ -34,32 +77,6 @@ const StudentProfile = () => {
       visa_end_date: "",
     });
   };
-
-  // API URL FROM THE ENV FILE
-  const API_ENDPOINT = `${import.meta.env.VITE_API_URL}/students`;
-
-  axios
-    .post(API_ENDPOINT, {
-      method: "POST",
-      data: {
-        ...studentDate,
-        roll_number: studentDate.roll_number,
-        address: studentDate.address,
-        date_of_birth: studentDate.date_of_birth,
-        gender: studentDate.gender,
-        avatar_image: studentDate.avatar_image,
-        department: studentDate.department,
-        Course: studentDate.Course,
-        visa_start_date: studentDate.visa_start_date,
-        visa_end_date: studentDate.visa_end_date,
-      },
-    })
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
 
   return (
     <>
@@ -179,6 +196,9 @@ const StudentProfile = () => {
             />
           </div>
 
+          {/*//? error message  */}
+          <p className="text-red-500 text-lg font-bold">{errorMessage}</p>
+
           <h1 className="text-3xl font-bold pb-8 pt-4">School Information</h1>
 
           {/* // Department and Course */}
@@ -297,6 +317,9 @@ const StudentProfile = () => {
               />
             </div>
           </div>
+
+          {/*//? error message  */}
+          <p className="text-red-500 text-lg font-bold mb-4">{errorMessage}</p>
 
           {/* submit button  */}
           <button

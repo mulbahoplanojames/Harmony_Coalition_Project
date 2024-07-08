@@ -16,9 +16,14 @@ const LogIn = () => {
   // TODO : The axios call for login should be here in the handleLogin function
   const handleLogin = (event) => {
     event.preventDefault();
-    setIsLoggedIn(true);
-    navigate("/student_profile");
-    console.log("is logged in");
+
+    if (email === "" || password === "") {
+      alert("Please fill all the fields");
+    } else {
+      setIsLoggedIn(true);
+      navigate("/student_profile");
+      console.log("is logged in");
+    }
   };
 
   // API URL FROM THE ENV FILE
