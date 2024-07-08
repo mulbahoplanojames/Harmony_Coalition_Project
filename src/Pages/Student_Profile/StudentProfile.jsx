@@ -7,7 +7,7 @@ const StudentProfile = () => {
     address: "",
     date_of_birth: "",
     gender: "",
-    avatar_image: "",
+    avatar_image: null,
     department: "",
     Course: "",
     visa_start_date: "",
@@ -43,8 +43,7 @@ const StudentProfile = () => {
 
       axios
         .post(API_ENDPOINT, {
-          method: "POST",
-          data: {
+          body: {
             ...studentDate,
             roll_number: studentDate.roll_number,
             address: studentDate.address,
@@ -170,7 +169,7 @@ const StudentProfile = () => {
                 onChange={(e) =>
                   setStudentDate({
                     ...studentDate,
-                    gender: e.target.value,
+                    gender: e.target.files[0],
                   })
                 }
               >

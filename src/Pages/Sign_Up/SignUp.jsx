@@ -16,6 +16,9 @@ const SignUp = () => {
   // Error Message
   const [errorMessage, setErrorMessage] = useState("");
 
+  //? API URL FROM THE ENV FILE
+  const API_ENDPOINT = `${import.meta.env.VITE_API_URL}/students`;
+
   const handleSignUp = (e) => {
     e.preventDefault();
 
@@ -30,9 +33,8 @@ const SignUp = () => {
       setErrorMessage("Please fill all the fields");
     } else {
       axios
-        .post("http://localhost:3001/students", {
-          method: "POST",
-          data: {
+        .post(API_ENDPOINT, {
+          body: {
             firstName: signedUpData.firstName,
             lastName: signedUpData.lastName,
             email: signedUpData.email,

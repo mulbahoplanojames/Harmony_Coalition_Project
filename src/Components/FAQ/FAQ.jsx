@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import { AppContext } from "../../Context/AppContext";
+
 const FAQ = () => {
+  const { darkMode } = useContext(AppContext);
+
   return (
     <>
       <section className="w-full pb-20">
@@ -7,11 +12,15 @@ const FAQ = () => {
           {/* // First QUestion */}
           <div className="collapse collapse-arrow join-item border-base-300 border ">
             <input type="radio" name="my-accordion-4" defaultChecked />
-            <div className="collapse-title text-xl font-medium">
+            <div
+              className={`collapse-title text-xl font-medium ${
+                darkMode ? "text-black" : "text-black"
+              }`}
+            >
               What do i need to do to get started?
             </div>
             <div className="collapse-content">
-              <p>
+              <p className={`${darkMode ? "text-black" : "text-black"}`}>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Repudiandae culpa cum eos in magnam soluta nobis! Neque placeat
                 fugit quisquam.
@@ -20,13 +29,17 @@ const FAQ = () => {
           </div>
 
           {/* // Second Question */}
-          <div className="collapse collapse-arrow join-item border-base-300 border">
+          <div
+            className={`collapse collapse-arrow join-item border-base-300 border  ${
+              darkMode ? "text-black" : "text-black"
+            }`}
+          >
             <input type="radio" name="my-accordion-4" />
             <div className="collapse-title text-xl font-medium">
               Do I need to be a Liberian to apply?
             </div>
             <div className="collapse-content">
-              <p>
+              <p className={`${darkMode ? "text-black" : "text-black"}`}>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae
                 cupiditate iusto, beatae quia, dolores officiis tenetur commodi
                 sint doloremque, debitis cum? Adipisci perferendis repellat
@@ -36,13 +49,17 @@ const FAQ = () => {
           </div>
 
           {/* // Third Question */}
-          <div className="collapse collapse-arrow join-item border-base-300 border">
+          <div
+            className={`collapse collapse-arrow join-item border-base-300 border ${
+              darkMode ? "text-black" : "text-black"
+            }`}
+          >
             <input type="radio" name="my-accordion-4" />
             <div className="collapse-title text-xl font-medium">
               Can i create an account before entering the country?
             </div>
             <div className="collapse-content">
-              <p>
+              <p className={`${darkMode ? "text-black" : "text-black"}`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quam
                 voluptatum laborum suscipit totam, deserunt doloribus ab libero!
                 Ad, corporis.
@@ -51,13 +68,17 @@ const FAQ = () => {
           </div>
 
           {/* // Fourth Question */}
-          <div className="collapse collapse-arrow join-item border-base-300 border">
+          <div
+            className={`collapse collapse-arrow join-item border-base-300 border ${
+              darkMode ? "text-black" : "text-black"
+            }`}
+          >
             <input type="radio" name="my-accordion-4" />
             <div className="collapse-title text-xl font-medium">
               What is the cost of admission?
             </div>
             <div className="collapse-content">
-              <p>
+              <p className={`${darkMode ? "text-black" : "text-black"}`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quam
                 voluptatum laborum suscipit totam, deserunt doloribus ab libero!
                 Ad, corporis.

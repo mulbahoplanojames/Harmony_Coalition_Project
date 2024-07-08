@@ -30,16 +30,15 @@ const LogIn = () => {
   const API_ENDPOINT = `${import.meta.env.VITE_API_URL}/students`;
 
   axios
-    .post(API_ENDPOINT, {
-      method: "POST",
-      data: {
-        email: email,
-        password: password,
-      },
-    })
+    .get(API_ENDPOINT)
     .then((response) => {
-      console.log(response);
-      if (response.status === 200) {
+      console.log(response.data);
+
+      // TODO : Check if the email and password are correct
+      if (
+        response.data.email === email &&
+        response.data.password === password
+      ) {
         setIsLoggedIn(true);
         navigate("/student_profile");
       } else {
@@ -48,6 +47,7 @@ const LogIn = () => {
     })
     .catch((error) => {
       console.log(error);
+      setIsLoggedIn(false);
     });
 
   return (

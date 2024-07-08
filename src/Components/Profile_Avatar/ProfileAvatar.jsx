@@ -44,7 +44,7 @@ const ProfileAvatar = () => {
         </li>
         <li>
           <Link
-            to="/settings"
+            to="/student_profile_setting"
             className={`${darkMode ? "text-black" : "text-black"}`}
           >
             Settings

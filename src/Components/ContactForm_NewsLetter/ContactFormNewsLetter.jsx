@@ -61,7 +61,6 @@ const ContactFormNewsletter = () => {
           />
           {/* message input field  */}
           <textarea
-            name="comment"
             placeholder="Message"
             name="message"
             className="bg-[#eaeef3] w-full h-[10rem] outline-none rounded-xl px-4 mb-4"
