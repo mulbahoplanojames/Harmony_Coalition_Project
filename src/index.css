@@ -6,6 +6,9 @@
   .icons_Wripper {
     @apply md:w-[5rem] md:h-[5rem] w-[5rem] h-[5rem]  rounded-full absolute border-4 border-primary_main flex justify-center items-center z-40;
   }
+  .text_shadow {
+    text-shadow: 1px 1px 2px #8095c3, 0 0 1em blue, 0 0 0.2em blue;
+  }
 }
 
 #item1 {

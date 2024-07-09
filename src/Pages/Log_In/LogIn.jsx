@@ -21,7 +21,7 @@ const LogIn = () => {
       alert("Please fill all the fields");
     } else {
       setIsLoggedIn(true);
-      navigate("/student_profile");
+      navigate("/student_profile_settings");
       console.log("is logged in");
     }
   };
@@ -40,7 +40,7 @@ const LogIn = () => {
         response.data.password === password
       ) {
         setIsLoggedIn(true);
-        navigate("/student_profile");
+        navigate("/student_profile_settings");
       } else {
         setIsLoggedIn(false);
       }

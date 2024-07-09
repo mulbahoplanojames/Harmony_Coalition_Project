@@ -17,7 +17,7 @@ const SignUp = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   //? API URL FROM THE ENV FILE
-  const API_ENDPOINT = `${import.meta.env.VITE_API_URL}/students`;
+  // const API_ENDPOINT = `${import.meta.env.VITE_API_URL}/students`;
 
   const handleSignUp = (e) => {
     e.preventDefault();
