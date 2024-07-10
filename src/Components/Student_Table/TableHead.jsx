@@ -9,9 +9,11 @@ const TableHead = () => {
           <th>Last name</th>
           <th>Email </th>
           <th>Phone Number</th>
+          <th>Address</th>
           <th>Date of Birth</th>
           <th>Gender</th>
           <th>Department</th>
+          <th>Course</th>
           <th>Visa Start Date</th>
           <th>Visa End Date</th>
           <th>Visa Status</th>

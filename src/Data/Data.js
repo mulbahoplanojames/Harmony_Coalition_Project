@@ -182,8 +182,8 @@ export const pastLeaderShip = [
 ];
 
 // ! ===================================================================================
-const computerScience = "/src/assets/hero.jpg";
-const law = "/src/assets/hero1.jpg";
+import computerScience from "/src/assets/hero.jpg";
+import law from "/src/assets/hero1.jpg";
 
 export const disciplinesOffer = [
   {

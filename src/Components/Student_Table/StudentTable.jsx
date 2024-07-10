@@ -1,5 +1,5 @@
 import TableHead from "./TableHead";
-import { registerStudents } from "../../Data/Data";
+// import { registerStudents } from "../../Data/Data";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -8,7 +8,7 @@ const StudentTable = () => {
 
   useEffect(() => {
     axios
-      .get("http://192.168.30.31:8000/api/students")
+      .get("http://192.168.1.12:8000/api/students")
       .then((response) => {
         console.log(response.data);
         setStudentInfo(response.data);
@@ -65,20 +65,25 @@ const StudentTable = () => {
                       <div className="flex items-center gap-3">
                         <div className="avatar">
                           <div className="mask mask-squircle h-12 w-12">
-                            <img src={student.avatar} alt={student.firstName} />
+                            <img
+                              src={student.user.picture}
+                              alt={student.firstName}
+                            />
                           </div>
                         </div>
                       </div>
                     </td>
-                    <td>{student.address}</td>
-                    <td>{student.lastName}</td>
+                    <td>{student.user.first_name}</td>
+                    <td>{student.user.last_name}</td>
                     <td>{student.user.email}</td>
-                    <td>{student.phoneNumber}</td>
-                    <td>{student.birthDate}</td>
+                    <td>{student.user.phone_number}</td>
+                    <td>{student.address}</td>
+                    <td>{student.department}</td>
                     <td>{student.gender}</td>
                     <td>{student.department}</td>
-                    <td>{student.visaStartDate}</td>
-                    <td>{student.visaEndDate}</td>
+                    <td>{student.course}</td>
+                    <td>{student.visa_start}</td>
+                    <td>{student.visa_end}</td>
                     <td>{student.visaStatus}</td>
                   </tr>
                 );
