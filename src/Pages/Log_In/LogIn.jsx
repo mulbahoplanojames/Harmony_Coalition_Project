@@ -1,54 +1,30 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import singUp_image from "/src/assets/study1-removebg-preview.png";
 import { CgArrowLeftR } from "react-icons/cg";
-import { AppContext } from "../../Context/AppContext";
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { useAuth } from "../../Context/AuthContext";
 
 const LogIn = () => {
-  const [email, setEmail] = useState("");
-  const [password, setEPassword] = useState("");
+  // Creating the state to hold the user data from the form
+  const [userData, setUserData] = useState({
+    email: "",
+    password: "",
+  });
 
-  const { setIsLoggedIn } = useContext(AppContext);
-  const navigate = useNavigate();
+  // getting the useAuth function from the AuthContext
+  const auth = useAuth();
 
-  // TODO : The axios call for login should be here in the handleLogin function
-  const handleLogin = (event) => {
-    event.preventDefault();
+  // handling the form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    if (email === "" || password === "") {
-      alert("Please fill all the fields");
+    if (userData.email !== "" && userData.password !== "") {
+      auth.loginAction(userData);
+      return;
     } else {
-      setIsLoggedIn(true);
-      navigate("/student_profile_settings");
-      console.log("is logged in");
+      alert("Please fill all the fields");
     }
   };
-
-  // API URL FROM THE ENV FILE
-  const API_ENDPOINT = `${import.meta.env.VITE_API_URL}/students`;
-
-  axios
-    .get(API_ENDPOINT)
-    .then((response) => {
-      console.log(response.data);
-
-      // TODO : Check if the email and password are correct
-      if (
-        response.data.email === email &&
-        response.data.password === password
-      ) {
-        setIsLoggedIn(true);
-        navigate("/student_profile_settings");
-      } else {
-        setIsLoggedIn(false);
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-      setIsLoggedIn(false);
-    });
 
   return (
     <>
@@ -72,7 +48,7 @@ const LogIn = () => {
               platform of the Association.
             </p>
 
-            <form className="relative" onSubmit={handleLogin}>
+            <form className="relative" onSubmit={handleSubmit}>
               {/* // Email */}
               <div className="mb-4">
                 <label htmlFor="email" className="inline-block pb-2">
@@ -82,8 +58,10 @@ const LogIn = () => {
                   type="email"
                   name="email"
                   required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={userData.email}
+                  onChange={(e) =>
+                    setUserData({ ...userData, email: e.target.value })
+                  }
                   className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
                 />
               </div>
@@ -98,8 +76,10 @@ const LogIn = () => {
                     type="password"
                     name="password"
                     required
-                    value={password}
-                    onChange={(e) => setEPassword(e.target.value)}
+                    value={userData.password}
+                    onChange={(e) =>
+                      setUserData({ ...userData, password: e.target.value })
+                    }
                     className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
                   />
                 </div>
@@ -142,5 +122,4 @@ const LogIn = () => {
     </>
   );
 };
-
 export default LogIn;

@@ -17,47 +17,121 @@ const SignUp = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   //? API URL FROM THE ENV FILE
-  // const API_ENDPOINT = `${import.meta.env.VITE_API_URL}/students`;
+  const API_ENDPOINT = `http://192.168.1.68:8000/api/signup/`;
+  // const API_ENDPOINT = `${import.meta.env.VITE_API_URL}/signup`;
+  // const handleSignUp = (e) => {
+  //   e.preventDefault();
 
-  const handleSignUp = (e) => {
+  //   if (
+  //     signedUpData.firstName.length === 0 ||
+  //     signedUpData.lastName.length === 0 ||
+  //     signedUpData.email.length === 0 ||
+  //     signedUpData.password.length === 0 ||
+  //     signedUpData.phone.length === 0
+  //   ) {
+  //     // alert("Please fill all the fields");
+  //     setErrorMessage("Please fill all the fields");
+  //   } else {
+  //     axios
+  //       .post(API_ENDPOINT, {
+  //         body: {
+  //           firstName: signedUpData.firstName,
+  //           lastName: signedUpData.lastName,
+  //           email: signedUpData.email,
+  //           password: signedUpData.password,
+  //           phone: signedUpData.phone,
+  //         },
+  //         headers: {
+  //           'X'
+  //         },
+  //       })
+  //       .then((response) => {
+  //         console.log(response.data);
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //       });
+  //   }
+  //   console.log(signedUpData);
+
+  //   setSignedUpData({
+  //     ...signedUpData,
+  //     firstName: "",
+  //     lastName: "",
+  //     email: "",
+  //     password: "",
+  //     phone: "",
+  //   });
+  // };
+
+  // const getCSRFToken = async () => {
+  //   const response = await axios.get(
+  //     `http://192.168.1.68:8000/api/csrf_cookie/`
+  //   ); // Replace with your endpoint
+  //   console.log(response);
+  //   return response.data;
+  // };
+
+  const getCSRFToken = async () => {
+    try {
+      // Make a GET request to fetch CSRF token
+      const response = await axios.get(
+        "http://192.168.1.68:8000/api/csrf_cookie/",
+        {
+          withCredentials: true, // Include cookies in the request
+        }
+      );
+
+      // Access CSRF token from response headers
+      const csrfToken = response.headers.get("x-csrftoken");
+
+      // Set the maxAge property of the cookie to 30 days
+      document.cookie = `csrftoken=${csrfToken}; max-age=${
+        60 * 60 * 24 * 30
+      }; path=/`;
+
+      // Log CSRF token to console
+      console.log("Response:", response);
+      console.log("CSRF token:", csrfToken);
+
+      return csrfToken;
+    } catch (error) {
+      console.error("Error fetching CSRF token:", error);
+      throw error;
+    }
+  };
+
+  const sendData = async (e) => {
     e.preventDefault();
 
-    if (
-      signedUpData.firstName.length === 0 ||
-      signedUpData.lastName.length === 0 ||
-      signedUpData.email.length === 0 ||
-      signedUpData.password.length === 0 ||
-      signedUpData.phone.length === 0
-    ) {
-      // alert("Please fill all the fields");
-      setErrorMessage("Please fill all the fields");
-    } else {
-      axios
-        .post(API_ENDPOINT, {
-          body: {
-            firstName: signedUpData.firstName,
-            lastName: signedUpData.lastName,
-            email: signedUpData.email,
-            password: signedUpData.password,
-            phone: signedUpData.phone,
-          },
-        })
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
+    try {
+      // Fetch CSRF token
+      const csrfToken = await getCSRFToken();
 
-    setSignedUpData({
-      ...signedUpData,
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
-      phone: "",
-    });
+      // Set CSRF token in headers
+      axios.defaults.headers.common["X-CSRFToken"] = csrfToken;
+
+      // Make POST request
+      const response = await axios.post(API_ENDPOINT, {
+        headers: {
+          "X-CSRFToken": cookies.get("csrftoken"),
+        },
+        first_name: signedUpData.firstName,
+        last_name: signedUpData.lastName,
+        email: signedUpData.email,
+        password: signedUpData.password,
+        phone_number: signedUpData.phone,
+      });
+
+      console.log("CSRF token Function: ", getCSRFToken());
+      console.log("CSRF token: ", csrfToken);
+
+      // Handle response
+      console.log(response.data);
+    } catch (error) {
+      // Handle error
+      console.error("Error sending data: ", error);
+    }
   };
 
   return (
@@ -82,7 +156,7 @@ const SignUp = () => {
               platform of the Association.
             </p>
 
-            <form className="relative" onSubmit={handleSignUp}>
+            <form className="relative" onSubmit={sendData}>
               {/* // First Name and Last Name */}
               <div className="flex justify-between items-center w-full gap-4 md:flex-nowrap flex-wrap mb-2">
                 <div>

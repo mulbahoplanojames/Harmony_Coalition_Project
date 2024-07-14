@@ -1,8 +1,11 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AppContext } from "../../Context/AppContext";
 
 const StudentProfileSettings = () => {
-  const [studentDate, setStudentDate] = useState({
+  const { loggedinEmail, loggedinPassword } = useContext(AppContext);
+
+  const [studentData, setStudentData] = useState({
     roll_number: "",
     address: "",
     date_of_birth: "",
@@ -23,18 +26,18 @@ const StudentProfileSettings = () => {
   // TODO : The axios call for login should be here in the handleSubmit function
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(studentDate);
+    console.log(studentData);
 
     if (
-      studentDate.roll_number.length === 0 ||
-      studentDate.address.length === 0 ||
-      studentDate.date_of_birth.length === 0 ||
-      studentDate.gender.length === 0 ||
-      studentDate.avatar_image.length === 0 ||
-      studentDate.department.length === 0 ||
-      studentDate.Course.length === 0 ||
-      studentDate.visa_start_date.length === 0 ||
-      studentDate.visa_end_date.length === 0
+      studentData.roll_number.length === 0 ||
+      studentData.address.length === 0 ||
+      studentData.date_of_birth.length === 0 ||
+      studentData.gender.length === 0 ||
+      studentData.avatar_image.length === 0 ||
+      studentData.department.length === 0 ||
+      studentData.Course.length === 0 ||
+      studentData.visa_start_date.length === 0 ||
+      studentData.visa_end_date.length === 0
     ) {
       // alert("Please fill all the fields");
       setErrorMessae("Please fill all the fields");
@@ -44,16 +47,16 @@ const StudentProfileSettings = () => {
       axios
         .post(API_ENDPOINT, {
           body: {
-            ...studentDate,
-            roll_number: studentDate.roll_number,
-            address: studentDate.address,
-            date_of_birth: studentDate.date_of_birth,
-            gender: studentDate.gender,
-            avatar_image: studentDate.avatar_image,
-            department: studentDate.department,
-            Course: studentDate.Course,
-            visa_start_date: studentDate.visa_start_date,
-            visa_end_date: studentDate.visa_end_date,
+            ...studentData,
+            roll_number: studentData.roll_number,
+            address: studentData.address,
+            date_of_birth: studentData.date_of_birth,
+            gender: studentData.gender,
+            avatar_image: studentData.avatar_image,
+            department: studentData.department,
+            Course: studentData.Course,
+            visa_start_date: studentData.visa_start_date,
+            visa_end_date: studentData.visa_end_date,
           },
         })
         .then((response) => {
@@ -64,7 +67,7 @@ const StudentProfileSettings = () => {
         });
     }
 
-    setStudentDate({
+    setStudentData({
       roll_number: "",
       address: "",
       date_of_birth: "",
@@ -80,6 +83,10 @@ const StudentProfileSettings = () => {
   return (
     <>
       <div className="w-full">
+        <h1 className="text-3xl font-bold pb-8  text-black">{loggedinEmail}</h1>
+        <h1 className="text-3xl font-bold pb-8  text-black">
+          {loggedinPassword}
+        </h1>
         <form
           className="md:w-[90%] w-full bg-white h-fit py-6 md:px-8 px-4 rounded-md mx-auto mb-20 mt-10"
           onSubmit={handleSubmit}
@@ -102,10 +109,10 @@ const StudentProfileSettings = () => {
                 name="roll_number"
                 className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
                 placeholder="Enter your roll number"
-                value={studentDate.roll_number}
+                value={studentData.roll_number}
                 onChange={(e) =>
-                  setStudentDate({
-                    ...studentDate,
+                  setStudentData({
+                    ...studentData,
                     roll_number: e.target.value,
                   })
                 }
@@ -122,10 +129,10 @@ const StudentProfileSettings = () => {
                 name="address"
                 placeholder="Enter your address"
                 className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
-                value={studentDate.address}
+                value={studentData.address}
                 onChange={(e) =>
-                  setStudentDate({
-                    ...studentDate,
+                  setStudentData({
+                    ...studentData,
                     address: e.target.value,
                   })
                 }
@@ -147,10 +154,10 @@ const StudentProfileSettings = () => {
                 type="date"
                 name="date_of_birth"
                 className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
-                value={studentDate.date_of_birth}
+                value={studentData.date_of_birth}
                 onChange={(e) =>
-                  setStudentDate({
-                    ...studentDate,
+                  setStudentData({
+                    ...studentData,
                     date_of_birth: e.target.value,
                   })
                 }
@@ -165,10 +172,10 @@ const StudentProfileSettings = () => {
               <select
                 name="gender"
                 className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
-                value={studentDate.gender}
+                value={studentData.gender}
                 onChange={(e) =>
-                  setStudentDate({
-                    ...studentDate,
+                  setStudentData({
+                    ...studentData,
                     gender: e.target.files[0],
                   })
                 }
@@ -196,10 +203,10 @@ const StudentProfileSettings = () => {
               type="file"
               name="profile_picture"
               className="file-input file-input-bordered w-full"
-              value={studentDate.avatar_image}
+              value={studentData.avatar_image}
               onChange={(e) =>
-                setStudentDate({
-                  ...studentDate,
+                setStudentData({
+                  ...studentData,
                   avatar_image: e.target.value,
                 })
               }
@@ -226,9 +233,9 @@ const StudentProfileSettings = () => {
               <select
                 name="department"
                 className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
-                value={studentDate.department}
+                value={studentData.department}
                 onChange={(e) =>
-                  setStudentDate({ ...studentDate, department: e.target.value })
+                  setStudentData({ ...studentData, department: e.target.value })
                 }
               >
                 <option value="department" hidden>
@@ -252,9 +259,9 @@ const StudentProfileSettings = () => {
               <select
                 name="department"
                 className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
-                value={studentDate.course}
+                value={studentData.course}
                 onChange={(e) =>
-                  setStudentDate({ ...studentDate, course: e.target.value })
+                  setStudentData({ ...studentData, course: e.target.value })
                 }
               >
                 <option value="course" hidden>
@@ -306,10 +313,10 @@ const StudentProfileSettings = () => {
                 type="date"
                 name="visa_start_date"
                 className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
-                value={studentDate.visa_start_date}
+                value={studentData.visa_start_date}
                 onChange={(e) =>
-                  setStudentDate({
-                    ...studentDate,
+                  setStudentData({
+                    ...studentData,
                     visa_start_date: e.target.value,
                   })
                 }
@@ -328,10 +335,10 @@ const StudentProfileSettings = () => {
                 type="date"
                 name="visa_end_date"
                 className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
-                value={studentDate.visa_end_date}
+                value={studentData.visa_end_date}
                 onChange={(e) =>
-                  setStudentDate({
-                    ...studentDate,
+                  setStudentData({
+                    ...studentData,
                     visa_end_date: e.target.value,
                   })
                 }
