@@ -16,7 +16,8 @@ import StudentProfileSettings from "./Pages/Student_Profile_settings/StudentProf
 import StudentProfile from "./Pages/Student_Profile/StudentProfile";
 
 // Visitor Pages
-import VisitHome from "./Pages/Visit_Home/VisitHome";
+import VisitHome from "./Pages/Visit_Pages/Visit_Home/VisitHome";
+import VisitAbout from "./Pages/Visit_Pages/Visit_About/VisitAbout";
 
 const App = () => {
   const { darkModeStyle } = useContext(AppContext);
@@ -38,9 +39,13 @@ const App = () => {
             <Route path="/student_profile" element={<StudentProfile />} />
           </Route>
 
-          {/* Vistor Page */}
-          <Route path="/home" element={<VisitHome />} />
+          {/* ================================================================================ */}
 
+          {/* Vistor Pages */}
+          <Route path="/home" element={<VisitHome />} />
+          <Route path="/visit-about" element={<VisitAbout />} />
+
+          {/* =================================================================================== */}
           {/* 404 Page */}
           <Route path="*" element={<PageNotFound />} />
 

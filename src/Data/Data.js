@@ -22,7 +22,7 @@ export default navLinks;
 export const navLinks2 = [
   {
     label: "Home",
-    path: "/",
+    path: "/home",
   },
   {
     label: "About",
