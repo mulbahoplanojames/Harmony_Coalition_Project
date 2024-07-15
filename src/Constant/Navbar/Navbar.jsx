@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import { TbMenu2 } from "react-icons/tb";
 import { MdOutlineCancelPresentation } from "react-icons/md";
-import navLinks from "../../Data/Data";
 import { Link } from "react-router-dom";
 import ToggleDarkModeIcon from "../../Components/Toggle_DarkMode/ToggleDarkModeIcon";
 import { AppContext } from "../../Context/AppContext";
@@ -11,7 +10,7 @@ import { AppContext } from "../../Context/AppContext";
  * It contains links to different pages and a sign in button.
  * It also has a responsive menu for smaller devices.
  */
-const Navbar = () => {
+const Navbar = ({ navLinks }) => {
   // State variable to keep track of whether the menu is open or not.
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 

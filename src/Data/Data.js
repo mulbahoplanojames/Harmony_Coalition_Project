@@ -19,6 +19,21 @@ const navLinks = [
 
 export default navLinks;
 
+export const navLinks2 = [
+  {
+    label: "Home",
+    path: "/",
+  },
+  {
+    label: "About",
+    path: "/visit-about",
+  },
+  {
+    label: "Contact Us",
+    path: "/visit-contact-us",
+  },
+];
+
 //! ===================================================================================
 import stephen from "/src/assets/stephen.jpeg";
 import eric from "/src/assets/eric.jpeg";

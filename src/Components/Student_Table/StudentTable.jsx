@@ -73,7 +73,7 @@ const StudentTable = () => {
                               src={
                                 student.user.picture
                                   ? student.user.picture
-                                  : "/src/assets/girl.jpeg"
+                                  : "/src/assets/userAvatar.jpg"
                               }
                               alt={student.firstName}
                             />
