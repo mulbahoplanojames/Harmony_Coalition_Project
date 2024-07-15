@@ -8,7 +8,11 @@ const StudentTable = () => {
 
   useEffect(() => {
     axios
-      .get("http://192.168.1.12:8000/api/students")
+      .get("http://192.168.1.12:8000/api/students", {
+        headers: {
+          Authorization: `Token ${localStorage.getItem("token")}`,
+        },
+      })
       .then((response) => {
         console.log(response.data);
         setStudentInfo(response.data);
@@ -66,7 +70,11 @@ const StudentTable = () => {
                         <div className="avatar">
                           <div className="mask mask-squircle h-12 w-12">
                             <img
-                              src={student.user.picture}
+                              src={
+                                student.user.picture
+                                  ? student.user.picture
+                                  : "/src/assets/girl.jpeg"
+                              }
                               alt={student.firstName}
                             />
                           </div>

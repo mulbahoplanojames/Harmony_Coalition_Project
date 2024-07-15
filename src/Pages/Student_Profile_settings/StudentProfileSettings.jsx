@@ -10,7 +10,7 @@ const StudentProfileSettings = () => {
     address: "",
     date_of_birth: "",
     gender: "",
-    avatar_image: null,
+    avatar_image: "",
     department: "",
     Course: "",
     visa_start_date: "",

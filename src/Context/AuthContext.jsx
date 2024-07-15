@@ -16,8 +16,8 @@ const AuthProvider = ({ children }) => {
   // Getting the setIsLoggedIn state from the AppContext
   const { setIsLoggedIn } = useContext(AppContext);
 
-  const API_ENDPOINT = "http://192.168.40.52:8000/api/login/";
-  // const LOGOUT_ENDPOINT = "http://192.168.1.12:8000/api/logout/";
+  const API_ENDPOINT = "http://192.168.1.12:8000/api/login/";
+  const LOGOUT_ENDPOINT = "http://192.168.1.12:8000/api/logout/";
 
   /*
     The loginAction function handles user login by sending a POST request to the 
@@ -57,27 +57,31 @@ const AuthProvider = ({ children }) => {
   };
 
   // logOut function to log the user out
-  // const logOut = async () => {
-  //   try {
-  //     await axios.post(LOGOUT_ENDPOINT);
-  //     setUser(null);
-  //     setToken(null);
-  //     localStorage.removeItem("token");
-  //     delete axios.defaults.headers.common["Authorization"];
-  //     navigate("/");
-  //     setIsLoggedIn(false);
-  //   } catch (error) {
-  //     console.log("Logout failed:", error);
-  //     // Handle error state or show error message to user
-  //   }
-  // };
+  const logOut = async () => {
+    try {
+      await axios.post(LOGOUT_ENDPOINT, {
+        headers: {
+          Authorization: `Token ${token}`,
+        },
+      });
+      setUser(null);
+      setToken(null);
+      localStorage.removeItem("token");
+      delete axios.defaults.headers.common["Authorization"];
+      navigate("/");
+      setIsLoggedIn(false);
+    } catch (error) {
+      // Handle error state or show error message to user
+      console.log("Logout failed:", error);
+    }
+  };
 
   // Creating the values that will be passed to the context
   const value = {
     user,
     token,
     loginAction,
-    // logOut,
+    logOut,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
