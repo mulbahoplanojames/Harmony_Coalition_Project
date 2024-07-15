@@ -9,15 +9,17 @@ import Enrollment from "./Pages/Enrollment/Enrollment";
 import StudentPortal from "./Pages/Student_Portal/StudentPortal";
 import ContactUs from "./Pages/Contact_Us/ContactUs";
 
+import StudentProfileSettings from "./Pages/Student_Profile_settings/StudentProfileSettings";
+import StudentProfile from "./Pages/Student_Profile/StudentProfile";
+
 import PageNotFound from "./Pages/Page_Not_Found/PageNotFound";
 import SignUp from "./Pages/Sign_Up/SignUp";
 import LogIn from "./Pages/Log_In/LogIn";
-import StudentProfileSettings from "./Pages/Student_Profile_settings/StudentProfileSettings";
-import StudentProfile from "./Pages/Student_Profile/StudentProfile";
 
 // Visitor Pages
 import VisitHome from "./Pages/Visit_Pages/Visit_Home/VisitHome";
 import VisitAbout from "./Pages/Visit_Pages/Visit_About/VisitAbout";
+import VisitContactUs from "./Pages/Visit_Pages/Visit_ContactUs/VisitContactUs";
 
 const App = () => {
   const { darkModeStyle } = useContext(AppContext);
@@ -44,6 +46,7 @@ const App = () => {
           {/* Vistor Pages */}
           <Route path="/home" element={<VisitHome />} />
           <Route path="/visit-about" element={<VisitAbout />} />
+          <Route path="/visit-contact-us" element={<VisitContactUs />} />
 
           {/* =================================================================================== */}
           {/* 404 Page */}

@@ -18,59 +18,6 @@ const SignUp = () => {
 
   //? API URL FROM THE ENV FILE
   const API_ENDPOINT = `http://192.168.1.68:8000/api/signup/`;
-  // const API_ENDPOINT = `${import.meta.env.VITE_API_URL}/signup`;
-  // const handleSignUp = (e) => {
-  //   e.preventDefault();
-
-  //   if (
-  //     signedUpData.firstName.length === 0 ||
-  //     signedUpData.lastName.length === 0 ||
-  //     signedUpData.email.length === 0 ||
-  //     signedUpData.password.length === 0 ||
-  //     signedUpData.phone.length === 0
-  //   ) {
-  //     // alert("Please fill all the fields");
-  //     setErrorMessage("Please fill all the fields");
-  //   } else {
-  //     axios
-  //       .post(API_ENDPOINT, {
-  //         body: {
-  //           firstName: signedUpData.firstName,
-  //           lastName: signedUpData.lastName,
-  //           email: signedUpData.email,
-  //           password: signedUpData.password,
-  //           phone: signedUpData.phone,
-  //         },
-  //         headers: {
-  //           'X'
-  //         },
-  //       })
-  //       .then((response) => {
-  //         console.log(response.data);
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  //   }
-  //   console.log(signedUpData);
-
-  //   setSignedUpData({
-  //     ...signedUpData,
-  //     firstName: "",
-  //     lastName: "",
-  //     email: "",
-  //     password: "",
-  //     phone: "",
-  //   });
-  // };
-
-  // const getCSRFToken = async () => {
-  //   const response = await axios.get(
-  //     `http://192.168.1.68:8000/api/csrf_cookie/`
-  //   ); // Replace with your endpoint
-  //   console.log(response);
-  //   return response.data;
-  // };
 
   const getCSRFToken = async () => {
     try {
@@ -136,7 +83,7 @@ const SignUp = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center w-full h-fit py-14  bg-primary_main ">
+      <div className="flex justify-center items-center w-full h-fit py-14  bg-primary_main text-black">
         <div className="md:w-[80%] w-[95%] h-fit grid md:grid-cols-2 grid-cols-1 bg-white">
           <div className=" w-full md:h-full h-[15rem] overflow-hidden bg-purple-200">
             <img
