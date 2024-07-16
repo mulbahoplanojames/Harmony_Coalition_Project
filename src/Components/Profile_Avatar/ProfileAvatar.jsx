@@ -1,18 +1,12 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AppContext } from "../../Context/AppContext";
 import { useContext } from "react";
 import { useAuth } from "../../Context/AuthContext";
 
 const ProfileAvatar = () => {
-  const { setIsLoggedIn, darkMode } = useContext(AppContext);
-  // const navigate = useNavigate();
+  const { darkMode } = useContext(AppContext);
 
-  // const handleLogout = () => {
-  //   setIsLoggedIn(false);
-  //   navigate("/");
-  // };
-
-  const { logOut } = useAuth();
+  const user = useAuth();
 
   return (
     <div className="dropdown dropdown-end">
@@ -55,7 +49,7 @@ const ProfileAvatar = () => {
         </li>
         <li>
           <p
-            onClick={logOut}
+            onClick={user.logOut}
             className={`${darkMode ? "text-black" : "text-black"}`}
           >
             Logout

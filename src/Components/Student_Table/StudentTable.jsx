@@ -8,7 +8,7 @@ const StudentTable = () => {
 
   useEffect(() => {
     axios
-      .get("http://192.168.1.12:8000/api/students", {
+      .get("http://192.168.1.132:8000/api/students", {
         headers: {
           Authorization: `Token ${localStorage.getItem("token")}`,
         },
@@ -86,7 +86,7 @@ const StudentTable = () => {
                     <td>{student.user.email}</td>
                     <td>{student.user.phone_number}</td>
                     <td>{student.address}</td>
-                    <td>{student.department}</td>
+                    <td>{student.birth_date}</td>
                     <td>{student.gender}</td>
                     <td>{student.department}</td>
                     <td>{student.course}</td>

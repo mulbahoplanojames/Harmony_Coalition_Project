@@ -1,14 +1,19 @@
 import { SiProgress } from "react-icons/si";
 
-const StudentProfileHeader = () => {
+const StudentProfileHeader = (props) => {
+  const { firstName, lastName, department, course } = props;
+
   return (
     <>
       <div className="w-full h-fit py-9 px-3 bg-[#303247] shadow-lg rounded-md grid md:grid-cols-2 grid-cols-1 md:gap-2 gap-y-14">
         <div className="flex md:gap-10 gap-6 place-items-center pb:ml-4 pl-1 ">
           <div className="md:w-[6rem] md:h-[6rem] w-[5rem] h-[5rem] border-4 border-blue-700 rounded-full bg-red-400"></div>
           <div className="">
-            <h1 className="text-2xl pb-1">Oplano James mulbah</h1>
-            <p className="text-lg">Computer Science Class</p>
+            <h1 className="text-2xl pb-1">
+              {firstName} {lastName}
+            </h1>
+            <p className="text-lg">{department}</p>
+            <p className="text-lg">{course}</p>
           </div>
         </div>
 

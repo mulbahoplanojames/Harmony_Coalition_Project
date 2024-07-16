@@ -6,78 +6,55 @@ import axios from "axios";
 
 const SignUp = () => {
   const [signedUpData, setSignedUpData] = useState({
-    firstName: "",
-    lastName: "",
+    first_name: "",
+    last_name: "",
     email: "",
     password: "",
-    phone: "",
+    phone_number: "",
   });
 
   // Error Message
   const [errorMessage, setErrorMessage] = useState("");
 
   //? API URL FROM THE ENV FILE
-  const API_ENDPOINT = `http://192.168.1.68:8000/api/signup/`;
+  const API_ENDPOINT = `http://192.168.1.132:8000/api/signup/`;
 
-  const getCSRFToken = async () => {
-    try {
-      // Make a GET request to fetch CSRF token
-      const response = await axios.get(
-        "http://192.168.1.68:8000/api/csrf_cookie/",
-        {
-          withCredentials: true, // Include cookies in the request
-        }
-      );
-
-      // Access CSRF token from response headers
-      const csrfToken = response.headers.get("x-csrftoken");
-
-      // Set the maxAge property of the cookie to 30 days
-      document.cookie = `csrftoken=${csrfToken}; max-age=${
-        60 * 60 * 24 * 30
-      }; path=/`;
-
-      // Log CSRF token to console
-      console.log("Response:", response);
-      console.log("CSRF token:", csrfToken);
-
-      return csrfToken;
-    } catch (error) {
-      console.error("Error fetching CSRF token:", error);
-      throw error;
-    }
-  };
-
-  const sendData = async (e) => {
-    e.preventDefault();
+  const sendData = async (event) => {
+    event.preventDefault();
 
     try {
-      // Fetch CSRF token
-      const csrfToken = await getCSRFToken();
-
-      // Set CSRF token in headers
-      axios.defaults.headers.common["X-CSRFToken"] = csrfToken;
-
-      // Make POST request
       const response = await axios.post(API_ENDPOINT, {
-        headers: {
-          "X-CSRFToken": cookies.get("csrftoken"),
-        },
-        first_name: signedUpData.firstName,
-        last_name: signedUpData.lastName,
+        first_name: signedUpData.first_name,
+        last_name: signedUpData.last_name,
         email: signedUpData.email,
         password: signedUpData.password,
-        phone_number: signedUpData.phone,
+        phone_number: signedUpData.phone_number,
       });
 
-      console.log("CSRF token Function: ", getCSRFToken());
-      console.log("CSRF token: ", csrfToken);
+      if (
+        signedUpData.first_name === "" ||
+        signedUpData.last_name === "" ||
+        signedUpData.email === "" ||
+        signedUpData.password === "" ||
+        signedUpData.phone_number === ""
+      ) {
+        setErrorMessage("All fields are required");
+        return;
+      }
 
-      // Handle response
-      console.log(response.data);
+      console.log(response);
+      setErrorMessage(
+        "Account created successfully, please check ypur email to Activate your account"
+      );
+      setSignedUpData({
+        first_name: "",
+        last_name: "",
+        email: "",
+        password: "",
+        phone_number: "",
+      });
     } catch (error) {
-      // Handle error
-      console.error("Error sending data: ", error);
+      console.log(error);
     }
   };
 
@@ -114,11 +91,11 @@ const SignUp = () => {
                     type="text"
                     name="first_name"
                     className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none "
-                    value={signedUpData.firstName}
+                    value={signedUpData.first_name}
                     onChange={(e) => {
                       setSignedUpData({
                         ...signedUpData,
-                        firstName: e.target.value,
+                        first_name: e.target.value,
                       });
                     }}
                   />
@@ -132,11 +109,11 @@ const SignUp = () => {
                     type="text"
                     name="last_name"
                     className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
-                    value={signedUpData.lastName}
+                    value={signedUpData.last_name}
                     onChange={(e) => {
                       setSignedUpData({
                         ...signedUpData,
-                        lastName: e.target.value,
+                        last_name: e.target.value,
                       });
                     }}
                   />
@@ -189,11 +166,11 @@ const SignUp = () => {
                     type="tel"
                     name="number"
                     className="w-full bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
-                    value={signedUpData.phone}
+                    value={signedUpData.phone_number}
                     onChange={(e) => {
                       setSignedUpData({
                         ...signedUpData,
-                        phone: e.target.value,
+                        phone_number: e.target.value,
                       });
                     }}
                   />
