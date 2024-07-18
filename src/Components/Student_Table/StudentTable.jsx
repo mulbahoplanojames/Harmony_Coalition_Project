@@ -8,7 +8,7 @@ const StudentTable = () => {
 
   useEffect(() => {
     axios
-      .get("http://192.168.1.132:8000/api/students", {
+      .get(`${import.meta.env.VITE_API_URL}/students`, {
         headers: {
           Authorization: `Token ${localStorage.getItem("token")}`,
         },

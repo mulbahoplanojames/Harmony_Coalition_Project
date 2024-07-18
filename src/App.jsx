@@ -6,7 +6,6 @@ import Layout from "./Layout/Layout";
 import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
 import Enrollment from "./Pages/Enrollment/Enrollment";
-import StudentPortal from "./Pages/Student_Portal/StudentPortal";
 import ContactUs from "./Pages/Contact_Us/ContactUs";
 
 import StudentProfileSettings from "./Pages/Student_Profile_settings/StudentProfileSettings";
@@ -32,7 +31,6 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="/enrollment" element={<Enrollment />} />
-            <Route path="/student-portal" element={<StudentPortal />} />
             <Route path="/contact-us" element={<ContactUs />} />
             <Route
               path="/student_profile_settings"

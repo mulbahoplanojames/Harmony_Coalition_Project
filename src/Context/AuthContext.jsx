@@ -12,8 +12,8 @@ const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
   const navigate = useNavigate();
 
-  const API_ENDPOINT = "http://192.168.1.132:8000/api/login/";
-  const LOGOUT_ENDPOINT = "http://192.168.1.132:8000/api/logout/";
+  const API_ENDPOINT = `${import.meta.env.VITE_API_URL}/login/`;
+  const LOGOUT_ENDPOINT = `${import.meta.env.VITE_API_URL}/logout/`;
 
   // A state to display an error message if login fails
   const [errorMessage, setErrorMessage] = useState("");

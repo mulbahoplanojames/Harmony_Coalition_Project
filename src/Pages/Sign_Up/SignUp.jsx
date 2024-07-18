@@ -17,7 +17,7 @@ const SignUp = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   //? API URL FROM THE ENV FILE
-  const API_ENDPOINT = `http://192.168.1.132:8000/api/signup/`;
+  const API_ENDPOINT = `${import.meta.env.VITE_API_URL}/signup/`;
 
   const sendData = async (event) => {
     event.preventDefault();
