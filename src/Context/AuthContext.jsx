@@ -12,12 +12,17 @@ const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
   const navigate = useNavigate();
 
-  const API_ENDPOINT = `${import.meta.env.VITE_API_URL}/login/`;
-  const LOGOUT_ENDPOINT = `${import.meta.env.VITE_API_URL}/logout/`;
+  const API_ENDPOINT = `http://192.168.1.68:8000/api/login/`;
+  const LOGOUT_ENDPOINT = `http://192.168.1.68:8000/api/logout/`;
 
   // A state to display an error message if login fails
   const [errorMessage, setErrorMessage] = useState("");
+  // A state to display an error message if reset password fails
+  const [resetPasswordErrorMessage, setResetPasswordErrorMessage] = useState(
+    "Password does not match || fields are empty"
+  );
 
+  //? ===========================================================================================
   /*
     The loginAction function handles user login by sending a POST request to the 
     authentication endpoint, updating the user and token state upon a successful
@@ -61,7 +66,9 @@ const AuthProvider = ({ children }) => {
       console.log("Check your credentials:", error);
     }
   };
+  //? ===========================================================================================
 
+  //! ===========================================================================================
   // logOut function to log the user out
   const logOut = async () => {
     try {
@@ -80,6 +87,7 @@ const AuthProvider = ({ children }) => {
       console.log("Logout failed:", error);
     }
   };
+  //! ===========================================================================================
 
   // Creating the values that will be passed to the context
   const value = {
@@ -88,6 +96,7 @@ const AuthProvider = ({ children }) => {
     loginAction,
     logOut,
     errorMessage,
+    resetPasswordErrorMessage,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

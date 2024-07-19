@@ -8,10 +8,6 @@ const navLinks = [
     path: "/about",
   },
   {
-    label: "Student Portal",
-    path: "/student-portal",
-  },
-  {
     label: "Contact Us",
     path: "/contact-us",
   },

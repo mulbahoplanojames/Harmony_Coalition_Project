@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import singUp_image from "/src/assets/study2-removebg-preview.png";
+import singUp_image from "/src/assets/signup.png";
 import { CgArrowLeftR } from "react-icons/cg";
 import { useState } from "react";
 import axios from "axios";
@@ -17,7 +17,7 @@ const SignUp = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   //? API URL FROM THE ENV FILE
-  const API_ENDPOINT = `${import.meta.env.VITE_API_URL}/signup/`;
+  const API_ENDPOINT = `http://192.168.1.68:8000/api/signup/`;
 
   const sendData = async (event) => {
     event.preventDefault();

@@ -24,7 +24,7 @@ const StudentProfile = () => {
   //! Get Student Info
   useEffect(() => {
     axios
-      .get("http://192.168.1.132:8000/api/profile/", {
+      .get("http://192.168.1.68:8000/api/profile/", {
         headers: {
           Authorization: `Token ${localStorage.getItem("token")}`,
         },

@@ -19,6 +19,8 @@ import LogIn from "./Pages/Log_In/LogIn";
 import VisitHome from "./Pages/Visit_Pages/Visit_Home/VisitHome";
 import VisitAbout from "./Pages/Visit_Pages/Visit_About/VisitAbout";
 import VisitContactUs from "./Pages/Visit_Pages/Visit_ContactUs/VisitContactUs";
+import ForgetPassword from "./Pages/ForgetPassword/ForgetPassword";
+import ResetPassword from "./Pages/Reset_Password/ResetPassword";
 
 const App = () => {
   const { darkModeStyle } = useContext(AppContext);
@@ -55,6 +57,12 @@ const App = () => {
 
           {/* //Login Page */}
           <Route path="/log-in" element={<LogIn />} />
+
+          {/* //Forget Password Page */}
+          <Route path="/forget-password" element={<ForgetPassword />} />
+
+          {/* //Reset Password Page */}
+          <Route path="/reset-password" element={<ResetPassword />} />
         </Routes>
       </div>
     </>
