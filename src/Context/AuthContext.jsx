@@ -89,6 +89,7 @@ const AuthProvider = ({ children }) => {
   //! ===========================================================================================
 
   //? ====================================================================================
+  // A function to reset the password
   const resetPasswordAction = async (resetPassword, resetPasswordConfirm) => {
     try {
       const response = await axios.post(API_ENDPOINT, {
@@ -102,6 +103,10 @@ const AuthProvider = ({ children }) => {
     }
   };
   //? ====================================================================================
+
+  //! ====================================================================================
+  // This function a called when the user submit their for our NewsLatter Subscription
+
   // Creating the values that will be passed to the context
   const value = {
     user,

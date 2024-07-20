@@ -208,7 +208,6 @@ const StudentProfileSettings = () => {
               accept="image/*"
               name="profile_picture"
               className="file-input file-input-bordered w-full"
-              // value={studentData.avatar_image}
               onChange={(e) =>
                 setStudentData({
                   ...studentData,

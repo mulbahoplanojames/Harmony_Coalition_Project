@@ -1,6 +1,24 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../Context/AuthContext";
 
 const NewsLetter = () => {
+  const [newsLetterEmail, setNewsLetterEmail] = useState("");
+
+  // Use Auth function from AuthContext
+  const auth = useAuth();
+
+  const handleNewsLetterSubmit = (e) => {
+    e.preventDefault();
+    if (newsLetterEmail !== "") {
+      auth.newsLetterAction(newsLetterEmail);
+      setNewsLetterEmail("");
+      return;
+    } else {
+      alert("Please fill all the fields");
+    }
+  };
+
   return (
     <>
       <div className="grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-y-10 md:px-8 px-4 bg-white rounded-md md:py-20 shadow-xl py-14 mb-20 place-items-center">
@@ -21,6 +39,8 @@ const NewsLetter = () => {
             <input
               type="email"
               name="email"
+              value={newsLetterEmail}
+              onChange={(e) => setNewsLetterEmail(e.target.value)}
               className="text-black w-full bg-[#e8f0fe] h-14 px-6 rounded-md outline-none"
             />
             <button className="textblack py-3 px-6 bg-primary_main text-lg text-white border-none rounded-md mt-3 mb-6 hover:bg-opacity-70 w-full">
@@ -28,7 +48,7 @@ const NewsLetter = () => {
             </button>
           </div>
           <p className="text-black ">
-            <span className="opacity-50">
+            <span className="opacity-50 text-black">
               We care about your data. Read our
             </span>{" "}
             &nbsp;

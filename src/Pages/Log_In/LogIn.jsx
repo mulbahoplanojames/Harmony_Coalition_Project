@@ -85,6 +85,13 @@ const LogIn = () => {
                   className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
                 />
               </div>
+              <Link
+                to="/forget-password"
+                className="text-primary_main pt-3 md:pl-[72%] pl-[55%] text-base inline-block"
+                onClick={() => window.scrollTo(0, 8000)}
+              >
+                Forget Password?
+              </Link>
             </div>
 
             <p className="text-red-500 pt-4">{auth.errorMessage}</p>
@@ -98,7 +105,7 @@ const LogIn = () => {
             {/* // The back home button */}
             <Link
               to="/"
-              className="border-2 border-primary_main rounded-full  p-2 text-black inline-block absolute md:bottom-20 bottom-28 right-0"
+              className="border-2 border-primary_main rounded-full  p-2 text-black inline-block absolute md:bottom-14 bottom-16 right-0"
               onClick={() => {
                 window.scrollTo(0, 3000);
               }}
@@ -106,20 +113,20 @@ const LogIn = () => {
               <CgArrowLeftR className="md:text-2xl text-xl animate-pulse" />
             </Link>
             {/* // The text to navigate to the sign up page */}
-            <div className="flex justify-between md:gap-10 gap-3">
-              <p className="text-base md:pt-4 pt-6">
-                Don&apos;t have an account? &nbsp;
-                <Link
-                  to="/sign-up"
-                  className="text-primary_main"
-                  onClick={() => window.scrollTo(0, 8000)}
-                >
-                  Create Account
-                </Link>
-              </p>
 
-              {/* text to navigate to the forget password page */}
-              <p className="text-base md:pt-4 pt-6">
+            <p className="text-base md:pt-4 pt-6">
+              Don&apos;t have an account? &nbsp;
+              <Link
+                to="/sign-up"
+                className="text-primary_main"
+                onClick={() => window.scrollTo(0, 8000)}
+              >
+                Create Account
+              </Link>
+            </p>
+
+            {/* text to navigate to the forget password page */}
+            {/* <p className="text-base md:pt-4 pt-6">
                 Forget Password? &nbsp;
                 <Link
                   to="/forget-password"
@@ -129,7 +136,7 @@ const LogIn = () => {
                   Create New Password
                 </Link>
               </p>
-            </div>
+              */}
           </form>
         </div>
       </div>
