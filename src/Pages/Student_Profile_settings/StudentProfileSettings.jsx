@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { AppContext } from "../../Context/AppContext";
 
 const StudentProfileSettings = () => {
@@ -10,53 +10,52 @@ const StudentProfileSettings = () => {
     address: "",
     date_of_birth: "",
     gender: "",
-    avatar_image: "",
+    avatar_image: null,
     department: "",
-    Course: "",
+    course: "",
     visa_start_date: "",
     visa_end_date: "",
   });
 
+  const fileInputRef = useRef(null);
+
   // Error Message
-  const [errorMessage, setErrorMessae] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   //? API URL FROM THE ENV FILE
-  const API_ENDPOINT = `${import.meta.env.VITE_API_URL}/students`;
+  const API_ENDPOINT = `http://192.168.1.19:8000/api/profile/update/`;
 
   // TODO : The axios call for login should be here in the handleSubmit function
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(studentData);
 
     if (
-      studentData.roll_number.length === 0 ||
-      studentData.address.length === 0 ||
-      studentData.date_of_birth.length === 0 ||
-      studentData.gender.length === 0 ||
-      studentData.avatar_image.length === 0 ||
-      studentData.department.length === 0 ||
-      studentData.Course.length === 0 ||
-      studentData.visa_start_date.length === 0 ||
-      studentData.visa_end_date.length === 0
+      studentData.roll_number === "" ||
+      studentData.address === "" ||
+      studentData.date_of_birth === "" ||
+      studentData.gender === "" ||
+      !studentData.avatar_image ||
+      studentData.department === "" ||
+      studentData.course === "" ||
+      studentData.visa_start_date === "" ||
+      studentData.visa_end_date === ""
     ) {
-      // alert("Please fill all the fields");
-      setErrorMessae("Please fill all the fields");
+      setErrorMessage("Please fill all the fields");
     } else {
-      setErrorMessae("");
+      setErrorMessage("");
+      console.log(studentData);
+
+      const formData = new FormData();
+      for (const key in studentData) {
+        formData.append(key, studentData[key]);
+      }
 
       axios
-        .post(API_ENDPOINT, {
-          body: {
-            ...studentData,
-            roll_number: studentData.roll_number,
-            address: studentData.address,
-            date_of_birth: studentData.date_of_birth,
-            gender: studentData.gender,
-            avatar_image: studentData.avatar_image,
-            department: studentData.department,
-            Course: studentData.Course,
-            visa_start_date: studentData.visa_start_date,
-            visa_end_date: studentData.visa_end_date,
+        .put(API_ENDPOINT, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            Authorization: `Token ${localStorage.getItem("token")}`,
           },
         })
         .then((response) => {
@@ -65,19 +64,23 @@ const StudentProfileSettings = () => {
         .catch((error) => {
           console.log(error);
         });
-    }
 
-    setStudentData({
-      roll_number: "",
-      address: "",
-      date_of_birth: "",
-      gender: "",
-      avatar_image: "",
-      department: "",
-      Course: "",
-      visa_start_date: "",
-      visa_end_date: "",
-    });
+      setStudentData({
+        roll_number: "",
+        address: "",
+        date_of_birth: "",
+        gender: "",
+        avatar_image: null,
+        department: "",
+        course: "",
+        visa_start_date: "",
+        visa_end_date: "",
+      });
+
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+    }
   };
 
   return (
@@ -176,7 +179,7 @@ const StudentProfileSettings = () => {
                 onChange={(e) =>
                   setStudentData({
                     ...studentData,
-                    gender: e.target.files[0],
+                    gender: e.target.value,
                   })
                 }
               >
@@ -201,13 +204,15 @@ const StudentProfileSettings = () => {
             <br />
             <input
               type="file"
+              ref={fileInputRef}
+              accept="image/*"
               name="profile_picture"
               className="file-input file-input-bordered w-full"
-              value={studentData.avatar_image}
+              // value={studentData.avatar_image}
               onChange={(e) =>
                 setStudentData({
                   ...studentData,
-                  avatar_image: e.target.value,
+                  avatar_image: e.target.files[0],
                 })
               }
             />

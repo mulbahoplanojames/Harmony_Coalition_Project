@@ -25,12 +25,18 @@ const ResetPassword = () => {
       resetPassword === resetPasswordConfirm
     ) {
       // Call the loginAction function from the AuthContext
-      //   auth.loginAction(userData);
+      auth.resetPasswordAction(resetPassword, resetPasswordConfirm);
+      setResetPassword("");
+      setResetPasswordConfirm("");
+      auth.setResetPasswordErrorMessage("");
+      console.log(resetPassword, resetPasswordConfirm);
       // Return to prevent the rest of the function from running
       return;
     } else {
       // If the user has not filled in both fields, alert them
-      alert("Please fill all the fields");
+      auth.setResetPasswordErrorMessage(
+        "Password Don't match || Invalid input field"
+      );
     }
   };
 

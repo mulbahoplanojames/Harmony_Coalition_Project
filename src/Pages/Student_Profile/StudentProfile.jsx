@@ -24,7 +24,7 @@ const StudentProfile = () => {
   //! Get Student Info
   useEffect(() => {
     axios
-      .get("http://192.168.1.68:8000/api/profile/", {
+      .get(`${import.meta.env.VITE_API_URL}profile/`, {
         headers: {
           Authorization: `Token ${localStorage.getItem("token")}`,
         },

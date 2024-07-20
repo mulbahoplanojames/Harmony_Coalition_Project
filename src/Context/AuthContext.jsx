@@ -12,15 +12,14 @@ const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
   const navigate = useNavigate();
 
-  const API_ENDPOINT = `http://192.168.1.68:8000/api/login/`;
-  const LOGOUT_ENDPOINT = `http://192.168.1.68:8000/api/logout/`;
+  const API_ENDPOINT = `http://192.168.1.19:8000/api/login/`;
+  const LOGOUT_ENDPOINT = `http://192.168.1.19:8000/api/logout/`;
 
   // A state to display an error message if login fails
   const [errorMessage, setErrorMessage] = useState("");
   // A state to display an error message if reset password fails
-  const [resetPasswordErrorMessage, setResetPasswordErrorMessage] = useState(
-    "Password does not match || fields are empty"
-  );
+  const [resetPasswordErrorMessage, setResetPasswordErrorMessage] =
+    useState("");
 
   //? ===========================================================================================
   /*
@@ -77,10 +76,10 @@ const AuthProvider = ({ children }) => {
           Authorization: `Token ${localStorage.getItem("token")}`,
         },
       });
-      setUser(null);
-      setToken(null);
       localStorage.removeItem("token");
       delete axios.defaults.headers.common["Authorization"];
+      setUser(null);
+      setToken(null);
       navigate("/");
     } catch (error) {
       // Handle error state or show error message to user
@@ -89,14 +88,30 @@ const AuthProvider = ({ children }) => {
   };
   //! ===========================================================================================
 
+  //? ====================================================================================
+  const resetPasswordAction = async (resetPassword, resetPasswordConfirm) => {
+    try {
+      const response = await axios.post(API_ENDPOINT, {
+        resetPassword,
+        resetPasswordConfirm,
+      });
+
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  //? ====================================================================================
   // Creating the values that will be passed to the context
   const value = {
     user,
     token,
     loginAction,
     logOut,
+    resetPasswordAction,
     errorMessage,
     resetPasswordErrorMessage,
+    setResetPasswordErrorMessage,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

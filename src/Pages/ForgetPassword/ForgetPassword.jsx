@@ -2,30 +2,38 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import forgetPassword_image from "/src/assets/Forgot_password.png";
 import { CgArrowLeftR } from "react-icons/cg";
-import { useAuth } from "../../Context/AuthContext";
+import axios from "axios";
 
 // This component is responsible for rendering the login page
 const ForgetPassword = () => {
   // The state is an object that holds the user's data from the form
   const [forgetPasswordEmail, setForgetPasswordEmail] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  // The useAuth hook returns the loginAction function from the AuthContext
-  const auth = useAuth();
+  //? API URL FROM THE ENV FILE
+  const API_ENDPOINT = `http://192.168.1.19:8000/api/password-reset/`;
 
   // This function is called when the form is submitted
-  const handleForgetSubmit = (e) => {
+  const handleForgetSubmit = async (e) => {
     // Prevent the default form submission behavior
     e.preventDefault();
 
-    // If the user has filled in both the email and password fields
-    if (forgetPasswordEmail !== "") {
-      // Call the loginAction function from the AuthContext
-      //   auth.loginAction(userData);
-      // Return to prevent the rest of the function from running
-      return;
-    } else {
-      // If the user has not filled in both fields, alert them
-      alert("Please fill all the fields");
+    try {
+      const response = axios.post(API_ENDPOINT, {
+        email: forgetPasswordEmail,
+      });
+
+      // If the user has filled in  the email fields
+      if (forgetPasswordEmail == "") {
+        setErrorMessage("Please fill the fields");
+        return;
+      } else {
+        console.log(response);
+        setErrorMessage("Email Send Successfully, Please Check Your Email");
+        setForgetPasswordEmail("");
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -63,7 +71,7 @@ const ForgetPassword = () => {
                 type="email"
                 name="email"
                 placeholder="johnsmith@example.gmail.com"
-                required
+                // required
                 value={forgetPasswordEmail}
                 onChange={(e) => setForgetPasswordEmail(e.target.value)}
                 className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
@@ -71,7 +79,7 @@ const ForgetPassword = () => {
             </div>
             {/* // The password input field */}
 
-            <p className="text-red-500 pt-4">{auth.errorMessage}</p>
+            <p className="text-red-500 ">{errorMessage}</p>
             {/* // The button to submit the form */}
             <button
               type="submit"
