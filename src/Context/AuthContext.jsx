@@ -45,7 +45,7 @@ const AuthProvider = ({ children }) => {
         // delete axios.defaults.headers.common["Authorization"];
 
         // set the error message to an empty string
-        setErrorMessage("");
+        // setErrorMessage("");
 
         // Set Authorization header for subsequent requests
         axios.defaults.headers.common[
@@ -115,6 +115,7 @@ const AuthProvider = ({ children }) => {
     logOut,
     resetPasswordAction,
     errorMessage,
+    setErrorMessage,
     resetPasswordErrorMessage,
     setResetPasswordErrorMessage,
   };

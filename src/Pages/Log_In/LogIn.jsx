@@ -24,17 +24,23 @@ const LogIn = () => {
     if (userData.email !== "" && userData.password !== "") {
       // Call the loginAction function from the AuthContext
       auth.loginAction(userData);
+      setUserData({
+        email: "",
+        password: "",
+      });
+      auth.setErrorMessage("");
       // Return to prevent the rest of the function from running
       return;
     } else {
       // If the user has not filled in both fields, alert them
-      alert("Please fill all the fields");
+      // alert("Please fill all the fields");
+      auth.setErrorMessage("Invalid Email or Password");
     }
   };
 
   return (
     <div className="flex justify-center items-center w-full h-fit py-14  bg-primary_main text-black">
-      <div className="md:w-[80%] w-[95%] h-fit grid md:grid-cols-2 grid-cols-1 bg-white">
+      <div className="md:w-[80%] w-[95%] h-fit grid md:grid-cols-2 grid-cols-1 bg-white rounded-md  overflow-hidden">
         <div className=" w-full md:h-full h-[15rem] overflow-hidden bg-purple-200">
           <img
             src={singUp_image}
@@ -60,7 +66,7 @@ const LogIn = () => {
               <input
                 type="email"
                 name="email"
-                required
+                // required
                 value={userData.email}
                 onChange={(e) =>
                   setUserData({ ...userData, email: e.target.value })
@@ -77,7 +83,7 @@ const LogIn = () => {
                 <input
                   type="password"
                   name="password"
-                  required
+                  // required
                   value={userData.password}
                   onChange={(e) =>
                     setUserData({ ...userData, password: e.target.value })
@@ -94,7 +100,7 @@ const LogIn = () => {
               </Link>
             </div>
 
-            <p className="text-red-500 pt-4">{auth.errorMessage}</p>
+            <p className="text-red-500 ">{auth.errorMessage}</p>
             {/* // The button to submit the form */}
             <button
               type="submit"
@@ -124,19 +130,6 @@ const LogIn = () => {
                 Create Account
               </Link>
             </p>
-
-            {/* text to navigate to the forget password page */}
-            {/* <p className="text-base md:pt-4 pt-6">
-                Forget Password? &nbsp;
-                <Link
-                  to="/forget-password"
-                  className="text-primary_main"
-                  onClick={() => window.scrollTo(0, 8000)}
-                >
-                  Create New Password
-                </Link>
-              </p>
-              */}
           </form>
         </div>
       </div>

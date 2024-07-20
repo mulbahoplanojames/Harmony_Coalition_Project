@@ -14,7 +14,7 @@ const SignUp = () => {
   });
 
   // Error Message
-  const [errorMessage, setErrorMessage] = useState("");
+  const [signedUpErrorMessage, setSignUpErrorMessage] = useState("");
 
   //? API URL FROM THE ENV FILE
   const API_ENDPOINT = `${import.meta.env.VITE_REACT_API_URL}signup/`;
@@ -38,21 +38,26 @@ const SignUp = () => {
         signedUpData.password === "" ||
         signedUpData.phone_number === ""
       ) {
-        setErrorMessage("All fields are required");
-        return;
-      }
+        setSignUpErrorMessage("All fields are required");
+        alert("All fields are required");
 
-      console.log(response);
-      setErrorMessage(
-        "Account created successfully, please check ypur email to Activate your account"
-      );
-      setSignedUpData({
-        first_name: "",
-        last_name: "",
-        email: "",
-        password: "",
-        phone_number: "",
-      });
+        // return;
+      } else {
+        alert(
+          "Account created successfully, please check ypur email to Activate your account"
+        );
+        console.log(response);
+        setSignUpErrorMessage(
+          "Account created successfully, please check ypur email to Activate your account"
+        );
+        setSignedUpData({
+          first_name: "",
+          last_name: "",
+          email: "",
+          password: "",
+          phone_number: "",
+        });
+      }
     } catch (error) {
       console.log(error);
     }
@@ -179,7 +184,7 @@ const SignUp = () => {
 
               {/* //Error Message */}
               <p className="text-red-500 text-lg font-bold mt-4">
-                {errorMessage}
+                {signedUpErrorMessage}
               </p>
 
               {/* // Create account Button */}
