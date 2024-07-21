@@ -20,7 +20,7 @@ const HomeHero = () => {
   return (
     <>
       <div
-        className="grid md:grid-cols-2 grid-cols-1 place-items-center  md:py-16 py-8  md:gap-6 gap-14"
+        className="grid md:grid-cols-2 grid-cols-1 place-items-center md:px-1 px-2  md:py-16 py-8  md:gap-6 gap-14 md:bg-fixed"
         id="home_hero"
       >
         <div className="">
@@ -29,7 +29,7 @@ const HomeHero = () => {
             Welcome <br /> we are here to help you
           </h1>
           {/* Displaying the description */}
-          <p className="text-lg pb-10 font-semibold z-40">
+          <p className="text-lg  mb-10 font-semibold z-40 md:shadow-none shadow-2xl">
             The leadership of the Association of the Liberian Students at Kigali
             Independent University welcomes you to the official platform of the
             Association. We are here to render any assistance you may require
@@ -49,35 +49,35 @@ const HomeHero = () => {
         >
           {/* Displaying the LinkedIn icon link */}
           <Link
-            className={`icons_Wripper bg-primary_main top-1 right-5  ${
+            className={`icons_Wripper  top-1 right-5  bg-white  ${
               darkMode ? "border-white" : "border-primary_main"
             }`}
           >
-            <FaLinkedin className="text-4xl z-40 text-white" />
+            <FaLinkedin className="text-4xl z-40 text-primary_main" />
           </Link>
           {/* Displaying the Instagram icon link */}
           <Link
-            className={`icons_Wripper md:bottom-[4rem] bottom-8 -md:right-1 -right-6 bg-primary_main ${
+            className={`icons_Wripper md:bottom-[4rem] bottom-8 -md:right-1 -right-6 bg-white ${
               darkMode ? "border-white" : "border-primary_main"
             }`}
           >
-            <FaInstagram className="text-4xl z-40 text-white" />
+            <FaInstagram className="text-4xl z-40 text-primary_main" />
           </Link>
           {/* Displaying the WhatsApp icon link */}
           <Link
-            className={`icons_Wripper bg-primary_main top-7 left-0  ${
+            className={`icons_Wripper bg-white top-7 left-0  ${
               darkMode ? "border-white " : "border-primary_main"
             }`}
           >
-            <FaWhatsappSquare className="text-4xl z-40 text-white" />
+            <FaWhatsappSquare className="text-4xl z-40 text-primary_main" />
           </Link>
           {/* Displaying the Facebook icon link */}
           <Link
-            className={`icons_Wripper bg-primary_main md:bottom-14 -bottom-2 md:left-0 left-4 ${
+            className={`icons_Wripper bg-white md:bottom-14 -bottom-2 md:left-0 left-4 ${
               darkMode ? "border-white" : "border-primary_main"
             }`}
           >
-            <FaFacebookSquare className="text-4xl z-40 text-white" />
+            <FaFacebookSquare className="text-4xl z-40 text-primary_main" />
           </Link>
         </div>
       </div>
