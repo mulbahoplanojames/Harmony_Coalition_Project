@@ -181,14 +181,16 @@ export const pastLeaderShip = [
 ];
 
 // ! ===================================================================================
-import computerScience from "/src/assets/hero.jpg";
-import law from "/src/assets/hero1.jpg";
+import computerScience from "/src/assets/COMPUTER-SCIENCE.jpg";
+import law from "/src/assets/LAW.jpg";
+import ebs from "/src/assets/EBS.jpg";
+import polythenic from "/src/assets/polythenic.jpg";
 
 export const disciplinesOffer = [
   {
     id: 1,
     name: "ULK Polytechnic Institute",
-    image: law,
+    image: polythenic,
     description:
       "It comprises of the following: Electrical Engineering, Electronics and Telecommunication, Civil and Construction Engineering, Land Surveying.....",
     path: "/Ulk-Polytechnic-enrollment",
@@ -212,7 +214,7 @@ export const disciplinesOffer = [
   {
     id: 4,
     name: "Economics and Business Studies",
-    image: computerScience,
+    image: ebs,
     description:
       "It comprises of the following: Finance, Accounting, Economics......",
     path: "/Economics-and-Business-Studies-enrollment",
@@ -397,3 +399,5 @@ export const FAQData = [
     answer: "The duration of the Visa is 6 months.",
   },
 ];
+
+// ==================================================================

@@ -13,6 +13,8 @@ import {
   FaWhatsappSquare,
 } from "react-icons/fa";
 
+import { WordFlicker } from "/src/Data/Animatedata.jsx";
+
 const HomeHero = () => {
   // Accessing the darkMode value from the AppContext
   const { darkMode } = useContext(AppContext);
@@ -25,18 +27,18 @@ const HomeHero = () => {
       >
         <div className="">
           {/* Displaying the heading */}
-          <h1 className="md:text-5xl text-4xl uppercase font-black md:pr-72 pr-10 pb-6 z-50">
-            Welcome <br /> we are here to help you
-          </h1>
+          <div className="md:text-5xl text-4xl uppercase font-black md:pr-56 pr-20 pb-6 z-50">
+            Welcome <br /> we are here to {WordFlicker()}
+          </div>
           {/* Displaying the description */}
-          <p className="text-lg  mb-10 font-semibold z-40 md:shadow-none shadow-2xl">
+          <p className="text-lg  mb-10 font-semibold z-40 ">
             The leadership of the Association of the Liberian Students at Kigali
             Independent University welcomes you to the official platform of the
             Association. We are here to render any assistance you may require
           </p>
           {/* Displaying the link to the 'About Us' page */}
           <Link
-            to="about"
+            to="/visit-about"
             className="py-3 px-6 bg-primary_main text-lg text-white border-none rounded-full hover:bg-opacity-70"
           >
             About Us

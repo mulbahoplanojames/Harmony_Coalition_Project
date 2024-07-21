@@ -36,7 +36,7 @@ const AboutHero = () => {
           </p>
           {/* Displaying the link to the 'About Us' page */}
           <Link
-            to="/contact-us"
+            to="/sign-up"
             className="py-3 px-6 bg-primary_main text-lg text-white border-none rounded-full hover:bg-opacity-70"
           >
             Join Us

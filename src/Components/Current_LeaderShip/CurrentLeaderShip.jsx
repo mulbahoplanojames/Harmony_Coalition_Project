@@ -24,7 +24,7 @@ const CurrentLeaderShip = () => {
     <>
       {/* Displaying the heading */}
       <h1 className="text-center text-4xl font-semibold pb-10">
-        ALSULK Current Leadership
+        ALSULK Current <span>Leadership</span>
       </h1>
 
       {/* Displaying the grid container */}
@@ -32,13 +32,13 @@ const CurrentLeaderShip = () => {
         {
           /* //! Team Members */
           currentLeaderShip.map((member) => (
-            <div className="text-left" key={member.id}>
+            <div className="text-left group" key={member.id}>
               {/* Displaying the image */}
-              <div className="h-52 w-full">
+              <div className="h-60 w-full overflow-hidden">
                 <img
                   src={member.image}
                   alt="team"
-                  className=" md:mx-auto bg-red-400 rounded-md mb-3  w-full h-full object-scale"
+                  className=" md:mx-auto bg-red-400 rounded-md mb-3  w-full h-full object-scale group-hover:scale-110 transion-all duration-300"
                 />
               </div>
 

@@ -8,7 +8,7 @@ const DisciplinesOffer = () => {
         <h1 className="text-center md:text-4xl text-3xl font-semibold pb-14">
           Various Disciplines at the Kigali Independent University
         </h1>
-        <div className="grid md:grid-cols-2 grid-cols-1 md:place-items-start place-items-center gap-12">
+        <div className="grid md:grid-cols-2 grid-cols-1 md:place-items-start place-items-center gap-12 md:px-0 px-2">
           {disciplinesOffer.map((discipline) => (
             <div key={discipline.id} className="shadow-2xl rounded-sm">
               <div>

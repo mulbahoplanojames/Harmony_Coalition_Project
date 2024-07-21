@@ -24,14 +24,14 @@ const AboutUs = () => {
         </div>
 
         <div className="relative h-[60vh] w-full">
-          <div className="md:w-[54%] md:h-[52vh] w-[70%] h-[40vh] rounded-full absolute md:-top-10 -top-5 md:-left-3 left-2 overflow-hidden border-4 border-primary_main group cursor-pointer">
+          <div className="md:w-[54%] md:h-[52vh] w-[70%] h-[40vh]  absolute md:-top-10 -top-5 md:-left-3 left-2 overflow-hidden border-4 border-primary_main group cursor-pointer">
             <img
               src={image}
               alt="hero"
               className="w-full h-full object-cover group-hover:scale-110 duration-300"
             />
           </div>
-          <div className="md:w-[45%] md:h-[43vh] w-[54%] h-[30vh] bg-yellow-300 rounded-full absolute -bottom-12 right-8 overflow-hidden border-4 border-primary_main group cursor-pointer">
+          <div className="md:w-[55%] md:h-[43vh] w-[66%] h-[40vh] bg-yellow-300  absolute -bottom-10 right-4 md:right-20 overflow-hidden border-4 border-primary_main group cursor-pointer">
             <img
               src={image1}
               alt="hero"
