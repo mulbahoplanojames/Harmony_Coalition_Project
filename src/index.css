@@ -11,6 +11,13 @@
   }
 }
 
+#home_hero {
+  background: url(/src/assets/gradient_bg.png);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 #item1 {
   animation: rotate1 6s linear infinite;
   cursor: pointer;

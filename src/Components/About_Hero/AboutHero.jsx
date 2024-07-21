@@ -19,7 +19,10 @@ const AboutHero = () => {
 
   return (
     <>
-      <div className="grid md:grid-cols-2 grid-cols-1 place-items-center  md:py-16 py-8  md:gap-6 gap-14">
+      <div
+        className="grid md:grid-cols-2 grid-cols-1 place-items-center  md:py-16 py-8  md:gap-6 gap-14 "
+        id="home_hero"
+      >
         <div className="">
           {/* Displaying the heading */}
           <h1 className="md:text-4xl text-3xl uppercase font-black md:pr-40 pr-10 pb-6">

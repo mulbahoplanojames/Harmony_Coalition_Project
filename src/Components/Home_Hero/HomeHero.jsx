@@ -19,14 +19,17 @@ const HomeHero = () => {
 
   return (
     <>
-      <div className="grid md:grid-cols-2 grid-cols-1 place-items-center  md:py-16 py-8  md:gap-6 gap-14">
+      <div
+        className="grid md:grid-cols-2 grid-cols-1 place-items-center  md:py-16 py-8  md:gap-6 gap-14"
+        id="home_hero"
+      >
         <div className="">
           {/* Displaying the heading */}
-          <h1 className="md:text-5xl text-4xl uppercase font-black md:pr-72 pr-10 pb-6">
+          <h1 className="md:text-5xl text-4xl uppercase font-black md:pr-72 pr-10 pb-6 z-50">
             Welcome <br /> we are here to help you
           </h1>
           {/* Displaying the description */}
-          <p className="text-lg pb-10">
+          <p className="text-lg pb-10 font-semibold z-40">
             The leadership of the Association of the Liberian Students at Kigali
             Independent University welcomes you to the official platform of the
             Association. We are here to render any assistance you may require
