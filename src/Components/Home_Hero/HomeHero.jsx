@@ -23,7 +23,7 @@ const HomeHero = () => {
   return (
     <>
       <div
-        className="grid md:grid-cols-2 grid-cols-1 place-items-center md:px-1 px-2  md:py-16 py-8  md:gap-6 gap-14 md:bg-fixed"
+        className="grid md:grid-cols-2 grid-cols-1 place-items-center md:px-1 px-2  md:py-16 py-8  md:gap-6 gap-14 md:bg-fixed rounded-md"
         id="home_hero"
       >
         <motion.div
@@ -33,7 +33,7 @@ const HomeHero = () => {
           transition={{ duration: 0.8 }}
         >
           {/* Displaying the heading */}
-          <div className="md:text-5xl text-4xl uppercase font-black md:pr-56 pr-20 pb-6 z-50">
+          <div className="md:text-5xl text-4xl uppercase font-black md:pr-[14.2rem] pr-10 sm:pr-12 pb-6 z-50">
             Welcome <br /> we are here to {WordFlicker()}
           </div>
           {/* Displaying the description */}
