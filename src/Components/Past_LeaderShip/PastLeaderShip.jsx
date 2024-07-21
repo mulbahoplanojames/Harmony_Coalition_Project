@@ -18,6 +18,8 @@ import { useContext } from "react";
 // Importing the pastLeaderShip data from the Data/Data.js file.
 import { pastLeaderShip } from "../../Data/Data";
 
+import { motion } from "framer-motion";
+
 // Defining the PastLeaderShip component.
 const PastLeaderShip = () => {
   // Accessing the darkMode value from the AppContext.
@@ -26,16 +28,27 @@ const PastLeaderShip = () => {
   return (
     <>
       {/* Displaying the heading */}
-      <h1 className="text-center text-4xl font-semibold pb-10 pt-24">
+      <motion.h1
+        className="text-center text-4xl font-semibold pb-10 pt-24"
+        animate={{ opacity: 0, y: -100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+      >
         ALSULK Past <span>Leadership</span>
-      </h1>
+      </motion.h1>
 
       {/* Displaying the grid container */}
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-items-center gap-12">
         {
           /* //! Team Members */
           pastLeaderShip.map((member) => (
-            <div className="text-left group" key={member.id}>
+            <motion.div
+              className="text-left group"
+              key={member.id}
+              animate={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
               {/* Displaying the image */}
               <div className="h-60 w-full overflow-hidden rounded-md">
                 <img
@@ -98,7 +111,7 @@ const PastLeaderShip = () => {
                   </li>
                 </ul>
               </div>
-            </div>
+            </motion.div>
           ))
         }
       </div>

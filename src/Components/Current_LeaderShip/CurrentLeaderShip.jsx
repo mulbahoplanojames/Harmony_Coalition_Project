@@ -16,6 +16,8 @@ import { AppContext } from "../../Context/AppContext";
 // Importing the useContext hook from the React library.
 import { useContext } from "react";
 
+import { motion } from "framer-motion";
+
 const CurrentLeaderShip = () => {
   // Accessing the darkMode value from the AppContext.
   const { darkMode } = useContext(AppContext);
@@ -23,16 +25,27 @@ const CurrentLeaderShip = () => {
   return (
     <>
       {/* Displaying the heading */}
-      <h1 className="text-center text-4xl font-semibold pb-10">
+      <motion.h1
+        className="text-center text-4xl font-semibold pb-10"
+        animate={{ opacity: 0, y: -100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+      >
         ALSULK Current <span>Leadership</span>
-      </h1>
+      </motion.h1>
 
       {/* Displaying the grid container */}
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-items-center gap-12">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-items-center gap-12 ">
         {
           /* //! Team Members */
           currentLeaderShip.map((member) => (
-            <div className="text-left group" key={member.id}>
+            <motion.div
+              className="text-left group"
+              key={member.id}
+              animate={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
               {/* Displaying the image */}
               <div className="h-60 w-full overflow-hidden">
                 <img
@@ -95,7 +108,7 @@ const CurrentLeaderShip = () => {
                   </li>
                 </ul>
               </div>
-            </div>
+            </motion.div>
           ))
         }
       </div>

@@ -21,6 +21,7 @@ import VisitAbout from "./Pages/Visit_Pages/Visit_About/VisitAbout";
 import VisitContactUs from "./Pages/Visit_Pages/Visit_ContactUs/VisitContactUs";
 import ForgetPassword from "./Pages/ForgetPassword/ForgetPassword";
 import ResetPassword from "./Pages/Reset_Password/ResetPassword";
+import UserComponent from "./Components/User_Component/UserComponent";
 
 const App = () => {
   const { darkModeStyle } = useContext(AppContext);
@@ -47,6 +48,10 @@ const App = () => {
           <Route path="/home" element={<VisitHome />} />
           <Route path="/visit-about" element={<VisitAbout />} />
           <Route path="/visit-contact-us" element={<VisitContactUs />} />
+
+          {/* ================================================================================== */}
+          {/* User Component  */}
+          <Route path="/:id/:token/" element={<UserComponent />} />
 
           {/* =================================================================================== */}
           {/* 404 Page */}

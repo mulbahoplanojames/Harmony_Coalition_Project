@@ -4,7 +4,6 @@ import { MdOutlineCancelPresentation } from "react-icons/md";
 import { Link } from "react-router-dom";
 import ToggleDarkModeIcon from "../../Components/Toggle_DarkMode/ToggleDarkModeIcon";
 import { AppContext } from "../../Context/AppContext";
-
 /**
  * The Navbar component renders the navigation bar of this website.
  * It contains links to different pages and a sign in button.

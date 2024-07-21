@@ -46,7 +46,7 @@
     background-size: cover;
   }
 }
-
+/* 
 ::-webkit-scrollbar {
   width: 8px;
   border-radius: 30px;
@@ -62,4 +62,4 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(#1c3d5b);
-}
+} */

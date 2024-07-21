@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 // Importing the AppContext from the Context/AppContext.jsx file
 import { AppContext } from "../../Context/AppContext";
+import { motion } from "framer-motion";
 
 // Importing the necessary icons from the react-icons library
 import {
@@ -25,7 +26,12 @@ const HomeHero = () => {
         className="grid md:grid-cols-2 grid-cols-1 place-items-center md:px-1 px-2  md:py-16 py-8  md:gap-6 gap-14 md:bg-fixed"
         id="home_hero"
       >
-        <div className="">
+        <motion.div
+          className=""
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           {/* Displaying the heading */}
           <div className="md:text-5xl text-4xl uppercase font-black md:pr-56 pr-20 pb-6 z-50">
             Welcome <br /> we are here to {WordFlicker()}
@@ -43,11 +49,14 @@ const HomeHero = () => {
           >
             About Us
           </Link>
-        </div>
+        </motion.div>
         {/* Displaying the image with social media links */}
-        <div
+        <motion.div
           className=" md:w-[60%] md:h-[24rem] w-[70%] h-[17rem] rounded-full relative overflow-visible border-4 border-primary_main "
           id="item1"
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
         >
           {/* Displaying the LinkedIn icon link */}
           <Link
@@ -81,7 +90,7 @@ const HomeHero = () => {
           >
             <FaFacebookSquare className="text-4xl z-40 text-primary_main" />
           </Link>
-        </div>
+        </motion.div>
       </div>
     </>
   );

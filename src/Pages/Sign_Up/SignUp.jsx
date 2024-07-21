@@ -17,7 +17,7 @@ const SignUp = () => {
   const [signedUpErrorMessage, setSignUpErrorMessage] = useState("");
 
   //? API URL FROM THE ENV FILE
-  const API_ENDPOINT = `${import.meta.env.VITE_REACT_API_URL}signup/`;
+  const API_ENDPOINT = `http://192.168.1.19:8000/students/api/signup/`;
 
   const sendData = async (event) => {
     event.preventDefault();
@@ -39,13 +39,8 @@ const SignUp = () => {
         signedUpData.phone_number === ""
       ) {
         setSignUpErrorMessage("All fields are required");
-        alert("All fields are required");
-
-        // return;
+        return;
       } else {
-        alert(
-          "Account created successfully, please check ypur email to Activate your account"
-        );
         console.log(response);
         setSignUpErrorMessage(
           "Account created successfully, please check ypur email to Activate your account"
