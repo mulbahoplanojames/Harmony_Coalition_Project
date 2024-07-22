@@ -1,14 +1,20 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import singUp_image from "/src/assets/resetpassword.png";
 import { CgArrowLeftR } from "react-icons/cg";
 import { useAuth } from "../../Context/AuthContext";
+import axios from "axios";
 
 // This component is responsible for rendering the login page
 const ResetPassword = () => {
   // The state is an object that holds the user's data from the form
   const [resetPassword, setResetPassword] = useState("");
   const [resetPasswordConfirm, setResetPasswordConfirm] = useState("");
+
+  // The useParams hook returns an object that contains the route parameters
+  const { id, token } = useParams();
+
+  const [isResponseOk, setIsResponseOk] = useState(false);
 
   // The useAuth hook returns the loginAction function from the AuthContext
   const auth = useAuth();
@@ -25,7 +31,7 @@ const ResetPassword = () => {
       resetPassword === resetPasswordConfirm
     ) {
       // Call the loginAction function from the AuthContext
-      auth.resetPasswordAction(resetPassword, resetPasswordConfirm);
+      auth.resetPasswordAction(resetPassword, id, token);
       setResetPassword("");
       setResetPasswordConfirm("");
       auth.setResetPasswordErrorMessage("");
@@ -39,6 +45,33 @@ const ResetPassword = () => {
       );
     }
   };
+
+  useEffect(() => {
+    const fetchUserPassword = async () => {
+      try {
+        const decodedId = decodeURIComponent(id);
+        const decodedToken = decodeURIComponent(token);
+
+        const response = await axios.get(
+          `http://192.168.1.68:8000/students/api/checkreset-link/${decodedId}/${decodedToken}/`
+        );
+
+        console.log(response.data);
+
+        if (response.status === 200) {
+          setIsResponseOk(true);
+        } else {
+          setIsResponseOk(false);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    if (id && token) {
+      fetchUserPassword();
+    }
+  }, [id, token]);
 
   return (
     <div className="flex justify-center items-center w-full h-fit py-14  bg-primary_main text-black">

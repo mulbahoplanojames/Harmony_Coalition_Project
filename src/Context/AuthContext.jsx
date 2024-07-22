@@ -12,8 +12,8 @@ const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
   const navigate = useNavigate();
 
-  const API_ENDPOINT = `http://192.168.1.19:8000/api/login/`;
-  const LOGOUT_ENDPOINT = `http://192.168.1.19:8000/api/logout/`;
+  const API_ENDPOINT = `http://192.168.1.68:8000/students/api/login/`;
+  const LOGOUT_ENDPOINT = `http://192.168.1.68:8000/students/api/logout/`;
 
   // A state to display an error message if login fails
   const [errorMessage, setErrorMessage] = useState("");
@@ -90,12 +90,16 @@ const AuthProvider = ({ children }) => {
 
   //? ====================================================================================
   // A function to reset the password
-  const resetPasswordAction = async (resetPassword, resetPasswordConfirm) => {
+  const resetPasswordAction = async (resetPassword, id, token) => {
     try {
-      const response = await axios.post(API_ENDPOINT, {
-        resetPassword,
-        resetPasswordConfirm,
-      });
+      const response = await axios.patch(
+        `http://192.168.1.68:8000/students/api/set-newpassword/`,
+        {
+          password: resetPassword,
+          token: token,
+          uid: id,
+        }
+      );
 
       console.log(response.data);
     } catch (error) {
@@ -106,6 +110,19 @@ const AuthProvider = ({ children }) => {
 
   //! ====================================================================================
   // This function a called when the user submit their for our NewsLatter Subscription
+  const newsLetterAction = async (newsLetterEmail) => {
+    try {
+      const response = await axios.post(
+        `http://192.168.1.68:8000/students/api/newsletter/`,
+        {
+          email: newsLetterEmail,
+        }
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   // Creating the values that will be passed to the context
   const value = {
@@ -118,6 +135,7 @@ const AuthProvider = ({ children }) => {
     setErrorMessage,
     resetPasswordErrorMessage,
     setResetPasswordErrorMessage,
+    newsLetterAction,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

@@ -11,7 +11,7 @@ const ForgetPassword = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   //? API URL FROM THE ENV FILE
-  const API_ENDPOINT = `http://192.168.1.19:8000/api/password-reset/`;
+  const API_ENDPOINT = `http://192.168.1.68:8000/students/api/password-reset/`;
 
   // This function is called when the form is submitted
   const handleForgetSubmit = async (e) => {

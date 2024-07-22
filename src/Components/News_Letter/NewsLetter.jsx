@@ -4,6 +4,7 @@ import { useAuth } from "../../Context/AuthContext";
 
 const NewsLetter = () => {
   const [newsLetterEmail, setNewsLetterEmail] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   // Use Auth function from AuthContext
   const auth = useAuth();
@@ -13,9 +14,10 @@ const NewsLetter = () => {
     if (newsLetterEmail !== "") {
       auth.newsLetterAction(newsLetterEmail);
       setNewsLetterEmail("");
+      setErrorMessage("");
       return;
     } else {
-      alert("Please fill all the fields");
+      setErrorMessage("Please fill the Email fields");
     }
   };
 
@@ -34,7 +36,7 @@ const NewsLetter = () => {
             Students.
           </p>
         </div>
-        <div className=" w-full">
+        <form className=" w-full" onSubmit={handleNewsLetterSubmit}>
           <div className="">
             <input
               type="email"
@@ -43,6 +45,9 @@ const NewsLetter = () => {
               onChange={(e) => setNewsLetterEmail(e.target.value)}
               className="text-black w-full bg-[#e8f0fe] h-14 px-6 rounded-md outline-none"
             />
+            <p className="text-red-500 text-sm pt-3 font-bold">
+              {errorMessage}
+            </p>
             <button className="textblack py-3 px-6 bg-primary_main text-lg text-white border-none rounded-md mt-3 mb-6 hover:bg-opacity-70 w-full">
               Subscribe
             </button>
@@ -56,7 +61,7 @@ const NewsLetter = () => {
               privacy policy
             </Link>
           </p>
-        </div>
+        </form>
       </div>
     </>
   );

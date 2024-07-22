@@ -17,7 +17,7 @@ const SignUp = () => {
   const [signedUpErrorMessage, setSignUpErrorMessage] = useState("");
 
   //? API URL FROM THE ENV FILE
-  const API_ENDPOINT = `http://192.168.1.19:8000/students/api/signup/`;
+  const API_ENDPOINT = `http://192.168.1.68:8000/students/api/signup/`;
 
   const sendData = async (event) => {
     event.preventDefault();
@@ -54,7 +54,7 @@ const SignUp = () => {
         });
       }
     } catch (error) {
-      console.log(error);
+      console.log("Error", error);
     }
   };
 

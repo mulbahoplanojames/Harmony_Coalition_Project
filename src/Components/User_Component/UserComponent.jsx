@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import varified from "/src/assets/verified.jpg";
 
 const UserComponent = () => {
-  const { id } = useParams();
-  const { token } = useParams();
-  //   const [userData, setUserData] = useState("");
+  const { id, token } = useParams();
+  const [isVerified, setIsVerified] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -13,16 +14,18 @@ const UserComponent = () => {
         const decodedId = decodeURIComponent(id);
         const decodedToken = decodeURIComponent(token);
 
-        // console.log(
-        //   `Fetching data from: http://192.168.1.19:8000/students/api/activate_account/${decodedId}/${decodedToken}/`
-        // );
-
         const response = await axios.get(
-          `http://192.168.1.19:8000/students/api/activate_account/${decodedId}/${decodedToken}/`
+          `http://192.168.1.68:8000/students/api/activate_account/${decodedId}/${decodedToken}/`
         );
 
-        console.log(response.data);
+        if (response.status === 200) {
+          setIsVerified(true);
+        } else {
+          setIsVerified(false);
+        }
       } catch (error) {
+        setIsVerified(false);
+        setError(true);
         console.log("Error Fetching User Data:", error);
       }
     };
@@ -33,9 +36,43 @@ const UserComponent = () => {
   }, [id, token]);
 
   return (
-    <div>
-      <h1>Hi, Thanks for registering {"userData"}</h1>
-    </div>
+    <>
+      {isVerified ? (
+        <div className="w-full h-fit grid place-items-center bg-primary_main px-2 md:py-[4.3rem] py-10">
+          <div className="py-10 md:px-12 px-4 rounded-md bg-white grid md:grid-cols-2 grid-cols-1 container mx-auto place-items-center md:gap-12 gap-y-8">
+            <div>
+              <h1 className="text-3xl font-bold pb-4 md:pr-16 pr-2">
+                Your Account has been Successfully Activated
+              </h1>
+              <p className="text-lg md:pr-16 pb-10">
+                Your account has been successfully activated. You can now login
+                to your account
+              </p>
+              <Link
+                to={"/log-in"}
+                className="bg-primary_main text-white py-3 px-6 rounded-md"
+              >
+                Back to Login
+              </Link>
+            </div>
+            <div className="w-full md:h-[25rem] h-[14rem] bg-red-300 overflow-hidden border-2 border-primary_main md:order-last order-first">
+              <img
+                src={varified}
+                alt="Account verified image"
+                className="w-full h-full"
+              />
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="w-full h-screen flex justify-center items-center bg-primary_main px-2 md:py-[4.3rem] py-10">
+          <h1 className="text-3xl font-bold text-white">
+            Account not activated
+          </h1>
+          {error && <p className="text-lg text-white">Please Try again</p>}
+        </div>
+      )}
+    </>
   );
 };
 
