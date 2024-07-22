@@ -1,5 +1,3 @@
-import Footer from "../../Constant/Footer/Footer";
-
 import computerLab from "/src/assets/Computer-Labs-1.jpg";
 
 const text1 = `The School of Science and Technology (SST) is a school at ULK, which is comprised of several Engineering and Sciences Departments. Programs were selected based on what was thought to be a dire local need as well as being relevant to the demand of the Regional job market. The programs are designed to provide Hands-on skills training, and they focus on the technology of design, construction, implementation, and maintenance of the hardware and the software components of modern systems and computer-controlled equipment. The programs provide practical and theoretical principles to design and adequately maintain systems as well as using computerized equipment and instruments to solve technical problems in diverse application domains.`;

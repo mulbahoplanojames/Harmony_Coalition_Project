@@ -26,6 +26,7 @@ import ForgetPassword from "./Pages/ForgetPassword/ForgetPassword";
 import ResetPassword from "./Pages/Reset_Password/ResetPassword";
 import UserComponent from "./Components/User_Component/UserComponent";
 import VisitLaw from "./Depaerments_Details/Law/VisitLaw";
+import VisitSchoolOfEBS from "./Depaerments_Details/EBS/VisitSchoolOfEBS";
 
 const App = () => {
   const { darkModeStyle } = useContext(AppContext);
@@ -60,6 +61,7 @@ const App = () => {
             path="/visit-school-of-social-sciences-and-law"
             element={<VisitLaw />}
           />
+          <Route path="/visit-school-of-ebs" element={<VisitSchoolOfEBS />} />
 
           {/* ================================================================================== */}
           {/* User Component  */}

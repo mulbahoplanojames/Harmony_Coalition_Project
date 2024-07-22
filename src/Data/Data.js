@@ -193,7 +193,7 @@ export const disciplinesOffer = [
     image: polythenic,
     description:
       "It comprises of the following: Electrical Engineering, Electronics and Telecommunication, Civil and Construction Engineering, Land Surveying.....",
-    path: "/Ulk-Polytechnic-enrollment",
+    path: "/visit-polytechnic-instutute",
   },
   {
     id: 2,
@@ -217,7 +217,42 @@ export const disciplinesOffer = [
     image: ebs,
     description:
       "It comprises of the following: Finance, Accounting, Economics......",
-    path: "/Economics-and-Business-Studies-enrollment",
+    path: "/visit-school-of-ebs",
+  },
+];
+
+export const disciplinesOffer2 = [
+  {
+    id: 1,
+    name: "ULK Polytechnic Institute",
+    image: polythenic,
+    description:
+      "It comprises of the following: Electrical Engineering, Electronics and Telecommunication, Civil and Construction Engineering, Land Surveying.....",
+    path: "/polytechnic-instutute",
+  },
+  {
+    id: 2,
+    name: "Computer Science",
+    image: computerScience,
+    description:
+      "It comprises of the following: Data Science, Software Engineering and Networking......",
+    path: "/school-of-science-technology",
+  },
+  {
+    id: 3,
+    name: "Social Science and Law",
+    image: law,
+    description:
+      "It comprises of the following: Law, Development Studies, International Relations......",
+    path: "/school-of-social-sciences-and-law",
+  },
+  {
+    id: 4,
+    name: "Economics and Business Studies",
+    image: ebs,
+    description:
+      "It comprises of the following: Finance, Accounting, Economics......",
+    path: "/school-of-ebs",
   },
 ];
 
