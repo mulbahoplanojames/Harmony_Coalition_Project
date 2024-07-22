@@ -1,6 +1,4 @@
 import Footer from "../../Constant/Footer/Footer";
-import Navbar from "../../Constant/Navbar/Navbar";
-import { navLinks2 } from "../../Data/Data";
 
 import computerLab from "/src/assets/Computer-Labs-1.jpg";
 
@@ -9,7 +7,6 @@ const text1 = `The School of Science and Technology (SST) is a school at ULK, wh
 const ScienceAndTechnology = () => {
   return (
     <>
-      <Navbar navLinks={navLinks2} />
       <div className=" mt-[4.4rem] pb-10">
         <h1 className=" md:text-4xl text-3xl md:text-left text-center bg-primary_main text-white capitalize font-semibold py-10 md:py-14  md:px-20">
           School of Science and Technology
@@ -84,30 +81,8 @@ const ScienceAndTechnology = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };
 
 export default ScienceAndTechnology;
-/*
-
-Majors:
-
-Networking,
-Software Engineering,
-Data Science.
-Exit Awards:
-
-Bachelor of Science with Honours in Computer Science: Software Engineering,
-Bachelor of Science with Honours in Computer Science: Networking,
-Bachelor of Science with Honours in Computer Science: Data Science.
-Programme Duration:
-
-Four years (Day session),
-Four and half years (Evening session),
-Five years (Weekend session).
-Programme Pre-requisite: High School Advanced Level Certificate or equivalent certificate.
-
-The school has excellent infrastructure, and the school is recruiting highly qualified and experienced staff, and will from time to time involve business and industry professionals to provide the students with the real-time industry experience.
-*/
