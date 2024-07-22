@@ -18,7 +18,7 @@ const VisitHome = () => {
       <div className="pt-[4rem] md:px-[2rem] px-2">
         <HomeHero />
         <Team />
-        <AboutUs />
+        <AboutUs link="/visit-about" />
         <DisciplinesOffer />
         <NewsLetter />
         <FAQ />

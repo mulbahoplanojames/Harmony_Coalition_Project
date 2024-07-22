@@ -4,7 +4,7 @@ import image1 from "/src/assets/hero1.jpg";
 
 import { motion } from "framer-motion";
 
-const AboutUs = () => {
+const AboutUs = ({ link }) => {
   return (
     <>
       <div className="grid md:grid-cols-2 grid-cols-1 md:gap-x-16 gap-y-20 place-items-center pb-32 md:pt-32 pt-[3.5rem]">
@@ -22,7 +22,7 @@ const AboutUs = () => {
             at ULK.
           </p>
           <Link
-            to="about"
+            to={link}
             className="py-3 px-6 bg-primary_main text-lg text-white border-none rounded-full hover:bg-opacity-70"
           >
             Read More

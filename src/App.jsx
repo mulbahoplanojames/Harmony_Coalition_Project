@@ -27,6 +27,10 @@ import ResetPassword from "./Pages/Reset_Password/ResetPassword";
 import UserComponent from "./Components/User_Component/UserComponent";
 import VisitLaw from "./Depaerments_Details/Law/VisitLaw";
 import VisitSchoolOfEBS from "./Depaerments_Details/EBS/VisitSchoolOfEBS";
+import VisitPolythenicInstitute from "./Depaerments_Details/Polythenic_Institute/VisitPolythenicInstitute";
+
+// Scroll To Top
+import ScrollToTop from "./Components/Scroll_To_Top/ScrollToTop";
 
 const App = () => {
   const { darkModeStyle } = useContext(AppContext);
@@ -34,6 +38,7 @@ const App = () => {
   return (
     <>
       <div className="h-screen w-screen overflow-y-auto" style={darkModeStyle}>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -62,6 +67,10 @@ const App = () => {
             element={<VisitLaw />}
           />
           <Route path="/visit-school-of-ebs" element={<VisitSchoolOfEBS />} />
+          <Route
+            path="/visit-polytechnic-instutute"
+            element={<VisitPolythenicInstitute />}
+          />
 
           {/* ================================================================================== */}
           {/* User Component  */}
