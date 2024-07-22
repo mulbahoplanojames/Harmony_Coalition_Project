@@ -1,16 +1,28 @@
 import { Link } from "react-router-dom";
 import { disciplinesOffer } from "../../Data/Data";
+import { motion } from "framer-motion";
 
 const DisciplinesOffer = () => {
   return (
     <>
       <div className="md:pt-14 pt-4 pb-36">
-        <h1 className="text-center md:text-4xl text-3xl font-semibold pb-14">
+        <motion.h1
+          className="text-center md:text-4xl text-3xl font-semibold pb-14"
+          animate={{ opacity: 0, y: -100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
           Various Disciplines at the Kigali Independent University
-        </h1>
+        </motion.h1>
         <div className="grid md:grid-cols-2 grid-cols-1 md:place-items-start place-items-center gap-12 md:px-0 px-2">
           {disciplinesOffer.map((discipline) => (
-            <div key={discipline.id} className="shadow-2xl rounded-sm">
+            <motion.div
+              key={discipline.id}
+              className="shadow-2xl rounded-sm"
+              animate={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
               <div>
                 <img
                   src={discipline.image}
@@ -29,7 +41,7 @@ const DisciplinesOffer = () => {
                   </Link>
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

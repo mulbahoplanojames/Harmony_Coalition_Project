@@ -4,6 +4,9 @@ import singUp_image from "/src/assets/study1-removebg-preview.png";
 import { CgArrowLeftR } from "react-icons/cg";
 import { useAuth } from "../../Context/AuthContext";
 
+import eyeOpen from "/src/assets/eye_open.png";
+import eyeClose from "/src/assets/eye_close.png";
+
 // This component is responsible for rendering the login page
 const LogIn = () => {
   // The state is an object that holds the user's data from the form
@@ -11,6 +14,9 @@ const LogIn = () => {
     email: "",
     password: "",
   });
+
+  // State to check if the password is visibl or not
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
   // The useAuth hook returns the loginAction function from the AuthContext
   const auth = useAuth();
@@ -80,7 +86,39 @@ const LogIn = () => {
                 <label htmlFor="password" className="inline-block pb-2">
                   Password
                 </label>
-                <input
+                <div className="w-full h-12 bg-[#eaeef3]  px-1 gap-2 rounded-md outline-none flex justify-between overflow-hidden">
+                  <input
+                    type={passwordVisible ? "text" : "password"}
+                    name="password"
+                    placeholder="Enter New Password"
+                    // required
+                    value={userData.password}
+                    onChange={(e) =>
+                      setUserData({ ...userData, password: e.target.value })
+                    }
+                    className="h-full  bg-[#eaeef3] w-full outline-none px-3"
+                  />
+                  {passwordVisible ? (
+                    <img
+                      src={eyeClose}
+                      alt=""
+                      className="w-6 h-6 mt-3 cursor-pointer"
+                      onClick={() => {
+                        setPasswordVisible(!passwordVisible);
+                      }}
+                    />
+                  ) : (
+                    <img
+                      src={eyeOpen}
+                      alt=""
+                      className="w-6 h-6 mt-3 cursor-pointer"
+                      onClick={() => {
+                        setPasswordVisible(!passwordVisible);
+                      }}
+                    />
+                  )}
+                </div>
+                {/* <input
                   type="password"
                   name="password"
                   // required
@@ -89,7 +127,7 @@ const LogIn = () => {
                     setUserData({ ...userData, password: e.target.value })
                   }
                   className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
-                />
+                /> */}
               </div>
               <Link
                 to="/forget-password"

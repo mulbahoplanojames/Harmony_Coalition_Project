@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 // Importing the AppContext from the Context/AppContext.jsx file
 import { AppContext } from "../../Context/AppContext";
 
+import { motion } from "framer-motion";
+
 // Importing the necessary icons from the react-icons library
 import {
   FaLinkedin,
@@ -23,7 +25,11 @@ const AboutHero = () => {
         className="grid md:grid-cols-2 grid-cols-1 place-items-center  md:py-16 py-8  md:gap-6 gap-14 md:px-0 px-1"
         id="home_hero"
       >
-        <div className="">
+        <motion.div
+          animate={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
           {/* Displaying the heading */}
           <h1 className="md:text-4xl text-3xl uppercase font-black md:pr-40 pr-10 pb-6">
             Association of liberian Students at kigali independent university
@@ -41,11 +47,14 @@ const AboutHero = () => {
           >
             Join Us
           </Link>
-        </div>
+        </motion.div>
         {/* Displaying the image with social media links */}
-        <div
+        <motion.div
           className=" md:w-[60%] md:h-[24rem] w-[70%] h-[17rem] rounded-full relative overflow-visible border-4 border-primary_main "
           id="item1"
+          animate={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
         >
           {/* Displaying the LinkedIn icon link */}
           <Link
@@ -79,7 +88,7 @@ const AboutHero = () => {
           >
             <FaFacebookSquare className="text-4xl z-40 text-white" />
           </Link>
-        </div>
+        </motion.div>
       </div>
     </>
   );

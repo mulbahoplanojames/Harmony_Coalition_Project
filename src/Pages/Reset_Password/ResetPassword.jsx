@@ -125,7 +125,7 @@ const ResetPassword = () => {
                   <img
                     src={eyeClose}
                     alt=""
-                    className="w-8 h-8 mt-2 cursor-pointer"
+                    className="w-6 h-6 mt-3 cursor-pointer"
                     onClick={() => {
                       setPasswordVisible(!passwordVisible);
                     }}
@@ -134,7 +134,7 @@ const ResetPassword = () => {
                   <img
                     src={eyeOpen}
                     alt=""
-                    className="w-8 h-8 mt-2 cursor-pointer"
+                    className="w-6 h-6 mt-3 cursor-pointer"
                     onClick={() => {
                       setPasswordVisible(!passwordVisible);
                     }}
@@ -161,7 +161,7 @@ const ResetPassword = () => {
                   <img
                     src={eyeClose}
                     alt=""
-                    className="w-8 h-8 mt-2 cursor-pointer"
+                    className="w-6 h-6 mt-3 cursor-pointer"
                     onClick={() => {
                       setConfirmPasswordVisible(!confirmPasswordVisible);
                     }}
@@ -170,7 +170,7 @@ const ResetPassword = () => {
                   <img
                     src={eyeOpen}
                     alt=""
-                    className="w-8 h-8 mt-2 cursor-pointer"
+                    className="w-6 h-6 mt-3 cursor-pointer"
                     onClick={() => {
                       setConfirmPasswordVisible(!confirmPasswordVisible);
                     }}

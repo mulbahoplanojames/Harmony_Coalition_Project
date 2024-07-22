@@ -8,7 +8,11 @@ const AboutUs = () => {
   return (
     <>
       <div className="grid md:grid-cols-2 grid-cols-1 md:gap-x-16 gap-y-20 place-items-center pb-32 md:pt-32 pt-[3.5rem]">
-        <div className="">
+        <motion.div
+          animate={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
           <h1 className="text-4xl font-bold pb-8">About Us </h1>
           <p className="text-lg pb-10 md:pr-10">
             The Association of the Liberian Students is an Association establish
@@ -23,7 +27,7 @@ const AboutUs = () => {
           >
             Read More
           </Link>
-        </div>
+        </motion.div>
 
         <div className="relative h-[60vh] w-full">
           <motion.div
