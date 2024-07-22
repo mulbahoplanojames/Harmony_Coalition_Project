@@ -1,8 +1,11 @@
 import { useContext, useState } from "react";
 import { AppContext } from "../../Context/AppContext";
+import { useAuth } from "../../Context/AuthContext";
 
 const ContactFormNewsletter = () => {
   const [result, setResult] = useState("");
+  const [newsLetterEmail, setNewsLetterEmail] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -28,6 +31,20 @@ const ContactFormNewsletter = () => {
   };
 
   const { darkMode } = useContext(AppContext);
+
+  const auth = useAuth();
+
+  const handleNewsLetterSubmit = (e) => {
+    e.preventDefault();
+    if (newsLetterEmail !== "") {
+      auth.newsLetterAction(newsLetterEmail);
+      setNewsLetterEmail("");
+      setErrorMessage("");
+      return;
+    } else {
+      setErrorMessage("Please fill the Email fields");
+    }
+  };
 
   return (
     <>
@@ -94,13 +111,16 @@ const ContactFormNewsletter = () => {
             harum quia qui aliquid vel, natus neque?
           </p>
 
-          <form action="">
+          <form onClick={handleNewsLetterSubmit}>
             {/* email input field  */}
             <input
               type="email"
-              placeholder="Email"
-              className="w-full h-[2.8rem] text-secondary outline-none rounded-xl px-4 mb-4"
+              value={newsLetterEmail}
+              onChange={(e) => setNewsLetterEmail(e.target.value)}
+              placeholder="stephenjames@gmail.com"
+              className="w-full h-[2.8rem] text-secondary outline-none rounded-xl px-4 mb-2"
             />
+            <p className="text-red-500 pb-2">{errorMessage}</p>
             {/* submit button */}
             <button className="px-4 py-1 rounded-xl bg-primary_main text-white w-full h-[2.8rem] text-lg hover:bg-yellow_accent_2 transition-all duration-300">
               Subscribe

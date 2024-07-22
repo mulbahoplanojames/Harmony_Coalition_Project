@@ -123,6 +123,7 @@ const AuthProvider = ({ children }) => {
       console.log(error);
     }
   };
+  //! ====================================================================================
 
   // Creating the values that will be passed to the context
   const value = {

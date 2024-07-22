@@ -5,11 +5,18 @@ import { CgArrowLeftR } from "react-icons/cg";
 import { useAuth } from "../../Context/AuthContext";
 import axios from "axios";
 
+import eyeOpen from "/src/assets/eye_open.png";
+import eyeClose from "/src/assets/eye_close.png";
+
 // This component is responsible for rendering the login page
 const ResetPassword = () => {
   // The state is an object that holds the user's data from the form
   const [resetPassword, setResetPassword] = useState("");
   const [resetPasswordConfirm, setResetPasswordConfirm] = useState("");
+
+  // State to check if the password is visibl or not
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
 
   // The useParams hook returns an object that contains the route parameters
   const { id, token } = useParams();
@@ -104,30 +111,72 @@ const ResetPassword = () => {
               <label htmlFor="new password" className="inline-block pb-2">
                 New Password
               </label>
-              <input
-                type="password"
-                name="password"
-                placeholder="Enter New Password"
-                // required
-                value={resetPassword}
-                onChange={(e) => setResetPassword(e.target.value)}
-                className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
-              />
+              <div className="w-full h-12 bg-[#eaeef3]  px-1 gap-2 rounded-md outline-none flex justify-between overflow-hidden">
+                <input
+                  type={passwordVisible ? "text" : "password"}
+                  name="password"
+                  placeholder="Enter New Password"
+                  // required
+                  value={resetPassword}
+                  onChange={(e) => setResetPassword(e.target.value)}
+                  className="h-full  bg-[#eaeef3] w-full outline-none px-3"
+                />
+                {passwordVisible ? (
+                  <img
+                    src={eyeClose}
+                    alt=""
+                    className="w-8 h-8 mt-2 cursor-pointer"
+                    onClick={() => {
+                      setPasswordVisible(!passwordVisible);
+                    }}
+                  />
+                ) : (
+                  <img
+                    src={eyeOpen}
+                    alt=""
+                    className="w-8 h-8 mt-2 cursor-pointer"
+                    onClick={() => {
+                      setPasswordVisible(!passwordVisible);
+                    }}
+                  />
+                )}
+              </div>
             </div>
             {/* // The CONFIRM Reset password input field */}
             <div className="mb-4">
               <label htmlFor="email" className="inline-block pb-2">
                 Confirm New Password
               </label>
-              <input
-                type="password"
-                name="password"
-                placeholder="Confirm New Password"
-                // required
-                value={resetPasswordConfirm}
-                onChange={(e) => setResetPasswordConfirm(e.target.value)}
-                className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
-              />
+              <div className="w-full h-12 bg-[#eaeef3]  px-1 gap-2 rounded-md outline-none flex justify-between overflow-hidden">
+                <input
+                  type={confirmPasswordVisible ? "text" : "password"}
+                  name="password"
+                  placeholder="Confirm New Password"
+                  // required
+                  value={resetPasswordConfirm}
+                  onChange={(e) => setResetPasswordConfirm(e.target.value)}
+                  className="h-full  bg-[#eaeef3] w-full outline-none px-3"
+                />
+                {confirmPasswordVisible ? (
+                  <img
+                    src={eyeClose}
+                    alt=""
+                    className="w-8 h-8 mt-2 cursor-pointer"
+                    onClick={() => {
+                      setConfirmPasswordVisible(!confirmPasswordVisible);
+                    }}
+                  />
+                ) : (
+                  <img
+                    src={eyeOpen}
+                    alt=""
+                    className="w-8 h-8 mt-2 cursor-pointer"
+                    onClick={() => {
+                      setConfirmPasswordVisible(!confirmPasswordVisible);
+                    }}
+                  />
+                )}
+              </div>
             </div>
 
             <p className="text-red-500 text-base">
