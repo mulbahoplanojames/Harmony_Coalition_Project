@@ -19,6 +19,9 @@ import LogIn from "./Pages/Log_In/LogIn";
 import VisitHome from "./Pages/Visit_Pages/Visit_Home/VisitHome";
 import VisitAbout from "./Pages/Visit_Pages/Visit_About/VisitAbout";
 import VisitContactUs from "./Pages/Visit_Pages/Visit_ContactUs/VisitContactUs";
+import VisitScienceAndTechnology from "./Depaerments_Details/Computer_Science/VisitScienceAndTechnology";
+
+// Forget Password and Reset Password
 import ForgetPassword from "./Pages/ForgetPassword/ForgetPassword";
 import ResetPassword from "./Pages/Reset_Password/ResetPassword";
 import UserComponent from "./Components/User_Component/UserComponent";
@@ -48,6 +51,10 @@ const App = () => {
           <Route path="/home" element={<VisitHome />} />
           <Route path="/visit-about" element={<VisitAbout />} />
           <Route path="/visit-contact-us" element={<VisitContactUs />} />
+          <Route
+            path="/visit-school-of-science-technology"
+            element={<VisitScienceAndTechnology />}
+          />
 
           {/* ================================================================================== */}
           {/* User Component  */}

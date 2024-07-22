@@ -201,7 +201,7 @@ export const disciplinesOffer = [
     image: computerScience,
     description:
       "It comprises of the following: Data Science, Software Engineering and Networking......",
-    path: "/Computer-Science-enrollment",
+    path: "/visit-school-of-science-technology",
   },
   {
     id: 3,
