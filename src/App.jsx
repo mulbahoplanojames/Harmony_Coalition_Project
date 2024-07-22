@@ -25,6 +25,7 @@ import VisitScienceAndTechnology from "./Depaerments_Details/Computer_Science/Vi
 import ForgetPassword from "./Pages/ForgetPassword/ForgetPassword";
 import ResetPassword from "./Pages/Reset_Password/ResetPassword";
 import UserComponent from "./Components/User_Component/UserComponent";
+import VisitLaw from "./Depaerments_Details/Law/VisitLaw";
 
 const App = () => {
   const { darkModeStyle } = useContext(AppContext);
@@ -54,6 +55,10 @@ const App = () => {
           <Route
             path="/visit-school-of-science-technology"
             element={<VisitScienceAndTechnology />}
+          />
+          <Route
+            path="/visit-school-of-social-sciences-and-law"
+            element={<VisitLaw />}
           />
 
           {/* ================================================================================== */}
