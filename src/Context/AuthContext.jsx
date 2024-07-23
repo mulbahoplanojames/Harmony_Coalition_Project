@@ -17,9 +17,15 @@ const AuthProvider = ({ children }) => {
 
   // A state to display an error message if login fails
   const [errorMessage, setErrorMessage] = useState("");
+
   // A state to display an error message if reset password fails
   const [resetPasswordErrorMessage, setResetPasswordErrorMessage] =
     useState("");
+
+  // Admin Login State
+  const [adminLogin, setAdminLogin] = useState(false);
+
+  console.log(adminLogin);
 
   //? ===========================================================================================
   /*
@@ -113,14 +119,14 @@ const AuthProvider = ({ children }) => {
   const newsLetterAction = async (newsLetterEmail) => {
     try {
       const response = await axios.post(
-        `http://192.168.1.68:8000/students/api/newsletter/`,
+        `http://192.168.1.68:8000/newsletter/subscribe/`,
         {
           email: newsLetterEmail,
         }
       );
       console.log(response.data);
     } catch (error) {
-      console.log(error);
+      console.log("From the News Letter", error);
     }
   };
   //! ====================================================================================
@@ -137,6 +143,10 @@ const AuthProvider = ({ children }) => {
     resetPasswordErrorMessage,
     setResetPasswordErrorMessage,
     newsLetterAction,
+
+    // todo : admin login
+    adminLogin,
+    setAdminLogin,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

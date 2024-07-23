@@ -42,6 +42,8 @@ import StudentList from "./Admin/Student_List/StudentList";
 import AddStudent from "./Admin/Add_Student/AddStudent";
 import EditStudent from "./Admin/Edit_Student/EditStudent";
 import SendNewsLetter from "./Admin/Send_NewsLetter/SendNewsLetter";
+import AdminLogin from "./Admin/Admin_Login/AdminLogin";
+import ConfirmNewsLetter from "./Components/User_NewsLetter_Confirm/ConfirmNewsLetter";
 
 const App = () => {
   const { darkModeStyle } = useContext(AppContext);
@@ -101,8 +103,14 @@ const App = () => {
           />
 
           {/*//! ================================================================================== */}
-          {/* User Component  */}
+          {/* User Component varified if the user account is Acitive  */}
           <Route path="/:id/:token/" element={<UserComponent />} />
+
+          {/* Confirm the user Email id varified for the newsletter */}
+          <Route
+            path="/newsletter/confirm/:id/:number/"
+            element={<ConfirmNewsLetter />}
+          />
 
           {/*//? =================================================================================== */}
           {/* 404 Page */}
@@ -113,6 +121,9 @@ const App = () => {
 
           {/* //Login Page */}
           <Route path="/log-in" element={<LogIn />} />
+
+          {/* Admin Login */}
+          <Route path="/admin/log-in" element={<AdminLogin />} />
 
           {/* //Forget Password Page */}
           <Route path="/forget-password" element={<ForgetPassword />} />
