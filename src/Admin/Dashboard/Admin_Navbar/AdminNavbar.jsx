@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
+import adminNavLinks from "../Admin_Data/AdminData";
 
 const AdminNavbar = () => {
   return (
     <>
-      <div className="navbar bg-base-100 md:px-8 px-2">
+      <div className="navbar bg-base-100 md:px-8 px-2 fixed md:w-[83.8%]">
         <div className="navbar-start">
           <div className="dropdown md:hidden block">
             <div
@@ -16,17 +17,13 @@ const AdminNavbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-1 w-52 p-2 shadow z-50"
             >
-              <li>
-                <a>All Student</a>
-              </li>
-              <li>
-                <a>Add Student</a>
-              </li>
-              <li>
-                <a>Edit Student</a>
-              </li>
+              {adminNavLinks.map((link) => (
+                <li key={link.id}>
+                  <Link to={link.path}>{link.name}</Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

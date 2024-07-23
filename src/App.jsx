@@ -37,6 +37,7 @@ import UserComponent from "./Components/User_Component/UserComponent";
 import ScrollToTop from "./Components/Scroll_To_Top/ScrollToTop";
 import AdminLayout from "./Admin/Admin_Layout/AdminLayout";
 import StudentList from "./Admin/Student_List/StudentList";
+import AddStudent from "./Admin/Add_Student/AddStudent";
 
 const App = () => {
   const { darkModeStyle } = useContext(AppContext);
@@ -67,8 +68,9 @@ const App = () => {
 
           {/*//! ================================================================================== */}
 
-          <Route path="/admin" element={<AdminLayout />}>
+          <Route path="/admin/" element={<AdminLayout />}>
             <Route index element={<StudentList />} />
+            <Route path="/admin/add-student" element={<AddStudent />} />
           </Route>
 
           {/*//? ================================================================================ */}
@@ -89,6 +91,7 @@ const App = () => {
           <Route
             path="/visit-polytechnic-instutute"
             element={<VisitPolythenicInstitute />}
+            home
           />
 
           {/*//! ================================================================================== */}

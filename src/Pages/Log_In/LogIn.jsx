@@ -118,16 +118,6 @@ const LogIn = () => {
                     />
                   )}
                 </div>
-                {/* <input
-                  type="password"
-                  name="password"
-                  // required
-                  value={userData.password}
-                  onChange={(e) =>
-                    setUserData({ ...userData, password: e.target.value })
-                  }
-                  className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
-                /> */}
               </div>
               <Link
                 to="/forget-password"

@@ -17,7 +17,8 @@ const TableHead = () => {
           <th>Visa Start Date</th>
           <th>Visa End Date</th>
           <th>Visa Status</th>
-          <th></th>
+          <th>Visa Image</th>
+          <th>Status</th>
         </tr>
       </thead>
     </>
