@@ -7,7 +7,7 @@ import FAQ from "../../../Components/FAQ/FAQ";
 
 // for the navbar
 import Navbar from "../../../Constant/Navbar/Navbar";
-import { navLinks2 } from "../../../Data/Data";
+import { disciplinesOffer, navLinks2 } from "../../../Data/Data";
 
 import Footer from "../../../Constant/Footer/Footer";
 
@@ -19,7 +19,7 @@ const VisitHome = () => {
         <HomeHero />
         <Team />
         <AboutUs link="/visit-about" />
-        <DisciplinesOffer />
+        <DisciplinesOffer disciplinesOffer={disciplinesOffer} />
         <NewsLetter />
         <FAQ />
       </div>

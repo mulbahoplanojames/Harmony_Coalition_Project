@@ -98,7 +98,7 @@ const VisitSchoolOfEBS = () => {
                       className="w-full h-full"
                     />
                   </div>
-                  <p className="py-3 font-semibold pl-2 md:text-xl text-2xl">
+                  <p className="py-3 font-semibold pl-2 md:text-xl text-2xl text-black">
                     {departments.name}
                   </p>
                 </div>

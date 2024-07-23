@@ -244,7 +244,7 @@ export const disciplinesOffer2 = [
     image: law,
     description:
       "It comprises of the following: Law, Development Studies, International Relations......",
-    path: "/school-of-social-sciences-and-law",
+    path: "/school-of-law-social-sciences",
   },
   {
     id: 4,

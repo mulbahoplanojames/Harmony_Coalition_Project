@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { disciplinesOffer } from "../../Data/Data";
 import { motion } from "framer-motion";
 
-const DisciplinesOffer = () => {
+const DisciplinesOffer = ({ disciplinesOffer }) => {
   return (
     <>
       <div className="md:pt-14 pt-4 pb-36">

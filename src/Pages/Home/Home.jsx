@@ -4,6 +4,7 @@ import AboutUs from "../../Components/About_Us/AboutUs";
 import DisciplinesOffer from "../../Components/Disciplines_Offer/DisciplinesOffer";
 import NewsLetter from "../../Components/News_Letter/NewsLetter";
 import FAQ from "../../Components/FAQ/FAQ";
+import { disciplinesOffer2 } from "../../Data/Data";
 
 const Home = () => {
   return (
@@ -11,7 +12,7 @@ const Home = () => {
       <HomeHero />
       <Team />
       <AboutUs link={"about"} />
-      <DisciplinesOffer />
+      <DisciplinesOffer disciplinesOffer={disciplinesOffer2} />
       <NewsLetter />
       <FAQ />
     </div>

@@ -21,7 +21,7 @@ const VisitLaw = () => {
   return (
     <>
       <Navbar navLinks={navLinks2} />
-      <div className=" mt-[4.4rem] pb-10">
+      <div className=" mt-[4.4rem] pb-10 ">
         <h1 className=" md:text-4xl text-3xl md:text-left text-center bg-primary_main text-white capitalize font-semibold py-10 md:py-14  md:px-20">
           School of Law
         </h1>
