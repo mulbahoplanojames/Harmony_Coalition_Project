@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-const AddStudentForm = () => {
+const EditStudentForm = () => {
   const [addStudentData, setAddStudentData] = useState({
     first_name: "",
     last_name: "",
@@ -437,4 +437,4 @@ const AddStudentForm = () => {
   );
 };
 
-export default AddStudentForm;
+export default EditStudentForm;

@@ -35,9 +35,13 @@ import UserComponent from "./Components/User_Component/UserComponent";
 
 // Scroll To Top
 import ScrollToTop from "./Components/Scroll_To_Top/ScrollToTop";
+
+// Admin
 import AdminLayout from "./Admin/Admin_Layout/AdminLayout";
 import StudentList from "./Admin/Student_List/StudentList";
 import AddStudent from "./Admin/Add_Student/AddStudent";
+import EditStudent from "./Admin/Edit_Student/EditStudent";
+import SendNewsLetter from "./Admin/Send_NewsLetter/SendNewsLetter";
 
 const App = () => {
   const { darkModeStyle } = useContext(AppContext);
@@ -71,6 +75,8 @@ const App = () => {
           <Route path="/admin/" element={<AdminLayout />}>
             <Route index element={<StudentList />} />
             <Route path="/admin/add-student" element={<AddStudent />} />
+            <Route path="/admin/edit-student" element={<EditStudent />} />
+            <Route path="/admin/send-newsletter" element={<SendNewsLetter />} />
           </Route>
 
           {/*//? ================================================================================ */}
