@@ -1,11 +1,11 @@
 import BreadCrumb from "../Dashboard/BreadCrumb/BreadCrumb";
-import Editor from "../Dashboard/Editor/Editor";
+import NewsLetterEditor from "../Dashboard/Editor/NewsLetterEditor";
 
 const SendNewsLetter = () => {
   return (
     <>
       <BreadCrumb text={"Send NewsLetter"} />
-      <Editor />
+      <NewsLetterEditor />
     </>
   );
 };

@@ -79,7 +79,10 @@ const AddStudentForm = () => {
 
   return (
     <>
-      <form onSubmit={handleAddStudentSubmit} className="md:px-0 px-2">
+      <form
+        onSubmit={handleAddStudentSubmit}
+        className="md:px-3 md:py-4  px-2 shadow-xl"
+      >
         <div className="w-full flex justify-between items-center md:flex-nowrap flex-wrap md:gap-7 gap-y-3 mb-5">
           <div className="w-full">
             <label htmlFor="first_name" className="text-base pb-1 inline-block">
