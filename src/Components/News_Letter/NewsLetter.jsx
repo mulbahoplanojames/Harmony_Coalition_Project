@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
+import { motion } from "framer-motion";
 
 const NewsLetter = () => {
   const [newsLetterEmail, setNewsLetterEmail] = useState("");
@@ -23,7 +24,12 @@ const NewsLetter = () => {
 
   return (
     <>
-      <div className="grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-y-10 md:px-8 px-4 bg-white rounded-md md:py-20 shadow-xl py-14 mb-20 place-items-center">
+      <motion.div
+        className="grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-y-10 md:px-8 px-4 bg-white rounded-md md:py-20 shadow-xl py-14 mb-20 place-items-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
         <div className="">
           <h1
             className={`text-3xl font-semibold pb-5 md:text-left text-center uppercase text-black`}
@@ -62,7 +68,7 @@ const NewsLetter = () => {
             </Link>
           </p>
         </form>
-      </div>
+      </motion.div>
     </>
   );
 };
