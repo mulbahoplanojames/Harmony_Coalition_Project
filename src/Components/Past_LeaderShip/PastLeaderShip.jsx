@@ -45,9 +45,9 @@ const PastLeaderShip = () => {
             <motion.div
               className="text-left group"
               key={member.id}
-              animate={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
             >
               {/* Displaying the image */}
               <div className="h-60 w-full overflow-hidden rounded-md">

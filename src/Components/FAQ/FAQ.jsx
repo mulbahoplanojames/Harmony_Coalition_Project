@@ -11,9 +11,9 @@ const FAQ = () => {
       <section className="w-full pb-20">
         <motion.h1
           className="text-3xl font-bold text-center pb-10"
-          animate={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 0, y: -80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
         >
           FAQ
         </motion.h1>
@@ -27,7 +27,7 @@ const FAQ = () => {
                 key={data.id}
                 animate={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
               >
                 <input type="radio" name="my-accordion-4" defaultChecked />
                 <div

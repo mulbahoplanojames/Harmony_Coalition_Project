@@ -28,9 +28,9 @@ const HomeHero = () => {
       >
         <motion.div
           className=""
-          initial={{ opacity: 0, x: -100 }}
+          initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
         >
           {/* Displaying the heading */}
           <div className="md:text-5xl text-3xl uppercase font-black md:pr-[12rem] pr-5 sm:pr-2 pb-6 z-50">
@@ -54,9 +54,9 @@ const HomeHero = () => {
         <motion.div
           className=" md:w-[60%] md:h-[24rem] w-[70%] h-[17rem] rounded-full relative overflow-visible border-4 border-primary_main "
           id="item1"
-          initial={{ opacity: 0, x: 100 }}
+          initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
         >
           {/* Displaying the LinkedIn icon link */}
           <Link

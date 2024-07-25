@@ -7,7 +7,7 @@ const DisciplinesOffer = ({ disciplinesOffer }) => {
       <div className="md:pt-14 pt-4 pb-36">
         <motion.h1
           className="text-center md:text-4xl text-3xl font-semibold pb-14"
-          animate={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 0, y: -80 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
@@ -20,7 +20,7 @@ const DisciplinesOffer = ({ disciplinesOffer }) => {
               className="shadow-2xl rounded-sm"
               animate={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
             >
               <div>
                 <img
