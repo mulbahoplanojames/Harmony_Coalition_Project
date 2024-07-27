@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import { FcDataProtection } from "react-icons/fc";
-import { MdEventNote } from "react-icons/md";
 
 // React Calender
 import { useState } from "react";
@@ -30,39 +28,8 @@ const StudentProfileCards = () => {
           <p className="text-black">Avaliable 24/7</p>
         </div>
 
-        {/* card two */}
-        <div className="bg-white px-4 py-6 rounded-md text-black shadow-lg h-fit">
-          <h1 className="text-3xl pb-4 text-black">Events</h1>
-          {/* event one  */}
-          <div className="py-2  bg-red-100 text-white rounded-md flex justify-space-between px-2 gap-14 items-center mb-4 ">
-            <div className="flex items-center">
-              <FcDataProtection className="text-4xl text-red-500" />
-              <p className="ml-4 text-black">Inguration Program</p>
-            </div>
-            <MdEventNote className="text-2xl text-red-500" />
-          </div>
-
-          {/* event two  */}
-          <div className="py-2  bg-blue-100 text-white rounded-md flex justify-space-between px-2 gap-14 items-center mb-4 ">
-            <div className="flex items-center">
-              <FcDataProtection className="text-4xl" />
-              <p className="ml-4 text-black">Inguration Program</p>
-            </div>
-            <MdEventNote className="text-2xl text-blue-600" />
-          </div>
-
-          {/* event three  */}
-          <div className="py-2  bg-orange-100 text-white rounded-md flex justify-space-between px-2 gap-14 items-center mb-4 ">
-            <div className="flex items-center">
-              <FcDataProtection className="text-4xl" />
-              <p className="ml-4 text-black">Inguration Program</p>
-            </div>
-            <MdEventNote className="text-2xl text-orange-500" />
-          </div>
-        </div>
-
         {/* card three */}
-        <div className="shadow-md  rounded-md text-black">
+        <div className="shadow-md  rounded-md text-black col-span-2">
           <Calendar
             onChange={onChange}
             value={value}
