@@ -43,7 +43,7 @@ const SignUp = () => {
       } else {
         console.log(response);
         setSignUpErrorMessage(
-          "Account created successfully, please check ypur email to Activate your account"
+          "Account created successfully, please check your email to Activate your account"
         );
         setSignedUpData({
           first_name: "",
@@ -83,14 +83,14 @@ const SignUp = () => {
             <form className="relative" onSubmit={sendData}>
               {/* // First Name and Last Name */}
               <div className="flex justify-between items-center w-full gap-4 md:flex-nowrap flex-wrap mb-2">
-                <div>
+                <div className="w-full">
                   <label htmlFor="first_name" className="inline-block pb-2">
                     First Name
                   </label>
                   <input
                     type="text"
                     name="first_name"
-                    className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none "
+                    className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none neu_input_2"
                     value={signedUpData.first_name}
                     onChange={(e) => {
                       setSignedUpData({
@@ -101,14 +101,14 @@ const SignUp = () => {
                   />
                 </div>
 
-                <div>
+                <div className="w-full">
                   <label htmlFor="last_name" className="inline-block pb-2">
                     Last Name
                   </label>
                   <input
                     type="text"
                     name="last_name"
-                    className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
+                    className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none neu_input_2"
                     value={signedUpData.last_name}
                     onChange={(e) => {
                       setSignedUpData({
@@ -128,7 +128,7 @@ const SignUp = () => {
                 <input
                   type="email"
                   name="email"
-                  className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
+                  className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none neu_input_2"
                   value={signedUpData.email}
                   onChange={(e) => {
                     setSignedUpData({
@@ -140,15 +140,15 @@ const SignUp = () => {
               </div>
 
               {/* // Password and Number */}
-              <div className="flex justify-between items-center gap-4 md:flex-nowrap flex-wrap mb-2">
-                <div>
+              <div className="flex justify-between items-center gap-4 md:flex-nowrap flex-wrap mb-2 w-full">
+                <div className="w-full">
                   <label htmlFor="password" className="inline-block pb-2">
                     Password
                   </label>
                   <input
                     type="password"
                     name="password"
-                    className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
+                    className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none neu_input_2"
                     value={signedUpData.password}
                     onChange={(e) => {
                       setSignedUpData({
@@ -158,14 +158,15 @@ const SignUp = () => {
                     }}
                   />
                 </div>
-                <div>
+                {/* Phone */}
+                <div className="w-full">
                   <label htmlFor="number" className="inline-block pb-2">
                     Phone Number
                   </label>
                   <input
                     type="tel"
                     name="number"
-                    className="w-full bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
+                    className="w-full bg-[#eaeef3] h-12 px-6 rounded-md outline-none neu_input_2"
                     value={signedUpData.phone_number}
                     onChange={(e) => {
                       setSignedUpData({

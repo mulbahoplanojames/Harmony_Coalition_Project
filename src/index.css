@@ -38,8 +38,13 @@ body {
 }
 
 .neu_input {
-  box-shadow: -6px -6px 20px rgba(255, 255, 255, 0.5),
+  box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5),
     6px 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.neu_input_2 {
+  box-shadow: inset -6px -6px 20px rgba(255, 255, 255, 0.5),
+    inset 6px 6px 20px rgba(0, 0, 0, 0.5);
 }
 
 #home_hero {

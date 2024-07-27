@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import PrimaryFooter from "./PrimaryFooter";
 import SecondaryFooter from "./SecondaryFooter";
-import { FaFacebook, FaInstagram, FaWhatsappSquare } from "react-icons/fa";
-import { BsTwitterX } from "react-icons/bs";
 import { footerIconLinks } from "../../Data/LeaderData";
 import { AppContext } from "../../Context/AppContext";
 import { useContext } from "react";
@@ -24,8 +22,8 @@ const Footer = () => {
           </p>
           <div className="flex gap-10 md:text-2xl md:justify-end justify-start text-3xl">
             {footerIconLinks.map((link) => (
-              <a
-                key={link}
+              <Link
+                key={link.id}
                 href={link.link}
                 className={`text-2xl neu_icon rounded-md ${
                   darkMode
@@ -34,7 +32,7 @@ const Footer = () => {
                 } p-2 inline-block`}
               >
                 {link.icon}
-              </a>
+              </Link>
             ))}
             {/* <FaFacebook className="cursor-pointer opacity-75 hover:opacity-100" />
             <BsTwitterX className="cursor-pointer opacity-75 hover:opacity-100" />

@@ -9,11 +9,11 @@ const ProfileAvatar = () => {
   const user = useAuth();
 
   return (
-    <div className="dropdown dropdown-end">
+    <div className="dropdown dropdown-end ">
       <div
         tabIndex={0}
         role="button"
-        className="btn btn-ghost btn-circle avatar"
+        className="btn btn-ghost btn-circle avatar border-2 border-primary_main"
       >
         <div className="w-10 rounded-full">
           <img

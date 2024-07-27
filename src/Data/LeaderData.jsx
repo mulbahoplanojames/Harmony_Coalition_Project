@@ -251,18 +251,22 @@ export const pastLeaderShip = [
 // =====================================================================================
 export const footerIconLinks = [
   {
+    id: 1,
     icon: <FaFacebookSquare />,
     link: "https://www.facebook.com/",
   },
   {
+    id: 2,
     icon: <FaLinkedin />,
     link: "https://www.twitter.com/",
   },
   {
+    id: 3,
     icon: <FaXTwitter />,
     link: "https://www.linkedin.com/",
   },
   {
+    id: 4,
     icon: <FaInstagram />,
     link: "https://www.linkedin.com/",
   },

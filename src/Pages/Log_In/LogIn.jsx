@@ -65,7 +65,7 @@ const LogIn = () => {
 
           <form className="relative" onSubmit={handleSubmit}>
             {/* // The email input field */}
-            <div className="mb-4">
+            <div className="mb-4 ">
               <label htmlFor="email" className="inline-block pb-2">
                 Email
               </label>
@@ -77,7 +77,7 @@ const LogIn = () => {
                 onChange={(e) =>
                   setUserData({ ...userData, email: e.target.value })
                 }
-                className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none"
+                className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none neu_input_2"
               />
             </div>
             {/* // The password input field */}
@@ -86,7 +86,7 @@ const LogIn = () => {
                 <label htmlFor="password" className="inline-block pb-2">
                   Password
                 </label>
-                <div className="w-full h-12 bg-[#eaeef3]  px-1 gap-2 rounded-md outline-none flex justify-between overflow-hidden">
+                <div className="w-full h-12 bg-[#ebeef1]  px-1 gap-2 rounded-md outline-none flex justify-between overflow-hidden neu_input">
                   <input
                     type={passwordVisible ? "text" : "password"}
                     name="password"
@@ -96,7 +96,7 @@ const LogIn = () => {
                     onChange={(e) =>
                       setUserData({ ...userData, password: e.target.value })
                     }
-                    className="h-full  bg-[#eaeef3] w-full outline-none px-3"
+                    className="h-full  bg-[#eaeef3] w-full outline-none px-3 "
                   />
                   {passwordVisible ? (
                     <img

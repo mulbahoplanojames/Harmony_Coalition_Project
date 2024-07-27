@@ -23,7 +23,7 @@ const LogInNavbar = () => {
   return (
     <>
       <nav
-        className={`flex justify-between items-center bg-white py-4 md:px-10 px-4 border-b border-[#e6e6e6] fixed z-50 w-full top-0`}
+        className={`flex justify-between items-center py-4 md:px-10 px-4 fixed z-50 w-full top-0 bg-[rgba(255,255,255,0.29)] shadow-[0_8px_32px_0_rgba(31,38,135,0.35)] backdrop-blur-[20px] rounded-[10px] border border-[rgba(255,255,255,0.28)]`}
       >
         {/* Link to the home page */}
         <Link

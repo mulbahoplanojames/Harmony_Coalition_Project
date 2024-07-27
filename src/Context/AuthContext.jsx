@@ -23,7 +23,7 @@ const AuthProvider = ({ children }) => {
     useState("");
 
   // Admin Login State
-  const [adminLogin, setAdminLogin] = useState(false);
+  const [adminLogin, setAdminLogin] = useState(true);
 
   console.log(adminLogin);
 
