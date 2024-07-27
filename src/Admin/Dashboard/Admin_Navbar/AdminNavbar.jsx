@@ -5,7 +5,7 @@ import adminNavLinks from "../Admin_Data/AdminData";
 const AdminNavbar = () => {
   return (
     <>
-      <div className="navbar bg-base-100 md:px-8 px-2 fixed md:w-[83.8%]">
+      <nav className="navbar md:px-8 px-2 fixed md:w-[83.2%]  bg-[rgba(255,255,255,0.29)] shadow-[0_8px_32px_0_rgba(31,38,135,0.35)] backdrop-blur-[20px]  border border-[rgba(255,255,255,0.28)]">
         <div className="navbar-start">
           <div className="dropdown md:hidden block">
             <div
@@ -65,7 +65,7 @@ const AdminNavbar = () => {
             </ul>
           </div>
         </div>
-      </div>
+      </nav>
     </>
   );
 };

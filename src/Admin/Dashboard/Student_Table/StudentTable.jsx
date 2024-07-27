@@ -26,7 +26,7 @@ const StudentTable = () => {
   return (
     <>
       <section className="w-full">
-        <div className="overflow-x-auto bg-white">
+        <div className="overflow-x-auto bg-white ">
           <table className="table w-full">
             {/* head */}
             <TableHead />

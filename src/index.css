@@ -57,6 +57,12 @@ body {
     inset 6px 6px 20px rgba(0, 0, 0, 0.5);
 }
 
+.bread_crum {
+  box-shadow: -10px -10px 30px rgba(255, 255, 255, 1),
+    10px 10px 20px rgba(0, 0, 0, 0.1);
+  background: #ebeef1;
+}
+
 .tw_round {
   border-radius: 24% 76% 29% 71% / 71% 26% 74% 29%;
   box-shadow: inset -3px -3px 10px rgba(255, 255, 255, 0.5),

@@ -81,7 +81,7 @@ const AddStudentForm = () => {
     <>
       <form
         onSubmit={handleAddStudentSubmit}
-        className="md:px-3 md:py-4  px-2 shadow-xl"
+        className="md:px-3 md:py-4  px-2 shadow-xl neu_card_2"
       >
         <div className="w-full flex justify-between items-center md:flex-nowrap flex-wrap md:gap-7 gap-y-3 mb-5">
           <div className="w-full">

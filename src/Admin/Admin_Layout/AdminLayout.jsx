@@ -16,7 +16,7 @@ const AdminLayout = () => {
         <div className="w-full h-full grid md:grid-cols-12 grid-cols-1">
           {/* Sidebar */}
           <div className="col-span-2 md:block hidden bg-primary_main overflow-y-auto">
-            <h1 className="text-3xl bg-white text-center py-[0.97rem] mb-10">
+            <h1 className="text-3xl text-center text-white py-[0.97rem] mb-10  bg-[rgba(255,255,255,0.29)] shadow-[0_8px_32px_0_rgba(31,38,135,0.35)] backdrop-blur-[20px] border border-[rgba(255,255,255,0.28)]">
               ALSULK
             </h1>
             <div className="h-[8rem] rounded-md shadow-lg mb-3 mx-auto w-[80%] bg-green-400"></div>
