@@ -3,7 +3,7 @@ import { useContext, useRef, useState } from "react";
 import { AppContext } from "../../Context/AppContext";
 
 const StudentProfileSettings = () => {
-  const { loggedinEmail, loggedinPassword } = useContext(AppContext);
+  const { loggedinEmail, loggedinPassword, darkMode } = useContext(AppContext);
 
   const [studentData, setStudentData] = useState({
     roll_number: "",
@@ -85,13 +85,11 @@ const StudentProfileSettings = () => {
 
   return (
     <>
-      <div className="w-full">
-        <h1 className="text-3xl font-bold pb-8  text-black">{loggedinEmail}</h1>
-        <h1 className="text-3xl font-bold pb-8  text-black">
-          {loggedinPassword}
-        </h1>
+      <div className="w-full py-3 ">
         <form
-          className="md:w-[90%] w-full bg-white h-fit py-6 md:px-8 px-4 rounded-md mx-auto mb-20 mt-10"
+          className={`md:w-[90%] w-full bg-[ebeef1] h-fit py-6 md:px-8 px-4 rounded-md mx-auto mb-20 mt-10 ${
+            darkMode ? "neu_card_1 text-black " : "neu_card_2 "
+          }`}
           onSubmit={handleSubmit}
         >
           <h1 className="text-3xl font-bold pb-8  text-black">
