@@ -51,7 +51,12 @@ const HomeHero = () => {
           </Link>
         </motion.div>
 
-        <div className="md:w-[50%] w-[90%] h-[60vh] bg-blue-300 rounded-md md:-skew-x-12 -skew-x-6 py-3 px-4 text-center z-40 md:mt-12 tw_id">
+        <motion.div
+          className="md:w-[50%] w-[90%] h-[60vh] bg-blue-300 rounded-md md:-skew-x-12 -skew-x-6 py-3 px-4 text-center z-40 md:mt-12 tw_id"
+          initial={{ opacity: 0, y: 90 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 2, delay: 0.3 }}
+        >
           <div className="w-[11rem] h-[28vh] mx-auto mb-4 rounded-full bg-red-300 border-4 overflow-hidden border-primary_main">
             <img
               src={
@@ -68,8 +73,13 @@ const HomeHero = () => {
           <p className="text-base">ID : 202234697</p>
           <p className="text-base">PHONE : 079167643</p>
           <p className="text-base">EMAIL : oplanojames@gmail.com</p>
-        </div>
-        <div className="w-[1.5rem] md:h-[28vh] h-[70vh] rounded-full absolute top-0 right-[10rem] md:right-[16rem]  tw_id_line"></div>
+        </motion.div>
+        <motion.div
+          className="w-[1.5rem] md:h-[28vh] h-[70vh] rounded-full absolute top-0 right-[11rem] md:right-[19rem]  tw_id_line"
+          initial={{ opacity: 0, y: -90 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        ></motion.div>
 
         {/* Displaying the image with social media links */}
         {/* <motion.div
