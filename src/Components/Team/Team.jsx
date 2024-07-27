@@ -17,7 +17,7 @@ const Team = () => {
       <div
         className={`pb-14 pt-20 md:px-8 px-4 rounded-sm  ${
           // Conditionally setting the background color based on the darkMode property.
-          darkMode ? "bg-#1d232a" : "bg-white"
+          darkMode ? "bg-#1d232a" : "bg-[#ebeef1]"
         }`}
       >
         {/* Rendering the CurrentLeaderShip component. */}

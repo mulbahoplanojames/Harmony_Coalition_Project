@@ -29,9 +29,9 @@ const AboutUs = ({ link }) => {
           </Link>
         </motion.div>
 
-        <div className="relative h-[60vh] w-full">
+        <div className="relative h-[60vh] w-full ">
           <motion.div
-            className="md:w-[54%] md:h-[44vh] w-[70%] h-[40vh]  absolute md:-top-10 -top-5 md:-left-3 left-2 overflow-hidden border-4 border-primary_main group cursor-pointer"
+            className="md:w-[54%] md:h-[44vh] w-[70%] h-[40vh]  absolute md:-top-10 -top-5 md:-left-3 left-2 overflow-hidden border-4 border-primary_main group cursor-pointer "
             animate={{ opacity: 0, x: -80 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4, delay: 0.3 }}

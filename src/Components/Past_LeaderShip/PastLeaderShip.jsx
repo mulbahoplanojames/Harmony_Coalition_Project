@@ -16,9 +16,9 @@ import { AppContext } from "../../Context/AppContext";
 import { useContext } from "react";
 
 // Importing the pastLeaderShip data from the Data/Data.js file.
-import { pastLeaderShip } from "../../Data/Data";
 
 import { motion } from "framer-motion";
+import { pastLeaderShip } from "../../Data/LeaderData";
 
 // Defining the PastLeaderShip component.
 const PastLeaderShip = () => {
@@ -43,14 +43,14 @@ const PastLeaderShip = () => {
           /* //! Team Members */
           pastLeaderShip.map((member) => (
             <motion.div
-              className="text-left group"
+              className="px-5 py-3 text-left group  neu_card rounded-md"
               key={member.id}
               animate={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.3 }}
             >
               {/* Displaying the image */}
-              <div className="h-60 w-full overflow-hidden rounded-md">
+              <div className="h-60 w-[80%] mx-auto my-3 overflow-hidden z-20 rounded-md">
                 <img
                   src={member.image}
                   alt="team"
@@ -70,45 +70,20 @@ const PastLeaderShip = () => {
               {/* Displaying the social links */}
               <div className="">
                 <ul className="flex items-center gap-6 py-4">
-                  <li>
-                    {/* Displaying the Facebook icon link */}
-                    <a
-                      href={member.socialsLinks.facebook}
-                      className="text-3xl text-primary"
-                    >
-                      <FaFacebookSquare
-                        className={`text-2xl ${
-                          darkMode ? "text-white" : "text-black"
-                        }`}
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    {/* Displaying the Twitter icon link */}
-                    <a
-                      href={member.socialsLinks.twitter}
-                      className="text-3xl text-primary"
-                    >
-                      <FaXTwitter
-                        className={`text-2xl ${
-                          darkMode ? "text-white" : "text-black"
-                        }`}
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    {/* Displaying the LinkedIn icon link */}
-                    <a
-                      href={member.socialsLinks.linkedin}
-                      className="text-3xl text-primary"
-                    >
-                      <FaLinkedin
-                        className={`text-2xl ${
-                          darkMode ? "text-white" : "text-black"
-                        }`}
-                      />
-                    </a>
-                  </li>
+                  {member.socialsLinks.map((socialLink) => (
+                    <li key={socialLink}>
+                      <a
+                        href={socialLink.link}
+                        className={`text-2xl neu_icon rounded-md ${
+                          darkMode
+                            ? "bg-primary text-white"
+                            : " bg-[#ebeef1] text-primary "
+                        } p-2 inline-block`}
+                      >
+                        {socialLink.icon}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </motion.div>

@@ -43,7 +43,7 @@ const AboutHero = () => {
           {/* Displaying the link to the 'About Us' page */}
           <Link
             to="/sign-up"
-            className="py-3 px-6 bg-primary_main text-lg text-white border-none rounded-full hover:bg-opacity-70"
+            className="shadow-[10px 10px 10px -1px rgba(10,99,169,0.16), -10px,-10px,10px -1px rgba(255,255,255,0.70)] py-3 px-6 bg-primary_main text-lg text-white border-none rounded-full hover:bg-opacity-70"
           >
             Join Us
           </Link>
@@ -58,35 +58,35 @@ const AboutHero = () => {
         >
           {/* Displaying the LinkedIn icon link */}
           <Link
-            className={`icons_Wripper bg-primary_main top-1 right-5  ${
+            className={`icons_Wripper  top-1 right-5  bg-[#ebeef1] neu_icon ${
               darkMode ? "border-white" : "border-primary_main"
             }`}
           >
-            <FaLinkedin className="text-4xl z-40 text-white" />
+            <FaLinkedin className="text-4xl z-40 text-primary_main" />
           </Link>
           {/* Displaying the Instagram icon link */}
           <Link
-            className={`icons_Wripper md:bottom-[4rem] bottom-8 -md:right-1 -right-6 bg-primary_main ${
+            className={`icons_Wripper md:bottom-[4rem] bottom-8 -md:right-1 -right-6 bg-[#ebeef1] neu_icon ${
               darkMode ? "border-white" : "border-primary_main"
             }`}
           >
-            <FaInstagram className="text-4xl z-40 text-white" />
+            <FaInstagram className="text-4xl z-40 text-primary_main" />
           </Link>
           {/* Displaying the WhatsApp icon link */}
           <Link
-            className={`icons_Wripper bg-primary_main top-7 left-0  ${
+            className={`icons_Wripper bg-[#ebeef1] top-7 left-0 neu_icon ${
               darkMode ? "border-white " : "border-primary_main"
             }`}
           >
-            <FaWhatsappSquare className="text-4xl z-40 text-white" />
+            <FaWhatsappSquare className="text-4xl z-40 text-primary_main" />
           </Link>
           {/* Displaying the Facebook icon link */}
           <Link
-            className={`icons_Wripper bg-primary_main md:bottom-14 -bottom-2 md:left-0 left-4 ${
+            className={`icons_Wripper bg-[#ebeef1] md:bottom-14 -bottom-2 md:left-0 left-4 neu_icon ${
               darkMode ? "border-white" : "border-primary_main"
             }`}
           >
-            <FaFacebookSquare className="text-4xl z-40 text-white" />
+            <FaFacebookSquare className="text-4xl z-40 text-primary_main" />
           </Link>
         </motion.div>
       </div>

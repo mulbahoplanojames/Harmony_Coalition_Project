@@ -45,7 +45,7 @@ const HomeHero = () => {
           {/* Displaying the link to the 'About Us' page */}
           <Link
             to="/visit-about"
-            className="py-3 px-6 bg-primary_main text-lg text-white border-none rounded-full hover:bg-opacity-70"
+            className="shadow-[10px 10px 10px -1px rgba(10,99,169,0.16), -10px,-10px,10px -1px rgba(255,255,255,0.70)] py-3 px-6 bg-primary_main text-lg text-white border-none rounded-full hover:bg-opacity-70"
           >
             About Us
           </Link>
@@ -60,7 +60,7 @@ const HomeHero = () => {
         >
           {/* Displaying the LinkedIn icon link */}
           <Link
-            className={`icons_Wripper  top-1 right-5  bg-white  ${
+            className={`icons_Wripper  top-1 right-5  bg-[#ebeef1] neu_icon ${
               darkMode ? "border-white" : "border-primary_main"
             }`}
           >
@@ -68,7 +68,7 @@ const HomeHero = () => {
           </Link>
           {/* Displaying the Instagram icon link */}
           <Link
-            className={`icons_Wripper md:bottom-[4rem] bottom-8 -md:right-1 -right-6 bg-white ${
+            className={`icons_Wripper md:bottom-[4rem] bottom-8 -md:right-1 -right-6 bg-[#ebeef1] neu_icon ${
               darkMode ? "border-white" : "border-primary_main"
             }`}
           >
@@ -76,7 +76,7 @@ const HomeHero = () => {
           </Link>
           {/* Displaying the WhatsApp icon link */}
           <Link
-            className={`icons_Wripper bg-white top-7 left-0  ${
+            className={`icons_Wripper bg-[#ebeef1] top-7 left-0 neu_icon ${
               darkMode ? "border-white " : "border-primary_main"
             }`}
           >
@@ -84,7 +84,7 @@ const HomeHero = () => {
           </Link>
           {/* Displaying the Facebook icon link */}
           <Link
-            className={`icons_Wripper bg-white md:bottom-14 -bottom-2 md:left-0 left-4 ${
+            className={`icons_Wripper bg-[#ebeef1] md:bottom-14 -bottom-2 md:left-0 left-4 neu_icon ${
               darkMode ? "border-white" : "border-primary_main"
             }`}
           >

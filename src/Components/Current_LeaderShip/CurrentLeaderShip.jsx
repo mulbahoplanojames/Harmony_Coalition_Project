@@ -4,8 +4,6 @@
   from the Data/Data.js file and maps through it to display the team members.
 */
 
-import { currentLeaderShip } from "../../Data/Data";
-
 // Importing the necessary icons from the react-icons library.
 import { FaLinkedin, FaFacebookSquare } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -17,6 +15,7 @@ import { AppContext } from "../../Context/AppContext";
 import { useContext } from "react";
 
 import { motion } from "framer-motion";
+import { currentLeaderShip } from "../../Data/LeaderData";
 
 const CurrentLeaderShip = () => {
   // Accessing the darkMode value from the AppContext.
@@ -26,7 +25,7 @@ const CurrentLeaderShip = () => {
     <>
       {/* Displaying the heading */}
       <motion.h1
-        className="text-center text-4xl font-semibold pb-10"
+        className="text-center text-4xl font-semibold pb-10 "
         animate={{ opacity: 0, y: -100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
@@ -40,18 +39,18 @@ const CurrentLeaderShip = () => {
           /* //! Team Members */
           currentLeaderShip.map((member) => (
             <motion.div
-              className="text-left group"
+              className="px-5 py-3 text-left group  neu_card rounded-md"
               key={member.id}
               animate={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.3 }}
             >
               {/* Displaying the image */}
-              <div className="h-60 w-full overflow-hidden">
+              <div className="h-60 w-[80%] mx-auto my-3 overflow-hidden z-20 rounded-md">
                 <img
                   src={member.image}
                   alt="team"
-                  className=" md:mx-auto bg-red-400 rounded-md mb-3  w-full h-full object-scale group-hover:scale-110 transion-all duration-300"
+                  className=" md:mx-auto bg-red-400  mb-3  w-full h-full object-scale group-hover:scale-110 transion-all duration-300"
                 />
               </div>
 
@@ -67,45 +66,20 @@ const CurrentLeaderShip = () => {
               {/* Displaying the social links */}
               <div className="">
                 <ul className="flex items-center gap-6 py-4">
-                  <li>
-                    {/* Displaying the Facebook icon link */}
-                    <a
-                      href={member.socialsLinks.facebook}
-                      className="text-3xl text-primary"
-                    >
-                      <FaFacebookSquare
-                        className={`text-2xl ${
-                          darkMode ? "text-white" : "text-black"
-                        }`}
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    {/* Displaying the Twitter icon link */}
-                    <a
-                      href={member.socialsLinks.twitter}
-                      className="text-3xl text-primary"
-                    >
-                      <FaXTwitter
-                        className={`text-2xl ${
-                          darkMode ? "text-white" : "text-black"
-                        }`}
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    {/* Displaying the Linkedin icon link */}
-                    <a
-                      href={member.socialsLinks.linkedin}
-                      className="text-3xl text-primary"
-                    >
-                      <FaLinkedin
-                        className={`text-2xl ${
-                          darkMode ? "text-white" : "text-black"
-                        }`}
-                      />
-                    </a>
-                  </li>
+                  {member.socialsLinks.map((socialLink) => (
+                    <li key={socialLink}>
+                      <a
+                        href={socialLink.link}
+                        className={`text-2xl neu_icon rounded-md ${
+                          darkMode
+                            ? "bg-primary text-white"
+                            : " bg-[#ebeef1] text-primary "
+                        } p-2 inline-block`}
+                      >
+                        {socialLink.icon}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </motion.div>

@@ -60,13 +60,13 @@ const ContactFormNewsletter = () => {
               type="email"
               placeholder="Email"
               name="email"
-              className="md:w-[48%] w-full bg-[#eaeef3] md:h-[2.8rem] h-[3.4rem] outline-none rounded-xl px-4 md:mb-0 mb-3"
+              className="md:w-[48%] w-full bg-[#eaeef3] md:h-[2.8rem] h-[3.4rem] outline-none rounded-xl px-4 md:mb-0 mb-3 neu_input"
             />
             <input
               type="tel"
               placeholder="Phone"
               name="phone"
-              className="md:w-[48%] w-full bg-[#eaeef3] md:h-[2.8rem] h-[3.4rem] outline-none rounded-xl px-4"
+              className="md:w-[48%] w-full bg-[#eaeef3] md:h-[2.8rem] h-[3.4rem] outline-none rounded-xl px-4 neu_input"
             />
           </div>
           {/* name input field  */}
@@ -74,13 +74,13 @@ const ContactFormNewsletter = () => {
             type="text"
             placeholder="Name"
             name="name"
-            className="bg-[#eaeef3] w-full md:h-[2.8rem] h-[3.4rem]  outline-none rounded-xl px-4 mb-4"
+            className="bg-[#eaeef3] w-full md:h-[2.8rem] h-[3.4rem]  outline-none rounded-xl px-4 mb-4 neu_input"
           />
           {/* message input field  */}
           <textarea
             placeholder="Message"
             name="message"
-            className="bg-[#eaeef3] w-full h-[10rem] outline-none rounded-xl px-4 mb-4"
+            className="bg-[#eaeef3] w-full h-[10rem] outline-none rounded-xl px-4 mb-4 neu_input"
           ></textarea>
 
           <p className="pb-4">{result}</p>
@@ -96,7 +96,7 @@ const ContactFormNewsletter = () => {
 
         {/* News letter section */}
         <div
-          className="bg-no-repeat bg-center bg-cover h-fit px-5 py-8 rounded-xl capitalize text-primary w-full"
+          className="bg-no-repeat bg-center bg-cover h-fit px-5 py-8 rounded-xl capitalize text-primary w-full neu_icon"
           id="newsletter"
         >
           <h1
@@ -118,7 +118,7 @@ const ContactFormNewsletter = () => {
               value={newsLetterEmail}
               onChange={(e) => setNewsLetterEmail(e.target.value)}
               placeholder="stephenjames@gmail.com"
-              className="w-full h-[2.8rem] text-secondary outline-none rounded-xl px-4 mb-2"
+              className="w-full h-[2.8rem] text-secondary outline-none rounded-xl px-4 mb-2 neu_input"
             />
             <p className="text-red-500 pb-2">{errorMessage}</p>
             {/* submit button */}
