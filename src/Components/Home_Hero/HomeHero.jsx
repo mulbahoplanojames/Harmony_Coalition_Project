@@ -6,13 +6,7 @@ import { Link } from "react-router-dom";
 import { AppContext } from "../../Context/AppContext";
 import { motion } from "framer-motion";
 
-// Importing the necessary icons from the react-icons library
-import {
-  FaLinkedin,
-  FaInstagram,
-  FaFacebookSquare,
-  FaWhatsappSquare,
-} from "react-icons/fa";
+import avatar from "/src/assets/userAvatar.jpg";
 
 import { WordFlicker } from "/src/Data/Animatedata.jsx";
 
@@ -59,11 +53,7 @@ const HomeHero = () => {
         >
           <div className="w-[11rem] h-[28vh] mx-auto mb-4 rounded-full bg-red-300 border-4 overflow-hidden border-primary_main">
             <img
-              src={
-                darkMode
-                  ? "/src/assets/userAvatar.jpg"
-                  : "/src/assets/userAvatar.jpg"
-              }
+              src={darkMode ? avatar : avatar}
               alt="id card"
               className="w-full h-full"
             />
@@ -80,48 +70,6 @@ const HomeHero = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         ></motion.div>
-
-        {/* Displaying the image with social media links */}
-        {/* <motion.div
-          className=" md:w-[60%] md:h-[24rem] w-[70%] h-[17rem] rounded-full relative overflow-visible border-4 border-primary_main "
-          id="item1"
-          initial={{ opacity: 0, x: 60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4, delay: 0.3 }}
-        >
-          Displaying the LinkedIn icon link
-          <Link
-            className={`icons_Wripper  top-1 right-5  bg-[#ebeef1] neu_icon ${
-              darkMode ? "border-white" : "border-primary_main"
-            }`}
-          >
-            <FaLinkedin className="text-4xl z-40 text-primary_main" />
-          </Link>
-          Displaying the Instagram icon link
-          <Link
-            className={`icons_Wripper md:bottom-[4rem] bottom-8 -md:right-1 -right-6 bg-[#ebeef1] neu_icon ${
-              darkMode ? "border-white" : "border-primary_main"
-            }`}
-          >
-            <FaInstagram className="text-4xl z-40 text-primary_main" />
-          </Link>
-          Displaying the WhatsApp icon link
-          <Link
-            className={`icons_Wripper bg-[#ebeef1] top-7 left-0 neu_icon ${
-              darkMode ? "border-white " : "border-primary_main"
-            }`}
-          >
-            <FaWhatsappSquare className="text-4xl z-40 text-primary_main" />
-          </Link>
-          Displaying the Facebook icon link
-          <Link
-            className={`icons_Wripper bg-[#ebeef1] md:bottom-14 -bottom-2 md:left-0 left-4 neu_icon ${
-              darkMode ? "border-white" : "border-primary_main"
-            }`}
-          >
-            <FaFacebookSquare className="text-4xl z-40 text-primary_main" />
-          </Link>
-        </motion.div> */}
       </div>
     </>
   );
