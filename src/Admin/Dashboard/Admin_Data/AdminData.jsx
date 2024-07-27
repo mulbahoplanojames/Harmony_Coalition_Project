@@ -1,23 +1,38 @@
+import { PiUsersThree } from "react-icons/pi";
+import { IoPersonAddOutline } from "react-icons/io5";
+import { TbUserEdit } from "react-icons/tb";
+import { SlEnvolopeLetter } from "react-icons/sl";
+
 const adminNavLinks = [
   {
     id: 1,
     name: "All Students",
     path: "/admin/",
+    icon: <PiUsersThree />,
   },
   {
     id: 2,
     name: "Add Student",
     path: "/admin/add-student",
+    icon: <IoPersonAddOutline />,
   },
   {
     id: 3,
     name: "Edit Student",
     path: "/admin/edit-student",
+    icon: <TbUserEdit />,
   },
   {
     id: 4,
     name: "Send Newsletter",
     path: "/admin/send-newsletter",
+    icon: <SlEnvolopeLetter />,
+  },
+  {
+    id: 5,
+    name: "Add Events",
+    path: "/admin/add-events",
+    icon: <IoPersonAddOutline />,
   },
 ];
 

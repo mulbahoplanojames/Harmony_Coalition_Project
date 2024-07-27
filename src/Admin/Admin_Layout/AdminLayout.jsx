@@ -24,10 +24,11 @@ const AdminLayout = () => {
             <p className="text-center text-lg text-white mb-10">Admin</p>
             {adminNavLinks.map((link) => (
               <Link
-                className="py-2 px-3 bg-white rounded-md  inline-block w-[90%] ml-3 text-lg hover:opacity-90 mb-3 "
+                className="py-2 px-3 bg-white rounded-md  w-[90%] ml-3 text-base hover:opacity-90 mb-3  flex items-center gap-3 neu_card"
                 key={link.id}
                 to={link.path}
               >
+                <span className="text-xl ">{link.icon}</span>
                 {link.name}
               </Link>
             ))}

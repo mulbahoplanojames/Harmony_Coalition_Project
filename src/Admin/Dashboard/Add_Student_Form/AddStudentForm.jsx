@@ -93,7 +93,7 @@ const AddStudentForm = () => {
               name="first_name"
               placeholder="Enter First Name"
               autoComplete="given-name"
-              className="block w-full h-[2.8rem] p-4 outline-none rounded-md border-gray-300 shadow-sm  sm:text-sm"
+              className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
               value={addStudentData.first_name}
               onChange={(e) =>
                 setAddStudentData({
@@ -112,7 +112,7 @@ const AddStudentForm = () => {
               name="last_name"
               placeholder="Enter Last Name"
               autoComplete="family-name"
-              className="block w-full h-[2.8rem] rounded-md border-gray-300 outline-none px-4 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
               value={addStudentData.last_name}
               onChange={(e) =>
                 setAddStudentData({
@@ -136,7 +136,7 @@ const AddStudentForm = () => {
             name="email"
             placeholder="Enter Email"
             autoComplete="email"
-            className="block w-full h-[2.8rem] rounded-md border-gray-300 outline-none px-4 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
             value={addStudentData.email}
             onChange={(e) =>
               setAddStudentData({
@@ -158,7 +158,7 @@ const AddStudentForm = () => {
               name="password"
               placeholder="Enter Password"
               autoComplete="new-password"
-              className="block w-full h-[2.8rem] rounded-md border-gray-300 outline-none px-4 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
               value={addStudentData.password}
               onChange={(e) =>
                 setAddStudentData({
@@ -180,7 +180,7 @@ const AddStudentForm = () => {
               name="phone_number"
               placeholder="Enter Phone Number"
               autoComplete="phone"
-              className="block w-full h-[2.8rem] rounded-md border-gray-300 outline-none px-4 shadow-sm sm:text-sm"
+              className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
               value={addStudentData.phone_number}
               onChange={(e) =>
                 setAddStudentData({
@@ -200,7 +200,7 @@ const AddStudentForm = () => {
             </label>
             <select
               name="department"
-              className="block w-full h-[2.8rem] rounded-md border-gray-300 outline-none px-4 shadow-sm sm:text-sm bg-white"
+              className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
               placeholder="Select your Department"
               value={addStudentData.department}
               onChange={(e) =>
@@ -229,7 +229,7 @@ const AddStudentForm = () => {
             </label>
             <select
               name="course"
-              className="block w-full h-[2.8rem] rounded-md border-gray-300 outline-none px-4 shadow-sm sm:text-sm bg-white"
+              className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
               placeholder="Select your Course"
               value={addStudentData.course}
               onChange={(e) =>
@@ -283,7 +283,7 @@ const AddStudentForm = () => {
               type="text"
               name="roll_number"
               placeholder="Enter Roll Number"
-              className="block w-full h-[2.8rem] rounded-md border-gray-300 outline-none px-4 shadow-sm sm:text-sm"
+              className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
               value={addStudentData.roll_number}
               onChange={(e) =>
                 setAddStudentData({
@@ -301,7 +301,7 @@ const AddStudentForm = () => {
               type="text"
               name="address"
               placeholder="Enter Address"
-              className="block w-full h-[2.8rem] rounded-md border-gray-300 outline-none px-4 shadow-sm sm:text-sm"
+              className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
               value={addStudentData.address}
               onChange={(e) =>
                 setAddStudentData({
@@ -329,7 +329,7 @@ const AddStudentForm = () => {
                   avatar: e.target.files[0],
                 })
               }
-              className="file-input file-input-bordered w-full"
+              className="file-input file-input-bordered bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
             />
           </div>
         </div>
@@ -346,7 +346,7 @@ const AddStudentForm = () => {
             <input
               type="date"
               name="date_of_birth"
-              className="block w-full h-[2.8rem] rounded-md border-gray-300 outline-none px-4 shadow-sm sm:text-sm"
+              className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
               placeholder="Enter Date of Birth"
               value={addStudentData.date_of_birth}
               onChange={(e) =>
@@ -363,7 +363,7 @@ const AddStudentForm = () => {
             </label>
             <select
               name="gender"
-              className="block w-full h-[2.8rem] rounded-md border-gray-300 outline-none px-4 shadow-sm sm:text-sm bg-white"
+              className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
               placeholder="Select your Gender"
               value={addStudentData.gender}
               onChange={(e) =>
@@ -391,7 +391,7 @@ const AddStudentForm = () => {
             <input
               type="date"
               name="visa_start_date"
-              className="block w-full h-[2.8rem] rounded-md border-gray-300 outline-none px-4 shadow-sm sm:text-sm"
+              className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
               value={addStudentData.visa_start_date}
               onChange={(e) =>
                 setAddStudentData({
@@ -411,7 +411,7 @@ const AddStudentForm = () => {
             <input
               type="date"
               name="visa_end_date"
-              className="block w-full h-[2.8rem] rounded-md border-gray-300 outline-none px-4 shadow-sm sm:text-sm"
+              className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
               value={addStudentData.visa_end_date}
               onChange={(e) =>
                 setAddStudentData({
