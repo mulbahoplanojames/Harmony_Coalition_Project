@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useRef, useState } from "react";
 
 const AddStudentForm = () => {
@@ -74,6 +75,16 @@ const AddStudentForm = () => {
       }
 
       console.log(formData);
+
+      try {
+        const response = await axios.post(
+          `http://192.168.1.68:8000/api/students/`,
+          formData
+        );
+        console.log(response);
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 

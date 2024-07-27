@@ -2,6 +2,7 @@ import { PiUsersThree } from "react-icons/pi";
 import { IoPersonAddOutline } from "react-icons/io5";
 import { TbUserEdit } from "react-icons/tb";
 import { SlEnvolopeLetter } from "react-icons/sl";
+import { MdEventAvailable } from "react-icons/md";
 
 const adminNavLinks = [
   {
@@ -32,7 +33,7 @@ const adminNavLinks = [
     id: 5,
     name: "Add Events",
     path: "/admin/add-events",
-    icon: <IoPersonAddOutline />,
+    icon: <MdEventAvailable />,
   },
 ];
 
