@@ -4,6 +4,7 @@ import StudentProfileDetailInfo from "../../Components/Student_Profile_Detail_In
 import StudentProfileHeader from "../../Components/Student_Profile_Header/StudentProfileHeader";
 import axios from "axios";
 import Events from "../../Components/Events/Events";
+import Calender from "../../Components/Student_Calender/Calender";
 
 const StudentProfile = () => {
   const [studentInfo, setStudentInfo] = useState({
@@ -71,6 +72,7 @@ const StudentProfile = () => {
           />
           <StudentProfileCards />
           <Events />
+          <Calender />
           <StudentProfileDetailInfo
             firstName={studentInfo.first_name || ""}
             lastName={studentInfo.last_name || ""}
