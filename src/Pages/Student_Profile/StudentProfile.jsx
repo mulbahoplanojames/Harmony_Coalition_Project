@@ -3,6 +3,7 @@ import StudentProfileCards from "../../Components/Sttudent_Profile_cards/Student
 import StudentProfileDetailInfo from "../../Components/Student_Profile_Detail_Info/StudentProfileDetailInfo";
 import StudentProfileHeader from "../../Components/Student_Profile_Header/StudentProfileHeader";
 import axios from "axios";
+import Events from "../../Components/Events/Events";
 
 const StudentProfile = () => {
   const [studentInfo, setStudentInfo] = useState({
@@ -84,6 +85,7 @@ const StudentProfile = () => {
             visaStartDate={studentInfo.visaStartDate || ""}
             visaEndDate={studentInfo.visaEndDate || ""}
           />
+          <Events />
         </div>
       </div>
     </>

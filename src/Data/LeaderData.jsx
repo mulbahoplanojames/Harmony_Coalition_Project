@@ -271,3 +271,44 @@ export const footerIconLinks = [
     link: "https://www.linkedin.com/",
   },
 ];
+
+// =====================================================================
+import law from "/src/assets/LAW.jpg";
+import ebs from "/src/assets/EBS.jpg";
+import polythenic from "/src/assets/polythenic.jpg";
+
+export const eventsData = [
+  {
+    id: 1,
+    title: " Inagural Ceremony for Liberain Students at ULK ",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reprehenderit adipisci tempore voluptas laborum quod.",
+    date: "2023-05-01",
+    start_time: "10:00 AM",
+    end_time: "16:00 AM",
+    location: "Location 1",
+    image: law,
+  },
+  {
+    id: 2,
+    title: "Event 2",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reprehenderit adipisci tempore voluptas laborum quod.",
+    date: "2023-05-02",
+    start_time: "10:00 AM",
+    end_time: "16:00 AM",
+    location: "Location 2",
+    image: ebs,
+  },
+  {
+    id: 3,
+    title: "Event 3",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reprehenderit adipisci tempore voluptas laborum quod.",
+    date: "2023-05-03",
+    start_time: "10:00 AM",
+    end_time: "16:00 AM",
+    location: "Location 3",
+    image: polythenic,
+  },
+];
