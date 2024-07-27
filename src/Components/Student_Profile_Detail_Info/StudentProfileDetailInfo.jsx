@@ -3,8 +3,12 @@ import { BsPersonFill } from "react-icons/bs";
 import { LiaBirthdayCakeSolid } from "react-icons/lia";
 import { FaLock, FaPhoneAlt, FaPassport } from "react-icons/fa";
 import { SiGoogleclassroom } from "react-icons/si";
+import { useContext } from "react";
+import { AppContext } from "../../Context/AppContext";
 
 const StudentProfileDetailInfo = (props) => {
+  const { darkMode } = useContext(AppContext);
+
   const {
     firstName,
     lastName,
@@ -22,12 +26,16 @@ const StudentProfileDetailInfo = (props) => {
 
   return (
     <>
-      <div className="w-full h-fit py-9 md:px-6 px-4 bg-white shadow-lg rounded-md grid md:grid-cols-2 grid-cols-1 md:gap-28 gap-y-14">
+      <div
+        className={`w-full h-fit py-9 md:px-6 px-1  shadow-lg rounded-md grid md:grid-cols-2 grid-cols-1 md:gap-28 gap-y-14  bg-[#ebeef1] ${
+          darkMode ? "neu_card" : "neu_card_2"
+        }`}
+      >
         <div className="">
           <h1 className="text-2xl pb-4 text-black">Basic and Contact Info</h1>
           <p className="text-lg text-black pb-4">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque
-            voluptatibus, quidem, voluptate ipsa, quas voluptatem quae{" "}
+            voluptatibus, quidem, voluptate ipsa, quas voluptatem qua
           </p>
 
           {/* basic Information of the Sudent  */}

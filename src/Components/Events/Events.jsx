@@ -16,7 +16,11 @@ const Events = () => {
             key={event.id}
           >
             <div className="bg-no-repeat bg-cover bg-slate-300 overflow-hidden col-span-full lg:col-span-4  h-[35vh] w-full">
-              hjj
+              <img
+                src={event.image}
+                alt={event.title}
+                className="w-full h-full"
+              />
             </div>
             <div className="flex flex-col p-6 col-span-full row-span-full lg:col-span-8 lg:p-10">
               <div className="flex justify-start">

@@ -10,8 +10,8 @@ const StudentProfileCards = () => {
 
   return (
     <>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:mt-16 mt-6 md:gap-8 gap-y-6 mb-14">
-        <div className="px-4 py-6 rounded-md text-black h-fit">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:mt-16 mt-6 md:gap-8  gap-y-6  mb-14 ">
+        <div className="px-4 py-6 rounded-md text-black h-fit w-full neu_card_2">
           <h1 className="text-3xl pb-2 text-black">Need Help?</h1>
           <p className="text-lg text-black pb-4">
             Call or email us to get feedback about latest news and events
@@ -29,11 +29,11 @@ const StudentProfileCards = () => {
         </div>
 
         {/* card three */}
-        <div className="shadow-md  rounded-md text-black col-span-2">
+        <div className="shadow-md  rounded-md text-black col-span-2 ">
           <Calendar
             onChange={onChange}
             value={value}
-            className="w-full h-full"
+            className="w-full h-full bg-[#ebeef1] border-none rounded-md neu_card_1"
           />
         </div>
       </div>

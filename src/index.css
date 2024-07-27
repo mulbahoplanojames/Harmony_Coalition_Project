@@ -27,6 +27,11 @@ body {
     6px 6px 20px rgba(0, 0, 0, 0.1);
 }
 
+.neu_card_1 {
+  box-shadow: inset -6px -6px 20px rgba(255, 255, 255, 0.5),
+    inset 6px 6px 20px rgba(0, 0, 0, 0.5);
+}
+
 .neu_card_2 {
   box-shadow: -10px -10px 20px rgba(255, 255, 255, 1),
     8px 8px 20px rgba(0, 0, 0, 0.1);
