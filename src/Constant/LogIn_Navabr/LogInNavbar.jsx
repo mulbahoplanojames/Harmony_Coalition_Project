@@ -7,6 +7,8 @@ import ToggleDarkModeIcon from "../../Components/Toggle_DarkMode/ToggleDarkModeI
 import { AppContext } from "../../Context/AppContext";
 import ProfileAvatar from "../../Components/Profile_Avatar/ProfileAvatar";
 
+import logo from "/src/assets/logo.jpg";
+
 /**
  * The Navbar component renders the navigation bar of this website.
  * It contains links to different pages and a sign in button.
@@ -28,10 +30,11 @@ const LogInNavbar = () => {
         {/* Link to the home page */}
         <Link
           to="/"
-          className={`text-2xl font-bold ${
+          className={`text-2xl font-bold flex justify-center items-center gap-2 ${
             darkMode ? "text-black" : "text-black"
           }`}
         >
+          <img src={logo} alt="logo" className="w-10 h-10 rounded-md" />
           ALSULK
         </Link>
         {/*//! Menu items for larger devices and mapping through the links */}

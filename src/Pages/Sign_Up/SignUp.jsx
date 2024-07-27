@@ -22,25 +22,25 @@ const SignUp = () => {
   const sendData = async (event) => {
     event.preventDefault();
 
-    try {
-      const response = await axios.post(API_ENDPOINT, {
-        first_name: signedUpData.first_name,
-        last_name: signedUpData.last_name,
-        email: signedUpData.email,
-        password: signedUpData.password,
-        phone_number: signedUpData.phone_number,
-      });
+    if (
+      signedUpData.first_name === "" ||
+      signedUpData.last_name === "" ||
+      signedUpData.email === "" ||
+      signedUpData.password === "" ||
+      signedUpData.phone_number === ""
+    ) {
+      setSignUpErrorMessage("All fields are required");
+      return;
+    } else {
+      try {
+        const response = await axios.post(API_ENDPOINT, {
+          first_name: signedUpData.first_name,
+          last_name: signedUpData.last_name,
+          email: signedUpData.email,
+          password: signedUpData.password,
+          phone_number: signedUpData.phone_number,
+        });
 
-      if (
-        signedUpData.first_name === "" ||
-        signedUpData.last_name === "" ||
-        signedUpData.email === "" ||
-        signedUpData.password === "" ||
-        signedUpData.phone_number === ""
-      ) {
-        setSignUpErrorMessage("All fields are required");
-        return;
-      } else {
         console.log(response);
         setSignUpErrorMessage(
           "Account created successfully, please check your email to Activate your account"
@@ -52,9 +52,10 @@ const SignUp = () => {
           password: "",
           phone_number: "",
         });
+      } catch (error) {
+        console.log("Error", error);
+        setSignUpErrorMessage(JSON.stringify(error.response.data));
       }
-    } catch (error) {
-      console.log("Error", error);
     }
   };
 

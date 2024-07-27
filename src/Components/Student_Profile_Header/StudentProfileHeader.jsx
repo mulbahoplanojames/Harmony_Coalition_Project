@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { SiProgress } from "react-icons/si";
 
+import avatar from "/src/assets/userAvatar.jpg";
+
 const StudentProfileHeader = (props) => {
   const { firstName, lastName, department, course } = props;
   const [date, setDate] = useState({
@@ -59,7 +61,7 @@ const StudentProfileHeader = (props) => {
           <p>{course} Software engineering</p>
         </div>
         <div className="bg-blue-300  md:h-[15rem] h-[12rem] md:w-[26rem] w-full  md:order-last order-first overflow-hidden tw_round">
-          <img src="/src/assets/eric.jpeg" alt="" className="w-full h-full" />
+          <img src={avatar} alt="" className="w-full h-full" />
         </div>
       </div>
     </>
