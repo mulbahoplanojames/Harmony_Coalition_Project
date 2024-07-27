@@ -44,6 +44,7 @@ import EditStudent from "./Admin/Edit_Student/EditStudent";
 import SendNewsLetter from "./Admin/Send_NewsLetter/SendNewsLetter";
 import AdminLogin from "./Admin/Admin_Login/AdminLogin";
 import ConfirmNewsLetter from "./Components/User_NewsLetter_Confirm/ConfirmNewsLetter";
+import AddEvents from "./Admin/Add_Events/AddEvents";
 
 const App = () => {
   const { darkModeStyle } = useContext(AppContext);
@@ -79,6 +80,7 @@ const App = () => {
             <Route path="/admin/add-student" element={<AddStudent />} />
             <Route path="/admin/edit-student" element={<EditStudent />} />
             <Route path="/admin/send-newsletter" element={<SendNewsLetter />} />
+            <Route path="/admin/add-events" element={<AddEvents />} />
           </Route>
 
           {/*//? ================================================================================ */}
