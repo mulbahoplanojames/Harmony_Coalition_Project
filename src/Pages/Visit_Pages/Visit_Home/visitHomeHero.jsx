@@ -3,7 +3,8 @@ import { useContext } from "react";
 // Importing the Link component from the react-router-dom library
 import { Link } from "react-router-dom";
 // Importing the AppContext from the Context/AppContext.jsx file
-import { AppContext } from "../../Context/AppContext";
+import { AppContext } from "../../../Context/AppContext";
+
 import { motion } from "framer-motion";
 
 // Importing the necessary icons from the react-icons library
@@ -16,7 +17,7 @@ import {
 
 import { WordFlicker } from "/src/Data/Animatedata.jsx";
 
-const HomeHomeHero = () => {
+const VisitHomeHero = () => {
   // Accessing the darkMode value from the AppContext
   const { darkMode } = useContext(AppContext);
 
@@ -97,4 +98,4 @@ const HomeHomeHero = () => {
   );
 };
 
-export default HomeHomeHero;
+export default VisitHomeHero;

@@ -1,4 +1,4 @@
-import HomeHomeHero from "./visitHomeHero";
+import VisitHomeHero from "./visitHomeHero";
 import Team from "../../../Components/Team/Team";
 import AboutUs from "../../../Components/About_Us/AboutUs";
 import DisciplinesOffer from "../../../Components/Disciplines_Offer/DisciplinesOffer";
@@ -16,7 +16,7 @@ const VisitHome = () => {
     <>
       <Navbar navLinks={navLinks2} />
       <div className="pt-[4rem] md:px-[2rem] px-2">
-        <HomeHomeHero />
+        <VisitHomeHero />
         <Team />
         <AboutUs link="/visit-about" />
         <DisciplinesOffer disciplinesOffer={disciplinesOffer} />
