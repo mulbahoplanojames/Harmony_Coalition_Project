@@ -63,6 +63,25 @@ body {
     inset 6px 6px 20px rgba(0, 0, 0, 0.5);
 }
 
+.tw_id {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.5),
+    6px 6px 20px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.tw_id_line {
+  background: rgba(75, 32, 140, 0.54);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border: 1px solid rgba(75, 32, 140, 0.57);
+}
+
 #home_hero {
   background: url(/src/assets/gradient_bg.png);
   background-position: center;

@@ -23,11 +23,11 @@ const HomeHero = () => {
   return (
     <>
       <div
-        className="grid md:grid-cols-2 grid-cols-1 place-items-center md:px-1 px-2  md:py-16 py-8  md:gap-6 gap-14 md:bg-fixed rounded-md"
+        className="grid md:grid-cols-2 grid-cols-1 place-items-center md:px-1 px-2  md:py-16 py-8  md:gap-6 gap-14 md:bg-fixed rounded-md h-fit relative"
         id="home_hero"
       >
         <motion.div
-          className=""
+          className="z-30"
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, delay: 0.3 }}
@@ -50,15 +50,36 @@ const HomeHero = () => {
             About Us
           </Link>
         </motion.div>
+
+        <div className="md:w-[50%] w-[90%] h-[60vh] bg-blue-300 rounded-md md:-skew-x-12 -skew-x-6 py-3 px-4 text-center z-40 md:mt-12 tw_id">
+          <div className="w-[11rem] h-[28vh] mx-auto mb-4 rounded-full bg-red-300 border-4 overflow-hidden border-primary_main">
+            <img
+              src={
+                darkMode
+                  ? "/src/assets/userAvatar.jpg"
+                  : "/src/assets/userAvatar.jpg"
+              }
+              alt="id card"
+              className="w-full h-full"
+            />
+          </div>
+          <p className="text-lg">Oplano James Mulbah</p>
+          <p className="text-base pb-3">Software Engineering</p>
+          <p className="text-base">ID : 202234697</p>
+          <p className="text-base">PHONE : 079167643</p>
+          <p className="text-base">EMAIL : oplanojames@gmail.com</p>
+        </div>
+        <div className="w-[1.5rem] md:h-[28vh] h-[70vh] rounded-full absolute top-0 right-[10rem] md:right-[16rem]  tw_id_line"></div>
+
         {/* Displaying the image with social media links */}
-        <motion.div
+        {/* <motion.div
           className=" md:w-[60%] md:h-[24rem] w-[70%] h-[17rem] rounded-full relative overflow-visible border-4 border-primary_main "
           id="item1"
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, delay: 0.3 }}
         >
-          {/* Displaying the LinkedIn icon link */}
+          Displaying the LinkedIn icon link
           <Link
             className={`icons_Wripper  top-1 right-5  bg-[#ebeef1] neu_icon ${
               darkMode ? "border-white" : "border-primary_main"
@@ -66,7 +87,7 @@ const HomeHero = () => {
           >
             <FaLinkedin className="text-4xl z-40 text-primary_main" />
           </Link>
-          {/* Displaying the Instagram icon link */}
+          Displaying the Instagram icon link
           <Link
             className={`icons_Wripper md:bottom-[4rem] bottom-8 -md:right-1 -right-6 bg-[#ebeef1] neu_icon ${
               darkMode ? "border-white" : "border-primary_main"
@@ -74,7 +95,7 @@ const HomeHero = () => {
           >
             <FaInstagram className="text-4xl z-40 text-primary_main" />
           </Link>
-          {/* Displaying the WhatsApp icon link */}
+          Displaying the WhatsApp icon link
           <Link
             className={`icons_Wripper bg-[#ebeef1] top-7 left-0 neu_icon ${
               darkMode ? "border-white " : "border-primary_main"
@@ -82,7 +103,7 @@ const HomeHero = () => {
           >
             <FaWhatsappSquare className="text-4xl z-40 text-primary_main" />
           </Link>
-          {/* Displaying the Facebook icon link */}
+          Displaying the Facebook icon link
           <Link
             className={`icons_Wripper bg-[#ebeef1] md:bottom-14 -bottom-2 md:left-0 left-4 neu_icon ${
               darkMode ? "border-white" : "border-primary_main"
@@ -90,7 +111,7 @@ const HomeHero = () => {
           >
             <FaFacebookSquare className="text-4xl z-40 text-primary_main" />
           </Link>
-        </motion.div>
+        </motion.div> */}
       </div>
     </>
   );

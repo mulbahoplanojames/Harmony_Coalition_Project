@@ -15,6 +15,8 @@ const StudentProfileSettings = () => {
     course: "",
     visa_start_date: "",
     visa_end_date: "",
+    visa_image: null,
+    academic_year: "",
   });
 
   const fileInputRef = useRef(null);
@@ -36,6 +38,8 @@ const StudentProfileSettings = () => {
       studentData.date_of_birth === "" ||
       studentData.gender === "" ||
       !studentData.avatar_image ||
+      !studentData.visa_image ||
+      !studentData.academic_year ||
       studentData.department === "" ||
       studentData.course === "" ||
       studentData.visa_start_date === "" ||
@@ -88,27 +92,23 @@ const StudentProfileSettings = () => {
       <div className="w-full py-3 ">
         <form
           className={`md:w-[90%] w-full bg-[ebeef1] h-fit py-6 md:px-8 px-4 rounded-md mx-auto mb-20 mt-10 ${
-            darkMode ? "neu_card_1 text-black " : "neu_card_2 "
+            darkMode ? "neu_card_1 text-white " : "neu_card_2 "
           }`}
           onSubmit={handleSubmit}
         >
-          <h1 className="text-3xl font-bold pb-8  text-black">
-            Personal Information
-          </h1>
+          <h1 className="text-3xl font-bold pb-8  ">Personal Information</h1>
+
           {/* //Roll numer and Address  */}
           <div className="w-full flex justify-center items-center gap-5 md:flex-nowrap flex-wrap mb-8">
             {/* roll number  */}
             <div className="w-full">
-              <label
-                htmlFor="roll_number"
-                className="inline-block pb-2 text-black"
-              >
+              <label htmlFor="roll_number" className="inline-block pb-2 ">
                 Roll Number
               </label>
               <input
+                className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
                 type="text"
                 name="roll_number"
-                className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
                 placeholder="Enter your roll number"
                 value={studentData.roll_number}
                 onChange={(e) =>
@@ -122,14 +122,14 @@ const StudentProfileSettings = () => {
 
             {/* address  */}
             <div className="w-full">
-              <label htmlFor="address" className="inline-block pb-2 text-black">
+              <label htmlFor="address" className="inline-block pb-2 ">
                 Address
               </label>
               <input
                 type="text"
                 name="address"
                 placeholder="Enter your address"
-                className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
+                className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
                 value={studentData.address}
                 onChange={(e) =>
                   setStudentData({
@@ -145,16 +145,13 @@ const StudentProfileSettings = () => {
           <div className="w-full flex justify-center items-center gap-5 md:flex-nowrap flex-wrap mb-8">
             {/* date of birth  */}
             <div className="w-full">
-              <label
-                htmlFor="date_of_birth"
-                className="inline-block pb-2 text-black"
-              >
+              <label htmlFor="date_of_birth" className="inline-block pb-2 ">
                 Date of Birth
               </label>
               <input
                 type="date"
                 name="date_of_birth"
-                className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
+                className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
                 value={studentData.date_of_birth}
                 onChange={(e) =>
                   setStudentData({
@@ -167,12 +164,12 @@ const StudentProfileSettings = () => {
 
             {/* gender  */}
             <div className="w-full">
-              <label htmlFor="gender" className="inline-block pb-2 text-black">
+              <label htmlFor="gender" className="inline-block pb-2 ">
                 Gender
               </label>
               <select
                 name="gender"
-                className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
+                className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
                 value={studentData.gender}
                 onChange={(e) =>
                   setStudentData({
@@ -193,10 +190,7 @@ const StudentProfileSettings = () => {
 
           {/* profile picture  */}
           <div className="w-full mb-8">
-            <label
-              htmlFor="profile_picture"
-              className="inline-block pb-2 text-black"
-            >
+            <label htmlFor="profile_picture" className="inline-block pb-2  ">
               Profile Picture
             </label>
             <br />
@@ -205,7 +199,7 @@ const StudentProfileSettings = () => {
               ref={fileInputRef}
               accept="image/*"
               name="profile_picture"
-              className="file-input file-input-bordered w-full"
+              className="file-input file-input-bordered bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
               onChange={(e) =>
                 setStudentData({
                   ...studentData,
@@ -218,23 +212,18 @@ const StudentProfileSettings = () => {
           {/*//? error message  */}
           <p className="text-red-500 text-lg font-bold">{errorMessage}</p>
 
-          <h1 className="text-3xl font-bold pb-8 pt-4 text-black">
-            School Information
-          </h1>
+          <h1 className="text-3xl font-bold pb-8 pt-4 ">School Information</h1>
 
           {/* // Department and Course */}
           <div className="w-full flex justify-center items-center gap-5 md:flex-nowrap flex-wrap mb-8">
             {/* department  */}
             <div className="w-full">
-              <label
-                htmlFor="department"
-                className="inline-block pb-2 text-black"
-              >
+              <label htmlFor="department" className="inline-block pb-2 ">
                 Department
               </label>
               <select
                 name="department"
-                className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
+                className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
                 value={studentData.department}
                 onChange={(e) =>
                   setStudentData({ ...studentData, department: e.target.value })
@@ -255,12 +244,12 @@ const StudentProfileSettings = () => {
 
             {/* // course  */}
             <div className="w-full">
-              <label htmlFor="course" className="inline-block pb-2 text-black">
+              <label htmlFor="course" className="inline-block pb-2 ">
                 Course
               </label>
               <select
                 name="department"
-                className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
+                className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
                 value={studentData.course}
                 onChange={(e) =>
                   setStudentData({ ...studentData, course: e.target.value })
@@ -305,16 +294,13 @@ const StudentProfileSettings = () => {
           <div className="w-full flex justify-center items-center gap-5 md:flex-nowrap flex-wrap mb-5">
             {/* visa start date  */}
             <div className="w-full">
-              <label
-                htmlFor="visa_start_date"
-                className="inline-block pb-2 text-black"
-              >
+              <label htmlFor="visa_start_date" className="inline-block pb-2 ">
                 Visa Start Date
               </label>
               <input
                 type="date"
                 name="visa_start_date"
-                className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
+                className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
                 value={studentData.visa_start_date}
                 onChange={(e) =>
                   setStudentData({
@@ -327,21 +313,58 @@ const StudentProfileSettings = () => {
 
             {/* visa end date  */}
             <div className="w-full">
-              <label
-                htmlFor="visa_end_date"
-                className="inline-block pb-2 text-black"
-              >
+              <label htmlFor="visa_end_date" className="inline-block pb-2 ">
                 Visa End Date
               </label>
               <input
                 type="date"
                 name="visa_end_date"
-                className="text-lg w-full border-2 border-slate-400 bg-transparent h-14 px-6 rounded-md outline-none"
+                className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
                 value={studentData.visa_end_date}
                 onChange={(e) =>
                   setStudentData({
                     ...studentData,
                     visa_end_date: e.target.value,
+                  })
+                }
+              />
+            </div>
+          </div>
+
+          {/* Visa imahe and Academic status  */}
+          <div className="w-full mb-5 flex justify-center items-center gap-5 md:flex-nowrap flex-wrap ">
+            <div className="w-full">
+              <label htmlFor="profile_picture" className="inline-block pb-2  ">
+                Upload visa Image
+              </label>
+              <input
+                type="file"
+                ref={fileInputRef}
+                accept="image/*"
+                name="profile_picture"
+                className="file-input file-input-bordered bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
+                onChange={(e) =>
+                  setStudentData({
+                    ...studentData,
+                    visa_image: e.target.files[0],
+                  })
+                }
+              />
+            </div>
+            <div className="w-full">
+              <label htmlFor="academic_status" className="inline-block pb-2 ">
+                Academic Status/Year
+              </label>
+              <input
+                type="text"
+                name="academic_status"
+                placeholder="Enter your academic year"
+                className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
+                value={studentData.academic_year}
+                onChange={(e) =>
+                  setStudentData({
+                    ...studentData,
+                    academic_year: e.target.value,
                   })
                 }
               />
@@ -354,7 +377,7 @@ const StudentProfileSettings = () => {
           {/* submit button  */}
           <button
             type="submit"
-            className="md:w-[20%] w-[50%] mt-2 mb-4 bg-primary_main text-white py-3 px-6 rounded-md hover:bg-opacity-70"
+            className="md:w-[20%] w-[50%] mt-2 mb-4 bg-white text-primary_main py-3 px-6 rounded-md hover:bg-opacity-70  shadow-[0_0.4rem_#dfd9d9] shadow-primary_main"
           >
             Submit
           </button>
