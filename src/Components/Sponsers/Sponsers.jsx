@@ -8,15 +8,15 @@ const Sponsers = () => {
 
   return (
     <>
-      <div className=" md:py-28 py-12">
+      <div className=" md:py-28 py-12 ">
         <h1 className="text-center md:text-4xl text-3xl font-semibold pb-10">
           Pending Sponsers For Inaguration Program
         </h1>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-items-center gap-12   justify-center">
+        <div className="grid  md:grid-cols-2 grid-cols-1 place-items-center md:gap-5 gap-12 justify-center">
           {sponserData.map((sponser) => {
             return (
               <motion.div
-                className="px-5 py-3 text-left group  neu_card_2 rounded-md"
+                className="px-5 py-3 text-left group  neu_card_2 rounded-md md:w-[60%] w-full"
                 key={sponser.id}
                 animate={{ opacity: 0, y: 80 }}
                 whileInView={{ opacity: 1, y: 0 }}

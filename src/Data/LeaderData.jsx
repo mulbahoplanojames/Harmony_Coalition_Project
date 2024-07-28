@@ -257,7 +257,8 @@ export const sponserData = [
     name: "Senetor Johnny K. Kpehe Sr.",
     image: sponser2,
     position: "Senator Bong County",
-    quote: "The only way to do great work is to love what you do.",
+    quote:
+      "We are fortunate to have him as the generous leader of our county and country.",
     socialsLinks: [
       {
         icon: <FaFacebookSquare />,
@@ -279,7 +280,7 @@ export const sponserData = [
     image: sponser1,
     position: "Representative District No. 5, Bong County",
     quote:
-      "The greatest glory in life is not to have much to do, but to have nothing to lose.",
+      "Generous leader of our county and country. We are so glad to have him.",
     socialsLinks: [
       {
         icon: <FaFacebookSquare />,
