@@ -1,4 +1,4 @@
-import mission from "/src/assets/OurMission.webp";
+import mission from "/src/assets/aboutimg3.jpg";
 import { motion } from "framer-motion";
 
 const OurMission = () => {

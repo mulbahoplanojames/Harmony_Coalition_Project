@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import image from "/src/assets/hero.jpg";
-import image1 from "/src/assets/hero1.jpg";
+import image1 from "/src/assets/aboutimg1.jpg";
+import image2 from "/src/assets/aboutimg3.jpg";
 
 import { motion } from "framer-motion";
 
@@ -37,7 +37,7 @@ const AboutUs = ({ link }) => {
             transition={{ duration: 0.4, delay: 0.3 }}
           >
             <img
-              src={image}
+              src={image2}
               alt="hero"
               className="w-full h-full object-cover group-hover:scale-110 duration-300"
             />

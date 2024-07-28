@@ -1,4 +1,4 @@
-import storyImage from "/src/assets/ourStory.webp";
+import storyImage from "/src/assets/aboutimg4.jpg";
 
 import { motion } from "framer-motion";
 
