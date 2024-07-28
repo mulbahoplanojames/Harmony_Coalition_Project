@@ -254,7 +254,7 @@ import sponser2 from "/src/assets/sponser2.jpg";
 export const sponserData = [
   {
     id: 1,
-    name: "Senetor Johnny K. Kpehe Sr.",
+    name: "Senetor Johnny K. Kpehe Sr. and wife",
     image: sponser2,
     position: "Senator Bong County",
     quote:

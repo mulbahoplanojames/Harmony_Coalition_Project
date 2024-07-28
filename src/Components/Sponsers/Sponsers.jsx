@@ -9,7 +9,7 @@ const Sponsers = () => {
   return (
     <>
       <div className=" md:py-28 py-12 ">
-        <h1 className="text-center md:text-4xl text-3xl font-semibold pb-10">
+        <h1 className="text-center md:text-4xl text-3xl font-semibold pb-14">
           Pending Sponsers For Inaguration Program
         </h1>
         <div className="grid  md:grid-cols-2 grid-cols-1 place-items-center md:gap-5 gap-12 justify-center">
