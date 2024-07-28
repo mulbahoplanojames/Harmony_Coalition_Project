@@ -251,6 +251,8 @@ export const pastLeaderShip = [
 // ====================================================================================
 import sponser1 from "/src/assets/sponser1.jpg";
 import sponser2 from "/src/assets/sponser2.jpg";
+import sponser3 from "/src/assets/sponser3.jpg";
+
 export const sponserData = [
   {
     id: 1,
@@ -279,6 +281,28 @@ export const sponserData = [
     name: "Representative Eugine J M Kollie",
     image: sponser1,
     position: "Representative District No. 5, Bong County",
+    quote:
+      "Generous leader of our county and country. We are so glad to have him.",
+    socialsLinks: [
+      {
+        icon: <FaFacebookSquare />,
+        link: "https://www.facebook.com/",
+      },
+      {
+        icon: <FaLinkedin />,
+        link: "https://www.twitter.com/",
+      },
+      {
+        icon: <FaXTwitter />,
+        link: "https://www.linkedin.com/",
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "Honorable Edward W Karfiah ",
+    image: sponser3,
+    position: "Sponsor Bong County",
     quote:
       "Generous leader of our county and country. We are so glad to have him.",
     socialsLinks: [
