@@ -258,7 +258,7 @@ export const sponserData = [
     image: sponser2,
     position: "Senator Bong County",
     quote:
-      "We are fortunate to have him as the generous leader of our county and country.",
+      "We are fortunate to have him as a generous leader of our county and country.",
     socialsLinks: [
       {
         icon: <FaFacebookSquare />,
