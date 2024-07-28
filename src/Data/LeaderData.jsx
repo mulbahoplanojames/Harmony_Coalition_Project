@@ -248,6 +248,55 @@ export const pastLeaderShip = [
   },
 ];
 
+// ====================================================================================
+import sponser1 from "/src/assets/sponser1.jpg";
+import sponser2 from "/src/assets/sponser2.jpg";
+export const sponserData = [
+  {
+    id: 1,
+    name: "Senetor Johnny K. Kpehe Sr.",
+    image: sponser2,
+    position: "Senator Bong County",
+    quote: "The only way to do great work is to love what you do.",
+    socialsLinks: [
+      {
+        icon: <FaFacebookSquare />,
+        link: "https://www.facebook.com/",
+      },
+      {
+        icon: <FaLinkedin />,
+        link: "https://www.twitter.com/",
+      },
+      {
+        icon: <FaXTwitter />,
+        link: "https://www.linkedin.com/",
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "Representative Eugine J M Kollie",
+    image: sponser1,
+    position: "Representative District No. 5, Bong County",
+    quote:
+      "The greatest glory in life is not to have much to do, but to have nothing to lose.",
+    socialsLinks: [
+      {
+        icon: <FaFacebookSquare />,
+        link: "https://www.facebook.com/",
+      },
+      {
+        icon: <FaLinkedin />,
+        link: "https://www.twitter.com/",
+      },
+      {
+        icon: <FaXTwitter />,
+        link: "https://www.linkedin.com/",
+      },
+    ],
+  },
+];
+
 // =====================================================================================
 export const footerIconLinks = [
   {

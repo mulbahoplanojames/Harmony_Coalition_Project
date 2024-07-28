@@ -45,6 +45,7 @@ import SendNewsLetter from "./Admin/Send_NewsLetter/SendNewsLetter";
 import AdminLogin from "./Admin/Admin_Login/AdminLogin";
 import ConfirmNewsLetter from "./Components/User_NewsLetter_Confirm/ConfirmNewsLetter";
 import AddEvents from "./Admin/Add_Events/AddEvents";
+import Sponsers from "./Components/Sponsers/Sponsers";
 
 const App = () => {
   const { darkModeStyle } = useContext(AppContext);
@@ -103,6 +104,7 @@ const App = () => {
             element={<VisitPolythenicInstitute />}
             home
           />
+          <Route path="/visit-sponsership" element={<Sponsers />} />
 
           {/*//! ================================================================================== */}
           {/* User Component varified if the user account is Acitive  */}

@@ -10,6 +10,7 @@ import Navbar from "../../../Constant/Navbar/Navbar";
 import { disciplinesOffer, navLinks2 } from "../../../Data/Data";
 
 import Footer from "../../../Constant/Footer/Footer";
+import Sponsers from "../../../Components/Sponsers/Sponsers";
 
 const VisitHome = () => {
   return (
@@ -17,6 +18,7 @@ const VisitHome = () => {
       <Navbar navLinks={navLinks2} />
       <div className="pt-[4rem] md:px-[2rem] px-2">
         <VisitHomeHero />
+        <Sponsers />
         <Team />
         <AboutUs link="/visit-about" />
         <DisciplinesOffer disciplinesOffer={disciplinesOffer} />
