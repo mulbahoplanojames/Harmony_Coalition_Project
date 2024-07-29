@@ -12,6 +12,7 @@ import connection from "/src/assets/connections.svg";
 import Navbar from "../../../Constant/Navbar/Navbar";
 import { navLinks2 } from "../../../Data/Data";
 import Footer from "../../../Constant/Footer/Footer";
+import Gallery from "../../../Components/Gallery/Gallery";
 
 const VisitAbout = () => {
   return (
@@ -22,6 +23,7 @@ const VisitAbout = () => {
         <OurMission />
         <OurStory />
         <FAQ />
+        <Gallery />
 
         <div className="">
           <h1 className="text-center text-4xl capitalize font-semibold pb-10">
