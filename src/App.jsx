@@ -58,23 +58,42 @@ const VisitPolythenicInstitute = React.lazy(() =>
 
 // ==================================================================================
 
-// Forget Password and Reset Password
-import ForgetPassword from "./Pages/ForgetPassword/ForgetPassword";
-import ResetPassword from "./Pages/Reset_Password/ResetPassword";
-import UserComponent from "./Components/User_Component/UserComponent";
+const ForgetPassword = React.lazy(() =>
+  import("./Pages/ForgetPassword/ForgetPassword")
+);
+const ResetPassword = React.lazy(() =>
+  import("./Pages/Reset_Password/ResetPassword")
+);
+const UserComponent = React.lazy(() =>
+  import("./Components/User_Component/UserComponent")
+);
+
+// ====================================================================================
 
 // Scroll To Top
 import ScrollToTop from "./Components/Scroll_To_Top/ScrollToTop";
 
-// Admin
-import AdminLayout from "./Admin/Admin_Layout/AdminLayout";
-import StudentList from "./Admin/Student_List/StudentList";
-import AddStudent from "./Admin/Add_Student/AddStudent";
-import EditStudent from "./Admin/Edit_Student/EditStudent";
-import SendNewsLetter from "./Admin/Send_NewsLetter/SendNewsLetter";
-import AdminLogin from "./Admin/Admin_Login/AdminLogin";
-import ConfirmNewsLetter from "./Components/User_NewsLetter_Confirm/ConfirmNewsLetter";
-import AddEvents from "./Admin/Add_Events/AddEvents";
+// ====================================================================================
+
+// Admins
+const AdminLayout = React.lazy(() =>
+  import("./Admin/Admin_Layout/AdminLayout")
+);
+const StudentList = React.lazy(() =>
+  import("./Admin/Student_List/StudentList")
+);
+const AddStudent = React.lazy(() => import("./Admin/Add_Student/AddStudent"));
+const EditStudent = React.lazy(() =>
+  import("./Admin/Edit_Student/EditStudent")
+);
+const SendNewsLetter = React.lazy(() =>
+  import("./Admin/Send_NewsLetter/SendNewsLetter")
+);
+const AdminLogin = React.lazy(() => import("./Admin/Admin_Login/AdminLogin"));
+const ConfirmNewsLetter = React.lazy(() =>
+  import("./Components/User_NewsLetter_Confirm/ConfirmNewsLetter")
+);
+const AddEvents = React.lazy(() => import("./Admin/Add_Events/AddEvents"));
 
 //! ==================================================================================
 // Versel speed insights
