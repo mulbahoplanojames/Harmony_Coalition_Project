@@ -51,6 +51,8 @@ import Sponsers from "./Components/Sponsers/Sponsers";
 // Versel speed insights
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
+// Versel Analytics
+import { Analytics } from "@vercel/analytics/react";
 const App = () => {
   const { darkModeStyle } = useContext(AppContext);
 
@@ -59,6 +61,7 @@ const App = () => {
       <div className="h-screen w-screen overflow-y-auto" style={darkModeStyle}>
         <ScrollToTop />
         <SpeedInsights />
+        <Analytics />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
