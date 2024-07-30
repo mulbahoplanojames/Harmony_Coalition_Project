@@ -47,6 +47,10 @@ import ConfirmNewsLetter from "./Components/User_NewsLetter_Confirm/ConfirmNewsL
 import AddEvents from "./Admin/Add_Events/AddEvents";
 import Sponsers from "./Components/Sponsers/Sponsers";
 
+//! ==================================================================================
+// Versel speed insights
+import { SpeedInsights } from "@vercel/speed-insights/react";
+
 const App = () => {
   const { darkModeStyle } = useContext(AppContext);
 
@@ -54,6 +58,7 @@ const App = () => {
     <>
       <div className="h-screen w-screen overflow-y-auto" style={darkModeStyle}>
         <ScrollToTop />
+        <SpeedInsights />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
