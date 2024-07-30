@@ -2,7 +2,7 @@ import axios from "axios";
 import { useRef, useState } from "react";
 
 const AddEventsForm = () => {
-  const [isEvents, setIsEvents] = useState({
+  const [Events, setEvents] = useState({
     event_title: "",
     event_date: "",
     event_start_time: "",
@@ -14,30 +14,30 @@ const AddEventsForm = () => {
 
   const fileInputRef = useRef(null);
 
-  const handleAddEventsSubmit = async (e) => {
+  const handleAddEvents = async (e) => {
     e.preventDefault();
 
     if (
-      isEvents.event_title === "" ||
-      isEvents.event_date === "" ||
-      isEvents.event_start_time === "" ||
-      isEvents.event_end_time === "" ||
-      isEvents.event_description === "" ||
-      isEvents.event_image === "" ||
-      isEvents.event_location === ""
+      Events.event_title === "" ||
+      Events.event_date === "" ||
+      Events.event_start_time === "" ||
+      Events.event_end_time === "" ||
+      Events.event_description === "" ||
+      Events.event_image === "" ||
+      Events.event_location === ""
     ) {
       alert("Please fill all the fields");
     } else {
-      console.log(isEvents);
+      console.log(Events);
 
       try {
         const response = await axios.post(
           `http://192.168.1.68:8000/api/events/`,
-          isEvents
+          Events
         );
         console.log(response);
 
-        setIsEvents({
+        setEvents({
           event_title: "",
           event_date: "",
           event_start_time: "",
@@ -56,7 +56,7 @@ const AddEventsForm = () => {
     <>
       <form
         className=" md:py-8 py-5 px-3 md:px-6 shadow-xl neu_card_1"
-        onSubmit={handleAddEventsSubmit}
+        onSubmit={handleAddEvents}
       >
         {/* Event Name and Date */}
         <div className="w-full flex justify-between items-center md:flex-nowrap flex-wrap md:gap-7 gap-y-3 mb-5">
@@ -70,9 +70,9 @@ const AddEventsForm = () => {
               placeholder="Enter First Name"
               autoComplete="given-name"
               className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
-              value={isEvents.event_title}
+              value={Events.event_title}
               onChange={(e) =>
-                setIsEvents({ ...isEvents, event_title: e.target.value })
+                setEvents({ ...Events, event_title: e.target.value })
               }
             />
           </div>
@@ -86,9 +86,9 @@ const AddEventsForm = () => {
               placeholder="Enter the date of the Event"
               autoComplete="family-name"
               className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
-              value={isEvents.event_date}
+              value={Events.event_date}
               onChange={(e) =>
-                setIsEvents({ ...isEvents, event_date: e.target.value })
+                setEvents({ ...Events, event_date: e.target.value })
               }
             />
           </div>
@@ -104,9 +104,9 @@ const AddEventsForm = () => {
             placeholder="Enter the description of the Event"
             autoComplete="family-name"
             className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-36 px-6 "
-            value={isEvents.event_description}
+            value={Events.event_description}
             onChange={(e) =>
-              setIsEvents({ ...isEvents, event_description: e.target.value })
+              setEvents({ ...Events, event_description: e.target.value })
             }
           ></textarea>
         </div>
@@ -123,9 +123,9 @@ const AddEventsForm = () => {
               placeholder="Enter the Start time of the Event"
               autoComplete="given-name"
               className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
-              value={isEvents.event_start_time}
+              value={Events.event_start_time}
               onChange={(e) =>
-                setIsEvents({ ...isEvents, event_start_time: e.target.value })
+                setEvents({ ...Events, event_start_time: e.target.value })
               }
             />
           </div>
@@ -139,9 +139,9 @@ const AddEventsForm = () => {
               placeholder="Enter the End time of the Event"
               autoComplete="family-name"
               className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
-              value={isEvents.event_end_time}
+              value={Events.event_end_time}
               onChange={(e) =>
-                setIsEvents({ ...isEvents, event_end_time: e.target.value })
+                setEvents({ ...Events, event_end_time: e.target.value })
               }
             />
           </div>
@@ -159,9 +159,9 @@ const AddEventsForm = () => {
               placeholder="Enter the Location of the Event"
               autoComplete="given-name"
               className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
-              value={isEvents.event_location}
+              value={Events.event_location}
               onChange={(e) =>
-                setIsEvents({ ...isEvents, event_location: e.target.value })
+                setEvents({ ...Events, event_location: e.target.value })
               }
             />
           </div>
@@ -177,7 +177,7 @@ const AddEventsForm = () => {
               className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
               ref={fileInputRef}
               onChange={(e) =>
-                setIsEvents({ ...isEvents, event_image: e.target.files[0] })
+                setEvents({ ...Events, event_image: e.target.files[0] })
               }
             />
           </div>

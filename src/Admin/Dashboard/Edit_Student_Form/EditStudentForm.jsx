@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useRef, useState } from "react";
 
 const EditStudentForm = () => {
@@ -17,6 +18,7 @@ const EditStudentForm = () => {
     visa_start_date: "",
     visa_end_date: "",
     visa_image: "",
+    academic_year: "",
   });
 
   const [errorMessage, setErrorMessage] = useState("");
@@ -40,8 +42,9 @@ const EditStudentForm = () => {
       addStudentData.date_of_birth === "" ||
       addStudentData.gender === "" ||
       addStudentData.visa_start_date === "" ||
-      addStudentData.visa_end_date === ""
-      //   addStudentData.visa_image === ""
+      addStudentData.visa_end_date === "" ||
+      addStudentData.visa_image === "" ||
+      addStudentData.academic_year === ""
     ) {
       setErrorMessage("Please fill all the fields");
     } else {
@@ -65,12 +68,26 @@ const EditStudentForm = () => {
         visa_start_date: "",
         visa_end_date: "",
         visa_image: "",
+        academic_year: "",
       });
 
       // TODO: Send the form data to the server
       const formData = new FormData();
       for (const key in addStudentData) {
         formData.append(key, addStudentData[key]);
+      }
+
+      try {
+        const response = await axios.put("http://localhost:8000/students/", {
+          headers: {
+            Authorization: `Token ${localStorage.getItem("token")}`,
+          },
+          formData,
+        });
+
+        console.log(response);
+      } catch (error) {
+        console.log(error);
       }
 
       console.log(formData);
@@ -417,6 +434,49 @@ const EditStudentForm = () => {
                 setAddStudentData({
                   ...addStudentData,
                   visa_end_date: e.target.value,
+                })
+              }
+            />
+          </div>
+        </div>
+
+        {/* Visa Image and Academic Year  */}
+        <div className="w-full flex justify-between items-center md:flex-nowrap flex-wrap md:gap-7 gap-y-3 mb-5">
+          <div className="w-full">
+            <label htmlFor="avatar" className="text-base pb-1 inline-block">
+              Visa Image
+            </label>
+            <input
+              type="file"
+              name="avatar"
+              ref={fileInputRef}
+              onChange={(e) =>
+                setAddStudentData({
+                  ...addStudentData,
+                  visa_image: e.target.files[0],
+                })
+              }
+              className="file-input file-input-bordered bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
+            />
+          </div>
+
+          <div className="w-full">
+            <label
+              htmlFor="academic_year"
+              className="text-base pb-1 inline-block"
+            >
+              Academic Year
+            </label>
+            <input
+              type="text"
+              name="academic_year"
+              className="file-input file-input-bordered bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
+              placeholder="Enter Academic Year"
+              value={addStudentData.academic_year}
+              onChange={(e) =>
+                setAddStudentData({
+                  ...addStudentData,
+                  academic_year: e.target.value,
                 })
               }
             />
