@@ -70,6 +70,7 @@ const ResetPassword = () => {
         } else {
           setIsResponseOk(false);
         }
+        console.log(isResponseOk);
       } catch (error) {
         console.log(error);
       }

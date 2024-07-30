@@ -299,7 +299,7 @@ export const sponserData = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     name: "Honorable Edward W Karfiah ",
     image: sponser3,
     position: "Sponsor Bong County",
