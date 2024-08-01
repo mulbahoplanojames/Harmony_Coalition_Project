@@ -11,7 +11,7 @@ const ForgetPassword = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   //? API URL FROM THE ENV FILE
-  const API_ENDPOINT = `http://192.168.1.68:8000/students/api/password-reset/`;
+  const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
 
   // This function is called when the form is submitted
   const handleForgetSubmit = async (e) => {
@@ -19,7 +19,7 @@ const ForgetPassword = () => {
     e.preventDefault();
 
     try {
-      const response = axios.post(API_ENDPOINT, {
+      const response = axios.post(`${BASE_URL}/accounts/password/reset/`, {
         email: forgetPasswordEmail,
       });
 

@@ -63,7 +63,7 @@ const AdminLogin = () => {
               <input
                 type="password"
                 name="password"
-                className="border-2 rounded-md border-black w-full h-10 px-2 outline-none"
+                className="border-2 rounded-md border-black w-full h-10 px-2 outline-none text-black"
                 placeholder="Enter password"
                 value={adminLoginData.password}
                 onChange={(e) => {

@@ -13,18 +13,18 @@ const AuthProvider = ({ children }) => {
 
   const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
 
-  const API_ENDPOINT = `${BASE_URL}/students/api/login/`;
-
   const [errorMessage, setErrorMessage] = useState("");
   const [resetPasswordErrorMessage, setResetPasswordErrorMessage] =
     useState("");
 
   //? ===========================================================================================
   /*
-    The loginAction function handles user login by sending a POST request to the
-    authentication endpoint, updating the user and token state upon a successful
-    response, and storing the token in local storage.
+  The loginAction function handles user login by sending a POST request to the
+  authentication endpoint, updating the user and token state upon a successful
+  response, and storing the token in local storage.
   */
+
+  const API_ENDPOINT = `${BASE_URL}/students/api/login/`;
 
   let authInterceptor;
 
@@ -170,14 +170,11 @@ const AuthProvider = ({ children }) => {
   // A function to reset the password
   const resetPasswordAction = async (resetPassword, id, token) => {
     try {
-      const response = await axios.patch(
-        `${BASE_URL}/students/api/set-newpassword/`,
-        {
-          password: resetPassword,
-          token: token,
-          uid: id,
-        }
-      );
+      const response = await axios.patch(`${BASE_URL}/accounts/password/new/`, {
+        password: resetPassword,
+        token: token,
+        uid: id,
+      });
 
       console.log(response.data);
     } catch (error) {

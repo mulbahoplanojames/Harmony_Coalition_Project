@@ -63,7 +63,7 @@ const ResetPassword = () => {
         const decodedToken = decodeURIComponent(token);
 
         const response = await axios.get(
-          `${BASE_URL}/students/api/checkreset-link/${decodedId}/${decodedToken}/`
+          `${BASE_URL}/accounts/checkreset-link/${decodedId}/${decodedToken}/`
         );
 
         console.log(response.data);
@@ -119,7 +119,7 @@ const ResetPassword = () => {
                 <input
                   type={passwordVisible ? "text" : "password"}
                   name="password"
-                  placeholder="Enter New Password"
+                  placeholder="Enter New Password Length 8-20"
                   // required
                   value={resetPassword}
                   onChange={(e) => setResetPassword(e.target.value)}
@@ -155,7 +155,7 @@ const ResetPassword = () => {
                 <input
                   type={confirmPasswordVisible ? "text" : "password"}
                   name="password"
-                  placeholder="Confirm New Password"
+                  placeholder="Confirm New Password Length 8-20"
                   // required
                   value={resetPasswordConfirm}
                   onChange={(e) => setResetPasswordConfirm(e.target.value)}

@@ -121,7 +121,7 @@ const LogIn = () => {
               </div>
               <Link
                 to="/forget-password"
-                className="text-primary_main pt-3 md:pl-[72%] pl-[55%] text-base inline-block"
+                className="text-primary_main pt-3 md:pl-[72%] pl-[63%] text-base inline-block"
                 onClick={() => window.scrollTo(0, 8000)}
               >
                 Forget Password?

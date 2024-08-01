@@ -45,18 +45,32 @@ const StudentProfileSettings = () => {
       studentData.department === "" ||
       studentData.course === "" ||
       studentData.visa_start_date === "" ||
-      studentData.visa_end_date === ""
-      // studentData.visa_image === "" ||
-      // studentData.avatar_image === ""
+      studentData.visa_end_date === "" ||
+      studentData.visa_image === "" ||
+      studentData.avatar_image === ""
     ) {
       setErrorMessage("Please fill all the fields");
     } else {
       setErrorMessage("");
       console.log(studentData);
 
+      const formData = new FormData();
+      formData.append("roll_number", studentData.roll_number);
+      formData.append("address", studentData.address);
+      formData.append("date_of_birth", studentData.date_of_birth);
+      formData.append("gender", studentData.gender);
+      formData.append("avatar_image", studentData.avatar_image);
+      formData.append("department", studentData.department);
+      formData.append("course", studentData.course);
+      formData.append("visa_start_date", studentData.visa_start_date);
+      formData.append("visa_end_date", studentData.visa_end_date);
+      formData.append("visa_image", studentData.visa_image);
+      formData.append("academic_year", studentData.academic_year);
+
       axios
-        .put(API_ENDPOINT, studentData, {
+        .put(API_ENDPOINT, formData, {
           headers: {
+            "Content-Type": "multipart/form-data",
             Authorization: `Token ${localStorage.getItem("token")}`,
           },
         })
@@ -154,7 +168,7 @@ const StudentProfileSettings = () => {
               <input
                 type="date"
                 name="date_of_birth"
-                className="bg-[#fff] md:w-full w-[23rem] border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
+                className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
                 value={studentData.date_of_birth}
                 placeholder="Enter your date of birth"
                 onChange={(e) =>
@@ -304,7 +318,7 @@ const StudentProfileSettings = () => {
               <input
                 type="date"
                 name="visa_start_date"
-                className="bg-[#fff] md:w-full w-[23rem] border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
+                className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
                 value={studentData.visa_start_date}
                 onChange={(e) =>
                   setStudentData({
@@ -323,7 +337,7 @@ const StudentProfileSettings = () => {
               <input
                 type="date"
                 name="visa_end_date"
-                className="bg-[#fff] md:w-full w-[23rem] border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
+                className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
                 value={studentData.visa_end_date}
                 onChange={(e) =>
                   setStudentData({

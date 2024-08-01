@@ -61,7 +61,6 @@ const SignUp = () => {
       }
     }
   };
-
   return (
     <>
       <div className="flex justify-center items-center w-full h-fit py-14  bg-primary_main text-black">
