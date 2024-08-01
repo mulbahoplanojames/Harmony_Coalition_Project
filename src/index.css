@@ -106,19 +106,19 @@ body {
 @keyframes rotate1 {
   0% {
     /* transform: rotate(0deg); */
-    background: url(./assets/hero1.jpg);
+    background: url(/src/assets/aboutimg4.jpg);
     background-position: center;
     background-size: cover;
   }
   50% {
     /* transform: rotate(180deg); */
-    background: url(./assets/hero.jpg);
+    background: url(/src/assets/aboutimg2.jpg);
     background-position: center;
     background-size: cover;
   }
   100% {
     /* transform: rotate(360deg); */
-    background: url(./assets/hero1.jpg);
+    background: url(/src/assets/aboutimg1.jpg);
     background-position: center;
     background-size: cover;
   }

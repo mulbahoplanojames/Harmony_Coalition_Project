@@ -53,6 +53,9 @@ const ResetPassword = () => {
     }
   };
 
+  // The base Url of the API
+  const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
+
   useEffect(() => {
     const fetchUserPassword = async () => {
       try {
@@ -60,7 +63,7 @@ const ResetPassword = () => {
         const decodedToken = decodeURIComponent(token);
 
         const response = await axios.get(
-          `http://192.168.1.68:8000/students/api/checkreset-link/${decodedId}/${decodedToken}/`
+          `${BASE_URL}/students/api/checkreset-link/${decodedId}/${decodedToken}/`
         );
 
         console.log(response.data);
@@ -79,7 +82,7 @@ const ResetPassword = () => {
     if (id && token) {
       fetchUserPassword();
     }
-  }, [id, token]);
+  }, [id, token, BASE_URL, isResponseOk]);
 
   return (
     <div className="flex justify-center items-center w-full h-fit py-14  bg-primary_main text-black">

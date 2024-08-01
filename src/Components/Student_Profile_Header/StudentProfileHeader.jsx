@@ -4,7 +4,7 @@ import { SiProgress } from "react-icons/si";
 import avatar from "/src/assets/userAvatar.jpg";
 
 const StudentProfileHeader = (props) => {
-  const { firstName, lastName, department, course } = props;
+  const { firstName, lastName, department, course, image } = props;
   const [date, setDate] = useState({
     hour: "",
     minute: "",
@@ -57,11 +57,11 @@ const StudentProfileHeader = (props) => {
             Always stay up to date in your student portal
           </p>
 
-          <p className="pb-2">{department} Computer Science</p>
-          <p>{course} Software engineering</p>
+          <p className="pb-2">{department ? department : "Department"}</p>
+          <p>{course ? course : "Course"}</p>
         </div>
         <div className="bg-blue-300  md:h-[15rem] h-[12rem] md:w-[26rem] w-full  md:order-last order-first overflow-hidden tw_round">
-          <img src={avatar} alt="" className="w-full h-full" />
+          <img src={image ? image : avatar} alt="" className="w-full h-full" />
         </div>
       </div>
     </>

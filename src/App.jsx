@@ -94,6 +94,14 @@ const ConfirmNewsLetter = React.lazy(() =>
   import("./Components/User_NewsLetter_Confirm/ConfirmNewsLetter")
 );
 const AddEvents = React.lazy(() => import("./Admin/Add_Events/AddEvents"));
+const AllEvents = React.lazy(() => import("./Admin/All_Events/AllEvents"));
+const EditEvents = React.lazy(() => import("./Admin/Edit_Events/EditEvents"));
+const AllNewsLetter = React.lazy(() =>
+  import("./Admin/All_Letter/AllNewsLetter")
+);
+const EditNewsLetter = React.lazy(() =>
+  import("./Admin/Edit_NewsLetter/EditNewsLetter")
+);
 
 //! ==================================================================================
 // Versel speed insights
@@ -135,6 +143,7 @@ const App = () => {
 
             {/*//! ================================================================================== */}
 
+            {/* Admin Pages */}
             <Route path="/admin/" element={<AdminLayout />}>
               <Route index element={<StudentList />} />
               <Route path="/admin/add-student" element={<AddStudent />} />
@@ -144,6 +153,16 @@ const App = () => {
                 element={<SendNewsLetter />}
               />
               <Route path="/admin/add-events" element={<AddEvents />} />
+              <Route path="/admin/all-events" element={<AllEvents />} />
+              <Route path="/admin/edit-events/:id/" element={<EditEvents />} />
+              <Route
+                path="/admin/all-newsletter/"
+                element={<AllNewsLetter />}
+              />
+              <Route
+                path="/admin/edit-newsletter/:id/"
+                element={<EditNewsLetter />}
+              />
             </Route>
 
             {/*//? ================================================================================ */}

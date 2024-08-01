@@ -23,10 +23,13 @@ const StudentProfile = () => {
     visaEndDate: "",
   });
 
+  // The Base URL for the API
+  const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
+
   //! Get Student Info
   useEffect(() => {
     axios
-      .get(`http://192.168.1.68:8000/students/api/profile/`, {
+      .get(`${BASE_URL}/students/api/profile/`, {
         headers: {
           Authorization: `Token ${localStorage.getItem("token")}`,
         },
@@ -45,7 +48,7 @@ const StudentProfile = () => {
           birth_date: response.data.student.birth_date,
           address: response.data.student.address,
           phoneNumber: response.data.student.user.phone_number,
-          image: response.data.student.image,
+          image: response.data.student.user.picture,
           visaStartDate: response.data.student.visa_start,
           visaEndDate: response.data.student.visa_end,
         });
@@ -53,7 +56,7 @@ const StudentProfile = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [BASE_URL]);
 
   // Log studentInfo whenever it changes
   useEffect(() => {
@@ -69,6 +72,7 @@ const StudentProfile = () => {
             lastName={studentInfo.last_name}
             department={studentInfo.department}
             course={studentInfo.course}
+            image={studentInfo.image || ""}
           />
           <StudentProfileCards />
           <Events />
@@ -84,7 +88,6 @@ const StudentProfile = () => {
             birthDate={studentInfo.birth_date || ""}
             address={studentInfo.address || ""}
             phoneNumber={studentInfo.phoneNumber || ""}
-            image={studentInfo.image || ""}
             visaStartDate={studentInfo.visaStartDate || ""}
             visaEndDate={studentInfo.visaEndDate || ""}
           />

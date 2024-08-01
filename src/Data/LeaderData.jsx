@@ -18,14 +18,17 @@ export const currentLeaderShip = [
       "The greatest glory in life is not to have much to do, but to have nothing to lose.",
     socialsLinks: [
       {
+        id: 1,
         icon: <FaFacebookSquare />,
         link: "https://www.facebook.com/",
       },
       {
+        id: 2,
         icon: <FaLinkedin />,
         link: "https://www.twitter.com/",
       },
       {
+        id: 3,
         icon: <FaXTwitter />,
         link: "https://www.linkedin.com/",
       },
@@ -39,14 +42,17 @@ export const currentLeaderShip = [
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: [
       {
+        id: 1,
         icon: <FaFacebookSquare />,
         link: "https://www.facebook.com/",
       },
       {
+        id: 2,
         icon: <FaLinkedin />,
         link: "https://www.twitter.com/",
       },
       {
+        id: 3,
         icon: <FaXTwitter />,
         link: "https://www.linkedin.com/",
       },
@@ -60,14 +66,17 @@ export const currentLeaderShip = [
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: [
       {
+        id: 1,
         icon: <FaFacebookSquare />,
         link: "https://www.facebook.com/",
       },
       {
+        id: 2,
         icon: <FaLinkedin />,
         link: "https://www.twitter.com/",
       },
       {
+        id: 3,
         icon: <FaXTwitter />,
         link: "https://www.linkedin.com/",
       },
@@ -81,14 +90,17 @@ export const currentLeaderShip = [
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: [
       {
+        id: 1,
         icon: <FaFacebookSquare />,
         link: "https://www.facebook.com/",
       },
       {
+        id: 2,
         icon: <FaLinkedin />,
         link: "https://www.twitter.com/",
       },
       {
+        id: 3,
         icon: <FaXTwitter />,
         link: "https://www.linkedin.com/",
       },
@@ -102,14 +114,17 @@ export const currentLeaderShip = [
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: [
       {
+        id: 1,
         icon: <FaFacebookSquare />,
         link: "https://www.facebook.com/",
       },
       {
+        id: 2,
         icon: <FaLinkedin />,
         link: "https://www.twitter.com/",
       },
       {
+        id: 3,
         icon: <FaXTwitter />,
         link: "https://www.linkedin.com/",
       },
@@ -123,14 +138,17 @@ export const currentLeaderShip = [
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: [
       {
+        id: 1,
         icon: <FaFacebookSquare />,
         link: "https://www.facebook.com/",
       },
       {
+        id: 2,
         icon: <FaLinkedin />,
         link: "https://www.twitter.com/",
       },
       {
+        id: 3,
         icon: <FaXTwitter />,
         link: "https://www.linkedin.com/",
       },
@@ -149,14 +167,17 @@ export const pastLeaderShip = [
       "The greatest glory in life is not to have much to do, but to have nothing to lose.",
     socialsLinks: [
       {
+        id: 1,
         icon: <FaFacebookSquare />,
         link: "https://www.facebook.com/",
       },
       {
+        id: 2,
         icon: <FaLinkedin />,
         link: "https://www.twitter.com/",
       },
       {
+        id: 3,
         icon: <FaXTwitter />,
         link: "https://www.linkedin.com/",
       },
@@ -170,14 +191,17 @@ export const pastLeaderShip = [
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: [
       {
+        id: 1,
         icon: <FaFacebookSquare />,
         link: "https://www.facebook.com/",
       },
       {
+        id: 2,
         icon: <FaLinkedin />,
         link: "https://www.twitter.com/",
       },
       {
+        id: 3,
         icon: <FaXTwitter />,
         link: "https://www.linkedin.com/",
       },
@@ -191,14 +215,17 @@ export const pastLeaderShip = [
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: [
       {
+        id: 1,
         icon: <FaFacebookSquare />,
         link: "https://www.facebook.com/",
       },
       {
+        id: 2,
         icon: <FaLinkedin />,
         link: "https://www.twitter.com/",
       },
       {
+        id: 3,
         icon: <FaXTwitter />,
         link: "https://www.linkedin.com/",
       },
@@ -212,14 +239,17 @@ export const pastLeaderShip = [
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: [
       {
+        id: 1,
         icon: <FaFacebookSquare />,
         link: "https://www.facebook.com/",
       },
       {
+        id: 2,
         icon: <FaLinkedin />,
         link: "https://www.twitter.com/",
       },
       {
+        id: 3,
         icon: <FaXTwitter />,
         link: "https://www.linkedin.com/",
       },
@@ -233,14 +263,17 @@ export const pastLeaderShip = [
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: [
       {
+        id: 1,
         icon: <FaFacebookSquare />,
         link: "https://www.facebook.com/",
       },
       {
+        id: 2,
         icon: <FaLinkedin />,
         link: "https://www.twitter.com/",
       },
       {
+        id: 3,
         icon: <FaXTwitter />,
         link: "https://www.linkedin.com/",
       },
@@ -263,14 +296,17 @@ export const sponserData = [
       "We are fortunate to have him as a generous leader of our county and country.",
     socialsLinks: [
       {
+        id: 1,
         icon: <FaFacebookSquare />,
         link: "https://www.facebook.com/",
       },
       {
+        id: 2,
         icon: <FaLinkedin />,
         link: "https://www.twitter.com/",
       },
       {
+        id: 3,
         icon: <FaXTwitter />,
         link: "https://www.linkedin.com/",
       },
@@ -285,14 +321,17 @@ export const sponserData = [
       "Generous leader of our county and country. We are so glad to have him.",
     socialsLinks: [
       {
+        id: 1,
         icon: <FaFacebookSquare />,
         link: "https://www.facebook.com/",
       },
       {
+        id: 2,
         icon: <FaLinkedin />,
         link: "https://www.twitter.com/",
       },
       {
+        id: 3,
         icon: <FaXTwitter />,
         link: "https://www.linkedin.com/",
       },
@@ -307,14 +346,17 @@ export const sponserData = [
       "Generous leader of our county and country. We are so glad to have him.",
     socialsLinks: [
       {
+        id: 1,
         icon: <FaFacebookSquare />,
         link: "https://www.facebook.com/",
       },
       {
+        id: 2,
         icon: <FaLinkedin />,
         link: "https://www.twitter.com/",
       },
       {
+        id: 3,
         icon: <FaXTwitter />,
         link: "https://www.linkedin.com/",
       },

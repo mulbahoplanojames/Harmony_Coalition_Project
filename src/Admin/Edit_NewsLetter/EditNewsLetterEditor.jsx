@@ -1,16 +1,28 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-const NewsLetterEditor = () => {
+import { useLocation, useNavigate } from "react-router-dom";
+const EditNewsLetterEditor = () => {
   const editorRef = useRef(null);
   const [editorContent, setEditorContent] = useState(null);
   const [newsletterSubject, setNewsletterSubject] = useState("");
 
   const navigate = useNavigate();
 
+  // USe Location Hook
+  const location = useLocation();
+  const { state } = location;
+  console.log(state);
+
   // Base URL for the API
   const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
+
+  useEffect(() => {
+    if (state) {
+      setNewsletterSubject(state.subject);
+      setEditorContent(state.content);
+    }
+  }, [state]);
 
   const handleNewsLetterSubmit = async (e) => {
     e.preventDefault();
@@ -29,10 +41,8 @@ const NewsLetterEditor = () => {
           console.log("Editor not initialized");
         }
 
-        console.log(editorContent);
-
-        const response = await axios.post(
-          `${BASE_URL}/newsletter/newsletter/`,
+        const response = await axios.patch(
+          `${BASE_URL}/newsletter/newsletter/${state.id}/`,
           {
             subject: newsletterSubject,
             content: editorContent,
@@ -44,8 +54,8 @@ const NewsLetterEditor = () => {
         editorRef.current.setContent("");
         setNewsletterSubject("");
 
-        // Navigate to the All_NewsLetter page
-        navigate("/admin/all-newsletter/");
+        // Navigate to the all news letter page
+        navigate("/admin/all-newsletter");
       } catch (error) {
         console.log(error);
       }
@@ -59,7 +69,7 @@ const NewsLetterEditor = () => {
 
   return (
     <>
-      <form onSubmit={handleNewsLetterSubmit}>
+      <form className="" onSubmit={handleNewsLetterSubmit}>
         <input
           type="text"
           className="w-full h-[2.6rem] px-5 mb-3 rounded-md shadow-md outline-none border-none"
@@ -70,11 +80,11 @@ const NewsLetterEditor = () => {
         <Editor
           apiKey={API_KEY}
           onInit={(_evt, editor) => (editorRef.current = editor)}
-          initialValue="<p>The Entire body or Subject of the newsLeter goes in here.</p>."
+          initialValue={editorContent}
           init={{
             height: 500,
             menubar: true,
-            skin: "oxide-dark",
+            // skin: "oxide-dark",
             // content_css: "dark",
             plugins: [
               "advlist",
@@ -107,17 +117,17 @@ const NewsLetterEditor = () => {
         />
 
         <button type="submit" className="btn bg-primary_main text-white my-4">
-          Submit
+          Update
         </button>
       </form>
 
-      <div>
+      {/* <div>
         <h2>Editor Content:</h2>
         <div dangerouslySetInnerHTML={{ __html: editorContent }} />
-        {/* <h1>{editorContent}</h1> */}
-      </div>
+        <h1>{editorContent}</h1>
+      </div> */}
     </>
   );
 };
 
-export default NewsLetterEditor;
+export default EditNewsLetterEditor;

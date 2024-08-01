@@ -2,7 +2,8 @@ import { PiUsersThree } from "react-icons/pi";
 import { IoPersonAddOutline } from "react-icons/io5";
 import { TbUserEdit } from "react-icons/tb";
 import { SlEnvolopeLetter } from "react-icons/sl";
-import { MdEventAvailable } from "react-icons/md";
+import { MdEventAvailable, MdEvent } from "react-icons/md";
+import { FaMailBulk } from "react-icons/fa";
 
 const adminNavLinks = [
   {
@@ -31,9 +32,21 @@ const adminNavLinks = [
   },
   {
     id: 5,
+    name: "All Newsletter",
+    path: "/admin/all-newsletter",
+    icon: <FaMailBulk />,
+  },
+  {
+    id: 6,
     name: "Add Events",
     path: "/admin/add-events",
     icon: <MdEventAvailable />,
+  },
+  {
+    id: 7,
+    name: "List All Events",
+    path: "/admin/all-events",
+    icon: <MdEvent />,
   },
 ];
 

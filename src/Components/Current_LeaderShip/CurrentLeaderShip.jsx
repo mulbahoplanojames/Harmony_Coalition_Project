@@ -67,7 +67,7 @@ const CurrentLeaderShip = () => {
               <div className="">
                 <ul className="flex items-center gap-6 py-4">
                   {member.socialsLinks.map((socialLink) => (
-                    <li key={socialLink}>
+                    <li key={socialLink.id}>
                       <a
                         href={socialLink.link}
                         className={`text-2xl neu_icon rounded-md ${

@@ -8,6 +8,9 @@ const UserComponent = () => {
   const [isVerified, setIsVerified] = useState(false);
   const [error, setError] = useState(false);
 
+  // Base URL for the API
+  const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
+
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -15,7 +18,7 @@ const UserComponent = () => {
         const decodedToken = decodeURIComponent(token);
 
         const response = await axios.get(
-          `http://192.168.1.68:8000/students/api/activate_account/${decodedId}/${decodedToken}/`
+          `${BASE_URL}/accounts/activate/${decodedId}/${decodedToken}/`
         );
 
         if (response.status === 200) {

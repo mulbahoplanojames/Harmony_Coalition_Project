@@ -3,7 +3,7 @@ import { useContext, useRef, useState } from "react";
 import { AppContext } from "../../Context/AppContext";
 
 const StudentProfileSettings = () => {
-  const { loggedinEmail, loggedinPassword, darkMode } = useContext(AppContext);
+  const { darkMode } = useContext(AppContext);
 
   const [studentData, setStudentData] = useState({
     roll_number: "",
@@ -20,12 +20,16 @@ const StudentProfileSettings = () => {
   });
 
   const fileInputRef = useRef(null);
+  const fileInputRef_2 = useRef(null);
 
   // Error Message
   const [errorMessage, setErrorMessage] = useState("");
 
+  // Base Url of the API
+  const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
+
   //? API URL FROM THE ENV FILE
-  const API_ENDPOINT = `http://192.168.1.19:8000/api/profile/update/`;
+  const API_ENDPOINT = `${BASE_URL}/students/api/profile/update/`;
 
   // TODO : The axios call for login should be here in the handleSubmit function
 
@@ -37,28 +41,22 @@ const StudentProfileSettings = () => {
       studentData.address === "" ||
       studentData.date_of_birth === "" ||
       studentData.gender === "" ||
-      !studentData.avatar_image ||
-      !studentData.visa_image ||
-      !studentData.academic_year ||
+      studentData.academic_year === "" ||
       studentData.department === "" ||
       studentData.course === "" ||
       studentData.visa_start_date === "" ||
       studentData.visa_end_date === ""
+      // studentData.visa_image === "" ||
+      // studentData.avatar_image === ""
     ) {
       setErrorMessage("Please fill all the fields");
     } else {
       setErrorMessage("");
       console.log(studentData);
 
-      const formData = new FormData();
-      for (const key in studentData) {
-        formData.append(key, studentData[key]);
-      }
-
       axios
-        .put(API_ENDPOINT, formData, {
+        .put(API_ENDPOINT, studentData, {
           headers: {
-            "Content-Type": "multipart/form-data",
             Authorization: `Token ${localStorage.getItem("token")}`,
           },
         })
@@ -79,10 +77,15 @@ const StudentProfileSettings = () => {
         course: "",
         visa_start_date: "",
         visa_end_date: "",
+        visa_image: null,
+        academic_year: "",
       });
 
       if (fileInputRef.current) {
         fileInputRef.current.value = "";
+      }
+      if (fileInputRef_2.current) {
+        fileInputRef_2.current.value = "";
       }
     }
   };
@@ -151,8 +154,9 @@ const StudentProfileSettings = () => {
               <input
                 type="date"
                 name="date_of_birth"
-                className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
+                className="bg-[#fff] md:w-full w-[23rem] border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
                 value={studentData.date_of_birth}
+                placeholder="Enter your date of birth"
                 onChange={(e) =>
                   setStudentData({
                     ...studentData,
@@ -300,7 +304,7 @@ const StudentProfileSettings = () => {
               <input
                 type="date"
                 name="visa_start_date"
-                className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
+                className="bg-[#fff] md:w-full w-[23rem] border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
                 value={studentData.visa_start_date}
                 onChange={(e) =>
                   setStudentData({
@@ -319,7 +323,7 @@ const StudentProfileSettings = () => {
               <input
                 type="date"
                 name="visa_end_date"
-                className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
+                className="bg-[#fff] md:w-full w-[23rem] border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
                 value={studentData.visa_end_date}
                 onChange={(e) =>
                   setStudentData({
@@ -339,9 +343,9 @@ const StudentProfileSettings = () => {
               </label>
               <input
                 type="file"
-                ref={fileInputRef}
+                ref={fileInputRef_2}
                 accept="image/*"
-                name="profile_picture"
+                name="visa_image"
                 className="file-input file-input-bordered bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
                 onChange={(e) =>
                   setStudentData({

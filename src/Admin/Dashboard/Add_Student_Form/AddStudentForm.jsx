@@ -21,9 +21,14 @@ const AddStudentForm = () => {
     academic_year: "",
   });
 
+  // Error Message
   const [errorMessage, setErrorMessage] = useState("");
 
+  // File Input
   const fileInputRef = useRef(null);
+
+  // Base URL for the API
+  const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
 
   const handleAddStudentSubmit = async (e) => {
     e.preventDefault();
@@ -81,8 +86,13 @@ const AddStudentForm = () => {
 
       try {
         const response = await axios.post(
-          `http://192.168.1.68:8000/api/students/`,
-          formData
+          `${BASE_URL}/api/students/`,
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
         );
         console.log(response);
       } catch (error) {

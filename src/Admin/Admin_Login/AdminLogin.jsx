@@ -8,24 +8,29 @@ const AdminLogin = () => {
     password: "",
   });
 
+  // The useAuth hook returns the loginAction function from the AuthContext
   const auth = useAuth();
 
+  // This function is called when the form is submitted
   const handleSubmit = (e) => {
+    // Prevent the default form submission behavior
     e.preventDefault();
 
-    if (adminLoginData.email !== "" || adminLoginData.password !== "") {
-      // Todo : Admin Login Login
-      auth.setAdminLogin(false);
-      // console.log(auth.adminLogin);
-      //   todo : adminLoginAction function in the Auth context
-      //   auth.adminLoginAction(adminLoginData);
+    // If the user has filled in both the email and password fields
+    if (adminLoginData.email !== "" && adminLoginData.password !== "") {
+      // Call the loginAction function from the AuthContext
+      auth.AdminLoginAction(adminLoginData);
       setAdminLoginData({
         email: "",
         password: "",
       });
       auth.setErrorMessage("");
+      // Return to prevent the rest of the function from running
+      return;
     } else {
-      auth.setErrorMessage("Please fill all the fields");
+      // If the user has not filled in both fields, alert them
+      // alert("Please fill all the fields");
+      auth.setErrorMessage("Invalid Email or Password");
     }
   };
 

@@ -1,8 +1,9 @@
 import axios from "axios";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-const AddEventsForm = () => {
+const EditEventsForm = () => {
   const [Events, setEvents] = useState({
     title: "",
     start_date: "",
@@ -14,11 +15,24 @@ const AddEventsForm = () => {
     venue: "",
   });
 
+  const [editImage, setEditImage] = useState("");
+
+  // This is to navigate to another page
   const navigate = useNavigate();
+
+  const location = useLocation();
+  const { state } = location;
+  console.log(state);
 
   const fileInputRef = useRef(null);
 
   const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
+
+  useEffect(() => {
+    if (state) {
+      setEvents(state);
+    }
+  }, [state]);
 
   const handleAddEvents = async (e) => {
     e.preventDefault();
@@ -47,12 +61,12 @@ const AddEventsForm = () => {
         formData.append("end_time", Events.end_time);
         formData.append("details", Events.details);
         formData.append("venue", Events.venue);
-        if (Events.image) {
-          formData.append("image", Events.image);
-        }
-
-        const response = await axios.post(
-          `${BASE_URL}/event/events/`,
+        formData.append("image", editImage);
+        // if (Events.image) {
+        //   formData.append("image", Events.image);
+        // }
+        const response = await axios.patch(
+          `${BASE_URL}/event/events/${state.id}/`,
           formData,
           {
             headers: {
@@ -202,7 +216,7 @@ const AddEventsForm = () => {
               className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
               ref={fileInputRef}
               onChange={(e) =>
-                setEvents({ ...Events, image: e.target.files[0] })
+                setEditImage(e.target.files[0] ? e.target.files[0] : null)
               }
             />
           </div>
@@ -232,11 +246,11 @@ const AddEventsForm = () => {
           type="submit"
           className="bg-primary_main text-white p-3 rounded-md w-full"
         >
-          Add Event
+          Update Event
         </button>
       </form>
     </>
   );
 };
 
-export default AddEventsForm;
+export default EditEventsForm;

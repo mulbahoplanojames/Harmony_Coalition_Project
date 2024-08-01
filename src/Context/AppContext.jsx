@@ -15,9 +15,6 @@ const AppContextProvider = ({ children }) => {
   // I am Checking local storage for theme preference, default to false (light mode)
   const saveDarkMode = JSON.parse(localStorage.getItem("darkMode")) || false;
 
-  // I am checking local storage for the user login status, default to false
-  const saveIsLogin = JSON.parse(localStorage.getItem("isLogin")) || false;
-
   /* 
     i am using the `useState` hook to create a state variable called `darkMode`.
      This state variable will keep track of whether the application is in dark mode or not
@@ -25,18 +22,11 @@ const AppContextProvider = ({ children }) => {
   */
   const [darkMode, setDarkMode] = useState(saveDarkMode);
 
-  // I create a state variable called `logIn`. This state variable will keep track of whether the user is logged in or not.
-  const [isLoggedIn, setIsLoggedIn] = useState(saveIsLogin);
-
   // Update local storage whenever darkMode state changes using the useEffect hook
   useEffect(() => {
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
-    console.log("darkMode", darkMode);
-
-    // Update local storage whenever isLogin state changes using the useEffect hook
-    localStorage.setItem("isLogin", JSON.stringify(isLoggedIn));
-    console.log("isLogin", isLoggedIn);
-  }, [darkMode, isLoggedIn]);
+    // console.log("darkMode", darkMode);
+  }, [darkMode]);
 
   // I define a function called `toggleDarkMode`. This function will be used to
   //toggle the value of the `darkMode` state variable.
@@ -62,8 +52,6 @@ const AppContextProvider = ({ children }) => {
     darkMode,
     toggleDarkMode,
     darkModeStyle,
-    isLoggedIn,
-    setIsLoggedIn,
   };
 
   // I return the `AppContext.Provider` component, which will provide the `contextValue` object to all of its child components.

@@ -16,8 +16,11 @@ const SignUp = () => {
   // Error Message
   const [signedUpErrorMessage, setSignUpErrorMessage] = useState("");
 
+  // The base URL of the API
+  const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
+
   //? API URL FROM THE ENV FILE
-  const API_ENDPOINT = `http://192.168.1.68:8000/students/api/signup/`;
+  const API_ENDPOINT = `${BASE_URL}/accounts/signup/`;
 
   const sendData = async (event) => {
     event.preventDefault();
@@ -41,7 +44,7 @@ const SignUp = () => {
           phone_number: signedUpData.phone_number,
         });
 
-        console.log(response);
+        console.log(response.data);
         setSignUpErrorMessage(
           "Account created successfully, please check your email to Activate your account"
         );
