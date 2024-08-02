@@ -17,6 +17,23 @@ body {
   font-family: "Readex Pro", sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 30px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
 .neu_card {
   box-shadow: inset -6px -6px 20px rgba(255, 255, 255, 0.5),
     inset 6px 6px 20px rgba(0, 0, 0, 0.5);
@@ -124,7 +141,7 @@ body {
   }
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 8px;
   border-radius: 30px;
 }
@@ -139,14 +156,4 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(#1c3d5b);
-}
-
-.fc .fc-col-header-cell-cushion {
-  display: inline-block;
-  padding: 2px 2px;
-}
-
-.fc .fc-daygrid-day-frame {
-  padding: 4px;
-  height: 3rem;
-}
+} */
