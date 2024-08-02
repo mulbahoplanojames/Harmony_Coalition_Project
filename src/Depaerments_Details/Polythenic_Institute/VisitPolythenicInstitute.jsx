@@ -12,19 +12,19 @@ const text1 = `Our academic programmes general objective is to provide students 
 
 const DepartmentsEBSData = [
   {
-    name: "Rural Development",
+    name: "Civil Engineering",
     image: image1,
   },
   {
-    name: "Accounting",
+    name: "Electrical Engineering",
     image: image2,
   },
   {
-    name: "Economics",
+    name: "Construction Engineering",
     image: image3,
   },
   {
-    name: "Finance",
+    name: "Land Surveying",
     image: image4,
   },
 ];
