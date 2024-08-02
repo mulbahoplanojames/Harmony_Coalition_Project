@@ -179,28 +179,67 @@ export const FAQData = [
   {
     id: 2,
     question: "Do I need to be a Liberian to apply?",
-    answer: "The duration of the Visa is 6 months.",
+    answer:
+      "Yes, you need to be a Liberian to apply. Only Liberian citizens are eligible for this application process.",
   },
   {
     id: 3,
     question: "Can i create an account before entering the country?",
-    answer: "The duration of the Visa is 6 months.",
+    answer:
+      "Yes, you can create an account before entering the country. The registration process can be completed online.",
   },
   {
     id: 4,
     question: "What is the cost of admission at Kigali Independent University?",
-    answer: "The duration of the Visa is 6 months.",
-  },
-  {
-    id: 5,
-    question: "What is the cost of admission at Kigali Independent University?",
-    answer: "The duration of the Visa is 6 months.",
-  },
-  {
-    id: 6,
-    question: "Can i create an account before entering the country?",
-    answer: "The duration of the Visa is 6 months.",
+    answer:
+      "The cost of admission at Kigali Independent University varies depending on the program and level of study. Please contact the admissions office for detailed information.",
   },
 ];
 
-// ==================================================================
+//? =========================================================================================
+import gallery1 from "/src/assets/aboutimg1.jpg";
+import gallery2 from "/src/assets/aboutimg2.jpg";
+import gallery3 from "/src/assets/aboutimg3.jpg";
+import gallery4 from "/src/assets/aboutimg4.jpg";
+import gallery5 from "/src/assets/eric.jpeg";
+import gallery6 from "/src/assets/kelvin.jpeg";
+import gallery7 from "/src/assets/girl.jpeg";
+import gallery8 from "/src/assets/joy.jpg";
+
+export const galleryImages = [
+  {
+    id: 1,
+    image: gallery1,
+  },
+  {
+    id: 2,
+    image: gallery2,
+  },
+  {
+    id: 3,
+    image: gallery3,
+  },
+  {
+    id: 4,
+    image: gallery4,
+  },
+];
+
+export const galleryImages_2 = [
+  {
+    id: 1,
+    image: gallery5,
+  },
+  {
+    id: 2,
+    image: gallery6,
+  },
+  {
+    id: 3,
+    image: gallery7,
+  },
+  {
+    id: 4,
+    image: gallery8,
+  },
+];

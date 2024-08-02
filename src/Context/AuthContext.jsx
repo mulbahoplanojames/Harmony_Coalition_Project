@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useContext, createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 // Creating the AuthContext
 const AuthContext = createContext();
@@ -52,11 +53,25 @@ const AuthProvider = ({ children }) => {
 
         navigate("/student_profile_settings");
       } else {
-        setErrorMessage("Invalid Email or Password");
+        setErrorMessage("Invalid Email or Password or User Not Found");
+
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+          footer: "Please try again",
+        });
+
         throw new Error("Invalid response from server");
       }
     } catch (error) {
       console.log("Login failed:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+        footer: "Please try again",
+      });
       console.log("Check your credentials:", error);
     }
   };
@@ -135,11 +150,23 @@ const AuthProvider = ({ children }) => {
         navigate("/admin");
       } else {
         setErrorMessage("Invalid Email or Password");
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+          footer: "Please try again",
+        });
         throw new Error("Invalid response from server");
       }
     } catch (error) {
       console.log("Login failed:", error);
       console.log("Check your credentials:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+        footer: "Please try again",
+      });
     }
   };
 
