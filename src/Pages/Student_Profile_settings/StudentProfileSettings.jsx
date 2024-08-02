@@ -10,17 +10,17 @@ const StudentProfileSettings = () => {
     address: "",
     date_of_birth: "",
     gender: "",
-    avatar_image: null,
+    avatar_image: "",
     department: "",
     course: "",
     visa_start_date: "",
     visa_end_date: "",
-    visa_image: null,
+    visa_image: "",
     academic_year: "",
   });
 
-  const fileInputRef = useRef(null);
-  const fileInputRef_2 = useRef(null);
+  const fileInputRef = useRef("");
+  const fileInputRef_2 = useRef("");
 
   // Error Message
   const [errorMessage, setErrorMessage] = useState("");
@@ -36,71 +36,54 @@ const StudentProfileSettings = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (
-      studentData.roll_number === "" ||
-      studentData.address === "" ||
-      studentData.date_of_birth === "" ||
-      studentData.gender === "" ||
-      studentData.academic_year === "" ||
-      studentData.department === "" ||
-      studentData.course === "" ||
-      studentData.visa_start_date === "" ||
-      studentData.visa_end_date === "" ||
-      studentData.visa_image === "" ||
-      studentData.avatar_image === ""
-    ) {
-      setErrorMessage("Please fill all the fields");
-    } else {
-      setErrorMessage("");
-      console.log(studentData);
+    console.log(studentData);
 
-      const formData = new FormData();
-      formData.append("roll_number", studentData.roll_number);
-      formData.append("address", studentData.address);
-      formData.append("date_of_birth", studentData.date_of_birth);
-      formData.append("gender", studentData.gender);
-      formData.append("avatar_image", studentData.avatar_image);
-      formData.append("department", studentData.department);
-      formData.append("course", studentData.course);
-      formData.append("visa_start_date", studentData.visa_start_date);
-      formData.append("visa_end_date", studentData.visa_end_date);
-      formData.append("visa_image", studentData.visa_image);
-      formData.append("academic_year", studentData.academic_year);
+    const formData = new FormData();
+    formData.append("roll_number", studentData.roll_number);
+    formData.append("address", studentData.address);
+    formData.append("birth_date", studentData.date_of_birth);
+    formData.append("gender", studentData.gender);
+    formData.append("user", studentData.avatar_image);
+    formData.append("department", studentData.department);
+    formData.append("course", studentData.course);
+    formData.append("visa_start", studentData.visa_start_date);
+    formData.append("visa_end", studentData.visa_end_date);
+    formData.append("visa_image", studentData.visa_image);
+    formData.append("academic_year", studentData.academic_year);
 
-      axios
-        .put(API_ENDPOINT, formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-            Authorization: `Token ${localStorage.getItem("token")}`,
-          },
-        })
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-
-      setStudentData({
-        roll_number: "",
-        address: "",
-        date_of_birth: "",
-        gender: "",
-        avatar_image: null,
-        department: "",
-        course: "",
-        visa_start_date: "",
-        visa_end_date: "",
-        visa_image: null,
-        academic_year: "",
+    axios
+      .patch(API_ENDPOINT, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Token ${localStorage.getItem("token")}`,
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
       });
 
-      if (fileInputRef.current) {
-        fileInputRef.current.value = "";
-      }
-      if (fileInputRef_2.current) {
-        fileInputRef_2.current.value = "";
-      }
+    setStudentData({
+      roll_number: "",
+      address: "",
+      date_of_birth: "",
+      gender: "",
+      avatar_image: "",
+      department: "",
+      course: "",
+      visa_start_date: "",
+      visa_end_date: "",
+      visa_image: "",
+      academic_year: "",
+    });
+
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+    if (fileInputRef_2.current) {
+      fileInputRef_2.current.value = "";
     }
   };
 

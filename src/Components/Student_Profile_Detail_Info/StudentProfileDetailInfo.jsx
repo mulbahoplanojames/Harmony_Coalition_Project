@@ -23,6 +23,8 @@ const StudentProfileDetailInfo = (props) => {
     visaStartDate,
     visaEndDate,
     rollNumber,
+    visaImage,
+    academicYear,
   } = props;
 
   return (
@@ -180,7 +182,7 @@ const StudentProfileDetailInfo = (props) => {
             <div className="flex gap-3">
               <FaGraduationCap className="text-lg text-black" />
               <div>
-                <h1 className="text-lg text-black">{"academicYear"}</h1>
+                <h1 className="text-lg text-black">{academicYear}</h1>
                 <p className="text-base text-black opacity-65">Academic Year</p>
               </div>
             </div>
@@ -188,11 +190,11 @@ const StudentProfileDetailInfo = (props) => {
           </div>
 
           {/* Visa Image */}
-          <div className="flex justify-between items-center gap-10">
+          <div className="flex justify-between items-center gap-10 ">
             <img
-              src={"visaImage"}
+              src={visaImage ? visaImage : "https://via.placeholder.com/150"}
               alt="visa image"
-              className="w-full h-[30vh] bg-red-300"
+              className="w-full h-[30vh] rounded-md overflow-hidden border-primary_main border"
             />
             <FaLock className=" text-lg text-slate-500 " />
           </div>

@@ -197,6 +197,67 @@ const AuthProvider = ({ children }) => {
   };
   //! ====================================================================================
 
+  // Getting the students data from the API endpoint and passing it through the context provider to be used in other components
+
+  const [studentInfo, setStudentInfo] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    department: "",
+    gender: "",
+    rollNumber: "",
+    course: "",
+    birth_date: "",
+    address: "",
+    phoneNumber: "",
+    image: "",
+    visaStartDate: "",
+    visaEndDate: "",
+    visaImage: "",
+    academic_year: "",
+  });
+
+  //! Get Student Info
+  useEffect(() => {
+    axios
+      .get(`${BASE_URL}/students/api/profile/`, {
+        headers: {
+          Authorization: `Token ${localStorage.getItem("token")}`,
+        },
+      })
+      .then((response) => {
+        console.log(response.data.student);
+
+        setStudentInfo({
+          first_name: response.data.student.user.first_name,
+          last_name: response.data.student.user.last_name,
+          email: response.data.student.user.email,
+          department: response.data.student.department,
+          gender: response.data.student.gender,
+          rollNumber: response.data.student.roll_number,
+          course: response.data.student.course,
+          birth_date: response.data.student.birth_date,
+          address: response.data.student.address,
+          phoneNumber: response.data.student.user.phone_number,
+          image: response.data.student.user.picture,
+          visaStartDate: response.data.student.visa_start,
+          visaEndDate: response.data.student.visa_end,
+          visaImage: response.data.student.visa_image,
+          academic_year: response.data.student.academic_year,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [BASE_URL]);
+
+  // Log studentInfo whenever it changes
+  useEffect(() => {
+    console.log("Student info", studentInfo);
+  }, [studentInfo]);
+
+  //? ====================================================================================
+
   // Creating the values that will be passed to the context
   const value = {
     user,
@@ -212,6 +273,8 @@ const AuthProvider = ({ children }) => {
     newsLetterAction,
     AdminLoginAction,
     AdminLogout,
+    studentInfo,
+    setStudentInfo,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

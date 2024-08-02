@@ -8,11 +8,18 @@ import { motion } from "framer-motion";
 
 import avatar from "/src/assets/userAvatar.jpg";
 
+// Importing the WordFlicker component from the Data/Animatedata.jsx file
 import { WordFlicker } from "/src/Data/Animatedata.jsx";
+
+// Importing the useAuth hook from the Context/AuthContext.jsx file
+import { useAuth } from "../../Context/AuthContext";
 
 const HomeHero = () => {
   // Accessing the darkMode value from the AppContext
   const { darkMode } = useContext(AppContext);
+
+  // Accessing the user value from the useAuth hook
+  const user = useAuth();
 
   return (
     <>
@@ -46,23 +53,47 @@ const HomeHero = () => {
         </motion.div>
 
         <motion.div
-          className="md:w-[50%] w-[90%] h-[60vh] bg-blue-300 rounded-md md:-skew-x-12 -skew-x-6 py-3 px-4 text-center z-40 md:mt-12 tw_id"
+          className="md:w-[50%] w-[90%] h-fit bg-blue-300 rounded-md md:-skew-x-12 -skew-x-6 py-3 px-4 font-bold  z-40 md:mt-12 tw_id"
           initial={{ opacity: 0, y: 90 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 2, delay: 0.3 }}
         >
           <div className="w-[11rem] h-[28vh] mx-auto mb-4 rounded-full bg-red-300 border-4 overflow-hidden border-primary_main">
             <img
-              src={darkMode ? avatar : avatar}
+              src={user.studentInfo.image ? user.studentInfo.image : avatar}
               alt="id card"
               className="w-full h-full"
             />
           </div>
-          <p className="text-lg">Oplano James Mulbah</p>
-          <p className="text-base pb-3">Software Engineering</p>
-          <p className="text-base">ID : 202234697</p>
-          <p className="text-base">PHONE : 079167643</p>
-          <p className="text-base">EMAIL : oplanojames@gmail.com</p>
+          <p className="text-lg">
+            {user.studentInfo.first_name}{" "}
+            {user.studentInfo.last_name
+              ? user.studentInfo.last_name
+              : "Student Name"}
+          </p>
+          <p className="text-base pb-1">
+            {user.studentInfo.department
+              ? user.studentInfo.department
+              : "Department"}
+          </p>
+          <p className="text-base pb-1">
+            {user.studentInfo.course ? user.studentInfo.course : "Course"}
+          </p>
+          <p className="text-base pb-1">
+            ID :{" "}
+            {user.studentInfo.rollNumber
+              ? user.studentInfo.rollNumber
+              : "Roll Number"}
+          </p>
+          <p className="text-base pb-1">
+            PHONE :{" "}
+            {user.studentInfo.phoneNumber
+              ? user.studentInfo.phoneNumber
+              : "Phone Number"}
+          </p>
+          <p className="text-base pb-3">
+            EMAIL : {user.studentInfo.email ? user.studentInfo.email : "Email"}
+          </p>
         </motion.div>
         <motion.div
           className="w-[1.5rem] md:h-[28vh] h-[70vh] rounded-full absolute top-0 right-[11rem] md:right-[19rem]  tw_id_line"
