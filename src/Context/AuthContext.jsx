@@ -213,6 +213,7 @@ const AuthProvider = ({ children }) => {
     image: "",
     visaStartDate: "",
     visaEndDate: "",
+    visaStatus: "",
     visaImage: "",
     academic_year: "",
   });
@@ -243,6 +244,7 @@ const AuthProvider = ({ children }) => {
           visaStartDate: response.data.student.visa_start,
           visaEndDate: response.data.student.visa_end,
           visaImage: response.data.student.visa_image,
+          visaStatus: response.data.student.visa_status,
           academic_year: response.data.student.academic_year,
         });
       })

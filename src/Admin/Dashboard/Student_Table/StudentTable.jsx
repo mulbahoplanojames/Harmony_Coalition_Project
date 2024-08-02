@@ -3,12 +3,19 @@ import TableHead from "./TableHead";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { registerStudents } from "../Admin_Data/AdminData";
+// import { useNavigate } from "react-router-dom";
+
+import { FaEdit } from "react-icons/fa";
+
+import { MdDeleteForever } from "react-icons/md";
 
 const StudentTable = () => {
   const [studentInfo, setStudentInfo] = useState([]);
 
+  // const navigate = useNavigate();
+
   // Base URL for the API
-  const BASE_URL = import.meta.env.VITE_API_URL;
+  const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
 
   useEffect(() => {
     axios
@@ -34,9 +41,8 @@ const StudentTable = () => {
             {/* head */}
             <TableHead />
 
-            {
+            {studentInfo ? (
               <tbody>
-                studentInfo ? (
                 {studentInfo.map((student) => {
                   return (
                     <tr key={student.id} className="text-black">
@@ -68,7 +74,7 @@ const StudentTable = () => {
                       <td>{student.course}</td>
                       <td>{student.visa_start}</td>
                       <td>{student.visa_end}</td>
-                      <td>{student.visaStatus}</td>
+                      <td>{student.visa_status}</td>
                       <td>
                         <div className="flex items-center gap-3">
                           <div className="avatar">
@@ -85,10 +91,23 @@ const StudentTable = () => {
                           </div>
                         </div>
                       </td>
+                      <td>
+                        <div className="flex justify-center items-center gap-2">
+                          <FaEdit
+                            className="p-1 text-2xl bg-green-200 rounded-md flex justify-center items-center text-green-700 cursor-pointer"
+                            // onClick={() =>
+                            //   navigate(`/admin/student/${student.id}`)
+                            // }
+                          />
+                          <MdDeleteForever className="p-1 text-2xl bg-red-200 rounded-md flex justify-center items-center text-red-700 cursor-pointer" />
+                        </div>
+                      </td>
                     </tr>
                   );
                 })}
-                ) : (
+              </tbody>
+            ) : (
+              <tbody>
                 {registerStudents.map((student) => {
                   return (
                     <tr key={student.id} className="text-black">
@@ -98,7 +117,11 @@ const StudentTable = () => {
                           <div className="avatar">
                             <div className="mask mask-squircle h-12 w-12">
                               <img
-                                src={student.avatar}
+                                src={
+                                  student.avatar
+                                    ? student.avatar
+                                    : "/src/assets/userAvatar.jpg"
+                                }
                                 alt={student.firstName}
                               />
                             </div>
@@ -113,18 +136,32 @@ const StudentTable = () => {
                       <td>{student.birthDate}</td>
                       <td>{student.gender}</td>
                       <td>{student.department}</td>
-                      <td>{student.department}</td>
+                      <td>{student.course}</td>
                       <td>{student.visaStartDate}</td>
                       <td>{student.visaEndDate}</td>
                       <td>{student.visaStatus}</td>
-                      <td>{student.visaImage}</td>
+                      <td>
+                        <div className="flex items-center gap-3">
+                          <div className="avatar">
+                            <div className="mask mask-squircle h-12 w-12">
+                              <img
+                                src={
+                                  student.avatar
+                                    ? student.avatar
+                                    : "/src/assets/userAvatar.jpg"
+                                }
+                                alt={student.firstName}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </td>
                       <td>{student.status}</td>
                     </tr>
                   );
                 })}
-                )
               </tbody>
-            }
+            )}
           </table>
         </div>
       </section>

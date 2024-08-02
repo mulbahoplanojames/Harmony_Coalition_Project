@@ -2,6 +2,9 @@ import axios from "axios";
 import { useContext, useRef, useState } from "react";
 import { AppContext } from "../../Context/AppContext";
 
+// Sweet Alert
+import Swal from "sweetalert2";
+
 const StudentProfileSettings = () => {
   const { darkMode } = useContext(AppContext);
 
@@ -36,8 +39,6 @@ const StudentProfileSettings = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(studentData);
-
     const formData = new FormData();
     formData.append("roll_number", studentData.roll_number);
     formData.append("address", studentData.address);
@@ -59,7 +60,34 @@ const StudentProfileSettings = () => {
         },
       })
       .then((response) => {
-        console.log(response.data);
+        if (response.status === 200) {
+          console.log(response.data);
+
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your Profile has been Updated",
+            showConfirmButton: false,
+            timer: 4000,
+          });
+        } else {
+          console.log(response.data);
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+            footer: '<a href="#">Why do I have this issue?</a>',
+          });
+        }
+        if (response.status === 400) {
+          setErrorMessage(response.data);
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+            footer: '<a href="#">Why do I have this issue?</a>',
+          });
+        }
       })
       .catch((error) => {
         console.log(error);

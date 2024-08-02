@@ -2,7 +2,8 @@ import { MdOutlineDriveFileRenameOutline, MdOutlineMail } from "react-icons/md";
 import { BsPersonFill } from "react-icons/bs";
 import { FaGraduationCap } from "react-icons/fa";
 import { LiaBirthdayCakeSolid } from "react-icons/lia";
-import { FaLock, FaPhoneAlt, FaPassport } from "react-icons/fa";
+import { FaLock, FaPhoneAlt, FaPassport, FaCcVisa } from "react-icons/fa";
+
 import { SiGoogleclassroom } from "react-icons/si";
 import { useContext } from "react";
 import { AppContext } from "../../Context/AppContext";
@@ -24,6 +25,7 @@ const StudentProfileDetailInfo = (props) => {
     visaEndDate,
     rollNumber,
     visaImage,
+    visaStatus,
     academicYear,
   } = props;
 
@@ -171,6 +173,18 @@ const StudentProfileDetailInfo = (props) => {
               <FaPassport className="text-lg text-black" />
               <div>
                 <h1 className="text-lg text-black">{visaEndDate}</h1>
+                <p className="text-base text-black opacity-65">Visa End Date</p>
+              </div>
+            </div>
+            <FaLock className=" text-lg text-slate-500 " />
+          </div>
+
+          {/* //? Visa Status */}
+          <div className="flex justify-between items-center gap-2 mb-6">
+            <div className="flex gap-3">
+              <FaCcVisa className="text-lg text-black" />
+              <div>
+                <h1 className="text-lg text-black">{visaStatus}</h1>
                 <p className="text-base text-black opacity-65">Visa End Date</p>
               </div>
             </div>

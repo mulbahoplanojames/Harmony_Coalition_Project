@@ -3,6 +3,7 @@ import singUp_image from "/src/assets/signup.png";
 import { CgArrowLeftR } from "react-icons/cg";
 import { useState } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
   const [signedUpData, setSignedUpData] = useState({
@@ -44,20 +45,42 @@ const SignUp = () => {
           phone_number: signedUpData.phone_number,
         });
 
-        console.log(response.data);
-        setSignUpErrorMessage(
-          "Account created successfully, please check your email to Activate your account"
-        );
-        setSignedUpData({
-          first_name: "",
-          last_name: "",
-          email: "",
-          password: "",
-          phone_number: "",
-        });
+        if (response.status === 200) {
+          console.log(response.data);
+          setSignUpErrorMessage(
+            "Account created successfully, please check your email to Activate your account"
+          );
+          setSignedUpData({
+            first_name: "",
+            last_name: "",
+            email: "",
+            password: "",
+            phone_number: "",
+          });
+
+          Swal.fire({
+            title: "Success, Please check your email to activate your account",
+            width: 600,
+            padding: "3em",
+            color: "#716add",
+            background: "#fff url(src/assets/joy.jpg)",
+            backdrop: `
+              rgba(0,0,123,0.4)
+              url("/src/assets/joy.jpg")
+              left top
+              no-repeat
+            `,
+          });
+        }
       } catch (error) {
         console.log("Error", error);
-        setSignUpErrorMessage(JSON.stringify(error.response.data));
+        setSignUpErrorMessage("Error, please try again");
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+          footer: "Please try again",
+        });
       }
     }
   };

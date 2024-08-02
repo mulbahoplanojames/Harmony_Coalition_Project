@@ -41,7 +41,7 @@ const Calender = () => {
             time: event.start_time,
           }))}
           dayHeaderFormat={{
-            weekday: "long",
+            weekday: "short",
           }}
           eventClick={(info) => {
             alert(info.event.title);

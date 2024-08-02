@@ -36,6 +36,7 @@ const StudentProfile = () => {
             visaStartDate={user.studentInfo.visaStartDate || ""}
             visaEndDate={user.studentInfo.visaEndDate || ""}
             visaImage={user.studentInfo.visaImage || ""}
+            visaStatus={user.studentInfo.visaStatus || ""}
             academicYear={user.studentInfo.academic_year || ""}
           />
         </div>
