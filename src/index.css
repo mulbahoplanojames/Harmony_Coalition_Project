@@ -140,20 +140,3 @@ body {
     background-size: cover;
   }
 }
-
-/* ::-webkit-scrollbar {
-  width: 8px;
-  border-radius: 30px;
-}
-::-webkit-scrollbar-track {
-  background: #000;
-  border-radius: 20px;
-}
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to top, #1c3d5b);
-  height: 5px;
-  border-radius: 20px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(#1c3d5b);
-} */
