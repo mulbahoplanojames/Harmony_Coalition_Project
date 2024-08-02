@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Navbar from "../../Constant/Navbar/Navbar";
 import { navLinks2 } from "../../Data/Data";
+import Footer from "../../Constant/Footer/Footer";
 
 const whyDoWeColllect = [
   {
@@ -88,6 +89,7 @@ const Privacy = () => {
       <Navbar navLinks={navLinks2} />
       <div className="pt-[8rem] md:px-[4rem] px-2">
         <h1 className="text-3xl font-semibold pb-4">Privacy Policy</h1>
+        <p className="text-lg pb-5">Last Updated: 02/08/2024</p>
         <p className="text-lg pb-5">
           Welcome to All Liberian Students at ULK. We are committed to
           protecting your privacy and ensuring that your personal information is
@@ -182,7 +184,7 @@ const Privacy = () => {
           <li className="pb-1 text-xl font-semibold">
             Changes to This Privacy Policy
           </li>
-          <p className="pb-3">
+          <p className="pb-8">
             We may update this Privacy Policy from time to time. We will notify
             you of any material changes by posting the updated policy on our
             website.
@@ -202,6 +204,7 @@ const Privacy = () => {
           </p>
         </ol>
       </div>
+      <Footer />
     </>
   );
 };

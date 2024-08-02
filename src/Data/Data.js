@@ -135,7 +135,7 @@ export const supportLinks = [
   {
     id: 2,
     name: "Contact Us",
-    path: "/",
+    path: "/visit-contact-us",
   },
   {
     id: 3,
