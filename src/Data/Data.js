@@ -120,16 +120,6 @@ export const quickLinks = [
   },
   {
     id: 3,
-    name: "Enrollment",
-    path: "/enrollment",
-  },
-  {
-    id: 4,
-    name: "Student Portal",
-    path: "/student-portal",
-  },
-  {
-    id: 5,
     name: "Contact Us",
     path: "/contact-us",
   },
@@ -159,7 +149,7 @@ export const legalLinks = [
   {
     id: 1,
     name: "Privacy Policy",
-    path: "/",
+    path: "/visit-privacy-policy",
   },
   {
     id: 2,

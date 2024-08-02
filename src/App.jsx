@@ -17,6 +17,10 @@ const StudentProfile = React.lazy(() =>
   import("./Pages/Student_Profile/StudentProfile")
 );
 
+const Privacy = React.lazy(() =>
+  import("/src/Pages/Policy_Privacy/Privacy.jsx")
+);
+
 // =============================================================================================
 
 const SchoolOfEBS = React.lazy(() =>
@@ -138,7 +142,7 @@ const App = () => {
               />
               <Route path="/school-of-ebs" element={<SchoolOfEBS />} />
               <Route path="/school-of-law-social-sciences" element={<Law />} />
-              {/* <Route path="/student_profile" element={<Law />} /> */}
+              {/* <Route path="/privacy-policy" element={<PrivacyPolicy />} /> */}
             </Route>
 
             {/*//! ================================================================================== */}
@@ -183,8 +187,8 @@ const App = () => {
             <Route
               path="/visit-polytechnic-instutute"
               element={<VisitPolythenicInstitute />}
-              home
             />
+            <Route path="/visit-privacy-policy" element={<Privacy />} />
 
             {/*//! ================================================================================== */}
             {/* User Component varified if the user account is Acitive  */}
