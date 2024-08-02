@@ -163,7 +163,7 @@ const AuthProvider = ({ children }) => {
       console.log("Check your credentials:", error);
       Swal.fire({
         icon: "error",
-        title: "Oops...",
+        title: "Oops...", 
         text: "Something went wrong!",
         footer: "Please try again",
       });
