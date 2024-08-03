@@ -70,16 +70,16 @@ const EditNewsLetterEditor = () => {
           apiKey={API_KEY}
           onInit={(_evt, editor) => (editorRef.current = editor)}
           initialValue={editorContent}
-          value={editorContent} // Set the current value of the editor
+          value={editorContent}
           onEditorChange={(editorContent) => {
             setEditorContent(editorContent);
             console.log(editorContent);
-          }} // Update the state on content change
+          }}
           init={{
             height: 500,
-            selector: "textarea", // change this value according to your HTML
+            selector: "textarea",
             browser_spellcheck: true,
-            directionality: "ltr", // Ensure LTR direction
+            directionality: "rtl", // Set directionality to RTL
             menubar: true,
             skin: "oxide-dark",
             plugins: [
