@@ -1,30 +1,10 @@
 import { Link } from "react-router-dom";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import adminNavLinks from "../Admin_Data/AdminData";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import { useAuth } from "../../../Context/AuthContext";
 
 const AdminNavbar = () => {
-  const [userAvatar, setUserAvatar] = useState(null);
-
   // The Base Url for the API
-  const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
-
-  useEffect(() => {
-    axios
-      .get(`${BASE_URL}/students/api/profile/`, {
-        headers: {
-          Authorization: `Token ${localStorage.getItem("token")}`,
-        },
-      })
-      .then((response) => {
-        setUserAvatar(response.data.student.user.picture);
-      })
-      .catch((error) => {
-        console.log("Error Fetching User Data:", error);
-      });
-  }, [BASE_URL]);
 
   const user = useAuth();
 
@@ -67,7 +47,9 @@ const AdminNavbar = () => {
               <div className="w-10 rounded-full">
                 <img
                   alt="Tailwind CSS Navbar component"
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                  src={
+                    user.studentInfo.image ? user.studentInfo.image : "avatar"
+                  }
                 />
               </div>
             </div>

@@ -126,6 +126,14 @@ const AuthProvider = ({ children }) => {
 
   //! ===============================================================================================
 
+  const [adminData, setAdminData] = useState({
+    email: "",
+    phone: "",
+    image: "",
+    first_name: "",
+    last_name: "",
+  });
+
   /*
   The loginAction function handles user login by sending a POST request to the
   authentication endpoint, updating the user and token state upon a successful
@@ -142,12 +150,18 @@ const AuthProvider = ({ children }) => {
         setUser(response.data.user);
         setToken(response.data.token);
         localStorage.setItem("token", response.data.token);
-        console.log(response);
+        console.log(response.data);
+        setAdminData(response.data);
+        console.log(adminData);
 
-        // Call the authInterceptor to store the token
-        axios.interceptors.request.use(authInterceptor);
+        if (response.status === 200) {
+          // Call the authInterceptor to store the token
+          axios.interceptors.request.use(authInterceptor);
 
-        navigate("/admin");
+          navigate("/admin");
+        } else {
+          setErrorMessage("Invalid Email or Password");
+        }
       } else {
         setErrorMessage("Invalid Email or Password");
         Swal.fire({
@@ -163,7 +177,7 @@ const AuthProvider = ({ children }) => {
       console.log("Check your credentials:", error);
       Swal.fire({
         icon: "error",
-        title: "Oops...", 
+        title: "Oops...",
         text: "Something went wrong!",
         footer: "Please try again",
       });
@@ -254,7 +268,7 @@ const AuthProvider = ({ children }) => {
         },
       })
       .then((response) => {
-        console.log(response.data.student);
+        // console.log(response.data.student);
 
         setStudentInfo({
           first_name: response.data.student.user.first_name,
@@ -279,6 +293,8 @@ const AuthProvider = ({ children }) => {
         console.log(error);
       });
   }, [BASE_URL]);
+
+  console.log("Student info", studentInfo);
 
   // Log studentInfo whenever it changes
   useEffect(() => {

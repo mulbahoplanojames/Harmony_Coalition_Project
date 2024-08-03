@@ -58,7 +58,7 @@ const HomeHero = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 2, delay: 0.3 }}
         >
-          <div className="w-[11rem] h-[28vh] mx-auto mb-4 rounded-full bg-red-300 border-4 overflow-hidden border-primary_main">
+          <div className="w-[11rem] h-[28vh] mx-auto mb-4 rounded-md bg-red-300 border-4 overflow-hidden border-primary_main">
             <img
               src={user.studentInfo.image ? user.studentInfo.image : avatar}
               alt="id card"

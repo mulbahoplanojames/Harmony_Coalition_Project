@@ -21,7 +21,7 @@ const AdminLayout = () => {
             ALSULK
           </h1>
           <div className="h-[8rem] rounded-md shadow-lg mb-3 mx-auto w-[80%] bg-green-400"></div>
-          <p className="text-center text-lg text-white">Wilma Williams</p>
+          <p className="text-center text-lg text-white">Mr. Admin</p>
           <p className="text-center text-lg text-white mb-10">Admin</p>
           {adminNavLinks.map((link) => (
             <Link
