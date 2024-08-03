@@ -81,6 +81,8 @@ const EditNewsLetterEditor = () => {
           apiKey={API_KEY}
           onInit={(_evt, editor) => (editorRef.current = editor)}
           initialValue={editorContent}
+          value={editorContent}
+          onEditorChange={(content) => setEditorContent(content)}
           init={{
             height: 500,
             menubar: true,
