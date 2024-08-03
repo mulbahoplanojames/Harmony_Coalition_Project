@@ -71,7 +71,7 @@ const AdminLogin = () => {
                 <input
                   type={passwordVisible ? "text" : "password"}
                   name="password"
-                  placeholder="Enter New Password"
+                  placeholder="Enter Password"
                   // required
                   value={adminLoginData.password}
                   onChange={(e) =>
@@ -80,7 +80,7 @@ const AdminLogin = () => {
                       password: e.target.value,
                     })
                   }
-                  className="h-full   w-full outline-none px-3 "
+                  className="h-full  w-full outline-none px-3 "
                 />
                 {passwordVisible ? (
                   <img
