@@ -40,7 +40,7 @@ const EditNewsLetterEditor = () => {
         console.log("Response", response);
 
         // Reset the editor and subject
-        editorRef.current.setContent("");
+        // editorRef.current.setContent("");
         setNewsletterSubject("");
 
         // Navigate to the all newsletter page
