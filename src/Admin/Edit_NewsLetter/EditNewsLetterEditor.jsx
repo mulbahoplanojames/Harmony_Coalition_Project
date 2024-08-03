@@ -77,6 +77,8 @@ const EditNewsLetterEditor = () => {
           }} // Update the state on content change
           init={{
             height: 500,
+            selector: "textarea", // change this value according to your HTML
+            browser_spellcheck: true,
             menubar: true,
             skin: "oxide-dark",
             plugins: [
