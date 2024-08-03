@@ -79,6 +79,7 @@ const EditNewsLetterEditor = () => {
             height: 500,
             selector: "textarea", // change this value according to your HTML
             browser_spellcheck: true,
+            directionality: "ltr", // Ensure LTR direction
             menubar: true,
             skin: "oxide-dark",
             plugins: [
