@@ -75,6 +75,7 @@ const EditNewsLetterEditor = () => {
           init={{
             height: 500,
             menubar: true,
+            skin: "oxide-dark",
             plugins: [
               "advlist",
               "autolink",
