@@ -71,7 +71,10 @@ const EditNewsLetterEditor = () => {
           onInit={(_evt, editor) => (editorRef.current = editor)}
           initialValue={editorContent}
           value={editorContent} // Set the current value of the editor
-          onEditorChange={(content) => setEditorContent(content)} // Update the state on content change
+          onEditorChange={(content) => {
+            setEditorContent(content);
+            console.log(content);
+          }} // Update the state on content change
           init={{
             height: 500,
             menubar: true,
