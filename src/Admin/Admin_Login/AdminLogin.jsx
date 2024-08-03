@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { useAuth } from "../../Context/AuthContext";
-import { Navigate } from "react-router-dom";
+
+import eyeOpen from "/src/assets/eye_open.png";
+import eyeClose from "/src/assets/eye_close.png";
 
 const AdminLogin = () => {
   const [adminLoginData, setAdminLoginData] = useState({
     email: "",
     password: "",
   });
+  // State to check if the password is visibl or not
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
   // The useAuth hook returns the loginAction function from the AuthContext
   const auth = useAuth();
@@ -58,7 +62,7 @@ const AdminLogin = () => {
                 }}
               />
             </div>
-            <div className="w-full">
+            {/* <div className="w-full">
               <label htmlFor="password">Password</label>
               <input
                 type="password"
@@ -73,6 +77,46 @@ const AdminLogin = () => {
                   });
                 }}
               />
+            </div> */}
+            <div>
+              <label htmlFor="password" className="inline-block pb-2">
+                Password
+              </label>
+              <div className="w-full h-12 bg-[#ebeef1]  px-1 gap-2 rounded-md outline-none flex justify-between overflow-hidden neu_input text-black">
+                <input
+                  type={passwordVisible ? "text" : "password"}
+                  name="password"
+                  placeholder="Enter New Password"
+                  // required
+                  value={adminLoginData.password}
+                  onChange={(e) =>
+                    setAdminLoginData({
+                      ...adminLoginData,
+                      password: e.target.value,
+                    })
+                  }
+                  className="h-full  bg-[#eaeef3] w-full outline-none px-3 "
+                />
+                {passwordVisible ? (
+                  <img
+                    src={eyeClose}
+                    alt=""
+                    className="w-6 h-6 mt-3 cursor-pointer"
+                    onClick={() => {
+                      setPasswordVisible(!passwordVisible);
+                    }}
+                  />
+                ) : (
+                  <img
+                    src={eyeOpen}
+                    alt=""
+                    className="w-6 h-6 mt-3 cursor-pointer"
+                    onClick={() => {
+                      setPasswordVisible(!passwordVisible);
+                    }}
+                  />
+                )}
+              </div>
             </div>
 
             <p className="text-red-600  pt-3">{auth.errorMessage}</p>
