@@ -4,9 +4,12 @@ import { AppContext } from "../../Context/AppContext";
 
 // Sweet Alert
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const StudentProfileSettings = () => {
   const { darkMode } = useContext(AppContext);
+
+  const navigate = useNavigate();
 
   const [studentData, setStudentData] = useState({
     roll_number: "",
@@ -60,6 +63,14 @@ const StudentProfileSettings = () => {
         },
       })
       .then((response) => {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your Profile has been Updated",
+          showConfirmButton: false,
+          timer: 4000,
+        });
+
         if (response.status === 200) {
           console.log(response.data);
 
@@ -88,6 +99,7 @@ const StudentProfileSettings = () => {
             footer: '<a href="#">Why do I have this issue?</a>',
           });
         }
+        navigate("/student_profile");
       })
       .catch((error) => {
         console.log(error);
