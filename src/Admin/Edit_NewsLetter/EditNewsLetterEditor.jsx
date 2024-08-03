@@ -79,7 +79,9 @@ const EditNewsLetterEditor = () => {
             height: 500,
             selector: "textarea",
             browser_spellcheck: true,
-            directionality: "rtl", // Set directionality to RTL
+            directionality: "auto",
+            TextTracks: true,
+            text_direction: "ltr",
             menubar: true,
             skin: "oxide-dark",
             plugins: [
