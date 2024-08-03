@@ -4,13 +4,12 @@ import ContactCards from "../../../Interfaces/Contact_Card/ContactCard";
 
 // for the Visitor navbar
 import Navbar from "../../../Constant/Navbar/Navbar";
-import { navLinks2 } from "../../../Data/Data";
 import Footer from "../../../Constant/Footer/Footer";
 
 const VisitContactUs = () => {
   return (
     <>
-      <Navbar navLinks={navLinks2} />
+      <Navbar />
       <div className="pt-[4rem] md:px-[2rem] px-2">
         <ContactHeader />
         <ContactFormNewsletter />

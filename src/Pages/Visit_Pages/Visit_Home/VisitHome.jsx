@@ -7,7 +7,7 @@ import FAQ from "../../../Components/FAQ/FAQ";
 
 // for the navbar
 import Navbar from "../../../Constant/Navbar/Navbar";
-import { disciplinesOffer, navLinks2 } from "../../../Data/Data";
+import { disciplinesOffer } from "../../../Data/Data";
 
 import Footer from "../../../Constant/Footer/Footer";
 import Sponsers from "../../../Components/Sponsers/Sponsers";
@@ -15,7 +15,7 @@ import Sponsers from "../../../Components/Sponsers/Sponsers";
 const VisitHome = () => {
   return (
     <>
-      <Navbar navLinks={navLinks2} />
+      <Navbar />
       <div className="pt-[4rem] md:px-[2rem] px-2">
         <VisitHomeHero />
         <Sponsers />

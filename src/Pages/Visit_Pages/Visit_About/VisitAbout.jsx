@@ -10,14 +10,15 @@ import connection from "/src/assets/connections.svg";
 
 // for the navbar
 import Navbar from "../../../Constant/Navbar/Navbar";
-import { navLinks2 } from "../../../Data/Data";
+// for the footer
 import Footer from "../../../Constant/Footer/Footer";
+// for the Gallery
 import Gallery from "../../../Components/Gallery/Gallery";
 
 const VisitAbout = () => {
   return (
     <>
-      <Navbar navLinks={navLinks2} />
+      <Navbar />
       <div className="pt-[4rem] md:px-[2rem] px-2">
         <AboutHero />
         <OurMission />
