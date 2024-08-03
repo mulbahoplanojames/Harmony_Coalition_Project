@@ -51,7 +51,7 @@ const AdminLogin = () => {
               <input
                 type="email"
                 name="email"
-                className="border-2 rounded-md border-black w-full h-10 px-2 outline-none"
+                className=" rounded-md  w-full h-12 px-2 outline-none neu_input"
                 placeholder="Enter email"
                 value={adminLoginData.email}
                 onChange={(e) => {
@@ -62,27 +62,12 @@ const AdminLogin = () => {
                 }}
               />
             </div>
-            {/* <div className="w-full">
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                name="password"
-                className="border-2 rounded-md border-black w-full h-10 px-2 outline-none text-black"
-                placeholder="Enter password"
-                value={adminLoginData.password}
-                onChange={(e) => {
-                  setAdminLoginData({
-                    ...adminLoginData,
-                    password: e.target.value,
-                  });
-                }}
-              />
-            </div> */}
+
             <div>
               <label htmlFor="password" className="inline-block pb-2">
                 Password
               </label>
-              <div className="w-full h-12 bg-[#ebeef1]  px-1 gap-2 rounded-md outline-none flex justify-between overflow-hidden neu_input text-black">
+              <div className="w-full h-12   px-1 gap-2 rounded-md outline-none flex justify-between overflow-hidden neu_input text-black">
                 <input
                   type={passwordVisible ? "text" : "password"}
                   name="password"
@@ -95,7 +80,7 @@ const AdminLogin = () => {
                       password: e.target.value,
                     })
                   }
-                  className="h-full  bg-[#eaeef3] w-full outline-none px-3 "
+                  className="h-full   w-full outline-none px-3 "
                 />
                 {passwordVisible ? (
                   <img

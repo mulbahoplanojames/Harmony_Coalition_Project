@@ -25,14 +25,14 @@ const LogInNavbar = () => {
   return (
     <>
       <nav
-        className={`flex justify-between items-center py-4 md:px-10 px-4 fixed z-50 w-full top-0 bg-[rgba(255,255,255,0.29)] shadow-[0_8px_32px_0_rgba(31,38,135,0.35)] backdrop-blur-[20px] rounded-[10px] border border-[rgba(255,255,255,0.28)]`}
+        className={`flex justify-between items-center py-4 md:px-10 px-4 fixed z-50 w-full top-0 bg-[rgba(255,255,255,0.29)] shadow-[0_8px_32px_0_rgba(31,38,135,0.35)] backdrop-blur-[20px] rounded-[10px] border border-[rgba(255,255,255,0.28)] ${
+          darkMode ? "text-white" : "text-black"
+        }`}
       >
         {/* Link to the home page */}
         <Link
           to="/"
-          className={`text-2xl font-bold flex justify-center items-center gap-2 ${
-            darkMode ? "text-black" : "text-black"
-          }`}
+          className={`text-2xl font-bold flex justify-center items-center gap-2 `}
         >
           <img src={logo} alt="logo" className="w-10 h-10 rounded-md" />
           ALSULK
@@ -40,14 +40,15 @@ const LogInNavbar = () => {
         {/*//! Menu items for larger devices and mapping through the links */}
         <ul className="max-lg:hidden">
           {navLinks.map((navlink) => (
-            <li key={navlink.label} className={`inline-block px-8 `}>
+            <li
+              key={navlink.label}
+              className={`inline-block px-8 after:contents[""] after:w-0 after:h-[2px] after:bg-primary_main after:block after:transition-all hover:after:w-full after:duration-300 after:ease-in`}
+            >
               <Link
                 to={navlink.path}
-                className={`font-montserrat focus:text-black text-base leading-normal text-[#1d232a]${
-                  menu === navlink.label
-                    ? "pb-4 inline-block border-b-2 border-primary_main "
-                    : ""
-                } ${darkMode ? "text-black" : "text-black"}`}
+                className={`font-montserrat focus:text-black text-base leading-normal text-[#1d232a] ${
+                  darkMode ? "text-black" : "text-black"
+                }`}
                 onClick={() => {
                   setMenu(navlink.label);
                   window.scrollTo(0, 0);
