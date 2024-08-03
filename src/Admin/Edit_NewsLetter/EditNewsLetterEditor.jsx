@@ -81,7 +81,7 @@ const EditNewsLetterEditor = () => {
             browser_spellcheck: true,
             directionality: "auto",
             TextTracks: true,
-            text_direction: "ltr",
+            text_direction: "rtl",
             menubar: true,
             skin: "oxide-dark",
             plugins: [
