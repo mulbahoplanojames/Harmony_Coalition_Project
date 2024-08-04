@@ -278,8 +278,14 @@ const StudentProfileSettings = () => {
                 </option>
                 <option value="Data Science">Law </option>
                 <option value="Development Studies">Development Studies</option>
+                <option value="International Religion">
+                  International Religion
+                </option>
+                <option value="Econimics">Econimics</option>
+                <option value="Finance">Finance</option>
                 <option value="Computer Science">Computer Science</option>
                 <option value="Law">Law</option>
+                <option value="Accounting">Accounting</option>
               </select>
             </div>
 
