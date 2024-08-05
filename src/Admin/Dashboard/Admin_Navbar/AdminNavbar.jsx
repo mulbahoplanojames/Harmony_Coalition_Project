@@ -3,6 +3,8 @@ import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import adminNavLinks from "../Admin_Data/AdminData";
 import { useAuth } from "../../../Context/AuthContext";
 
+import avatar from "/src/assets/userAvatar.jpg";
+
 const AdminNavbar = () => {
   // The Base Url for the API
 
@@ -47,9 +49,7 @@ const AdminNavbar = () => {
               <div className="w-10 rounded-full">
                 <img
                   alt="Tailwind CSS Navbar component"
-                  src={
-                    user.studentInfo.image ? user.studentInfo.image : "avatar"
-                  }
+                  src={user.studentInfo.imag ? user.studentInfo.image : avatar}
                 />
               </div>
             </div>
