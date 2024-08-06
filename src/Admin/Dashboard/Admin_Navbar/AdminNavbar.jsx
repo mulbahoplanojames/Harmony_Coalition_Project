@@ -12,7 +12,7 @@ const AdminNavbar = () => {
 
   return (
     <>
-      <nav className="navbar md:px-8 px-2 fixed md:w-[83.2%]  bg-[rgba(255,255,255,0.29)] shadow-[0_8px_32px_0_rgba(31,38,135,0.35)] backdrop-blur-[20px]  border border-[rgba(255,255,255,0.28)]">
+      <nav className="navbar md:px-8 px-2 fixed md:w-[83.2%]  bg-[rgba(255,255,255,0.29)] shadow-[0_8px_32px_0_rgba(31,38,135,0.35)] backdrop-blur-[20px]  border border-[rgba(255,255,255,0.28)] z-50">
         <div className="navbar-start">
           <div className="dropdown md:hidden block z-50">
             <div

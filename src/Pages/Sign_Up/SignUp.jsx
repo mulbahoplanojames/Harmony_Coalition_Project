@@ -117,6 +117,7 @@ const SignUp = () => {
                   <input
                     type="text"
                     name="first_name"
+                    placeholder="exapmle: John "
                     className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none neu_input_2"
                     value={signedUpData.first_name}
                     onChange={(e) => {
@@ -135,6 +136,7 @@ const SignUp = () => {
                   <input
                     type="text"
                     name="last_name"
+                    placeholder="exapmle: Peterson"
                     className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none neu_input_2"
                     value={signedUpData.last_name}
                     onChange={(e) => {
@@ -155,6 +157,7 @@ const SignUp = () => {
                 <input
                   type="email"
                   name="email"
+                  placeholder="exapmle: 6D7oK@example.com"
                   className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none neu_input_2"
                   value={signedUpData.email}
                   onChange={(e) => {
@@ -176,6 +179,7 @@ const SignUp = () => {
                     type="password"
                     name="password"
                     className="w-full  bg-[#eaeef3] h-12 px-6 rounded-md outline-none neu_input_2"
+                    placeholder="********"
                     value={signedUpData.password}
                     onChange={(e) => {
                       setSignedUpData({
@@ -193,6 +197,7 @@ const SignUp = () => {
                   <input
                     type="tel"
                     name="number"
+                    placeholder="exapmle: 078 123 4567"
                     className="w-full bg-[#eaeef3] h-12 px-6 rounded-md outline-none neu_input_2"
                     value={signedUpData.phone_number}
                     onChange={(e) => {
