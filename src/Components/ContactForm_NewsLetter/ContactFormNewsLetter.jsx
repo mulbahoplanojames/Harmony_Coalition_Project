@@ -7,12 +7,14 @@ const ContactFormNewsletter = () => {
   const [newsLetterEmail, setNewsLetterEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  const web3forms = import.meta.env.VITE_REACT_WEB3FORM_API_KEY;
+
   const onSubmit = async (event) => {
     event.preventDefault();
     setResult("Sending....");
     const formData = new FormData(event.target);
 
-    formData.append("access_key", "");
+    formData.append("access_key", web3forms);
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -69,6 +71,11 @@ const ContactFormNewsletter = () => {
               className="md:w-[48%] w-full bg-[#eaeef3] md:h-[2.8rem] h-[3.4rem] outline-none rounded-xl px-4 neu_input"
             />
           </div>
+          <input
+            type="hidden"
+            name="subject"
+            value="New Submission from ALSULK Website"
+          ></input>
           {/* name input field  */}
           <input
             type="text"
