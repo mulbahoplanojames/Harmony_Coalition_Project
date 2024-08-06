@@ -34,7 +34,7 @@ const HomeHero = () => {
           transition={{ duration: 0.4, delay: 0.3 }}
         >
           {/* Displaying the heading */}
-          <div className="md:text-5xl text-3xl uppercase font-black md:pr-[12rem] pr-5 sm:pr-2 pb-6 z-50">
+          <div className="md:text-5xl text-3xl uppercase font-black md:pr-[8rem] pr-5 sm:pr-2 pb-6 z-50 md:pt-1 pt-8">
             Welcome <br /> we are here to <br /> {WordFlicker()}
           </div>
           {/* Displaying the description */}

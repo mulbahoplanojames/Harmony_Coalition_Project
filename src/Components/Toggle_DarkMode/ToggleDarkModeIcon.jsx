@@ -28,7 +28,7 @@ const ToggleDarkModeIcon = () => {
         {/* The className attribute uses the ternary operator to determine the color of the icon. */}
         <MdOutlineWbSunny
           className={`swap-on h-6 w-6 fill-current ${
-            darkMode ? "text-black" : "text-black"
+            darkMode ? "text-white" : "text-black"
           }`}
         />
 

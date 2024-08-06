@@ -46,8 +46,8 @@ const LogInNavbar = () => {
             >
               <Link
                 to={navlink.path}
-                className={`font-montserrat focus:text-black text-base leading-normal text-[#1d232a] ${
-                  darkMode ? "text-black" : "text-black"
+                className={`font-montserrat  text-base leading-normal ${
+                  darkMode ? "text-white" : "text-black"
                 }`}
                 onClick={() => {
                   setMenu(navlink.label);

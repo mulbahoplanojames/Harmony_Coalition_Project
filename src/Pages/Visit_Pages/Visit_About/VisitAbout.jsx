@@ -1,4 +1,4 @@
-import AboutHero from "../../../Components/About_Hero/AboutHero";
+// import AboutHero from "../../../Components/About_Hero/AboutHero";
 import OurMission from "../../../Components/About_Our_Mission/OurMission";
 import OurStory from "../../../Components/About_Our_Story/OurStory";
 import FAQ from "../../../Components/FAQ/FAQ";
@@ -14,13 +14,14 @@ import Navbar from "../../../Constant/Navbar/Navbar";
 import Footer from "../../../Constant/Footer/Footer";
 // for the Gallery
 import Gallery from "../../../Components/Gallery/Gallery";
+import VisitAboutHero from "./VisitAboutHero";
 
 const VisitAbout = () => {
   return (
     <>
       <Navbar />
       <div className="pt-[4rem] md:px-[2rem] px-2">
-        <AboutHero />
+        <VisitAboutHero />
         <OurMission />
         <OurStory />
         <FAQ />

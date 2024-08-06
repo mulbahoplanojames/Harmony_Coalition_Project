@@ -9,10 +9,11 @@ import { FaEdit } from "react-icons/fa";
 
 import { MdDeleteForever } from "react-icons/md";
 
+import { IoIosSearch } from "react-icons/io";
+
 const StudentTable = () => {
   const [studentInfo, setStudentInfo] = useState([]);
-
-  // const navigate = useNavigate();
+  const [filterStudent, setFilterStudent] = useState([]);
 
   // Base URL for the API
   const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
@@ -25,17 +26,38 @@ const StudentTable = () => {
         },
       })
       .then((response) => {
-        console.log(response.data);
+        console.log("All srudents response", response.data);
         setStudentInfo(response.data);
+        setFilterStudent(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
   }, [BASE_URL]);
 
+  const handleFilterStudent = (e) => {
+    const search = e.target.value;
+    setFilterStudent(
+      studentInfo.filter(
+        (student) =>
+          student.department.toLowerCase().includes(search.toLowerCase())
+        // student.user.first_name.toLowerCase().includes(search.toLowerCase())
+      )
+    );
+  };
+
   return (
     <>
       <section className="w-full">
+        <label className="input input-bordered flex items-center gap-2 mb-3">
+          <input
+            type="text"
+            className="grow"
+            placeholder="Search by Department"
+            onChange={handleFilterStudent}
+          />
+          <IoIosSearch className="h-4 w-4 opacity-70" />
+        </label>
         <div className="overflow-x-auto bg-white ">
           <table className="table w-full">
             {/* head */}
@@ -43,14 +65,14 @@ const StudentTable = () => {
 
             {studentInfo ? (
               <tbody>
-                {studentInfo.map((student) => {
+                {filterStudent.map((student) => {
                   return (
-                    <tr key={student.id} className="text-black">
+                    <tr key={student.id} className="text-black text-center">
                       <td>{student.id}</td>
                       <td>
                         <div className="flex items-center gap-3">
                           <div className="avatar">
-                            <div className="mask mask-squircle h-12 w-12">
+                            <div className="mask mask-decagon h-[6rem] w-[10rem]">
                               <img
                                 src={
                                   student.user.picture
@@ -58,6 +80,7 @@ const StudentTable = () => {
                                     : "/src/assets/userAvatar.jpg"
                                 }
                                 alt={student.firstName}
+                                className="w-full h-full"
                               />
                             </div>
                           </div>
@@ -65,20 +88,21 @@ const StudentTable = () => {
                       </td>
                       <td>{student.user.first_name}</td>
                       <td>{student.user.last_name}</td>
+                      <td>{student.department}</td>
+                      <td>{student.course}</td>
                       <td>{student.user.email}</td>
                       <td>{student.user.phone_number}</td>
                       <td>{student.address}</td>
                       <td>{student.birth_date}</td>
                       <td>{student.gender}</td>
-                      <td>{student.department}</td>
-                      <td>{student.course}</td>
+                      <td>{student.academic_year}</td>
                       <td>{student.visa_start}</td>
                       <td>{student.visa_end}</td>
                       <td>{student.visa_status}</td>
                       <td>
                         <div className="flex items-center gap-3">
                           <div className="avatar">
-                            <div className="mask mask-squircle h-12 w-12">
+                            <div className="mask h-[6rem] w-[10rem]">
                               <img
                                 src={
                                   student.visa_image

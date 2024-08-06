@@ -7,13 +7,14 @@ const TableHead = () => {
           <th>Avatar</th>
           <th>First Name</th>
           <th>Last name</th>
+          <th>Department</th>
+          <th>Course</th>
           <th>Email </th>
           <th>Phone Number</th>
           <th>Address</th>
           <th>Date of Birth</th>
           <th>Gender</th>
-          <th>Department</th>
-          <th>Course</th>
+          <th>Academic Year</th>
           <th>Visa Start Date</th>
           <th>Visa End Date</th>
           <th>Visa Status</th>

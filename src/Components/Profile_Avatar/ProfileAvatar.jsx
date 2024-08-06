@@ -15,7 +15,9 @@ const ProfileAvatar = () => {
       <div
         tabIndex={0}
         role="button"
-        className="btn btn-ghost btn-circle avatar border-2 border-primary_main"
+        className={`btn btn-ghost btn-circle avatar border-2 ${
+          darkMode ? "border-white" : "border-primary_main"
+        }`}
       >
         <div className="w-10 rounded-full">
           <img
