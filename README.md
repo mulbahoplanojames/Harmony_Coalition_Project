@@ -26,7 +26,7 @@
    <ul>
         <li>
             Clone the repository:
-            <span>git clone https://github.com/yourusername/your-repo-name.git</span>
+            <span>git clone https://github.com/mulbahoplanojames/Harmony_Coalition_Project.git</span>
           </li>
         <li>
             Navigate to the project directory:
