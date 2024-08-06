@@ -72,6 +72,7 @@ const LogIn = () => {
               <input
                 type="email"
                 name="email"
+                placeholder="Enter Email"
                 // required
                 value={userData.email}
                 onChange={(e) =>
@@ -90,7 +91,7 @@ const LogIn = () => {
                   <input
                     type={passwordVisible ? "text" : "password"}
                     name="password"
-                    placeholder="Enter New Password"
+                    placeholder="Enter Password"
                     // required
                     value={userData.password}
                     onChange={(e) =>
