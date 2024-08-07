@@ -3,10 +3,12 @@ import { Editor } from "@tinymce/tinymce-react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 const NewsLetterEditor = () => {
-  const editorRef = useRef(null);
   const [editorContent, setEditorContent] = useState(null);
   const [newsletterSubject, setNewsletterSubject] = useState("");
 
+  const editorRef = useRef(null);
+
+  // Use Navigate Hook
   const navigate = useNavigate();
 
   // Base URL for the API

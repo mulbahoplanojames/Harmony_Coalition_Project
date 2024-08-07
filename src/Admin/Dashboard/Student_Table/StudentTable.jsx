@@ -1,3 +1,6 @@
+import { useCallback } from "react";
+import ImageViewer from "react-simple-image-viewer";
+
 import TableHead from "./TableHead";
 // import { registerStudents } from "../../Data/Data";
 import { useEffect, useState } from "react";
@@ -12,8 +15,27 @@ import { MdDeleteForever } from "react-icons/md";
 import { IoIosSearch } from "react-icons/io";
 
 const StudentTable = () => {
+  // for the image viewer
+  const [currentImage, setCurrentImage] = useState(0);
+  const [isViewerOpen, setIsViewerOpen] = useState(false);
+
   const [studentInfo, setStudentInfo] = useState([]);
-  const [filterStudent, setFilterStudent] = useState([]);
+  const [filterStudentByDepartment, setFilterStudentByDepartment] = useState(
+    []
+  );
+  // const [filterStudentByYear, setFilterStudentByYear] = useState([]);
+
+  // for the image viewer to open
+  const openImageViewer = useCallback((index) => {
+    setCurrentImage(index);
+    setIsViewerOpen(true);
+  }, []);
+
+  // for the image viewer to close
+  const closeImageViewer = () => {
+    setCurrentImage(0);
+    setIsViewerOpen(false);
+  };
 
   // Base URL for the API
   const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
@@ -28,16 +50,16 @@ const StudentTable = () => {
       .then((response) => {
         console.log("All srudents response", response.data);
         setStudentInfo(response.data);
-        setFilterStudent(response.data);
+        setFilterStudentByDepartment(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
   }, [BASE_URL]);
 
-  const handleFilterStudent = (e) => {
+  const handleFilterStudentByDepartment = (e) => {
     const search = e.target.value;
-    setFilterStudent(
+    setFilterStudentByDepartment(
       studentInfo.filter(
         (student) =>
           student.department.toLowerCase().includes(search.toLowerCase())
@@ -46,18 +68,36 @@ const StudentTable = () => {
     );
   };
 
+  // const handleFilterStudentByYear = (e) => {
+  //   const search = e.target.value;
+  //   setFilterStudentByYear(
+  //     studentInfo.filter((student) => student.academic_year.includes(search))
+  //   );
+  // };
+
   return (
     <>
       <section className="w-full">
-        <label className="input input-bordered flex items-center gap-2 mb-3">
-          <input
-            type="text"
-            className="grow"
-            placeholder="Search by Department"
-            onChange={handleFilterStudent}
-          />
-          <IoIosSearch className="h-4 w-4 opacity-70" />
-        </label>
+        <div className="w-full grid md:grid-cols-2 grid-cols-1 md:gap-5 gap-2 place-items-center">
+          <label className="input input-bordered flex items-center gap-2 mb-3 w-full">
+            <input
+              type="text"
+              className="grow"
+              placeholder="Search by Department"
+              onChange={handleFilterStudentByDepartment}
+            />
+            <IoIosSearch className="h-4 w-4 opacity-70" />
+          </label>
+          <label className="input input-bordered flex items-center gap-2 mb-3 w-full">
+            <input
+              type="text"
+              className="grow"
+              placeholder="Search by Year"
+              // onChange={handleFilterStudentByYear}
+            />
+            <IoIosSearch className="h-4 w-4 opacity-70" />
+          </label>
+        </div>
         <div className="overflow-x-auto bg-white ">
           <table className="table w-full">
             {/* head */}
@@ -65,10 +105,10 @@ const StudentTable = () => {
 
             {studentInfo ? (
               <tbody>
-                {filterStudent.map((student) => {
+                {filterStudentByDepartment.map((student, i) => {
                   return (
                     <tr key={student.id} className="text-black text-center">
-                      <td>{student.id}</td>
+                      <td>{i}</td>
                       <td>
                         <div className="flex items-center gap-3">
                           <div className="avatar">
@@ -110,10 +150,26 @@ const StudentTable = () => {
                                     : "/src/assets/userAvatar.jpg"
                                 }
                                 alt={student.firstName}
+                                className="w-full h-full"
+                                onClick={() => openImageViewer(i)}
                               />
                             </div>
                           </div>
                         </div>
+                        {isViewerOpen && currentImage === i && (
+                          <ImageViewer
+                            src={
+                              filterStudentByDepartment[currentImage].visa_image
+                            }
+                            currentIndex={currentImage}
+                            disableScroll={false}
+                            closeOnClickOutside={true}
+                            onClose={closeImageViewer}
+                            backgroundStyle={{
+                              backgroundColor: "rgba(0,0,0,0.9)",
+                            }}
+                          />
+                        )}
                       </td>
                       <td>
                         <div className="flex justify-center items-center gap-2">
