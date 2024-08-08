@@ -1,30 +1,54 @@
-import { MdOutlineDriveFileRenameOutline, MdOutlineMail } from "react-icons/md";
-import { BsPersonFill } from "react-icons/bs";
-import { FaGraduationCap } from "react-icons/fa";
-import { LiaBirthdayCakeSolid } from "react-icons/lia";
-import { FaLock, FaPhoneAlt, FaPassport, FaCcVisa } from "react-icons/fa";
+// Importing icons from the react-icons library
+import {
+  MdOutlineDriveFileRenameOutline, // Icon for file rename
+  MdOutlineMail, // Icon for mail
+} from "react-icons/md";
 
-import { SiGoogleclassroom } from "react-icons/si";
+import { BsPersonFill } from "react-icons/bs"; // Icon for person
+
+import { FaGraduationCap } from "react-icons/fa"; // Icon for graduation cap
+
+import { LiaBirthdayCakeSolid } from "react-icons/lia"; // Icon for birthday cake
+
+import {
+  FaLock, // Icon for lock
+  FaPhoneAlt, // Icon for phone
+  FaPassport, // Icon for passport
+  FaCcVisa, // Icon for visa
+} from "react-icons/fa";
+
+import { SiGoogleclassroom } from "react-icons/si"; // Icon for Google Classroom
+
+// Importing hooks from the react library
 import { useCallback, useContext } from "react";
+
+// Importing the AppContext from the Context/AppContext.jsx file
 import { AppContext } from "../../Context/AppContext";
 
-// ImageViewer
+// Importing the useState hook from the react library
 import { useState } from "react";
+
+// Importing the ImageViewer component from the react-simple-image-viewer library
 import ImageViewer from "react-simple-image-viewer";
 
 const StudentProfileDetailInfo = (props) => {
+  // Defining the state variable isViewerOpen and its setter function setIsViewerOpen using the useState hook
   const [isViewerOpen, setIsViewerOpen] = useState(false);
 
+  // Defining the openImageViewer function using the useCallback hook
   const openImageViewer = useCallback(() => {
-    setIsViewerOpen(true);
+    setIsViewerOpen(true); // Setting isViewerOpen to true when the function is called
   }, []);
 
+  // Defining the closeImageViewer function
   const closeImageViewer = () => {
-    setIsViewerOpen(false);
+    setIsViewerOpen(false); // Setting isViewerOpen to false when the function is called
   };
 
+  // Destructuring the darkMode property from the AppContext using the useContext hook
   const { darkMode } = useContext(AppContext);
 
+  // Destructuring the props object to get the properties passed to the component
   const {
     firstName,
     lastName,
