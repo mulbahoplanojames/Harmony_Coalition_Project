@@ -1,11 +1,25 @@
+// Importing the necessary hooks and components from the React library.
 import { useContext, useState } from "react";
+
+// Importing the TbMenu2 icon from the react-icons library for the menu icon.
 import { TbMenu2 } from "react-icons/tb";
+
+// Importing the MdOutlineCancelPresentation icon from the react-icons library for the close icon.
 import { MdOutlineCancelPresentation } from "react-icons/md";
+
+// Importing the Link component from the react-router-dom library for navigating between pages.
 import { Link } from "react-router-dom";
+
+// Importing the ToggleDarkModeIcon component for enabling dark mode.
 import ToggleDarkModeIcon from "../../Components/Toggle_DarkMode/ToggleDarkModeIcon";
+
+// Importing the AppContext from the AppContext.jsx file for accessing the dark mode state.
 import { AppContext } from "../../Context/AppContext";
 
+// Importing the logo image for displaying the logo on the navigation bar.
 import logo from "/src/assets/logo.jpg";
+
+// Importing the navLinks2 data from the Data.jsx file for displaying the navigation links on the navigation bar.
 import { navLinks2 } from "../../Data/Data";
 
 /**
@@ -17,7 +31,8 @@ const Navbar = () => {
   // State variable to keep track of whether the menu is open or not.
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-
+  // Using the useContext hook to access the darkMode state from the AppContext.
+  // The darkMode state is used to determine the color scheme of the navigation bar based on the user's preference.
   const { darkMode } = useContext(AppContext);
 
   return (

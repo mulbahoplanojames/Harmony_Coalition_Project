@@ -1,25 +1,49 @@
+// Importing the necessary hooks from the React library. We're using useState and useContext.
 import { useContext, useState } from "react";
+
+// Importing the TbMenu2 icon from the react-icons library. This icon will be used for the menu button.
 import { TbMenu2 } from "react-icons/tb";
+
+// Importing the MdOutlineCancelPresentation icon from the react-icons library.
+//This icon will be used for the close button.
 import { MdOutlineCancelPresentation } from "react-icons/md";
+
+// Importing the navLinks data from the Data.jsx file.
+//This data will be used to populate the navigation links in the navbar.
 import navLinks from "../../Data/Data";
+
+// Importing the Link component from the react-router-dom library.
+// This component will be used for navigation between pages.
 import { Link } from "react-router-dom";
+
+// Importing the ToggleDarkModeIcon component from the /Components/Toggle_DarkMode/ToggleDarkModeIcon.jsx file.
+// This component will be used for toggling the dark mode of the application.
 import ToggleDarkModeIcon from "../../Components/Toggle_DarkMode/ToggleDarkModeIcon";
+
+// Importing the AppContext from the ../../Context/AppContext.jsx file.
+// This context will be used to access the dark mode state of the application.
 import { AppContext } from "../../Context/AppContext";
+
+// Importing the ProfileAvatar component from the /Components/Profile_Avatar/ProfileAvatar.jsx file.
+//This component will be used to display the profile avatar of the user.
 import ProfileAvatar from "../../Components/Profile_Avatar/ProfileAvatar";
 
+// Importing the logo image from the /src/assets/logo.jpg file. This image will be used as the logo on the navbar.
 import logo from "/src/assets/logo.jpg";
 
 /**
- * The Navbar component renders the navigation bar of this website.
+ * The LogInNavbar component renders the navigation bar of this website for the Log In page.
  * It contains links to different pages and a sign in button.
  * It also has a responsive menu for smaller devices.
+ * This component utilizes the following:
+ * - useState hook to keep track of whether the menu is open or not.
+ * - useContext hook to access the darkMode state from the AppContext.
  */
 const LogInNavbar = () => {
   // State variable to keep track of whether the menu is open or not.
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const [menu, setMenu] = useState("Home");
-
+  // Accessing the darkMode state from the AppContext using the useContext hook.
   const { darkMode } = useContext(AppContext);
 
   return (
@@ -50,7 +74,6 @@ const LogInNavbar = () => {
                   darkMode ? "text-white" : "text-black"
                 }`}
                 onClick={() => {
-                  setMenu(navlink.label);
                   window.scrollTo(0, 0);
                 }}
               >
@@ -95,7 +118,6 @@ const LogInNavbar = () => {
                   key={navlink.label}
                   onClick={() => {
                     setIsMenuOpen(!isMenuOpen);
-                    setMenu(navlink.label);
                     window.scrollTo(0, 8000);
                   }}
                 >

@@ -1,10 +1,18 @@
-// Importing the Link component from the react-router-dom library
+// I am importing the Link component from the react-router-dom library.
+// This Component allows us to create links between different pages in our application.
 import { Link } from "react-router-dom";
 
+// I am importing the motion component from the framer-motion library.
+// This library provides a set of animation tools that allow us to create smooth and interactive animations.
 import { motion } from "framer-motion";
 
+// I am importing the WordFlicker component from the "Animatedata.jsx" file located in the "src/Data" directory.
+// This component is a custom animation that I created using the framer-motion library.
+//It will be used to create a text animation effect.
 import { WordFlicker } from "/src/Data/Animatedata.jsx";
 
+// I am importing the "about_hero2.png" image file located in the "src/assets" directory.
+// This image will be used as the background image for the hero section of our home page.
 import heroImg from "/src/assets/about_hero2.png";
 
 const VisitHomeHero = () => {
