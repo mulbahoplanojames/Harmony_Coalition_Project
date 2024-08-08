@@ -33,7 +33,7 @@ const StudentTable = () => {
 
   // for the image viewer to close
   const closeImageViewer = () => {
-    setCurrentImage(0);
+    // setCurrentImage(0);
     setIsViewerOpen(false);
   };
 
@@ -140,34 +140,58 @@ const StudentTable = () => {
                       <td>{student.visa_end}</td>
                       <td>{student.visa_status}</td>
                       <td>
-                        <div className="flex items-center gap-3">
-                          <div className="avatar">
-                            <div className="mask h-[6rem] w-[10rem]">
-                              <img
-                                src={
-                                  student.visa_image
-                                    ? student.visa_image
-                                    : "/src/assets/userAvatar.jpg"
-                                }
-                                alt={student.firstName}
-                                className="w-full h-full"
-                                onClick={() => openImageViewer(i)}
-                              />
-                            </div>
+                        <div className="avatar">
+                          <div className="mask h-[6rem] w-[10rem]">
+                            <img
+                              src={
+                                student.visa_image
+                                  ? student.visa_image
+                                  : "/src/assets/userAvatar.jpg"
+                              }
+                              alt={student.firstName}
+                              className=""
+                              onClick={() => openImageViewer(i)}
+                            />
                           </div>
                         </div>
                         {isViewerOpen && currentImage === i && (
                           <ImageViewer
-                            src={
-                              filterStudentByDepartment[currentImage].visa_image
-                            }
-                            currentIndex={currentImage}
+                            src={[
+                              student.visa_image
+                                ? student.visa_image
+                                : "/src/assets/userAvatar.jpg",
+                            ]}
+                            currentIndex={0}
                             disableScroll={false}
                             closeOnClickOutside={true}
                             onClose={closeImageViewer}
                             backgroundStyle={{
                               backgroundColor: "rgba(0,0,0,0.9)",
                             }}
+                            styles={{
+                              container: {
+                                position: "fixed",
+                                top: 30,
+                                left: 0,
+                                right: 0,
+                                bottom: 0,
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                backgroundColor: "rgba(0,0,0,0.9)",
+                                zIndex: 9999,
+                              },
+                            }}
+                            onMovePrevRequest={() =>
+                              setCurrentImage(
+                                (currentImage) => currentImage - 1
+                              )
+                            }
+                            onMoveNextRequest={() =>
+                              setCurrentImage(
+                                (currentImage) => currentImage + 1
+                              )
+                            }
                           />
                         )}
                       </td>
