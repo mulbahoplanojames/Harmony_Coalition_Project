@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
 import { motion } from "framer-motion";
 
-const NewsLetter = () => {
+const NewsLetter = ({ path }) => {
   const [newsLetterEmail, setNewsLetterEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -61,9 +61,9 @@ const NewsLetter = () => {
           <p className="text-black ">
             <span className="opacity-50 text-black">
               We care about your data. Read our
-            </span>{" "}
+            </span>
             &nbsp;
-            <Link to={""} className="text-blue-600">
+            <Link to={path} className="text-blue-600">
               privacy policy
             </Link>
           </p>

@@ -22,7 +22,7 @@ const VisitHome = () => {
         <Team />
         <AboutUs link="/visit-about" />
         <DisciplinesOffer disciplinesOffer={disciplinesOffer} />
-        <NewsLetter />
+        <NewsLetter path="/visit-privacy-policy" />
         <FAQ />
       </div>
       <Footer />

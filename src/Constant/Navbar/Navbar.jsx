@@ -17,7 +17,6 @@ const Navbar = () => {
   // State variable to keep track of whether the menu is open or not.
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const [menu, setMenu] = useState("Home");
 
   const { darkMode } = useContext(AppContext);
 
@@ -47,7 +46,6 @@ const Navbar = () => {
                 to={navlink.path}
                 className={`font-montserrat text-base leading-normal  `}
                 onClick={() => {
-                  setMenu(navlink.label);
                   window.scrollTo(0, 0);
                 }}
               >
@@ -97,7 +95,6 @@ const Navbar = () => {
                   key={navlink.label}
                   onClick={() => {
                     setIsMenuOpen(!isMenuOpen);
-                    setMenu(navlink.label);
                     window.scrollTo(0, 8000);
                   }}
                 >

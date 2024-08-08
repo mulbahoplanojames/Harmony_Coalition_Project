@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import Navbar from "../../../Constant/Navbar/Navbar";
+import Footer from "../../../Constant/Footer/Footer";
 
 const whyDoWeColllect = [
   {
@@ -67,14 +69,10 @@ const rights = [
   },
 ];
 
-/**
-Contact Us
-If you have any questions about this Privacy Policy, please contact us at:
- */
-
-const Privacy = () => {
+const VisitPrivacy = () => {
   return (
     <>
+      <Navbar />
       <div className="pt-[8rem] md:px-[4rem] px-2">
         <h1 className="text-3xl font-semibold pb-4">Privacy Policy</h1>
         <p className="text-lg pb-5">Last Updated: 02/08/2024</p>
@@ -183,7 +181,7 @@ const Privacy = () => {
           <p className="pb-3">
             If you have any questions about this Privacy Policy, please contact
             us at:{" "}
-            <Link to="/contact-us" className="text-blue-600 underline">
+            <Link to="/visit-contact-us" className="text-blue-600 underline">
               Contact Us
             </Link>
           </p>
@@ -192,8 +190,9 @@ const Privacy = () => {
           </p>
         </ol>
       </div>
+      <Footer />
     </>
   );
 };
 
-export default Privacy;
+export default VisitPrivacy;

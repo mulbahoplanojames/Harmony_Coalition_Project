@@ -15,7 +15,7 @@ const Home = () => {
       <Team />
       <AboutUs link={"about"} />
       <DisciplinesOffer disciplinesOffer={disciplinesOffer2} />
-      <NewsLetter />
+      <NewsLetter path="/privacy-policy" />
       <FAQ />
     </div>
   );

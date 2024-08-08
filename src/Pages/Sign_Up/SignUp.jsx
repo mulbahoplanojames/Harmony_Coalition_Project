@@ -88,7 +88,7 @@ const SignUp = () => {
   return (
     <>
       <div className="flex justify-center items-center w-full h-fit py-14  bg-primary_main text-black">
-        <div className="md:w-[80%] w-[95%] h-fit grid md:grid-cols-2 grid-cols-1 bg-white">
+        <div className="md:w-[80%] w-[95%] h-fit grid md:grid-cols-2 grid-cols-1 bg-white rounded-md overflow-hidden shadow-md">
           <div className=" w-full md:h-full h-[15rem] overflow-hidden bg-purple-200">
             <img
               src={singUp_image}

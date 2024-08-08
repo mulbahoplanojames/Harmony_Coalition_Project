@@ -38,8 +38,10 @@ const PageNotFound = React.lazy(() =>
 );
 const SignUp = React.lazy(() => import("./Pages/Sign_Up/SignUp"));
 const LogIn = React.lazy(() => import("./Pages/Log_In/LogIn"));
+
 //==================================================================================================
-// Visitor Pages
+
+//? Visitor Pages
 const VisitHome = React.lazy(() =>
   import("./Pages/Visit_Pages/Visit_Home/VisitHome")
 );
@@ -59,9 +61,13 @@ const VisitSchoolOfEBS = React.lazy(() =>
 const VisitPolythenicInstitute = React.lazy(() =>
   import("./Depaerments_Details/Polythenic_Institute/VisitPolythenicInstitute")
 );
+const VisitPrivacy = React.lazy(() =>
+  import("./Pages/Visit_Pages/Visit_Privacy/VisitPrivacy")
+);
 
 // ==================================================================================
 
+//? Forget Password and Reset Password
 const ForgetPassword = React.lazy(() =>
   import("./Pages/ForgetPassword/ForgetPassword")
 );
@@ -74,12 +80,12 @@ const UserComponent = React.lazy(() =>
 
 // ====================================================================================
 
-// Scroll To Top
+//? Scroll To Top
 import ScrollToTop from "./Components/Scroll_To_Top/ScrollToTop";
 
 // ====================================================================================
 
-// Admins
+//? Admins
 const AdminLayout = React.lazy(() =>
   import("./Admin/Admin_Layout/AdminLayout")
 );
@@ -142,7 +148,7 @@ const App = () => {
               />
               <Route path="/school-of-ebs" element={<SchoolOfEBS />} />
               <Route path="/school-of-law-social-sciences" element={<Law />} />
-              {/* <Route path="/privacy-policy" element={<PrivacyPolicy />} /> */}
+              <Route path="/privacy-policy" element={<Privacy />} />
             </Route>
 
             {/*//! ================================================================================== */}
@@ -188,7 +194,7 @@ const App = () => {
               path="/visit-polytechnic-instutute"
               element={<VisitPolythenicInstitute />}
             />
-            <Route path="/visit-privacy-policy" element={<Privacy />} />
+            <Route path="/visit-privacy-policy" element={<VisitPrivacy />} />
 
             {/*//! ================================================================================== */}
             {/* User Component varified if the user account is Acitive  */}
