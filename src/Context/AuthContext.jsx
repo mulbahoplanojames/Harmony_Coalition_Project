@@ -231,14 +231,29 @@ const AuthProvider = ({ children }) => {
       const response = await axios.post(`${BASE_URL}/newsletter/subscribe/`, {
         email: newsLetterEmail,
       });
-      console.log(response.data);
+      if (response.status === 200) {
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "Thanks for subscribing to our newsletter!",
+          footer: "You will receive an email shortly",
+        });
+        // console.log(response.data);
+      }
     } catch (error) {
       console.log("From the News Letter", error);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+        footer: "Please try again",
+      });
     }
   };
   //! ====================================================================================
 
-  // Getting the students data from the API endpoint and passing it through the context provider to be used in other components
+  // Getting the students data from the API endpoint and passing it through the context provider to
+  //be used in other components
 
   const [studentInfo, setStudentInfo] = useState({
     first_name: "",
@@ -294,7 +309,7 @@ const AuthProvider = ({ children }) => {
       });
   }, [BASE_URL]);
 
-  console.log("Student info", studentInfo);
+  // console.log("Student info", studentInfo);
 
   // Log studentInfo whenever it changes
   useEffect(() => {
