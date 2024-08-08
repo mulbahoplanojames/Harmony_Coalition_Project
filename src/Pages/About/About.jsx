@@ -1,12 +1,28 @@
+// Importing the AboutHero component from the Components directory
 import AboutHero from "../../Components/About_Hero/AboutHero";
+
+// Importing the OurMission component from the Components directory
 import OurMission from "../../Components/About_Our_Mission/OurMission";
+
+// Importing the OurStory component from the Components directory
 import OurStory from "../../Components/About_Our_Story/OurStory";
+
+// Importing the Card component from the Interfaces directory
 import Card from "../../Interfaces/About_Card/Card";
 
+// Importing the totalStudents image from the assets directory
 import totalStudents from "/src/assets/total_Students.svg";
+
+// Importing the newStudents image from the assets directory
 import newStudents from "/src/assets/newStudents.svg";
+
+// Importing the connection image from the assets directory
 import connection from "/src/assets/connections.svg";
+
+// Importing the FAQ component from the Components directory
 import FAQ from "../../Components/FAQ/FAQ";
+
+// Importing the Gallery component from the Components directory
 import Gallery from "../../Components/Gallery/Gallery";
 
 const About = () => {

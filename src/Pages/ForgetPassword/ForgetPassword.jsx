@@ -1,10 +1,17 @@
+// Importing the useState hook from the React library
 import { useState } from "react";
+// Importing the Link component from the react-router-dom library
 import { Link } from "react-router-dom";
+
+// Importing the forgetPassword_image image file located in the "src/assets" directory
 import forgetPassword_image from "/src/assets/Forgot_password.png";
+
+// Importing the CgArrowLeftR icon from the react-icons/cg library
 import { CgArrowLeftR } from "react-icons/cg";
+
+// Importing the axios library for making HTTP requests
 import axios from "axios";
 
-// This component is responsible for rendering the login page
 const ForgetPassword = () => {
   // The state is an object that holds the user's data from the form
   const [forgetPasswordEmail, setForgetPasswordEmail] = useState("");

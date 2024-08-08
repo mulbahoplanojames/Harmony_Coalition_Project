@@ -1,5 +1,13 @@
+/**
+ * Importing the "aboutimg4.jpg" image file located in the "src/assets" directory.
+ * This image will be used as the background image for the "Our Story" section of the website.
+ */
 import storyImage from "/src/assets/aboutimg4.jpg";
 
+/**
+ * Importing the "motion" component from the "framer-motion" library.
+ * This library provides a set of animation tools that allow us to create smooth and interactive animations.
+ */
 import { motion } from "framer-motion";
 
 const OurStory = () => {

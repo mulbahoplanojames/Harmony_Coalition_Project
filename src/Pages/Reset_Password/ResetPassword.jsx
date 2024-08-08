@@ -1,11 +1,24 @@
+// Importing the useState and useEffect hooks from the React library
 import { useState, useEffect } from "react";
+// Importing the Link component and the useParams hook from the react-router-dom library
 import { Link, useParams } from "react-router-dom";
+
+// Importing the resetpassword.png image file located in the "src/assets" directory
 import singUp_image from "/src/assets/resetpassword.png";
+
+// Importing the CgArrowLeftR icon from the react-icons/cg library
 import { CgArrowLeftR } from "react-icons/cg";
+
+// Importing the useAuth hook from the ../../Context/AuthContext.jsx file
 import { useAuth } from "../../Context/AuthContext";
+
+// Importing the axios library for making HTTP requests
 import axios from "axios";
 
+// Importing the eye_open.png image file located in the "src/assets" directory
 import eyeOpen from "/src/assets/eye_open.png";
+
+// Importing the eye_close.png image file located in the "src/assets" directory
 import eyeClose from "/src/assets/eye_close.png";
 
 // This component is responsible for rendering the login page
