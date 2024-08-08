@@ -13,6 +13,9 @@ const ConfirmNewsLetter = () => {
   // Initializing the isVerified state variable to false
   const [isVerified, setIsVerified] = useState(false);
 
+  // Base URL for the API
+  const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
+
   // useEffect hook to fetch the newsletter data when the component mounts and whenever the 'id' or 'number' parameter changes
   useEffect(() => {
     const fetchNewsletterData = async () => {
@@ -23,8 +26,10 @@ const ConfirmNewsLetter = () => {
 
         // Making a GET request to the newsletter confirmation endpoint with the decoded 'id' and 'number' parameters
         const response = await axios.get(
-          `http://192.168.1.68:8000/newsletter/confirm/${decodedId}/${decodedNumber}/`
+          `${BASE_URL}/newsletter/confirm/${decodedId}/${decodedNumber}/`
         );
+
+        console.log("response", response.data);
 
         // Checking if the response status is 200 (OK)
         if (response.status === 200) {

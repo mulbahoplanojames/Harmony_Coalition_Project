@@ -1,7 +1,12 @@
+// Importing the axios library for making HTTP requests
 import axios from "axios";
+// Importing the useEffect and useState hooks from the React library
 import { useEffect, useState } from "react";
+// Importing the Link component and the useParams hook from the react-router-dom library
 import { Link, useParams } from "react-router-dom";
-import varified from "/src/assets/verified.jpg";
+
+// The path to the verified image asset
+const verifiedImage = "/src/assets/verified.jpg";
 
 const UserComponent = () => {
   const { id, token } = useParams();
@@ -60,7 +65,7 @@ const UserComponent = () => {
             </div>
             <div className="w-full md:h-[25rem] h-[14rem] bg-red-300 overflow-hidden border-2 border-primary_main md:order-last order-first">
               <img
-                src={varified}
+                src={verifiedImage}
                 alt="Account verified image"
                 className="w-full h-full"
               />
