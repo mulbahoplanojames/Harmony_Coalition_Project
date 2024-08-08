@@ -5,10 +5,24 @@ import { LiaBirthdayCakeSolid } from "react-icons/lia";
 import { FaLock, FaPhoneAlt, FaPassport, FaCcVisa } from "react-icons/fa";
 
 import { SiGoogleclassroom } from "react-icons/si";
-import { useContext } from "react";
+import { useCallback, useContext } from "react";
 import { AppContext } from "../../Context/AppContext";
 
+// ImageViewer
+import { useState } from "react";
+import ImageViewer from "react-simple-image-viewer";
+
 const StudentProfileDetailInfo = (props) => {
+  const [isViewerOpen, setIsViewerOpen] = useState(false);
+
+  const openImageViewer = useCallback(() => {
+    setIsViewerOpen(true);
+  }, []);
+
+  const closeImageViewer = () => {
+    setIsViewerOpen(false);
+  };
+
   const { darkMode } = useContext(AppContext);
 
   const {
@@ -204,13 +218,44 @@ const StudentProfileDetailInfo = (props) => {
           </div>
 
           {/* Visa Image */}
-          <div className="flex justify-between items-center gap-10 ">
+          <div className="flex justify-between items-center gap-10 relative">
             <img
               src={visaImage ? visaImage : "https://via.placeholder.com/150"}
               alt="visa image"
-              className="w-full h-[30vh] rounded-md overflow-hidden border-primary_main border"
+              className="w-full h-[30vh] rounded-md overflow-hidden border-primary_main border "
+              onClick={() => openImageViewer()}
             />
-            <FaLock className=" text-lg text-slate-500 " />
+            <FaLock className="text-lg text-slate-500" />
+            {isViewerOpen && (
+              <ImageViewer
+                src={[
+                  visaImage ? visaImage : "https://via.placeholder.com/150",
+                ]}
+                currentIndex={0}
+                disableScroll={true}
+                closeable={true}
+                closeOnClickOutside={true}
+                onClose={closeImageViewer}
+                backgroundStyle={{
+                  backgroundColor: "rgba(0,0,0,0.9)",
+                }}
+                styles={{
+                  container: {
+                    position: "absolute",
+                    top: 30,
+                    left: 0,
+                    right: 0,
+                    bottom: 50,
+                    // display: "flex",
+                    // alignItems: "center",
+                    // justifyContent: "center",
+                    height: "20vh",
+                    backgroundColor: "rgba(0,0,0,0.9)",
+                    zIndex: 9999,
+                  },
+                }}
+              />
+            )}
           </div>
         </div>
       </div>

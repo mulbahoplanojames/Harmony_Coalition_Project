@@ -5,7 +5,6 @@ import TableHead from "./TableHead";
 // import { registerStudents } from "../../Data/Data";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { registerStudents } from "../Admin_Data/AdminData";
 // import { useNavigate } from "react-router-dom";
 
 import { FaEdit } from "react-icons/fa";
