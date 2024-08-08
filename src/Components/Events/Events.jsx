@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../Context/AppContext";
-import { eventsData } from "../../Data/LeaderData";
 import axios from "axios";
 
 const Events = () => {
@@ -62,7 +61,9 @@ const Events = () => {
             </div>
           ))
         ) : (
-          <h1 className="text-3xl text-center">No Events Available</h1>
+          <div className="w-full bg-primary_main p-4 rounded-md text-center animate-pulse">
+            <h1 className="text-2xl text-white">No Events Available</h1>
+          </div>
         )}
       </div>
     </>

@@ -46,7 +46,7 @@ const StudentProfileHeader = (props) => {
 
   return (
     <>
-      <div className="w-full h-fit py-9  bg-[#303247]  rounded-md grid md:px-8 px-2 md:grid-cols-2 grid-cols-1 md:gap-2 gap-y-5 shadow-[-6px_-6px_20px_rgba(255,255,255,0.5),6px_6px_20px_rgba(0,0,0,0.5)]">
+      <div className="w-full h-fit py-9  bg-[#303247]  rounded-md grid md:px-8 px-2 md:grid-cols-2 grid-cols-1 place-items-stretch items-center md:gap-2 gap-y-5 shadow-[-6px_-6px_20px_rgba(255,255,255,0.5),6px_6px_20px_rgba(0,0,0,0.5)]">
         <div className="p-3 ">
           <p className="text-base pb-2">{`${date.month} ${date.day}, ${date.year}`}</p>
           <p className="text-base pb-5">{`${date.hour} : ${date.minute} `}</p>
@@ -60,8 +60,12 @@ const StudentProfileHeader = (props) => {
           <p className="pb-2">{department ? department : "Department"}</p>
           <p>{course ? course : "Course"}</p>
         </div>
-        <div className="bg-blue-300  md:h-[15rem] h-[12rem] md:w-[26rem] w-full  md:order-last order-first overflow-hidden tw_round">
-          <img src={image ? image : avatar} alt="" className="w-full h-full" />
+        <div className=" md:h-[17rem] h-[15rem] md:w-[26rem] w-full  md:order-last order-first overflow-hidden rounded-md">
+          <img
+            src={image ? image : avatar}
+            alt={`${firstName} ${lastName} image`}
+            className="w-full h-full object-scale"
+          />
         </div>
       </div>
     </>
