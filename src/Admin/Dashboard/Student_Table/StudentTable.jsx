@@ -1,76 +1,87 @@
-import { useCallback } from "react";
+// Importing the useCallback, useEffect and useState hooks from the react library
+import { useCallback, useState, useEffect } from "react";
+
+// Importing the ImageViewer component from the react-simple-image-viewer library
 import ImageViewer from "react-simple-image-viewer";
 
+// Importing the TableHead component from /Components/Admin/Dashboard/Student_Table/TableHead
 import TableHead from "./TableHead";
-// import { registerStudents } from "../../Data/Data";
-import { useEffect, useState } from "react";
+
+// Importing the axios library for making HTTP requests
 import axios from "axios";
-// import { useNavigate } from "react-router-dom";
 
+// Importing the FaEdit, MdDeleteForever, and IoIosSearch icons from the react-icons library
 import { FaEdit } from "react-icons/fa";
-
 import { MdDeleteForever } from "react-icons/md";
-
 import { IoIosSearch } from "react-icons/io";
 
 const StudentTable = () => {
-  // for the image viewer
-  const [currentImage, setCurrentImage] = useState(0);
-  const [isViewerOpen, setIsViewerOpen] = useState(false);
+  // Defining the state variables for the image viewer
+  const [currentImage, setCurrentImage] = useState(0); // The index of the current image being displayed in the image viewer
+  const [isViewerOpen, setIsViewerOpen] = useState(false); // A boolean indicating whether the image viewer is open or closed
 
-  const [studentInfo, setStudentInfo] = useState([]);
+  // Defining the state variables for the student information
+  const [studentInfo, setStudentInfo] = useState([]); // The array of student objects fetched from the API
   const [filterStudentByDepartment, setFilterStudentByDepartment] = useState(
     []
-  );
-  // const [filterStudentByYear, setFilterStudentByYear] = useState([]);
+  ); // The filtered array of student objects based on the department filter
 
-  // for the image viewer to open
+  // const [filterStudentByYear, setFilterStudentByYear] = useState([]); // The filtered array of student objects based on the academic year filter
+
+  // Defining the function to open the image viewer
   const openImageViewer = useCallback((index) => {
-    setCurrentImage(index);
-    setIsViewerOpen(true);
+    setCurrentImage(index); // Setting the current image index to the provided index
+    setIsViewerOpen(true); // Opening the image viewer
   }, []);
 
-  // for the image viewer to close
+  // Defining the function to close the image viewer
   const closeImageViewer = () => {
-    // setCurrentImage(0);
-    setIsViewerOpen(false);
+    setIsViewerOpen(false); // Closing the image viewer
   };
 
-  // Base URL for the API
+  // Defining the base URL for the API
   const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
 
+  // Fetching the student information from the API on component mount
   useEffect(() => {
     axios
       .get(`${BASE_URL}/students/api/students/`, {
         headers: {
+          // Including the authentication token in the request headers
           Authorization: `Token ${localStorage.getItem("token")}`,
         },
       })
       .then((response) => {
-        console.log("All srudents response", response.data);
+        // Logging the response data to the console
+        // console.log("All students response", response.data);
+        // Setting the student information state variable to the response data
         setStudentInfo(response.data);
+        // Setting the filtered student information state variable to the response data
         setFilterStudentByDepartment(response.data);
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error); // Logging any errors to the console
       });
   }, [BASE_URL]);
 
+  // Defining the function to filter the student information by department
   const handleFilterStudentByDepartment = (e) => {
-    const search = e.target.value;
+    const search = e.target.value; // Getting the value of the search input field
     setFilterStudentByDepartment(
       studentInfo.filter(
         (student) =>
+          // Filtering the student information based on the department name (case-insensitive)
           student.department.toLowerCase().includes(search.toLowerCase())
-        // student.user.first_name.toLowerCase().includes(search.toLowerCase())
+        // student.user.first_name.toLowerCase().includes(search.toLowerCase()) // Filtering the student information based on the first name (case-insensitive)
       )
     );
   };
 
+  // Uncommenting the code below will define the function to filter the student information by academic year
   // const handleFilterStudentByYear = (e) => {
-  //   const search = e.target.value;
+  //   const search = e.target.value; // Getting the value of the search input field
   //   setFilterStudentByYear(
-  //     studentInfo.filter((student) => student.academic_year.includes(search))
+  //     studentInfo.filter((student) => student.academic_year.includes(search)) // Filtering the student information based on the academic year
   //   );
   // };
 
