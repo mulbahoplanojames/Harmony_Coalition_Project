@@ -11,8 +11,8 @@ const VisitHomeHero = () => {
   return (
     <>
       <div
-        className="grid md:grid-cols-2 grid-cols-1 place-items-center md:px-1 px-2  md:py-20 py-8  md:gap-6 gap-14 md:bg-fixed rounded-md h-fit relative"
-        id="home_hero"
+        className="grid md:grid-cols-2 grid-cols-1 place-items-center md:px-1 px-2  md:py-20 py-8  md:gap-6 gap-14 md:bg-fixed rounded-md h-fit relative hero_bg"
+        // id="home_hero"
       >
         <motion.div
           className="z-30"

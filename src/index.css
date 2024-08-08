@@ -11,6 +11,12 @@
   .text_shadow {
     text-shadow: 1px 1px 2px #8095c3, 0 0 1em blue, 0 0 0.2em blue;
   }
+  .hero_bg {
+    @apply bg-cover bg-center bg-gradient-to-r from-[rgb(234,237,240,0.5)] to-[rgba(235,238,241,0.4)];
+  }
+  .hero_bg {
+    @apply bg-[url('/src/assets/gradient_bg.png')];
+  }
 }
 
 body {
@@ -26,12 +32,12 @@ body {
   border-radius: 20px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #fff;
+  background: linear-gradient(to top, #1c3d5b, #fff);
+  height: 5px;
   border-radius: 20px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #fff;
+  background: linear-gradient(to top, blue, white, #1c3d5b);
 }
 
 .neu_card {
@@ -103,12 +109,6 @@ body {
   backdrop-filter: blur(5.5px);
   -webkit-backdrop-filter: blur(5.5px);
   border: 1px solid rgba(75, 32, 140, 0.57);
-}
-
-#home_hero {
-  background: url(/src/assets/gradient_bg.png);
-  background-position: center;
-  background-size: cover;
 }
 
 #item1 {

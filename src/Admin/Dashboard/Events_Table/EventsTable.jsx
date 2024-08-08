@@ -28,10 +28,11 @@ const EventTable = () => {
       })
       .then((response) => {
         console.log(response.data);
-        setEventInfo(response.data);
+        setEventInfo(response.data || []);
       })
       .catch((error) => {
         console.log(error);
+        setEventInfo([]);
       });
   }, [BASE_URL]);
 
@@ -96,40 +97,8 @@ const EventTable = () => {
             {/* head */}
             <EventTableHead />
             <tbody>
-              {/* row 1 */}
-              {/* {registerStudents.map((student) => {
-                return (
-                  <tr key={student.id} className="text-black">
-                    <td>{student.id}</td>
-                    <td>
-                      <div className="flex items-center gap-3">
-                        <div className="avatar">
-                          <div className="mask mask-squircle h-12 w-12">
-                            <img src={student.avatar} alt={student.firstName} />
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>{student.firstName}</td>
-                    <td>{student.lastName}</td>
-                    <td>{student.email}</td>
-                    <td>{student.phoneNumber}</td>
-                    <td>{student.address}</td>
-                    <td>{student.birthDate}</td>
-                    <td>{student.gender}</td>
-                    <td>{student.department}</td>
-                    <td>{student.department}</td>
-                    <td>{student.visaStartDate}</td>
-                    <td>{student.visaEndDate}</td>
-                    <td>{student.visaStatus}</td>
-                    <td>{student.visaImage}</td>
-                    <td>{student.status}</td>
-                  </tr>
-                );
-              })} */}
-
-              {eventInfo.map((student) => {
-                return (
+              {eventInfo?.length > 0 ? (
+                eventInfo.map((student) => (
                   <tr key={student.id} className="text-black">
                     <td>{student.id}</td>
                     <td>
@@ -171,8 +140,14 @@ const EventTable = () => {
                       />
                     </td>
                   </tr>
-                );
-              })}
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="10" className="text-center text-3xl">
+                    No events found
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>

@@ -1,9 +1,7 @@
 // Importing the useContext hook from the React library
-import { useContext } from "react";
-// Importing the Link component from the react-router-dom library
+
 import { Link } from "react-router-dom";
-// Importing the AppContext from the Context/AppContext.jsx file
-import { AppContext } from "../../Context/AppContext";
+
 import { motion } from "framer-motion";
 
 import avatar from "/src/assets/userAvatar.jpg";
@@ -15,18 +13,12 @@ import { WordFlicker } from "/src/Data/Animatedata.jsx";
 import { useAuth } from "../../Context/AuthContext";
 
 const HomeHero = () => {
-  // Accessing the darkMode value from the AppContext
-  const { darkMode } = useContext(AppContext);
-
   // Accessing the user value from the useAuth hook
   const user = useAuth();
 
   return (
     <>
-      <div
-        className="grid md:grid-cols-2 grid-cols-1 place-items-center md:px-1 px-2  md:py-16 py-8  md:gap-6 gap-14 md:bg-fixed rounded-md h-fit relative"
-        id="home_hero"
-      >
+      <div className="grid md:grid-cols-2 grid-cols-1 place-items-center md:px-1 px-2  md:py-16 py-8  md:gap-6 gap-14 md:bg-fixed rounded-md h-fit relative hero_bg">
         <motion.div
           className="z-30"
           initial={{ opacity: 0, x: -60 }}

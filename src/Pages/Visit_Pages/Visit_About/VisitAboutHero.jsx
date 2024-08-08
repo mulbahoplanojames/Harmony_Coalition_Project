@@ -19,10 +19,7 @@ const VisitAboutHero = () => {
   const { darkMode } = useContext(AppContext);
   return (
     <>
-      <div
-        className="grid md:grid-cols-2 grid-cols-1 place-items-center  md:py-20 py-8  md:gap-3 gap-10 md:px-0 px-1"
-        id="home_hero"
-      >
+      <div className="grid md:grid-cols-2 grid-cols-1 place-items-center  md:py-20 py-8  md:gap-3 gap-10 md:px-0 px-1 hero_bg">
         <motion.div
           animate={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
