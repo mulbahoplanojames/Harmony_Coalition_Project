@@ -30,9 +30,8 @@ const Calender = () => {
           plugins={[dayGridPlugin, timeGridPlugin, listPlugin]}
           initialView="dayGridMonth"
           headerToolbar={{
-            left: "prev,next today",
-            center: "title",
-            right: "dayGridMonth,timeGridWeek,listWeek",
+            right: "prev,next today",
+            left: "title",
           }}
           weekends={false}
           events={date.map((event) => ({
