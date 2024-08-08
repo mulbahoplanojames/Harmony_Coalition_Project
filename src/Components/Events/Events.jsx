@@ -18,9 +18,9 @@ const Events = () => {
 
   return (
     <>
-      {events ? (
-        <div className="text-black md:py-20 py-6   ">
-          {events.map((event) => (
+      <div className="text-black md:py-20 py-6   ">
+        {events?.length > 0 ? (
+          events.map((event) => (
             <div
               className={`container grid grid-cols-12 mx-auto  mb-4 ${
                 darkMode ? "event_card" : "event_card"
@@ -60,11 +60,11 @@ const Events = () => {
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-      ) : (
-        <h1 className="text-center text-3xl font-bold">No events found</h1>
-      )}
+          ))
+        ) : (
+          <h1 className="text-3xl text-center">No Events Available</h1>
+        )}
+      </div>
     </>
   );
 };

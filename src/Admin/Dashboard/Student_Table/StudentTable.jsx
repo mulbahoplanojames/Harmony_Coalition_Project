@@ -212,7 +212,7 @@ const StudentTable = () => {
               ) : (
                 <tr>
                   <td colSpan={14} className=" text-3xl  ">
-                    No data found
+                    No Student data found
                   </td>
                 </tr>
               )}

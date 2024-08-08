@@ -99,64 +99,40 @@ const NewsLetterTable = () => {
             {/* head */}
             <NewsLetterTableHead />
             <tbody>
-              {/* row 1 */}
-              {/* {registerStudents.map((student) => {
-                return (
-                  <tr key={student.id} className="text-black">
-                    <td>{student.id}</td>
-                    <td>
-                      <div className="flex items-center gap-3">
-                        <div className="avatar">
-                          <div className="mask mask-squircle h-12 w-12">
-                            <img src={student.avatar} alt={student.firstName} />
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>{student.firstName}</td>
-                    <td>{student.lastName}</td>
-                    <td>{student.email}</td>
-                    <td>{student.phoneNumber}</td>
-                    <td>{student.address}</td>
-                    <td>{student.birthDate}</td>
-                    <td>{student.gender}</td>
-                    <td>{student.department}</td>
-                    <td>{student.department}</td>
-                    <td>{student.visaStartDate}</td>
-                    <td>{student.visaEndDate}</td>
-                    <td>{student.visaStatus}</td>
-                    <td>{student.visaImage}</td>
-                    <td>{student.status}</td>
-                  </tr>
-                );
-              })} */}
-
-              {newsLetterInfo.map((newsletter) => {
-                return (
-                  <tr key={newsletter.id} className="text-black ">
-                    <td>{newsletter.id}</td>
-                    <td>{newsletter.subject}</td>
-                    <td
-                      dangerouslySetInnerHTML={{ __html: newsletter.content }}
-                    ></td>
-                    <td>{newsletter.status}</td>
-                    <td className="flex gap-3 justify-center items-center">
-                      <MdOutlinePublishedWithChanges
-                        className="bg-blue-100 text-blue-600 p-1 text-3xl rounded-md cursor-pointer hover:bg-blue-400 "
-                        onClick={() => publishNewsletter(newsletter.id)}
-                      />
-                      <MdEditCalendar
-                        className="bg-green-100 text-green-600 p-1 text-3xl rounded-md cursor-pointer hover:bg-green-400 "
-                        onClick={() => editNewsletter(newsletter.id)}
-                      />
-                      <MdDelete
-                        className="bg-red-100 text-red-600 p-1 text-3xl rounded-md cursor-pointer hover:bg-red-400 "
-                        onClick={() => deleteNewsLetter(newsletter.id)}
-                      />
-                    </td>
-                  </tr>
-                );
-              })}
+              {newsLetterInfo?.length > 0 ? (
+                newsLetterInfo.map((newsletter) => {
+                  return (
+                    <tr key={newsletter.id} className="text-black ">
+                      <td>{newsletter.id}</td>
+                      <td>{newsletter.subject}</td>
+                      <td
+                        dangerouslySetInnerHTML={{ __html: newsletter.content }}
+                      ></td>
+                      <td>{newsletter.status}</td>
+                      <td className="flex gap-3 justify-center items-center">
+                        <MdOutlinePublishedWithChanges
+                          className="bg-blue-100 text-blue-600 p-1 text-3xl rounded-md cursor-pointer hover:bg-blue-400 "
+                          onClick={() => publishNewsletter(newsletter.id)}
+                        />
+                        <MdEditCalendar
+                          className="bg-green-100 text-green-600 p-1 text-3xl rounded-md cursor-pointer hover:bg-green-400 "
+                          onClick={() => editNewsletter(newsletter.id)}
+                        />
+                        <MdDelete
+                          className="bg-red-100 text-red-600 p-1 text-3xl rounded-md cursor-pointer hover:bg-red-400 "
+                          onClick={() => deleteNewsLetter(newsletter.id)}
+                        />
+                      </td>
+                    </tr>
+                  );
+                })
+              ) : (
+                <tr>
+                  <td colSpan={5} className="text-center text-3xl">
+                    No Newsletter data found
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>
