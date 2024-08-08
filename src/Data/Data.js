@@ -125,8 +125,44 @@ export const quickLinks = [
   },
 ];
 
+export const visitQuickLinks = [
+  {
+    id: 1,
+    name: "Home",
+    path: "/",
+  },
+  {
+    id: 2,
+    name: "About",
+    path: "/about",
+  },
+  {
+    id: 3,
+    name: "Contact Us",
+    path: "/contact-us",
+  },
+];
+
 // ! ===================================================================================
 export const supportLinks = [
+  {
+    id: 1,
+    name: "FAQs",
+    path: "/",
+  },
+  {
+    id: 2,
+    name: "Contact Us",
+    path: "/visit-contact-us",
+  },
+  {
+    id: 3,
+    name: "Support",
+    path: "/",
+  },
+];
+
+export const visitSupportLinks = [
   {
     id: 1,
     name: "FAQs",
@@ -149,7 +185,7 @@ export const legalLinks = [
   {
     id: 1,
     name: "Privacy Policy",
-    path: "/visit-privacy-policy",
+    path: "/privacy-policy",
   },
   {
     id: 2,
@@ -158,6 +194,18 @@ export const legalLinks = [
   },
 ];
 
+export const visitLegalLinks = [
+  {
+    id: 1,
+    name: "Privacy Policy",
+    path: "/visit-privacy-policy",
+  },
+  {
+    id: 2,
+    name: "Terms and Conditions",
+    path: "/",
+  },
+];
 // ! ===================================================================================
 
 export const FAQData = [

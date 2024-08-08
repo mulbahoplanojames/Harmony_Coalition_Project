@@ -3,7 +3,7 @@ import Navbar from "../Constant/Navbar/Navbar";
 import Footer from "../Constant/Footer/Footer";
 import { useAuth } from "../Context/AuthContext";
 import LogInNavbar from "../Constant/LogIn_Navabr/LogInNavbar";
-import navLinks from "../Data/Data";
+// import { quickLinks, supportLinks, legalLinks } from "../Data/Data";
 
 const Layout = () => {
   // getting the user from the useAuth function from the AuthContext
@@ -16,7 +16,7 @@ const Layout = () => {
 
   return (
     <>
-      {!user.token ? <Navbar navLinks={navLinks} /> : <LogInNavbar />}
+      {!user.token ? <Navbar /> : <LogInNavbar />}
       <div className="pt-[4rem] md:px-[2rem] px-2">
         <Outlet />
       </div>

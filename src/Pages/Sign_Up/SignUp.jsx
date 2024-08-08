@@ -1,11 +1,41 @@
+/**
+ * Importing the Link component from the react-router-dom library.
+ * The Link component is used for navigation between pages.
+ */
 import { Link } from "react-router-dom";
+
+/**
+ * Importing the signUp_image image file located in the "src/assets" directory.
+ * This image will be used for the sign up page.
+ */
 import singUp_image from "/src/assets/signup.png";
+
+/**
+ * Importing the CgArrowLeftR icon from the react-icons/cg library.
+ * This icon will be used for the left arrow in the sign up page.
+ */
 import { CgArrowLeftR } from "react-icons/cg";
+
+/**
+ * Importing the useState hook from the React library.
+ * The useState hook is used to manage the state of the component.
+ */
 import { useState } from "react";
+
+/**
+ * Importing the axios library for making HTTP requests.
+ * Axios is a popular library for making HTTP requests in JavaScript.
+ */
 import axios from "axios";
+
+/**
+ * Importing the Swal library for displaying sweet alerts.
+ * SweetAlert is a popular library for displaying alerts and notifications in JavaScript.
+ */
 import Swal from "sweetalert2";
 
 const SignUp = () => {
+  // State to store user's sign up data
   const [signedUpData, setSignedUpData] = useState({
     first_name: "",
     last_name: "",
@@ -14,18 +44,24 @@ const SignUp = () => {
     phone_number: "",
   });
 
-  // Error Message
+  // State to store error message
   const [signedUpErrorMessage, setSignUpErrorMessage] = useState("");
 
-  // The base URL of the API
+  // Base URL of the API
   const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
 
-  //? API URL FROM THE ENV FILE
+  // API endpoint for user registration
   const API_ENDPOINT = `${BASE_URL}/accounts/signup/`;
 
+  /**
+   * Sends user data to the API for registration.
+   * @param {Event} event - The submit event.
+   * @returns {Promise<void>} - A promise that resolves when the registration is complete.
+   */
   const sendData = async (event) => {
     event.preventDefault();
 
+    // Check if all fields are filled
     if (
       signedUpData.first_name === "" ||
       signedUpData.last_name === "" ||
@@ -33,10 +69,12 @@ const SignUp = () => {
       signedUpData.password === "" ||
       signedUpData.phone_number === ""
     ) {
+      // Set error message and return if any field is empty
       setSignUpErrorMessage("All fields are required");
       return;
     } else {
       try {
+        // Send user data to the API
         const response = await axios.post(API_ENDPOINT, {
           first_name: signedUpData.first_name,
           last_name: signedUpData.last_name,
@@ -46,7 +84,8 @@ const SignUp = () => {
         });
 
         if (response.status === 200) {
-          console.log(response.data);
+          // If registration is successful, show success message and reset form
+          // console.log(response.data);
           setSignUpErrorMessage(
             "Account created successfully, please check your email to Activate your account"
           );
@@ -58,6 +97,7 @@ const SignUp = () => {
             phone_number: "",
           });
 
+          // Show success message to the user
           Swal.fire({
             title: "Success, Please check your email to activate your account",
             width: 600,
@@ -74,6 +114,7 @@ const SignUp = () => {
           });
         }
       } catch (error) {
+        // If there is an error, show error message to the user
         console.log("Error", error);
         setSignUpErrorMessage("Error, please try again");
         Swal.fire({
@@ -85,6 +126,7 @@ const SignUp = () => {
       }
     }
   };
+
   return (
     <>
       <div className="flex justify-center items-center w-full h-fit py-14  bg-primary_main text-black">
