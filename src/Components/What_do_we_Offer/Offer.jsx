@@ -1,12 +1,4 @@
-/*
-Unique experiences and resources that set you apart
-Comprehensive support and guidance throughout your academic journey
-Free and MIT-licensed resources to enhance your learning
-Distinctive programs designed to meet your needs
-Guiding and supporting you every step of the way
-Bridging the gap between Liberian students and the administration
-Dedicated mentorship and a community that fosters your growth
-*/
+import { motion } from "framer-motion";
 
 const offerDate = [
   {
@@ -98,7 +90,12 @@ const offerDate = [
 const Offer = () => {
   return (
     <>
-      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 md:mt-20 mt-[4rem] bg-gray-100  text-gray-800">
+      <motion.div
+        className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 md:mt-20 mt-[4rem] bg-gray-100  text-gray-800"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
         <h2 className="mb-8 text-4xl font-bold leading-none text-center">
           What do we have to offer?
         </h2>
@@ -110,7 +107,7 @@ const Offer = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </motion.div>
     </>
   );
 };
