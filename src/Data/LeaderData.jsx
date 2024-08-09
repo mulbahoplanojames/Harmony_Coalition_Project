@@ -63,7 +63,8 @@ export const currentLeaderShip = [
     name: "Jefferson M. Flomo",
     image: jeff,
     position: "Secretary General",
-    quote: "The only way to do great work is to love what you do.",
+    quote:
+      "To achieve excellence in your work, you must be passionate about what you do",
     socialsLinks: [
       {
         id: 1,
@@ -87,7 +88,7 @@ export const currentLeaderShip = [
     name: "Isidore D. Kiel Jr.",
     image: pro,
     position: "Assistant Secretary",
-    quote: "The only way to do great work is to love what you do.",
+    quote: "True success comes when you pour your heart into what you do.",
     socialsLinks: [
       {
         id: 1,
@@ -263,7 +264,7 @@ export const pastLeaderShip = [
   {
     id: 5,
     name: "Kutu Love",
-    image: "saurabh.jpg",
+    image: user,
     position: "Treasurer",
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: [
