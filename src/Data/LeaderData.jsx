@@ -156,7 +156,10 @@ export const currentLeaderShip = [
   },
 ];
 
+// =========================================================================================
+
 import pius from "/src/assets/pius.jpeg";
+import sensi from "/src/assets/sensi.jpeg";
 export const pastLeaderShip = [
   {
     id: 1,
@@ -210,7 +213,7 @@ export const pastLeaderShip = [
   {
     id: 3,
     name: "Sensi Nyei",
-    image: "saurabh.jpg",
+    image: sensi,
     position: "Secretary General",
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: [

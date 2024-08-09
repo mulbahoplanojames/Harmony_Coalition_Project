@@ -10,6 +10,7 @@ import Navbar from "../../../Constant/Navbar/Navbar";
 import { disciplinesOffer } from "../../../Data/Data";
 
 import Footer from "../../../Constant/Footer/Footer";
+import Offer from "../../../Components/What_do_we_Offer/Offer";
 // import Sponsers from "../../../Components/Sponsers/Sponsers";
 
 const VisitHome = () => {
@@ -18,7 +19,7 @@ const VisitHome = () => {
       <Navbar />
       <div className="pt-[4rem] md:px-[2rem] px-2">
         <VisitHomeHero />
-        {/* <Sponsers /> */}
+        <Offer />
         <Team />
         <AboutUs link="/visit-about" />
         <DisciplinesOffer disciplinesOffer={disciplinesOffer} />
