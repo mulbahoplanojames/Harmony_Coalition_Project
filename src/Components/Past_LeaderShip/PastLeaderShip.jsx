@@ -74,6 +74,7 @@ const PastLeaderShip = () => {
                     <li key={socialLink.id}>
                       <a
                         href={socialLink.link}
+                        target="_blank"
                         className={`text-2xl neu_icon rounded-md ${
                           darkMode
                             ? "bg-primary text-white"

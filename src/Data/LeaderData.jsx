@@ -160,6 +160,7 @@ export const currentLeaderShip = [
 
 import pius from "/src/assets/pius.jpeg";
 import sensi from "/src/assets/sensi.jpeg";
+import user from "/src/assets/userAvatar.jpg";
 export const pastLeaderShip = [
   {
     id: 1,
@@ -189,7 +190,7 @@ export const pastLeaderShip = [
   {
     id: 2,
     name: "Laynue D. Keitoe",
-    image: "sachin.jpg",
+    image: user,
     position: "Vice President",
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: [
@@ -215,29 +216,30 @@ export const pastLeaderShip = [
     name: "Sensi Nyei",
     image: sensi,
     position: "Secretary General",
-    quote: "The only way to do great work is to love what you do.",
+    quote:
+      "“Your hopes and plans are not just make-believe but are like a map for your future. Trust in them, strive for them, and see them come true”~ Sensee Fuad Nyei",
     socialsLinks: [
       {
         id: 1,
         icon: <FaFacebookSquare />,
-        link: "https://www.facebook.com/",
+        link: "https://www.facebook.com/nuclear.nyei?mibextid=LQQJ4d",
       },
       {
         id: 2,
         icon: <FaLinkedin />,
-        link: "https://www.twitter.com/",
+        link: "https://www.linkedin.com/in/sensee-nyei-bba8ab241?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
       },
       {
         id: 3,
         icon: <FaXTwitter />,
-        link: "https://www.linkedin.com/",
+        link: "https://www.instagram.com/nuclearnyei?igsh=MWEzZ3gxN3dtdjc3YQ%3D%3D&utm_source=qr",
       },
     ],
   },
   {
     id: 4,
     name: "Edward Williams",
-    image: "saurabh.jpg",
+    image: user,
     position: "Financial Secretary",
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: [
