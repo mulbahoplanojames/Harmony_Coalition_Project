@@ -50,7 +50,7 @@ const AuthProvider = ({ children }) => {
         setUser(response.data.user);
         setToken(response.data.token);
         localStorage.setItem("token", response.data.token);
-        console.log(response);
+        // console.log(response);
 
         // Call the authInterceptor to store the token
         axios.interceptors.request.use(authInterceptor);
@@ -160,9 +160,9 @@ const AuthProvider = ({ children }) => {
         setUser(response.data.user);
         setToken(response.data.token);
         localStorage.setItem("token", response.data.token);
-        console.log(response.data);
+        // console.log(response.data);
         setAdminData(response.data);
-        console.log(adminData);
+        // console.log(adminData);
 
         if (response.status === 200) {
           // Call the authInterceptor to store the token
@@ -236,7 +236,7 @@ const AuthProvider = ({ children }) => {
         }
       );
 
-      console.log(response.data);
+      // console.log(response.data);
     } catch (error) {
       console.log(error);
     }
