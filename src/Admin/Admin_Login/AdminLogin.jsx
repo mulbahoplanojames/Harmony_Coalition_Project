@@ -80,7 +80,7 @@ const AdminLogin = () => {
                       password: e.target.value,
                     })
                   }
-                  className="h-full  w-full outline-none px-3 "
+                  className="h-full  w-full outline-none px-3  bg-white"
                 />
                 {passwordVisible ? (
                   <img
