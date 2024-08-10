@@ -9,10 +9,16 @@ const Events = () => {
   const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
 
   useEffect(() => {
-    axios.get(`${BASE_URL}/event/events/`).then((response) => {
-      console.log(response.data);
-      setEvents(response.data);
-    });
+    axios
+      .get(`${BASE_URL}/event/events/`, {
+        headers: {
+          Accept: "application/json; version=v1",
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+        setEvents(response.data);
+      });
   }, [BASE_URL]);
 
   return (

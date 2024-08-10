@@ -24,6 +24,7 @@ const EventTable = () => {
       .get(`${BASE_URL}/event/events/`, {
         headers: {
           Authorization: `Token ${localStorage.getItem("token")}`,
+          Accept: "application/json; version=v1",
         },
       })
       .then((response) => {
@@ -42,6 +43,7 @@ const EventTable = () => {
       const response = await axios.delete(`${BASE_URL}/event/events/${id}/`, {
         headers: {
           Authorization: `Token ${localStorage.getItem("token")}`,
+          Accept: "application/json; version=v1",
         },
       });
       console.log(response.data);
@@ -60,6 +62,7 @@ const EventTable = () => {
           headers: {
             "Content-Type": "multipart/form-data",
             Authorization: `Token ${localStorage.getItem("token")}`,
+            Accept: "application/json; version=v1",
           },
         }
       );
@@ -80,6 +83,7 @@ const EventTable = () => {
         {
           headers: {
             Authorization: `Token ${localStorage.getItem("token")}`,
+            Accept: "application/json; version=v1",
           },
         }
       );

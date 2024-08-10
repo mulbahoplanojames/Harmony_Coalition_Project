@@ -24,6 +24,7 @@ const NewsLetterTable = () => {
       .get(`${BASE_URL}/newsletter/newsletter/`, {
         headers: {
           Authorization: `Token ${localStorage.getItem("token")}`,
+          Accept: "application/json; version=v1",
         },
       })
       .then((response) => {
@@ -43,6 +44,7 @@ const NewsLetterTable = () => {
         {
           headers: {
             Authorization: `Token ${localStorage.getItem("token")}`,
+            Accept: "application/json; version=v1",
           },
         }
       );
@@ -62,6 +64,7 @@ const NewsLetterTable = () => {
           headers: {
             "Content-Type": "multipart/form-data",
             Authorization: `Token ${localStorage.getItem("token")}`,
+            Accept: "application/json; version=v1",
           },
         }
       );
@@ -82,6 +85,7 @@ const NewsLetterTable = () => {
         {
           headers: {
             Authorization: `Token ${localStorage.getItem("token")}`,
+            Accept: "application/json; version=v1",
           },
         }
       );

@@ -23,7 +23,12 @@ const UserComponent = () => {
         const decodedToken = decodeURIComponent(token);
 
         const response = await axios.get(
-          `${BASE_URL}/accounts/activate/${decodedId}/${decodedToken}/`
+          `${BASE_URL}/accounts/activate/${decodedId}/${decodedToken}/`,
+          {
+            headers: {
+              Accept: "application/json; version=v1",
+            },
+          }
         );
 
         if (response.status === 200) {

@@ -26,7 +26,12 @@ const ConfirmNewsLetter = () => {
 
         // Making a GET request to the newsletter confirmation endpoint with the decoded 'id' and 'number' parameters
         const response = await axios.get(
-          `${BASE_URL}/newsletter/confirm/${decodedId}/${decodedNumber}/`
+          `${BASE_URL}/newsletter/confirm/${decodedId}/${decodedNumber}/`,
+          {
+            headers: {
+              Accept: "application/json; version=v1",
+            },
+          }
         );
 
         console.log("response", response.data);

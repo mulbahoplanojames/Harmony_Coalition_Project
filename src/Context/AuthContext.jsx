@@ -39,7 +39,11 @@ const AuthProvider = ({ children }) => {
 
   const loginAction = async (data) => {
     try {
-      const response = await axios.post(API_ENDPOINT, data);
+      const response = await axios.post(API_ENDPOINT, data, {
+        headers: {
+          Accept: "application/json; version=v1",
+        },
+      });
 
       if (response.data && response.data.token) {
         // Update local state
@@ -87,6 +91,7 @@ const AuthProvider = ({ children }) => {
       await axios.post(LOGOUT_ENDPOINT, {
         headers: {
           Authorization: `Token ${localStorage.getItem("token")}`,
+          Accept: "application/json; version=v1",
         },
       });
       localStorage.removeItem("token");
@@ -110,6 +115,7 @@ const AuthProvider = ({ children }) => {
       await axios.post(LOGOUT_ALL_DEVICES_ENDPOINT, {
         headers: {
           Authorization: `Token ${localStorage.getItem("token")}`,
+          Accept: "application/json; version=v1",
         },
       });
       localStorage.removeItem("token");
@@ -143,7 +149,11 @@ const AuthProvider = ({ children }) => {
   const ADMIN_LOGIN_API_ENDPOINT = `${BASE_URL}/accounts/login/`;
   const AdminLoginAction = async (data) => {
     try {
-      const response = await axios.post(ADMIN_LOGIN_API_ENDPOINT, data);
+      const response = await axios.post(ADMIN_LOGIN_API_ENDPOINT, data, {
+        headers: {
+          Accept: "application/json; version=v1",
+        },
+      });
 
       if (response.data && response.data.token) {
         // Update local state
@@ -193,6 +203,7 @@ const AuthProvider = ({ children }) => {
       await axios.post(LOGOUT_ENDPOINT, {
         headers: {
           Authorization: `Token ${localStorage.getItem("token")}`,
+          Accept: "application/json; version=v1",
         },
       });
       localStorage.removeItem("token");
@@ -211,11 +222,19 @@ const AuthProvider = ({ children }) => {
   // A function to reset the password
   const resetPasswordAction = async (resetPassword, id, token) => {
     try {
-      const response = await axios.patch(`${BASE_URL}/accounts/password/new/`, {
-        password: resetPassword,
-        token: token,
-        uid: id,
-      });
+      const response = await axios.patch(
+        `${BASE_URL}/accounts/password/new/`,
+        {
+          password: resetPassword,
+          token: token,
+          uid: id,
+        },
+        {
+          headers: {
+            Accept: "application/json; version=v1",
+          },
+        }
+      );
 
       console.log(response.data);
     } catch (error) {
@@ -228,9 +247,17 @@ const AuthProvider = ({ children }) => {
   // This function a called when the user submit their for our NewsLatter Subscription
   const newsLetterAction = async (newsLetterEmail) => {
     try {
-      const response = await axios.post(`${BASE_URL}/newsletter/subscribe/`, {
-        email: newsLetterEmail,
-      });
+      const response = await axios.post(
+        `${BASE_URL}/newsletter/subscribe/`,
+        {
+          email: newsLetterEmail,
+        },
+        {
+          headers: {
+            Accept: "application/json; version=v1",
+          },
+        }
+      );
       if (response.status === 200) {
         Swal.fire({
           icon: "success",
@@ -280,6 +307,7 @@ const AuthProvider = ({ children }) => {
       .get(`${BASE_URL}/students/api/profile/`, {
         headers: {
           Authorization: `Token ${localStorage.getItem("token")}`,
+          Accept: "application/json; version=v1",
         },
       })
       .then((response) => {

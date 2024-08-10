@@ -49,6 +49,7 @@ const StudentTable = () => {
         headers: {
           // Including the authentication token in the request headers
           Authorization: `Token ${localStorage.getItem("token")}`,
+          Accept: "application/json; version=v1",
         },
       })
       .then((response) => {
