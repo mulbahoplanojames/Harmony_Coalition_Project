@@ -266,7 +266,7 @@ export const pastLeaderShip = [
   },
   {
     id: 5,
-    name: "Kutu Love",
+    name: "Kutu Love Vanyanbah",
     image: kutu,
     position: "Treasurer",
     quote: "The only way to do great work is to love what you do.",
