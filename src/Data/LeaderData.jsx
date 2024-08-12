@@ -162,6 +162,9 @@ export const currentLeaderShip = [
 import pius from "/src/assets/pius.jpeg";
 import sensi from "/src/assets/sensi1.jpeg";
 import user from "/src/assets/userAvatar.jpg";
+import kutu from "/src/assets/kutu.jpeg";
+import laynue from "/src/assets/vp.jpeg";
+
 export const pastLeaderShip = [
   {
     id: 1,
@@ -169,7 +172,7 @@ export const pastLeaderShip = [
     image: pius,
     position: "President",
     quote:
-      "Give a man a fish and you feed him for a day. Teach him how to fish and you feed him for a lifetime. Luck is what happens when preparation meets opportunity.",
+      "“Give a man a fish and you feed him for a day. Teach him how to fish and you feed him for a lifetime. Luck is what happens when preparation meets opportunity.” ~ P. Chuebar Barchue Jr",
     socialsLinks: [
       {
         id: 1,
@@ -191,7 +194,7 @@ export const pastLeaderShip = [
   {
     id: 2,
     name: "Laynue D. Keitoe",
-    image: user,
+    image: laynue,
     position: "Vice President",
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: [
@@ -264,7 +267,7 @@ export const pastLeaderShip = [
   {
     id: 5,
     name: "Kutu Love",
-    image: user,
+    image: kutu,
     position: "Treasurer",
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: [
