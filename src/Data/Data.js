@@ -116,12 +116,12 @@ export const quickLinks = [
   {
     id: 2,
     name: "About",
-    path: "/about",
+    path: "",
   },
   {
     id: 3,
     name: "Contact Us",
-    path: "/contact-us",
+    path: "",
   },
 ];
 
@@ -134,12 +134,12 @@ export const visitQuickLinks = [
   {
     id: 2,
     name: "About",
-    path: "/about",
+    path: "",
   },
   {
     id: 3,
     name: "Contact Us",
-    path: "/contact-us",
+    path: "",
   },
 ];
 
@@ -153,12 +153,12 @@ export const supportLinks = [
   {
     id: 2,
     name: "Contact Us",
-    path: "/visit-contact-us",
+    path: "",
   },
   {
     id: 3,
     name: "Support",
-    path: "/",
+    path: "",
   },
 ];
 
@@ -166,17 +166,17 @@ export const visitSupportLinks = [
   {
     id: 1,
     name: "FAQs",
-    path: "/",
+    path: "",
   },
   {
     id: 2,
     name: "Contact Us",
-    path: "/visit-contact-us",
+    path: "",
   },
   {
     id: 3,
     name: "Support",
-    path: "/",
+    path: "",
   },
 ];
 
@@ -185,12 +185,12 @@ export const legalLinks = [
   {
     id: 1,
     name: "Privacy Policy",
-    path: "/privacy-policy",
+    path: "",
   },
   {
     id: 2,
     name: "Terms and Conditions",
-    path: "/",
+    path: "",
   },
 ];
 
@@ -198,12 +198,12 @@ export const visitLegalLinks = [
   {
     id: 1,
     name: "Privacy Policy",
-    path: "/visit-privacy-policy",
+    path: "",
   },
   {
     id: 2,
     name: "Terms and Conditions",
-    path: "/",
+    path: "",
   },
 ];
 // ! ===================================================================================
