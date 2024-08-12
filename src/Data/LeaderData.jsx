@@ -165,7 +165,7 @@ import user from "/src/assets/userAvatar.jpg";
 export const pastLeaderShip = [
   {
     id: 1,
-    name: "Pius Barche",
+    name: "P. Chuebar Barchue Jr.",
     image: pius,
     position: "President",
     quote:
