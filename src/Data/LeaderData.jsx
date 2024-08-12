@@ -196,12 +196,13 @@ export const pastLeaderShip = [
     name: "Laynue D. Keitoe",
     image: laynue,
     position: "Vice President",
-    quote: "The only way to do great work is to love what you do.",
+    quote:
+      "“When life dictates your success, let your progress be the answer to every expectation” ~ Laynue D Keitoe.",
     socialsLinks: [
       {
         id: 1,
         icon: <FaFacebookSquare />,
-        link: "https://www.facebook.com/",
+        link: "https://www.facebook.com/profile.php?id=100007771666817&mibextid=LQQJ4d",
       },
       {
         id: 2,
@@ -217,11 +218,11 @@ export const pastLeaderShip = [
   },
   {
     id: 3,
-    name: "Sensi Nyei",
+    name: "Sensee Nyei",
     image: sensi,
     position: "Secretary General",
     quote:
-      "“Your hopes and plans are not just make-believe but are like a map for your future. Trust in them, strive for them, and see them come true”~ Sensee Fuad Nyei",
+      "“Your hopes and plans are not just make-believe but are like a map for your future. Trust in them, strive for them, and see them come true” ~ Sensee Fuad Nyei",
     socialsLinks: [
       {
         id: 1,
