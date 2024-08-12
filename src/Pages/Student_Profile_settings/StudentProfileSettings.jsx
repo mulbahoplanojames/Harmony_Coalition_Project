@@ -405,7 +405,7 @@ const StudentProfileSettings = () => {
               <input
                 type="text"
                 name="academic_status"
-                placeholder="Enter your academic year / Year1 / Year2 / Year3"
+                placeholder="Enter academic year / Year1 / Year2 / Year3"
                 className="bg-[#fff] w-full border-none p-4 text-[1rem]  rounded-[1rem] text-primary_main shadow-[0_0.4rem_#dfd9d9] cursor-pointer focus:outline-primary_main  h-14 px-6 "
                 value={studentData.academic_year}
                 onChange={(e) =>
