@@ -17,7 +17,7 @@ const DisciplinesOffer = ({ disciplinesOffer }) => {
           {disciplinesOffer.map((discipline) => (
             <motion.div
               key={discipline.id}
-              className="shadow-2xl rounded-md neu_card_2 overflow-hidden"
+              className=" rounded-md neu_card_disciplines overflow-hidden"
               animate={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.3 }}
@@ -26,7 +26,7 @@ const DisciplinesOffer = ({ disciplinesOffer }) => {
                 <img
                   src={discipline.image}
                   alt={discipline.name}
-                  className="h-64 md:h-[26rem] w-full  bg-red-400 rounded-md mb-6"
+                  className="h-64 md:h-[26rem] w-full rounded-md mb-6"
                 />
               </div>
               <div className="px-6">
