@@ -160,7 +160,7 @@ export const currentLeaderShip = [
 // =========================================================================================
 
 import pius from "/src/assets/pius.jpeg";
-import sensi from "/src/assets/sensi.jpeg";
+import sensi from "/src/assets/sensi1.jpeg";
 import user from "/src/assets/userAvatar.jpg";
 export const pastLeaderShip = [
   {
@@ -169,7 +169,7 @@ export const pastLeaderShip = [
     image: pius,
     position: "President",
     quote:
-      "The greatest glory in life is not to have much to do, but to have nothing to lose.",
+      "Give a man a fish and you feed him for a day. Teach him how to fish and you feed him for a lifetime. Luck is what happens when preparation meets opportunity.",
     socialsLinks: [
       {
         id: 1,
