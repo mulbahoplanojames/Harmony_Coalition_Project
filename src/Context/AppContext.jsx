@@ -42,7 +42,9 @@ const AppContextProvider = ({ children }) => {
   // I create an object called `darkModeStyle`. This object will provide CSS styles for the app based on the `darkMode` state variable.
   const darkModeStyle = {
     // If the `darkMode` state variable is true, the background color of the app will be "#23272f". Otherwise, it will be "#f6f7f9".
-    backgroundColor: darkMode ? "#1d232a" : "#ebeef1",
+    backgroundColor: darkMode ? "#111828" : "#ebeef1",
+    // #111828
+    // #1d232a
     // If the `darkMode` state variable is true, the text color of the app will be "white". Otherwise, it will be "#1d232a".
     color: darkMode ? "white" : "black",
   };
