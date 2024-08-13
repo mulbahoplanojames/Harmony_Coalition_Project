@@ -161,7 +161,8 @@ export const currentLeaderShip = [
 
 import pius from "/src/assets/pius.jpeg";
 import sensi from "/src/assets/sensi1.jpeg";
-import user from "/src/assets/userAvatar.jpg";
+import edward from "/src/assets/edward.jpeg";
+
 import kutu from "/src/assets/kutu.jpeg";
 import laynue from "/src/assets/vp.jpeg";
 
@@ -244,7 +245,7 @@ export const pastLeaderShip = [
   {
     id: 4,
     name: "Edward Williams",
-    image: user,
+    image: edward,
     position: "Financial Secretary",
     quote: "The only way to do great work is to love what you do.",
     socialsLinks: [
