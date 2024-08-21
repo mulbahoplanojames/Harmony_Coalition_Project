@@ -1,13 +1,14 @@
+// Importing the necessary components and hooks
 import { Link } from "react-router-dom";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import adminNavLinks from "../Admin_Data/AdminData";
 import { useAuth } from "../../../Context/AuthContext";
 
+// Importing the avatar image
 import avatar from "/src/assets/userAvatar.jpg";
 
 const AdminNavbar = () => {
-  // The Base Url for the API
-
+  // getting the user from the useAuth function from the AuthContext
   const user = useAuth();
 
   return (
@@ -26,6 +27,7 @@ const AdminNavbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-1 w-52 p-2 shadow z-50"
             >
+              {/*  Mapping through the adminNavLinks array and rendering the links */}
               {adminNavLinks.map((link) => (
                 <li key={link.id}>
                   <Link to={link.path}>{link.name}</Link>

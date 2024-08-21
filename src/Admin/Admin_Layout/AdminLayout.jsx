@@ -1,7 +1,8 @@
+// importing the necessary components and hooks
 import { Link, Outlet, Navigate } from "react-router-dom";
+import { useAuth } from "../../Context/AuthContext";
 import AdminNavbar from "../Dashboard/Admin_Navbar/AdminNavbar";
 import adminNavLinks from "../Dashboard/Admin_Data/AdminData";
-import { useAuth } from "../../Context/AuthContext";
 
 import avatar from "/src/assets/userAvatar.jpg";
 

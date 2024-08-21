@@ -1,3 +1,4 @@
+// Importing the necessary components from the components folder
 import HomeHero from "../../Components/Home_Hero/HomeHero";
 import Team from "../../Components/Team/Team";
 import AboutUs from "../../Components/About_Us/AboutUs";

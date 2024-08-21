@@ -4,16 +4,20 @@ import axios from "axios";
 // import { registerStudents } from "../Admin_Data/AdminData";
 import { useNavigate } from "react-router-dom";
 
+// importing the MdOutlinePublishedWithChanges, MdEditCalendar, and MdDelete icons from the react-icons library
 import {
   MdOutlinePublishedWithChanges,
   MdEditCalendar,
   MdDelete,
 } from "react-icons/md";
+
+// importing the NewsLetterTableHead component from /Components/Admin/Dashboard/News_Letter_Table/NewsLetterTablehead
 import NewsLetterTableHead from "./NewsLetterTablehead";
 
 const NewsLetterTable = () => {
   const [newsLetterInfo, setNewsLetterInfo] = useState([]);
 
+  // Using the useNavigate hook from react-router-dom for navigating to other pages
   const navigate = useNavigate();
 
   // Base URL of the API

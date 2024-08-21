@@ -1,14 +1,23 @@
+// importing the useRef and useState hooks from the react library
 import { useRef, useState } from "react";
+
+// importing the Editor component from @tinymce/tinymce-react
 import { Editor } from "@tinymce/tinymce-react";
+
+// importing the axios library for making HTTP requests
 import axios from "axios";
+
+// importing the useNavigate hook from the react-router-dom library
 import { useNavigate } from "react-router-dom";
+
 const NewsLetterEditor = () => {
   const [editorContent, setEditorContent] = useState(null);
   const [newsletterSubject, setNewsletterSubject] = useState("");
 
+  // Use Ref for the editor
   const editorRef = useRef(null);
 
-  // Use Navigate Hook
+  // Use Navigate Hook for navigation
   const navigate = useNavigate();
 
   // Base URL for the API
@@ -17,6 +26,7 @@ const NewsLetterEditor = () => {
   const handleNewsLetterSubmit = async (e) => {
     e.preventDefault();
 
+    // A condition to check if the subject and content are not empty
     if (newsletterSubject !== "" || editorContent !== "") {
       console.log(newsletterSubject);
       // TODO : send the newsletter
