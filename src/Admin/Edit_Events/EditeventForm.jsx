@@ -15,19 +15,24 @@ const EditEventsForm = () => {
     venue: "",
   });
 
+  // A state variable to store the selected image
   const [editImage, setEditImage] = useState("");
 
   // This is to navigate to another page
   const navigate = useNavigate();
 
+  // using the useLocation hook to get the state from the previous page
   const location = useLocation();
   const { state } = location;
   console.log(state);
 
+  // Using the useRef hook to access the file input
   const fileInputRef = useRef(null);
 
+  // Base URL for the API
   const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
 
+  // Use Effect Hook to set the events
   useEffect(() => {
     if (state) {
       setEvents(state);
@@ -52,7 +57,7 @@ const EditEventsForm = () => {
       console.log(Events);
 
       try {
-        // Create FormData object
+        // Create FormData object to store the form data
         const formData = new FormData();
         formData.append("title", Events.title);
         formData.append("start_date", Events.start_date);

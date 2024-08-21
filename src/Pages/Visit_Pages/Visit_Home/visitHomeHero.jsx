@@ -55,6 +55,7 @@ const VisitHomeHero = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <img
+            loading="lazy"
             src={heroImg}
             alt="hero"
             className="w-full h-full object-contain"

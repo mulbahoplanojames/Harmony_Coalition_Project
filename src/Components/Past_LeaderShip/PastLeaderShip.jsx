@@ -3,12 +3,6 @@
      at Kigali Independent University. It uses the pastLeaderShip data from the Data/Data.js file. 
 */
 
-// Importing the necessary icons from the react-icons library.
-import { FaLinkedin, FaFacebookSquare } from "react-icons/fa";
-
-// Importing the FaXTwitter icon from the react-icons/fa6 library.
-import { FaXTwitter } from "react-icons/fa6";
-
 // Importing the AppContext from the Context/AppContext.jsx file.
 import { AppContext } from "../../Context/AppContext";
 

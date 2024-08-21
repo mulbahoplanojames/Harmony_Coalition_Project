@@ -4,10 +4,6 @@
   from the Data/Data.js file and maps through it to display the team members.
 */
 
-// Importing the necessary icons from the react-icons library.
-import { FaLinkedin, FaFacebookSquare } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-
 // Importing the AppContext from the Context/AppContext.jsx file.
 import { AppContext } from "../../Context/AppContext";
 
@@ -48,6 +44,7 @@ const CurrentLeaderShip = () => {
               {/* Displaying the image */}
               <div className="h-60 w-[80%] mx-auto my-3 overflow-hidden z-20 rounded-md">
                 <img
+                  loading="lazy"
                   src={member.image}
                   alt="team"
                   className=" md:mx-auto bg-red-400  mb-3  w-full h-full object-scale group-hover:scale-110 transion-all duration-300"
