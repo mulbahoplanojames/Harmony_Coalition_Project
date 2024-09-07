@@ -48,7 +48,7 @@ const About = () => {
           />
           <Card
             image={newStudents}
-            title="100+ New Students"
+            title="30+ New Students"
             link="Learn More"
             path={""}
           />
