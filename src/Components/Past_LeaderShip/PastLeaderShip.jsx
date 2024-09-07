@@ -22,26 +22,18 @@ const PastLeaderShip = () => {
   return (
     <>
       {/* Displaying the heading */}
-      <motion.h1
-        className="text-center text-4xl font-semibold pb-10 pt-24"
-        animate={{ opacity: 0, y: -100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-      >
+      <h1 className="text-center text-4xl font-semibold pb-10 pt-24">
         ALSULK Past <span>Leadership</span>
-      </motion.h1>
+      </h1>
 
       {/* Displaying the grid container */}
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-items-center gap-12">
         {
           /* //! Team Members */
           pastLeaderShip.map((member) => (
-            <motion.div
+            <div
               className="px-5 py-3 text-left group  neu_card rounded-md"
               key={member.id}
-              animate={{ opacity: 0, y: 80 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.3 }}
             >
               {/* Displaying the image */}
               <div className="h-60 w-[80%] mx-auto my-3 overflow-hidden z-20 rounded-md">
@@ -81,7 +73,7 @@ const PastLeaderShip = () => {
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </div>
           ))
         }
       </div>

@@ -22,9 +22,10 @@ const CurrentLeaderShip = () => {
       {/* Displaying the heading */}
       <motion.h1
         className="text-center text-4xl font-semibold pb-10 "
-        animate={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 0, y: -60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
+        viewport={{ once: true }}
       >
         ALSULK Current <span>Leadership</span>
       </motion.h1>
@@ -34,12 +35,9 @@ const CurrentLeaderShip = () => {
         {
           /* //! Team Members */
           currentLeaderShip.map((member) => (
-            <motion.div
+            <div
               className="px-5 py-3 text-left group  neu_card rounded-md"
               key={member.id}
-              animate={{ opacity: 0, y: 80 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.3 }}
             >
               {/* Displaying the image */}
               <div className="h-60 w-[80%] mx-auto my-3 overflow-hidden z-20 rounded-md">
@@ -80,7 +78,7 @@ const CurrentLeaderShip = () => {
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </div>
           ))
         }
       </div>
