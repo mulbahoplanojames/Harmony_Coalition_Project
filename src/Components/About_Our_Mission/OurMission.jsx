@@ -5,18 +5,13 @@ const OurMission = () => {
   return (
     <>
       <div className="grid md:grid-cols-2 grid-cols-1 md:gap-x-16 gap-y-10 place-items-center pb-4 md:pt-32 pt-[3.5rem]">
-        <motion.div
-          className="w-full bg-red-400 h-[50vh] overflow-hidden border-4 border-slate-500 group"
-          animate={{ opacity: 0, x: -60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4, delay: 0.3 }}
-        >
+        <div className="w-full  h-[50vh] overflow-hidden border-4 border-slate-500 group">
           <img
             src={mission}
             alt="Our mission Image"
             className="w-full h-full object-cover group-hover:scale-125 transition-all duration-500"
           />
-        </motion.div>
+        </div>
         <div className="">
           <motion.h1
             className="text-4xl font-bold md:pb-8 pb-5"

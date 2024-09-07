@@ -28,6 +28,7 @@ const FAQ = () => {
                 animate={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.4, delay: 0.3 }}
+                viewport={{ once: true }}
               >
                 <input type="radio" name="my-accordion-4" defaultChecked />
                 <div
