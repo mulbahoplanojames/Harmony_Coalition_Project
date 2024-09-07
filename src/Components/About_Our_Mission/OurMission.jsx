@@ -1,5 +1,4 @@
 import mission from "/src/assets/aboutimg3.jpg";
-import { motion } from "framer-motion";
 
 const OurMission = () => {
   return (
@@ -13,24 +12,12 @@ const OurMission = () => {
           />
         </div>
         <div className="">
-          <motion.h1
-            className="text-4xl font-bold md:pb-8 pb-5"
-            animate={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            Our Mission{" "}
-          </motion.h1>
-          <motion.p
-            className="text-lg pb-10 md:pr-10"
-            animate={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
+          <h1 className="text-4xl font-bold md:pb-8 pb-5">Our Mission</h1>
+          <p className="text-lg pb-10 md:pr-10">
             We believe not just in growing bigger, but in growing better. And
             growing better means aligning the success of our Students with the
             success of the Liberian Community.
-          </motion.p>
+          </p>
         </div>
       </div>
     </>

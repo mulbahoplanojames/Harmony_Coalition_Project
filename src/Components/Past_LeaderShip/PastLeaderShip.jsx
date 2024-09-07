@@ -11,10 +11,11 @@ import { useContext } from "react";
 
 // Importing the pastLeaderShip data from the Data/Data.js file.
 
-import { motion } from "framer-motion";
 import { pastLeaderShip } from "../../Data/LeaderData";
 
-// Defining the PastLeaderShip component.
+// Importing the motion component from the framer-motion library.
+import { motion } from "framer-motion";
+
 const PastLeaderShip = () => {
   // Accessing the darkMode value from the AppContext.
   const { darkMode } = useContext(AppContext);
@@ -22,9 +23,14 @@ const PastLeaderShip = () => {
   return (
     <>
       {/* Displaying the heading */}
-      <h1 className="text-center text-4xl font-semibold pb-10 pt-24">
+      <motion.h1
+        className="text-center text-4xl font-semibold pb-10 pt-24"
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        viewport={{ once: true }}
+      >
         ALSULK Past <span>Leadership</span>
-      </h1>
+      </motion.h1>
 
       {/* Displaying the grid container */}
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-items-center gap-12">
