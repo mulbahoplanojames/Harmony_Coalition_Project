@@ -45,10 +45,10 @@ body {
     inset 6px 6px 20px rgba(0, 0, 0, 0.5);
 }
 
-.neu_card:hover {
+/* .neu_card:hover {
   box-shadow: -6px -6px 20px rgba(255, 255, 255, 1),
     6px 6px 20px rgba(0, 0, 0, 0.1);
-}
+} */
 
 .neu_card_1 {
   box-shadow: inset -6px -6px 20px rgba(255, 255, 255, 0.5),
