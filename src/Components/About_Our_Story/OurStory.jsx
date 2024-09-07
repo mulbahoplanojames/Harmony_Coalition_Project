@@ -20,6 +20,7 @@ const OurStory = () => {
             animate={{ opacity: 0, y: -60 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
           >
             Our Story
           </motion.h1>
@@ -28,6 +29,7 @@ const OurStory = () => {
             animate={{ opacity: 0, x: -80 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
           >
             The Association of the Liberian Students is an Association establish
             at the Kigali Independent University to head the affairs of
