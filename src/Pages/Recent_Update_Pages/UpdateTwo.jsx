@@ -19,7 +19,6 @@ const UpdateTwo = () => {
           <p className="text-lg pb-4">{recentUpdatesData[0].description}</p>
         </div>
         <p className="text-lg pb-4">
-          {" "}
           On the 28th of August 2024, the Inspector General of Police IGP.
           Gregory O W Coleman of the Republic of Liberia, Sen. Francis Saidy
           Dopoh II, senator, River Gee County, and the commissioner visited the

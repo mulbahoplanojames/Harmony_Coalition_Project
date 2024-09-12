@@ -39,6 +39,14 @@ const UpdateThree = () => {
           ))}
         </div>
 
+        <p className="text-lg py-10">
+          The Association of Liberian Students at Kigali Independent University
+          has established a commendable tradition of recognizing and celebrating
+          academic excellence among its members. This annual event serves to
+          honor and reward students who have demonstrated outstanding scholastic
+          performance throughout the academic year.
+        </p>
+
         <div className="flex justify-center items-center gap-10 overflow-x-auto scroll-smooth py-4 px-10 my-12 snap-x snap-mandatory">
           {academyExcellenceData2.map((data) => (
             <div
@@ -53,6 +61,15 @@ const UpdateThree = () => {
             </div>
           ))}
         </div>
+
+        <p className="text-lg py-10">
+          The ceremony not only acknowledges individual achievements but also
+          fosters a culture of academic rigor and healthy competition within the
+          Liberian student community. By highlighting exemplary academic
+          accomplishments, the Association reinforces the importance of
+          educational success and motivates its members to strive for excellence
+          in their studies.
+        </p>
 
         <div className="container grid grid-cols-2 gap-4 md:p-4 mx-auto md:grid-cols-4">
           {academyExcellenceData1.map((data) => (
@@ -69,6 +86,15 @@ const UpdateThree = () => {
             className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 dark:bg-gray-500 aspect-square"
           />
         </div>
+
+        <p className="text-lg py-10">
+          This prestigious recognition has become a highly anticipated event in
+          the Association&apos;s calendar, symbolizing the collective pride and
+          aspirations of Liberian students pursuing higher education at Kigali
+          Independent University. The awards ceremony stands as a testament to
+          the Association&apos;s commitment to promoting academic achievement
+          and personal growth among its members.
+        </p>
 
         {/* back to home  */}
         <Link
