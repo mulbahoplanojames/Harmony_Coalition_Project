@@ -11,6 +11,7 @@ import Navbar from "../../../Constant/Navbar/Navbar";
 
 // importing the disciplines data from the Data file
 import { disciplinesOffer } from "../../../Data/Data";
+import RecentsUpdates from "../../../Components/Recent_Updates/RecentsUpdates";
 
 // // importing the Sponsers component
 // import Sponsers from "../../../Components/Sponsers/Sponsers";
@@ -29,6 +30,7 @@ const VisitHome = () => {
 
         {/* displaying the what we offer section */}
         <Offer />
+        <RecentsUpdates />
 
         {/* displaying the team section */}
         <Team />

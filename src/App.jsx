@@ -65,6 +65,18 @@ const VisitPrivacy = React.lazy(() =>
   import("./Pages/Visit_Pages/Visit_Privacy/VisitPrivacy")
 );
 
+//? Recent Upadtes For the Association
+
+const UpdateOne = React.lazy(() =>
+  import("./Pages/Recent_Update_Pages/UpdateOne")
+);
+const UpdateTwo = React.lazy(() =>
+  import("./Pages/Recent_Update_Pages/UpdateTwo")
+);
+const UpdateThree = React.lazy(() =>
+  import("./Pages/Recent_Update_Pages/UpdateThree")
+);
+
 // ==================================================================================
 
 //? Forget Password and Reset Password
@@ -114,10 +126,10 @@ const EditNewsLetter = React.lazy(() =>
 );
 
 //! ==================================================================================
-// Versel speed insights
+//? Versel speed insights
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
-// Versel Analytics
+//? Versel Analytics
 import { Analytics } from "@vercel/analytics/react";
 import Spinner from "./Components/Spinner/Spinner";
 
@@ -153,7 +165,7 @@ const App = () => {
 
             {/*//! ================================================================================== */}
 
-            {/* Admin Pages */}
+            {/*//? Admin Pages */}
             <Route path="/admin/" element={<AdminLayout />}>
               <Route index element={<StudentList />} />
               <Route path="/admin/add-student" element={<AddStudent />} />
@@ -177,7 +189,7 @@ const App = () => {
 
             {/*//? ================================================================================ */}
 
-            {/* Vistor Pages */}
+            {/*//? Vistor Pages */}
             <Route path="/home" element={<VisitHome />} />
             <Route path="/visit-about" element={<VisitAbout />} />
             <Route path="/visit-contact-us" element={<VisitContactUs />} />
@@ -196,8 +208,23 @@ const App = () => {
             />
             <Route path="/visit-privacy-policy" element={<VisitPrivacy />} />
 
+            {/*//! ================================================================================ */}
+            {/*//? Recent Update Pages */}
+            <Route
+              path="/recent-updates/president-inauguration-speech"
+              element={<UpdateOne />}
+            />
+            <Route
+              path="/recent-updates-meeting-with-ig-gregory-coleman-and-senator-francis-saidy-dopoh-ii"
+              element={<UpdateTwo />}
+            />
+            <Route
+              path="/recent-updates-academic-excellence-award-ceremony"
+              element={<UpdateThree />}
+            />
+
             {/*//! ================================================================================== */}
-            {/* User Component varified if the user account is Acitive  */}
+            {/*//? User Component varified if the user account is Acitive  */}
             <Route path="/:id/:token/" element={<UserComponent />} />
 
             {/* Confirm the user Email id varified for the newsletter */}

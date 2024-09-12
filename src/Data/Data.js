@@ -281,3 +281,41 @@ export const galleryImages_2 = [
     image: gallery8,
   },
 ];
+
+// ===============================================================================================
+
+import recentImage1 from "/src/assets/general1.jpeg";
+import recentImage2 from "/src/assets/update2.jpg";
+import recentImage3 from "/src/assets/update5.jpg";
+// import recentImage4 from "/src/assets/update3.jpg";
+
+export const recentUpdatesData = [
+  {
+    id: 1,
+    image: recentImage1,
+    title: "Meeting with IG Gregory Coleman and Senator Francis Saidy Dopoh II",
+    description:
+      "Liberian Students at Kigali Independent University along with  several others Liberian Students met with IG Gregory Coleman and Senator Francis Saidy Dopoh II to discuss the range of issues regarding their studies here in Rwanda.",
+    date: "August 28, 2024",
+    path: "/recent-updates-meeting-with-ig-gregory-coleman-and-senator-francis-saidy-dopoh-ii",
+  },
+  {
+    id: 2,
+    image: recentImage2,
+    title: "Academic Excellence Award Ceremony",
+    description:
+      "It is a tradition now in the Association of Liberian Students at Kigali Independent University to celebrate and award students that performed well during the academic year.",
+    date: "August 10, 2024",
+    path: "/recent-updates-academic-excellence-award-ceremony",
+  },
+  // {
+  //   id: 3,
+  //   image: recentImage3,
+  //   title:
+  //     "Previous Meeting with the President and Founder of Kigali Independent University",
+  //   description:
+  //     "Meeting with the President and Founder of Kigali Independent University: A productive discussion focused on the institution&apos;s vision, achievements, and future strategies for academic excellence and innovation.",
+  //   date: "September 3, 2024",
+  //   path: "/",
+  // },
+];

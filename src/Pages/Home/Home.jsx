@@ -7,12 +7,14 @@ import NewsLetter from "../../Components/News_Letter/NewsLetter";
 import FAQ from "../../Components/FAQ/FAQ";
 import { disciplinesOffer2 } from "../../Data/Data";
 import Offer from "../../Components/What_do_we_Offer/Offer";
+// import RecentsUpdates from "../../Components/Recent_Updates/RecentsUpdates";
 // import Sponsers from "../../Components/Sponsers/Sponsers";
 
 const Home = () => {
   return (
     <div>
       <HomeHero />
+      {/* <RecentsUpdates /> */}
       <Offer />
       <Team />
       <AboutUs link={"about"} />

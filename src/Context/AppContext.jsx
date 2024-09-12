@@ -8,6 +8,8 @@ import { createContext, useEffect, useState } from "react";
 // I create a new context using the `createContext` function. The argument is the initial value of the context.
 export const AppContext = createContext(null);
 
+import { recentUpdatesData } from "../Data/Data";
+
 /* I define a functional component called `AppContextProvider`. This component will be
     used to provide the context to all of its child components.
  */
@@ -54,6 +56,7 @@ const AppContextProvider = ({ children }) => {
     darkMode,
     toggleDarkMode,
     darkModeStyle,
+    recentUpdatesData,
   };
 
   // I return the `AppContext.Provider` component, which will provide the `contextValue` object to all of its child components.
