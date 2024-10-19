@@ -1,11 +1,7 @@
-import { useContext } from "react";
-import { AppContext } from "../../Context/AppContext";
 import { FAQData } from "../../Data/Data";
 import { motion } from "framer-motion";
 
 const FAQ = () => {
-  const { darkMode } = useContext(AppContext);
-
   return (
     <>
       <section className="w-full pb-20">
@@ -17,13 +13,11 @@ const FAQ = () => {
         >
           FAQ
         </motion.h1>
-        <div className="join join-vertical w-full bg-white">
+        <div className="join join-vertical w-full dark:bg-transparent">
           {FAQData.map((data) => {
             return (
               <motion.div
-                className={`collapse collapse-arrow join-item border-base-300 border ${
-                  darkMode ? "text-black" : "text-black"
-                }`}
+                className={`collapse collapse-arrow join-item border-base-300 border dark:text-white text-slate-950`}
                 key={data.id}
                 animate={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -32,14 +26,12 @@ const FAQ = () => {
               >
                 <input type="radio" name="my-accordion-4" defaultChecked />
                 <div
-                  className={`collapse-title text-xl font-medium  ${
-                    darkMode ? "text-black" : "text-black"
-                  }`}
+                  className={`collapse-title text-xl font-medium  dark:text-white text-slate-950`}
                 >
                   {data.question}
                 </div>
                 <div className="collapse-content">
-                  <p className={`${darkMode ? "text-black" : "text-black"}`}>
+                  <p className={"dark:text-white  text-slate-950"}>
                     {data.answer}
                   </p>
                 </div>

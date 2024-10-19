@@ -103,17 +103,13 @@ const ContactFormNewsletter = () => {
 
         {/* News letter section */}
         <div
-          className="bg-no-repeat bg-center bg-cover h-fit px-5 py-8 rounded-xl capitalize text-primary w-full neu_icon"
+          className="bg-no-repeat bg-center bg-cover h-fit px-5 py-8 rounded-xl capitalize text-primary w-full "
           id="newsletter"
         >
-          <h1
-            className={`md:text-2xl text-4xl font-bold pb-3 ${
-              darkMode ? "text-white" : "text-black"
-            }`}
-          >
+          <h1 className={`md:text-2xl text-4xl font-bold pb-3 dark:text-white`}>
             Our newsletters
           </h1>
-          <p className={`pb-6 ${darkMode ? "text-white" : "text-black"}`}>
+          <p className={`pb-6 dark:text-white`}>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
             harum quia qui aliquid vel, natus neque?
           </p>
@@ -125,7 +121,7 @@ const ContactFormNewsletter = () => {
               value={newsLetterEmail}
               onChange={(e) => setNewsLetterEmail(e.target.value)}
               placeholder="stephenjames@gmail.com"
-              className="w-full h-[2.8rem] text-secondary outline-none rounded-xl px-4 mb-2 "
+              className="w-full h-[2.8rem]  outline-none rounded-xl px-4 mb-2 bg-[#eaeef3]  text-black"
             />
             <p className="text-red-500 pb-2">{errorMessage}</p>
             {/* submit button */}
