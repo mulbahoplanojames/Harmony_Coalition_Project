@@ -29,35 +29,37 @@ const About = () => {
   return (
     <>
       <AboutHero />
-      <OurMission />
-      <OurStory />
-      <FAQ />
-      <Gallery />
+      <div className="pt-[4rem] md:px-[2rem] px-2">
+        <OurMission />
+        <OurStory />
+        <FAQ />
+        <Gallery />
 
-      <div className="">
-        <h1 className="text-center text-4xl capitalize font-semibold pb-10">
-          HobSpot By the Numbers
-        </h1>
+        <div className="">
+          <h1 className="text-center text-4xl capitalize font-semibold pb-10">
+            HobSpot By the Numbers
+          </h1>
 
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mb-24 md:gap-4 gap-y-6">
-          <Card
-            image={totalStudents}
-            title="200+ Students"
-            link="Learn More"
-            path={""}
-          />
-          <Card
-            image={newStudents}
-            title="30+ New Students"
-            link="Learn More"
-            path={""}
-          />
-          <Card
-            image={connection}
-            title="50+ Connections"
-            link="Learn More"
-            path={""}
-          />
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mb-24 md:gap-4 gap-y-6">
+            <Card
+              image={totalStudents}
+              title="200+ Students"
+              link="Learn More"
+              path={""}
+            />
+            <Card
+              image={newStudents}
+              title="30+ New Students"
+              link="Learn More"
+              path={""}
+            />
+            <Card
+              image={connection}
+              title="50+ Connections"
+              link="Learn More"
+              path={""}
+            />
+          </div>
         </div>
       </div>
     </>
