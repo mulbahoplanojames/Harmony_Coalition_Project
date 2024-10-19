@@ -15,6 +15,7 @@ import Footer from "../../../Constant/Footer/Footer";
 // for the Gallery
 import Gallery from "../../../Components/Gallery/Gallery";
 import VisitAboutHero from "./VisitAboutHero";
+// import { FocusCards } from "@/components/ui/focus-cards";
 
 const VisitAbout = () => {
   return (
@@ -26,6 +27,7 @@ const VisitAbout = () => {
         <OurStory />
         <FAQ />
         <Gallery />
+        {/* <FocusCards /> */}
 
         <div className="">
           <h1 className="text-center text-4xl capitalize font-semibold pb-10">
