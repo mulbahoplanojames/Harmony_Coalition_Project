@@ -1,3 +1,5 @@
+import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -13,10 +15,23 @@ export default {
         quinary: "#1e3a8a",
         // aaah: "#5625A",
       },
+      animation: {
+        aurora: "aurora 60s linear infinite",
+      },
+      keyframes: {
+        aurora: {
+          from: {
+            backgroundPosition: "50% 50%, 50% 50%",
+          },
+          to: {
+            backgroundPosition: "350% 50%, 350% 50%",
+          },
+        },
+      },
     },
   },
   // add daisyUI plugin
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), addVariablesForColors],
 
   // daisyUI config (optional - here are the default values)
   daisyui: {
@@ -30,3 +45,14 @@ export default {
     themeRoot: ":root", // The element that receives theme color CSS variables
   },
 };
+
+function addVariablesForColors({ addBase, theme }) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}

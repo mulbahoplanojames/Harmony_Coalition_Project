@@ -24,28 +24,17 @@ const VisitHome = () => {
       <Navbar />
 
       {/* defining the main content of the page */}
-      <div className="pt-[4rem] md:px-[2rem] px-2">
-        {/* displaying the hero section */}
+      <div className="">
         <VisitHomeHero />
-
-        {/* displaying the what we offer section */}
-        <Offer />
-        <RecentsUpdates />
-
-        {/* displaying the team section */}
-        <Team />
-
-        {/* displaying the about us section */}
-        <AboutUs link="/visit-about" />
-
-        {/* displaying the disciplines we offer section */}
-        <DisciplinesOffer disciplinesOffer={disciplinesOffer} />
-
-        {/* displaying the newsletter section */}
-        <NewsLetter path="/visit-privacy-policy" />
-
-        {/* displaying the FAQ section */}
-        <FAQ />
+        <div className="md:px-[2rem] px-2">
+          <Offer />
+          <RecentsUpdates />
+          <Team />
+          <AboutUs link="/visit-about" />
+          <DisciplinesOffer disciplinesOffer={disciplinesOffer} />
+          <NewsLetter path="/visit-privacy-policy" />
+          <FAQ />
+        </div>
       </div>
 
       {/* displaying the footer */}

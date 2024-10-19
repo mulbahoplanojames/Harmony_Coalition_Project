@@ -24,7 +24,7 @@ const UpdateTwo = () => {
           Dopoh II, senator, River Gee County, and the commissioner visited the
           student body here in Rwanda after their missions. It was a splendid
           chat, some issues face by students were addressed before them, and
-          looking forward to settlement.{" "}
+          looking forward to settlement.
         </p>
         <p className="text-lg pb-4">Some of which were:</p>
         <ul className="text-lg pb-4 list-inside list-decimal">

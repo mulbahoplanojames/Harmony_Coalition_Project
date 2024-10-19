@@ -17,9 +17,9 @@ const Layout = () => {
   return (
     <>
       {!user.token ? <Navbar /> : <LogInNavbar />}
-      <div className="pt-[4rem] md:px-[2rem] px-2">
-        <Outlet />
-      </div>
+      {/* <div className="pt-[4rem] md:px-[2rem] px-2"> */}
+      <Outlet />
+      {/* </div> */}
       <Footer />
     </>
   );
