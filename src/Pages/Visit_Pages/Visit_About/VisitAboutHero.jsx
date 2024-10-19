@@ -29,11 +29,11 @@ const VisitAboutHero = () => {
             className=" h-fit pb-4"
           >
             {/* Displaying the heading */}
-            <h1 className="md:text-4xl text-3xl uppercase font-black md:pr-40 pr-10 pb-6 text-slate-950">
+            <h1 className="md:text-4xl text-3xl uppercase font-black md:pr-40 pr-10 pb-6 dark:text-white text-slate-950">
               Association of liberian Students at kigali independent university
             </h1>
             {/* Displaying the description */}
-            <p className="text-lg pb-10 font-semibold text-slate-950">
+            <p className="text-lg pb-10 font-semibold dark:text-white text-slate-950">
               The leadership of the Association of the Liberian Students at
               Kigali Independent University welcomes you to the official
               platform of the Association. We are here to render any assistance
