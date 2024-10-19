@@ -1,48 +1,40 @@
-// This component is responsible for toggling the dark mode of this application.
+import { Moon, Sun } from "lucide-react";
 
-// Importing the necessary icons from the react-icons library.
-import { BsMoonStars } from "react-icons/bs";
-import { MdOutlineWbSunny } from "react-icons/md";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-// Importing the AppContext from the Context/AppContext.jsx file.
-import { AppContext } from "../../Context/AppContext";
+import { useTheme } from "@/Context/ThemeProvider";
 
-// Importing the useContext hook from the React library.
-import { useContext } from "react";
-
-const ToggleDarkModeIcon = () => {
-  // The darkMode state is used to determine whether the application is in dark mode or not.
-  const { darkMode } = useContext(AppContext);
-
-  // This function is responsible for toggling the dark mode of the application.
-  const { toggleDarkMode } = useContext(AppContext);
+const ToogleDarkModeIcon = () => {
+  const { setTheme } = useTheme();
 
   return (
-    <>
-      {/* This label element wraps around a hidden checkbox element and the two icons.*/}
-      <label className="swap swap-rotate">
-        {/* The hidden checkbox controls the state of the dark mode. */}
-        <input type="checkbox" onClick={toggleDarkMode} />
-
-        {/* The sun icon is displayed when the dark mode is on. */}
-        {/* The className attribute uses the ternary operator to determine the color of the icon. */}
-        <MdOutlineWbSunny
-          className={`swap-on h-6 w-6 fill-current ${
-            darkMode ? "text-white" : "text-black"
-          }`}
-        />
-
-        {/* The moon icon is displayed when the dark mode is off. */}
-
-        <BsMoonStars
-          className={`swap-off h-6 w-6 fill-current ${
-            darkMode ? "text-black" : "text-black"
-          }`}
-        />
-      </label>
-    </>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="ghost" size="icon">
+          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          <span className="sr-only">Toggle theme</span>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem onClick={() => setTheme("light")}>
+          Light
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("dark")}>
+          Dark
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("system")}>
+          System
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
 
-// Exporting the ToggleDarkModeIcon component so that it can be used in other parts of the application.
-export default ToggleDarkModeIcon;
+export default ToogleDarkModeIcon;

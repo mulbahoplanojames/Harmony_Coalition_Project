@@ -11,7 +11,7 @@ import { MdOutlineCancelPresentation } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 // Importing the ToggleDarkModeIcon component for enabling dark mode.
-// import ToggleDarkModeIcon from "../../Components/Toggle_DarkMode/ToggleDarkModeIcon";
+import ToggleDarkModeIcon from "../../Components/Toggle_DarkMode/ToggleDarkModeIcon";
 
 // Importing the AppContext from the AppContext.jsx file for accessing the dark mode state.
 // import { AppContext } from "../../Context/AppContext";
@@ -69,7 +69,7 @@ const Navbar = () => {
         </ul>
         {/*//! Contact Us button */}
         <div className="lg:gap-x-6 gap-x-4 flex justify-center items-center">
-          {/* <ToggleDarkModeIcon /> */}
+          <ToggleDarkModeIcon />
           <Link
             to="/sign-up"
             className="py-1.5 lg:px-4 px-3 border-none  shadow-[10px 10px 10px -1px rgba(10,99,169,0.16), -10px,-10px,10px -1px rgba(255,255,255,0.70)] text-sm lg:text-base rounded-3xl text-black hover:opacity-50 bg-white"
