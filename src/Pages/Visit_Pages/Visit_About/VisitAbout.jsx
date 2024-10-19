@@ -20,8 +20,8 @@ const VisitAbout = () => {
   return (
     <>
       <Navbar />
+      <VisitAboutHero />
       <div className="pt-[4rem] md:px-[2rem] px-2">
-        <VisitAboutHero />
         <OurMission />
         <OurStory />
         <FAQ />

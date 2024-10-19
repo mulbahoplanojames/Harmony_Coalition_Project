@@ -14,6 +14,7 @@ import {
   FaFacebookSquare,
   FaWhatsappSquare,
 } from "react-icons/fa";
+import { AuroraBackground } from "../ui/aurora-background";
 
 const AboutHero = () => {
   // Accessing the darkMode value from the AppContext
