@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { AppContext } from "./Context/AppContext";
-import React, { Suspense, useContext } from "react";
+import React, { Suspense } from "react";
 
 const Layout = React.lazy(() => import("./Layout/Layout"));
 const Home = React.lazy(() => import("./Pages/Home/Home"));

@@ -4,24 +4,17 @@
   from the Data/Data.js file and maps through it to display the team members.
 */
 
-// Importing the AppContext from the Context/AppContext.jsx file.
-import { AppContext } from "../../Context/AppContext";
-
-// Importing the useContext hook from the React library.
-import { useContext } from "react";
-
 import { motion } from "framer-motion";
 import { currentLeaderShip } from "../../Data/LeaderData";
 
 const CurrentLeaderShip = () => {
   // Accessing the darkMode value from the AppContext.
-  const { darkMode } = useContext(AppContext);
 
   return (
     <>
       {/* Displaying the heading */}
       <motion.h1
-        className="text-center text-4xl font-semibold pb-10 "
+        className="text-center text-4xl font-semibold pb-10 dark:text-white text-slate-950"
         animate={{ opacity: 0, y: -60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
@@ -36,7 +29,7 @@ const CurrentLeaderShip = () => {
           /* //! Team Members */
           currentLeaderShip.map((member) => (
             <div
-              className="px-5 py-3 text-left group  neu_card rounded-md"
+              className="px-5 py-3 text-left group   rounded-md border"
               key={member.id}
             >
               {/* Displaying the image */}
@@ -45,12 +38,14 @@ const CurrentLeaderShip = () => {
                   loading="lazy"
                   src={member.image}
                   alt="team"
-                  className=" md:mx-auto bg-red-400  mb-3  w-full h-full object-scale group-hover:scale-110 transion-all duration-300"
+                  className=" md:mx-auto  mb-3  w-full h-full object-scale group-hover:scale-110 transion-all duration-300"
                 />
               </div>
 
               {/* Displaying the name */}
-              <p className="text-xl font-semibold py-1">{member.name}</p>
+              <p className="text-xl font-semibold py-1 dark:text-white text-slate-950">
+                {member.name}
+              </p>
 
               {/* Displaying the position */}
               <p className="text-lg pb-2">{member.position}</p>
@@ -66,11 +61,7 @@ const CurrentLeaderShip = () => {
                       <a
                         href={socialLink.link}
                         target="_blank"
-                        className={`text-2xl neu_icon rounded-md ${
-                          darkMode
-                            ? "bg-primary text-white"
-                            : " bg-[#ebeef1] text-primary "
-                        } p-2 inline-block`}
+                        className={`text-2xl neu_icon rounded-md  p-2 inline-block`}
                       >
                         {socialLink.icon}
                       </a>

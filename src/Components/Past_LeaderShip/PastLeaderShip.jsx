@@ -38,7 +38,7 @@ const PastLeaderShip = () => {
           /* //! Team Members */
           pastLeaderShip.map((member) => (
             <div
-              className="px-5 py-3 text-left group  neu_card rounded-md"
+              className="px-5 py-3 text-left group rounded-md border"
               key={member.id}
             >
               {/* Displaying the image */}
@@ -46,7 +46,7 @@ const PastLeaderShip = () => {
                 <img
                   src={member.image}
                   alt="team"
-                  className=" md:mx-auto bg-red-400  mb-3  w-full h-full object-scale group-hover:scale-110 transion-all duration-300"
+                  className=" md:mx-auto  mb-3  w-full h-full object-scale group-hover:scale-110 transion-all duration-300"
                 />
               </div>
 
@@ -67,11 +67,7 @@ const PastLeaderShip = () => {
                       <a
                         href={socialLink.link}
                         target="_blank"
-                        className={`text-2xl neu_icon rounded-md ${
-                          darkMode
-                            ? "bg-primary text-white"
-                            : " bg-[#ebeef1] text-primary "
-                        } p-2 inline-block`}
+                        className={`text-2xl neu_icon rounded-md p-2 inline-block`}
                       >
                         {socialLink.icon}
                       </a>

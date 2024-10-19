@@ -1,6 +1,13 @@
 import { FAQData } from "../../Data/Data";
 import { motion } from "framer-motion";
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
 const FAQ = () => {
   return (
     <>
@@ -16,26 +23,16 @@ const FAQ = () => {
         <div className="join join-vertical w-full dark:bg-transparent">
           {FAQData.map((data) => {
             return (
-              <motion.div
-                className={`collapse collapse-arrow join-item border-base-300 border dark:text-white text-slate-950`}
-                key={data.id}
-                animate={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.4, delay: 0.3 }}
-                viewport={{ once: true }}
-              >
-                <input type="radio" name="my-accordion-4" defaultChecked />
-                <div
-                  className={`collapse-title text-xl font-medium  dark:text-white text-slate-950`}
-                >
-                  {data.question}
-                </div>
-                <div className="collapse-content">
-                  <p className={"dark:text-white  text-slate-950"}>
+              <Accordion type="single" collapsible key={data.id}>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="text-xl font-medium">
+                    {data.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="dark:text-white text-slate-950 text-lg">
                     {data.answer}
-                  </p>
-                </div>
-              </motion.div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             );
           })}
         </div>
