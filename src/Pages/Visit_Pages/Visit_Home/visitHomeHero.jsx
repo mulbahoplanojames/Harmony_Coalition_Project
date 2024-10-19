@@ -15,6 +15,7 @@ import { WordFlicker } from "/src/Data/Animatedata.jsx";
 // I am importing the "about_hero2.png" image file located in the "src/assets" directory.
 // This image will be used as the background image for the hero section of our home page.
 import heroImg from "/src/assets/about_hero2.png";
+import { Button } from "@/components/ui/button";
 
 const VisitHomeHero = () => {
   return (
@@ -28,11 +29,11 @@ const VisitHomeHero = () => {
             transition={{ duration: 0.4, delay: 0.3 }}
           >
             {/* Displaying the heading */}
-            <div className="md:text-5xl text-3xl uppercase font-black text-white md:pr-[8rem] pr-5 sm:pr-2 pb-6 z-50 md:pt-1 pt-8">
+            <div className="md:text-5xl text-3xl uppercase font-black text-slate-950 md:pr-[8rem] pr-5 sm:pr-2 pb-6 z-50 md:pt-1 pt-8">
               Welcome <br /> we are here to <br /> {WordFlicker()}
             </div>
             {/* Displaying the description */}
-            <p className="text-lg  mb-10 font-semibold z-40 text-white">
+            <p className="text-lg  mb-10 font-semibold z-40 text-slate-950">
               The leadership of the Association of the Liberian Students at
               Kigali Independent University welcomes you to the official
               platform of the Association. We are here to render any assistance

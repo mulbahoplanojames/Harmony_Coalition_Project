@@ -1,5 +1,5 @@
 // Importing the necessary hooks and components from the React library.
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 // Importing the TbMenu2 icon from the react-icons library for the menu icon.
 import { TbMenu2 } from "react-icons/tb";
@@ -11,10 +11,10 @@ import { MdOutlineCancelPresentation } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 // Importing the ToggleDarkModeIcon component for enabling dark mode.
-import ToggleDarkModeIcon from "../../Components/Toggle_DarkMode/ToggleDarkModeIcon";
+// import ToggleDarkModeIcon from "../../Components/Toggle_DarkMode/ToggleDarkModeIcon";
 
 // Importing the AppContext from the AppContext.jsx file for accessing the dark mode state.
-import { AppContext } from "../../Context/AppContext";
+// import { AppContext } from "../../Context/AppContext";
 
 // Importing the logo image for displaying the logo on the navigation bar.
 import logo from "/src/assets/logo.jpg";
@@ -33,14 +33,12 @@ const Navbar = () => {
 
   // Using the useContext hook to access the darkMode state from the AppContext.
   // The darkMode state is used to determine the color scheme of the navigation bar based on the user's preference.
-  const { darkMode } = useContext(AppContext);
+  // const { darkMode } = useContext(AppContext);
 
   return (
     <>
       <nav
-        className={` flex justify-between items-center py-4 md:px-10 px-4 fixed z-50 w-full top-0 bg-[rgba(255,255,255,0.29)] shadow-[0_8px_32px_0_rgba(31,38,135,0.35)] backdrop-blur-[20px] rounded-[10px] border border-[rgba(255,255,255,0.28)] ${
-          darkMode ? "text-white" : "text-black"
-        }`}
+        className={` flex justify-between items-center py-4 md:px-10 px-4 fixed z-50 w-full top-0 bg-[rgba(255,255,255,0.29)] shadow-[0_8px_32px_0_rgba(31,38,135,0.35)] backdrop-blur-[20px] rounded-[10px] border border-[rgba(255,255,255,0.28)] `}
       >
         {/* Link to the home page */}
         <Link
@@ -71,7 +69,7 @@ const Navbar = () => {
         </ul>
         {/*//! Contact Us button */}
         <div className="lg:gap-x-6 gap-x-4 flex justify-center items-center">
-          <ToggleDarkModeIcon />
+          {/* <ToggleDarkModeIcon /> */}
           <Link
             to="/sign-up"
             className="py-1.5 lg:px-4 px-3 border-none  shadow-[10px 10px 10px -1px rgba(10,99,169,0.16), -10px,-10px,10px -1px rgba(255,255,255,0.70)] text-sm lg:text-base rounded-3xl text-black hover:opacity-50 bg-white"
@@ -80,9 +78,7 @@ const Navbar = () => {
           </Link>
           {/*//! Menu toggle button for smaller devices */}
           <TbMenu2
-            className={`max-lg:block hidden text-3xl cursor-pointer ${
-              darkMode ? "text-black" : "text-black"
-            }`}
+            className={`max-lg:block hidden text-3xl cursor-pointer `}
             onClick={() => {
               setIsMenuOpen(!isMenuOpen);
             }}

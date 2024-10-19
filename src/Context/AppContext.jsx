@@ -53,9 +53,9 @@ const AppContextProvider = ({ children }) => {
 
   // I create an object called `contextValue`. This object will store all of the data that i want to share to all parts of this project.
   const contextValue = {
-    darkMode,
-    toggleDarkMode,
-    darkModeStyle,
+    // darkMode,
+    // toggleDarkMode,
+    // darkModeStyle,
     recentUpdatesData,
   };
 

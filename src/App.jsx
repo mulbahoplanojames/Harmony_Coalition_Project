@@ -134,11 +134,11 @@ import { Analytics } from "@vercel/analytics/react";
 import Spinner from "./Components/Spinner/Spinner";
 
 const App = () => {
-  const { darkModeStyle } = useContext(AppContext);
+  // const { darkModeStyle } = useContext(AppContext);
 
   return (
     <>
-      <div className="h-screen w-screen overflow-y-auto" style={darkModeStyle}>
+      <div className="h-screen w-screen overflow-y-auto">
         <ScrollToTop />
         <SpeedInsights />
         <Analytics />
