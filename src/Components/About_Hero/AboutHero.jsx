@@ -23,7 +23,7 @@ const AboutHero = () => {
   return (
     <>
       <AuroraBackground>
-        <div className="grid md:grid-cols-2 grid-cols-1 place-items-center  md:py-16 py-8  md:gap-6 gap-14 md:px-0 px-1">
+        <div className="grid md:grid-cols-2 grid-cols-1 place-items-center  md:py-16 py-8  md:gap-6 gap-14 md:px-6 lg:px-10 px-2 ">
           <motion.div
             animate={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
