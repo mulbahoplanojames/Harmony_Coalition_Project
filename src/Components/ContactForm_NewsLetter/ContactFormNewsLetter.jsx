@@ -62,13 +62,13 @@ const ContactFormNewsletter = () => {
               type="email"
               placeholder="Email"
               name="email"
-              className="md:w-[48%] w-full bg-[#eaeef3] md:h-[2.8rem] h-[3.4rem] outline-none rounded-xl px-4 md:mb-0 mb-3 neu_input"
+              className="md:w-[48%] w-full bg-[#eaeef3] md:h-[2.8rem] h-[3.4rem] outline-none rounded-md px-4 md:mb-0 mb-3  dark:text-black"
             />
             <input
               type="tel"
               placeholder="Phone"
               name="phone"
-              className="md:w-[48%] w-full bg-[#eaeef3] md:h-[2.8rem] h-[3.4rem] outline-none rounded-xl px-4 neu_input"
+              className="md:w-[48%] w-full bg-[#eaeef3] md:h-[2.8rem] h-[3.4rem] outline-none rounded-md dark:text-black px-4 "
             />
           </div>
           <input
@@ -81,13 +81,13 @@ const ContactFormNewsletter = () => {
             type="text"
             placeholder="Name"
             name="name"
-            className="bg-[#eaeef3] w-full md:h-[2.8rem] h-[3.4rem]  outline-none rounded-xl px-4 mb-4 neu_input"
+            className="bg-[#eaeef3] w-full md:h-[2.8rem] h-[3.4rem]  outline-none rounded-md dark:text-black px-4 mb-4 "
           />
           {/* message input field  */}
           <textarea
             placeholder="Message"
             name="message"
-            className="bg-[#eaeef3] w-full h-[10rem] outline-none rounded-xl px-4 mb-4 neu_input"
+            className="bg-[#eaeef3] w-full h-[10rem] outline-none rounded-md dark:text-black px-4 mb-4 "
           ></textarea>
 
           <p className="pb-4">{result}</p>
@@ -125,7 +125,7 @@ const ContactFormNewsletter = () => {
               value={newsLetterEmail}
               onChange={(e) => setNewsLetterEmail(e.target.value)}
               placeholder="stephenjames@gmail.com"
-              className="w-full h-[2.8rem] text-secondary outline-none rounded-xl px-4 mb-2 neu_input"
+              className="w-full h-[2.8rem] text-secondary outline-none rounded-xl px-4 mb-2 "
             />
             <p className="text-red-500 pb-2">{errorMessage}</p>
             {/* submit button */}

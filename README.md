@@ -110,7 +110,8 @@
         Below is an overview of the routing structure:
       </p>
 
-  ### Main Pages
+### Main Pages
+
       <ul>
         <li>: Home</li>
         <li>/about: About</li>
@@ -123,7 +124,8 @@
         <li>/school-of-law-social-sciences: Law</li>
       </ul>
 
-  ### Admin Pages
+### Admin Pages
+
       <ul>
         <li>/admin/: Admin Layout</li>
         <li>/admin/add-student: Add Student</li>
