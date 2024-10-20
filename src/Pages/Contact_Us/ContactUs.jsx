@@ -5,7 +5,7 @@ import ContactCards from "../../Interfaces/Contact_Card/ContactCard";
 const ContactUs = () => {
   return (
     <>
-      <div className="pt-[4rem] md:px-[2rem] px-2">
+      <div className="md:pt-[4rem] pt-[6rem] md:px-[2rem] px-5">
         <ContactHeader />
         <ContactFormNewsletter />
         <ContactCards />

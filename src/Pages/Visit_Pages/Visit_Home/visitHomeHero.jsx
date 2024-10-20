@@ -20,7 +20,7 @@ const VisitHomeHero = () => {
   return (
     <>
       <AuroraBackground>
-        <div className="grid md:grid-cols-2 grid-cols-1 place-items-center md:px-6 lg:px-10 px-2  md:py-16 py-8  md:gap-6 gap-14 rounded-md h-fit relative  w-full">
+        <div className="grid md:grid-cols-2 grid-cols-1 place-items-center md:px-6 lg:px-10 px-4  md:py-16 py-8  md:gap-6 gap-14 rounded-md h-fit relative  w-full">
           <motion.div
             className="z-30"
             initial={{ opacity: 0, x: -60 }}

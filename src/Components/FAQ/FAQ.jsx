@@ -11,7 +11,7 @@ import {
 const FAQ = () => {
   return (
     <>
-      <section className="w-full pb-20">
+      <section className="w-full pb-20 md:px-12 px-4">
         <motion.h1
           className="text-3xl font-bold text-center pb-10"
           animate={{ opacity: 0, y: -80 }}

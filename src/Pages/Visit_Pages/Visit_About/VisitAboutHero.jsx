@@ -21,7 +21,7 @@ const VisitAboutHero = () => {
   return (
     <>
       <AuroraBackground>
-        <div className="grid md:grid-cols-2 grid-cols-1 place-items-center  md:py-20 py-8  md:gap-3 gap-10 md:px-6 lg:px-10 px-2 ">
+        <div className="grid md:grid-cols-2 grid-cols-1 place-items-center  md:py-24 py-16  md:gap-3 gap-10 md:px-6 lg:px-10 px-5 ">
           <motion.div
             animate={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}

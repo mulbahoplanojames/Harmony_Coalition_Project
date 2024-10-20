@@ -29,7 +29,7 @@ const About = () => {
   return (
     <>
       <AboutHero />
-      <div className="pt-[4rem] md:px-[2rem] px-2">
+      <div className="pt-[4rem] md:px-[2rem] px-5">
         <OurMission />
         <OurStory />
         <FAQ />
