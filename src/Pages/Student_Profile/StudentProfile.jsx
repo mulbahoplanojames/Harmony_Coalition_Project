@@ -10,8 +10,8 @@ const StudentProfile = () => {
 
   return (
     <>
-      <div className=" h-fit py-14 my-10  bg-[#ffffff4a]  px-2 rounded-md">
-        <div className=" md:py-14 py-8 md:px-8 px-1  md:w-[90%] w-full h-fit mx-auto  text-white bg-[rgba(255,255,255,0.29)] shadow-[0_8px_32px_0_rgba(31,38,135,0.35)] backdrop-blur-[20px] rounded-[10px] border border-[rgba(198,194,194,0.2)] neu_card_1">
+      <div className=" h-fit py-14 my-16   px-2 rounded-md">
+        <div className=" md:py-14 py-8 md:px-8 px-1  md:w-[90%] w-full h-fit mx-auto  text-white bg-[#f8f8f8]">
           <StudentProfileHeader
             firstName={user.studentInfo.first_name}
             lastName={user.studentInfo.last_name}

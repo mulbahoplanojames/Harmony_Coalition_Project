@@ -10,9 +10,9 @@ const Layout = () => {
   const user = useAuth();
 
   // if the user is not logged in, redirect to the login page else render the layout
-  if (!user.token) {
-    return <Navigate to="/home" />;
-  }
+  // if (!user.token) {
+  //   return <Navigate to="/home" />;
+  // }
 
   return (
     <>

@@ -129,10 +129,10 @@ const StudentProfileSettings = () => {
 
   return (
     <>
-      <div className="w-full py-3 ">
+      <div className="w-full pb-3 pt-16">
         <form
           className={`md:w-[90%] w-full bg-[ebeef1] h-fit py-6 md:px-8 px-4 rounded-md mx-auto mb-20 mt-10 ${
-            darkMode ? "neu_card_1 text-white " : "neu_card_2 "
+            darkMode ? "text-white " : " shadow-lg shadow-slate-500 "
           }`}
           onSubmit={handleSubmit}
         >
