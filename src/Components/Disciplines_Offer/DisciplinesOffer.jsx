@@ -9,10 +9,7 @@ const DisciplinesOffer = ({ disciplinesOffer }) => {
         </h1>
         <div className="grid md:grid-cols-2 grid-cols-1 md:place-items-start place-items-center gap-12 md:px-0 px-2">
           {disciplinesOffer.map((discipline) => (
-            <div
-              key={discipline.id}
-              className=" rounded-md neu_card_disciplines overflow-hidden"
-            >
+            <div key={discipline.id} className=" rounded-md  overflow-hidden">
               <div>
                 <img
                   src={discipline.image}

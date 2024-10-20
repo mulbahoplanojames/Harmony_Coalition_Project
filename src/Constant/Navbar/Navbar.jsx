@@ -38,7 +38,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={` flex justify-between items-center py-4 md:px-10 px-4 fixed z-50 w-full top-0 bg-[rgba(255,255,255,0.29)] shadow-[0_8px_32px_0_rgba(31,38,135,0.35)] backdrop-blur-[20px] rounded-[10px] border border-[rgba(255,255,255,0.28)] `}
+        className={` flex justify-between items-center py-4 md:px-10 px-4 fixed z-50 w-full top-0 bg-[rgba(255,255,255,0.29)] shadow-[0_8px_32px_0_rgba(31,38,135,0.35)] backdrop-blur-[20px]  border border-[rgba(255,255,255,0.28)] `}
       >
         {/* Link to the home page */}
         <Link
@@ -72,7 +72,7 @@ const Navbar = () => {
           <ToggleDarkModeIcon />
           <Link
             to="/sign-up"
-            className="py-1.5 lg:px-4 px-3 border-none  shadow-[10px 10px 10px -1px rgba(10,99,169,0.16), -10px,-10px,10px -1px rgba(255,255,255,0.70)] text-sm lg:text-base rounded-3xl text-black hover:opacity-50 bg-white"
+            className="py-1.5 lg:px-4 px-3 border-none  shadow-[10px 10px 10px -1px rgba(10,99,169,0.16), -10px,-10px,10px -1px rgba(255,255,255,0.70)] text-sm lg:text-base rounded-3xl text-white hover:opacity-50 bg-primary_main"
           >
             sign in
           </Link>

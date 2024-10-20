@@ -235,14 +235,14 @@ export const FAQData = [
 ];
 
 //? =========================================================================================
-import gallery1 from "/src/assets/aboutimg1.jpg";
+import gallery1 from "/src/assets/acad4.jpeg";
 import gallery2 from "/src/assets/aboutimg2.jpg";
-import gallery3 from "/src/assets/aboutimg3.jpg";
+import gallery3 from "/src/assets/general4.jpeg";
 import gallery4 from "/src/assets/aboutimg4.jpg";
-import gallery5 from "/src/assets/eric.jpeg";
+import gallery5 from "/src/assets/acad1.jpeg";
 import gallery6 from "/src/assets/kelvin.jpeg";
-import gallery7 from "/src/assets/girl.jpeg";
-import gallery8 from "/src/assets/joy.jpg";
+import gallery7 from "/src/assets/update4.jpg";
+import gallery8 from "/src/assets/acad7.jpeg";
 
 export const galleryImages = [
   {
