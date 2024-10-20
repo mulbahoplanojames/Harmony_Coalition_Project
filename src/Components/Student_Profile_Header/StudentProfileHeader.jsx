@@ -50,7 +50,7 @@ const StudentProfileHeader = (props) => {
       <div className="w-full h-fit py-9   rounded-lg shadow-lg text-black md:px-8 px-2 md:grid-cols-2 grid-cols-1 place-items-stretch items-center md:gap-2 gap-y-5 bg-white ">
         <h2 className="text-3xl capitalize pb-6">Student Details</h2>
 
-        <div className="grid md:grid-cols-4 grid-cols-1 md:place-items-start  gap-6">
+        <div className="grid md:grid-cols-4 grid-cols-1 md:place-items-start gap-6 md:pb-4 pb-6">
           <div className=" md:h-[10rem] h-[8rem] md:w-[10rem] w-[8rem]   overflow-hidden rounded-full bg-red-300">
             <img
               src={image ? image : avatar}
@@ -64,20 +64,20 @@ const StudentProfileHeader = (props) => {
               Welcome back, {firstName} {lastName}
             </h2>
 
-            <div className="p-3 flex md:gap-28 gap-x-8 gap-y-5 flex-wrap">
+            <div className="p-3 flex md:gap-28 gap-x-8 gap-y-3 flex-wrap">
               <div>
-                <p className="pb-3">Date</p>
+                <p className="pb-1">Date</p>
                 <p className="text-base pb-2">{`${date.month} ${date.day}, ${date.year}`}</p>
                 <p className="text-base pb-5">{`${date.hour} : ${date.minute} `}</p>
               </div>
 
               <div>
-                <p className="pb-3">Department</p>
+                <p className="pb-1">Department</p>
                 <p className="pb-2">{department ? department : "Department"}</p>
               </div>
 
               <div>
-                <p className="pb-3">Course</p>
+                <p className="pb-1">Course</p>
                 <p>{course ? course : "Course"}</p>
               </div>
               {/* <p className="text-base pb-5">
