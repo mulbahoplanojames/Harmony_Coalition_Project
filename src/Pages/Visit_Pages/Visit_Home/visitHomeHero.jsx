@@ -124,7 +124,7 @@ const VisitHomeHero = () => {
                 y2="288"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="red" />
+                <stop stopColor="#4b208c" />
                 <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
               </linearGradient>
               <radialGradient
